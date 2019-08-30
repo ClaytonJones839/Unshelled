@@ -19,7 +19,7 @@ const TacoSchema = new Schema({
         // required: true,
         min: 1,
         max: 5,
-        default: 3
+        // default: 3
     },
     price: {
         type: Number,
@@ -52,5 +52,9 @@ TacoSchema.statics.updateTacoRestaurant = (tacoId, restaurantId) => {
         });
     });
 };
+
+TacoSchema.statics.findRestaurant = function (tacoId) {
+    return this.findById(tacoId).populate("restaurant").then(taco => taco.restaurant)
+}
 
 module.exports = mongoose.model("tacos", TacoSchema);

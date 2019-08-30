@@ -3,6 +3,7 @@ const graphql = require("graphql");
 const { GraphQLObjectType, GraphQLString, GraphQLID, GraphQLInt } = graphql;
 
 const Taco = mongoose.model("tacos");
+const Restaurant = mongoose.model('restaurants');
 
 const TacoType = new GraphQLObjectType({
     name: "TacoType",
@@ -13,14 +14,10 @@ const TacoType = new GraphQLObjectType({
         description: { type: GraphQLString },
         rating: { type: GraphQLInt },
         price: { type: GraphQLInt },
-        category: {
+        restaurant: {
             type: require("./restaurant_type"),
-            resolver(parentValue) {
-                return Product.findById(parentValue._id)
-                    .populate("restaurant")
-                    .then(taco => {
-                        return taco.restaurant;
-                    });
+            resolve(parentValue) {
+                return Taco.findRestaurant(parentValue._id)
             }
         }
 

@@ -64,7 +64,7 @@ const mutation = new GraphQLObjectType({
                 description: { type: GraphQLString }
             },
             resolve(_, { name, style, price, description}) {
-                return new Product({ name, style, price, description }).save();
+                return new Taco({ name, style, price, description }).save();
             }
         },
         deleteTaco: {
@@ -91,8 +91,8 @@ const mutation = new GraphQLObjectType({
                 description: { type: GraphQLString },
                 location: { type: GraphQLString }
             },
-            resolve(_, { name }) {
-                return new Restaurant({ name }).save();
+            resolve(_, { name, description, location }) {
+                return new Restaurant({ name, description, location }).save();
             }
         },
         deleteRestaurant: {
