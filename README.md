@@ -9,7 +9,6 @@ Unshelled is a web application focuses on helping it's users find the best taco'
 - Clayton Jones
 - Kevin Le
 - Leap Soto
-
 ## MVP's
 - Drinks CRUD
 - Checkins / reviews
