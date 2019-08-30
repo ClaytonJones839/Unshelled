@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Mutation } from "react-apollo";
-import Mutations from "../../graphql/mutations";
+import Mutations from "../graphql/mutations";
 
 export default class Login extends Component {
     constructor(props) {

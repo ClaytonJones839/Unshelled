@@ -18,8 +18,13 @@ VERIFY_USER: gql`
 `,
  
 REGISTER_USER: gql`
-  mutation RegisterUser($name: String!, $email: String!, $password: String!) {
-    register(name: $name, email: $email, password: $password){
+  mutation RegisterUser($username: String!, 
+    $email: String!, 
+    $password: String!,
+    $firstName: String!,
+    $lastName: String!) {
+    register(username: $username, email: $email, password: $password
+        firstName: $firstName, lastName: $lastName){
       token
       loggedIn
     }

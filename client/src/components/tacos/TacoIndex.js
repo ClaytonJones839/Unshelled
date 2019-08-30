@@ -1,12 +1,13 @@
 import React from 'react';
-import { FETCH_TACOS } from '../../graphql/queries';
+import Queries from '../../graphql/queries';
+import { Link, withRouter } from "react-router-dom";
+import { ApolloConsumer } from "react-apollo";
 import { Query } from 'react-apollo';
 
-class TacoIndex extends React.Component {
-
-    render() {
+const TacoIndex = props => {
         return(
-            <Query query={FETCH_TACOS}>
+            <div>
+            <Query query={Queries.FETCH_TACOS}>
                 {({ loading, error, data }) => {
                     if (loading) return "Loading...";
                     if (error) return `Error! ${error.message}`;
@@ -20,8 +21,41 @@ class TacoIndex extends React.Component {
                     );
                 }}
             </Query>
+            {/* Just putting this here for testing purposes */}
+            <ApolloConsumer>
+                {client => (
+                    <Query query={Queries.IS_LOGGED_IN}>
+                        {({ data }) => {
+                            if (data.isLoggedIn) {
+                                return (
+                                    <div>
+                                        <button
+                                            onClick={e => {
+                                                e.preventDefault();
+                                                localStorage.removeItem("auth-token");
+                                                client.writeData({ data: { isLoggedIn: false } });
+                                                props.history.push("/");
+                                            }}
+                                        >
+                                            Logout
+                                    </button>
+                                    </div>
+                                );
+                            } else {
+                                return (
+                                    <div>
+                                        <Link to="/login">Login</Link>
+                                        <Link to="/register">Register</Link>
+                                    </div>
+                                );
+                            }
+                        }}
+                    </Query>
+                )}
+            </ApolloConsumer>
+            </div>
         )
     }
-}
 
-export default TacoIndex;
+
+export default withRouter(TacoIndex);
