@@ -15,3 +15,18 @@ export const FETCH_TACOS = gql`
            }
          }
        `;
+
+
+export const FETCH_RESTAURANTS = gql`
+  {
+    restaurants {
+      _id
+      name
+      description
+      location
+      tacos {
+        name
+      }
+    }
+  }
+`
