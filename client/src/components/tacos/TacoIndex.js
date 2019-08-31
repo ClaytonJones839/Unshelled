@@ -1,12 +1,14 @@
 import React from 'react';
-import { FETCH_TACOS } from '../../graphql/queries';
+// import { FETCH_TACOS } from '../../graphql/queries';
+import Queries from "../../graphql/queries";
 import { Query } from 'react-apollo';
+
 
 class TacoIndex extends React.Component {
 
     render() {
         return(
-            <Query query={FETCH_TACOS}>
+            <Query query={Queries.FETCH_TACOS}>
                 {({ loading, error, data }) => {
                     if (loading) return "Loading...";
                     if (error) return `Error! ${error.message}`;
