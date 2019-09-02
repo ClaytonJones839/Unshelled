@@ -1,5 +1,7 @@
 import React from 'react';
-import { FETCH_TACOS } from '../../graphql/queries';
+import Queries from '../../graphql/queries';
+import { Link, withRouter } from "react-router-dom";
+import { ApolloConsumer } from "react-apollo";
 import { Query } from 'react-apollo';
 
 class TacoIndex extends React.Component {
@@ -10,10 +12,7 @@ class TacoIndex extends React.Component {
         {({ loading, error, data }) => {
           if (loading) return "Loading...";
           if (error) return `Error! ${error.message}`;
-       
-
-
-      
+    
       return (
         <ul>
             {data.tacos.map((taco, i) => {
@@ -56,8 +55,8 @@ class TacoIndex extends React.Component {
         );
     }}
 </Query>
-)
-    }
-}
+)}
 
-export default TacoIndex;
+
+
+export default withRouter(TacoIndex);

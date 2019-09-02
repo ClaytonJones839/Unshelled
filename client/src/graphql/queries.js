@@ -16,6 +16,12 @@ export const FETCH_TACOS = gql`
          }
        `;
 
+export const IS_LOGGED_IN = gql`
+    query IsUserLoggedIn {
+      isLoggedIn @client
+    }
+  `
+  };
 
 export const FETCH_RESTAURANTS = gql`
   {
@@ -30,3 +36,4 @@ export const FETCH_RESTAURANTS = gql`
     }
   }
 `
+
