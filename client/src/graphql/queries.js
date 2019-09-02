@@ -30,9 +30,31 @@ export const FETCH_RESTAURANTS = gql`
       description
       location
       tacos {
+        _id
         name
       }
     }
   }
 `
-
+      
+export default {
+  
+  FETCH_TACO: gql`
+    query fetchTaco($id: ID!) {
+      taco(_id: $id) {
+        _id
+        name
+        style
+        description
+        rating
+        price
+        restaurant {
+          _id
+          name
+          location
+        }
+      }
+    }
+    `
+  
+}
