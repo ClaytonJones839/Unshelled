@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Mutation } from "react-apollo";
 import Mutations from "../graphql/mutations";
 import { Link, withRouter } from "react-router-dom";
-import LoginCSS from "../Login.css"
+import SessionCSS from "../Session.css"
 
 export default class Login extends Component {
     constructor(props) {
@@ -12,6 +12,8 @@ export default class Login extends Component {
             email: "",
             password: ""
         };
+
+        // this.demoUser = this.demoUser.bind(this)
     }
 
     update(field) {
@@ -24,6 +26,14 @@ export default class Login extends Component {
             data: { isLoggedIn: data.login.loggedIn }
         });
     }
+
+    // demoUser(e) {
+    //     e.preventDefault();
+    //     this.props.processForm({
+    //         username: 'Unshelled_Demo',
+    //         password: 'test123'
+    //     })
+    // }
 
     render() {
         return (
@@ -77,7 +87,7 @@ export default class Login extends Component {
                                     placeholder="Password"
                                 />
                                 </div>
-                                <button className="login-form-button" type="submit">Log In</button>
+                                <button className="login-form-button" type="submit">Sign In</button>
                             </form>
                             <div className="login-form-bottom">
                                 New around here? &nbsp;
