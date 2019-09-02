@@ -1,7 +1,8 @@
-import React, { Component } from "react";
-import gql from "graphql-tag";
+import React from "react";
+// import gql from "graphql-tag";
 import TacoIndex from './tacos/TacoIndex';
-import { Route, HashRouter, Switch } from 'react-router-dom';
+import { Route, HashRouter } from 'react-router-dom';
+import Nav from './navbar/nav';
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
       <h1>UNSHELLED</h1>
       <HashRouter>
         <Route exact path="/" component={TacoIndex} />
+        <Route path="/" component={Nav} />
       </HashRouter>
     </div>
   );

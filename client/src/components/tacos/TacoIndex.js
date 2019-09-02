@@ -1,6 +1,7 @@
 import React from 'react';
-import { FETCH_TACOS } from '../../graphql/queries';
 import { Query } from 'react-apollo';
+import Queries from '../../graphql/queries';
+const { FETCH_TACOS } = Queries;
 
 class TacoIndex extends React.Component {
 
