@@ -12,8 +12,8 @@ import UserProfile from "./users/UserProfile";
 const App = () => {
   return (
       <HashRouter>
+      <Route exact path="/restaurants" component={RestuarantIndex} />
         <Route path="/" component={Nav} />
-        <Route exact path="/" component={RestuarantIndex} />
         <Route exact path="/" component={TacoIndex} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />

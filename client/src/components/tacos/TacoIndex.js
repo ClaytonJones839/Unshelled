@@ -18,7 +18,9 @@ class TacoIndex extends React.Component {
           if (error) return `Error! ${error.message}`;
     
       return (
-        <ul>
+        <div className="taco-index-page">
+          <div className="taco-index-container">
+        <ul className="taco-index-list">
             {data.tacos.map((taco, i) => {
               
               let rating;
@@ -30,34 +32,42 @@ class TacoIndex extends React.Component {
 
               let price;
               if (taco.price <= 2) {
-                price = "$";
+                price = <i class='fas fa-dollar-sign'></i>;
               } else if (taco.price <= 4) {
-                price = "$$";
+                price = <div><i class='fas fa-dollar-sign'></i> <i class='fas fa-dollar-sign'></i></div>
               } else if (taco.price <= 6) {
-                price = "$$$"
+                price = <div><i class='fas fa-dollar-sign'></i> <i class='fas fa-dollar-sign'></i> <i class='fas fa-dollar-sign'></i></div>
               } else {
-                price = "$$$$"
+                price = <div><i class='fas fa-dollar-sign'></i> <i class='fas fa-dollar-sign'></i> <i class='fas fa-dollar-sign'></i> <i class='fas fa-dollar-sign'></i></div>
               };
               
 
               return (
-                <div>
-                  {/* <li key={taco._id}>
-                  {taco._id}
-                </li> */}
-                  <li key={`${taco.name}`}>Name: {taco.name}</li>
-                  <li key={`${taco.description}` + `${i}`}>
-                    Description: {taco.description}
-                  </li>
-                  {rating}
-                  <li>Price: {price}</li>
-                  <li>Restaurant: {taco.restaurant.name}</li>
-                  <br />
+                <div className="taco-index-item">
+                  <div className="taco-index-image"></div>
+                  <div className="taco-index-details">
+                  <div className="taco-item-top">
+                    <Link to={`/tacoshow/${taco._id}`} 
+                      className="taco-item-name">{taco.name}</Link>
+                    <Link to={`/tacoshow/${taco._id}`}
+                      className="taco-item-rest">{taco.restaurant.name}</Link>
+                  </div>
+                  {/* <div className="taco-item-style">{taco.style}</div> */}
+                  <div className="taco-item-desc">{taco.description}</div>
+                    <div className="taco-item-stats">
+                      <div className="taco-index-rating">{rating}</div>
+                      <div className="taco-index-price">{price}</div>
+                    </div>
+                </div>
+
                 </div>
               );})}
           </ul>
+            </div>
+        </div>
         );
-    }}
+      }}
+
 </Query>
 )} }
 

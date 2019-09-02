@@ -74,6 +74,7 @@
     color: white;
     background-color: #3b5998;
     border-radius: 5px;
+    outline: none;
 }
 
 .login-form-demo:hover, .login-form-button:hover {
@@ -137,6 +138,7 @@
     text-align: center;
     padding-bottom: 20px;
     font-weight: bold;
+    font-family: 'Roboto', sans-serif;
 }
 
 .login-link {
@@ -146,6 +148,5 @@
 }
 
 .login-link:visited {
-    color: black;
     color: #c60;
 }
