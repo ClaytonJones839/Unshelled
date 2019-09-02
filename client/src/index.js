@@ -8,6 +8,7 @@ import { ApolloProvider } from "react-apollo";
 import { onError } from "apollo-link-error";
 // import { ApolloLink } from "apollo-link";
 import Mutations from "./graphql/mutations"; 
+import "./css/loader.css";
 
 const httpLink = createHttpLink({
   uri: "http://localhost:5000/graphql",

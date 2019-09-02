@@ -6,13 +6,10 @@ import Nav from './navbar/nav';
 
 const App = () => {
   return (
-    <div>
-      <h1>UNSHELLED</h1>
       <HashRouter>
-        <Route exact path="/" component={TacoIndex} />
         <Route path="/" component={Nav} />
+        <Route exact path="/" component={TacoIndex} />
       </HashRouter>
-    </div>
   );
 };
 
