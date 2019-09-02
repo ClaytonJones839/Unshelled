@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Mutation } from "react-apollo";
 import Mutations from "../graphql/mutations";
 import SessionCSS from "../Session.css"
+import { Link, withRouter } from "react-router-dom";
 
 export default class Register extends Component {
     constructor(props) {
@@ -22,7 +23,6 @@ export default class Register extends Component {
 
     updateCache(client, { data }) {
         console.log(data);
-        // here we can write directly to our cache with our returned mutation data
         client.writeData({
             data: { isLoggedIn: data.register.loggedIn }
         });
@@ -40,8 +40,17 @@ export default class Register extends Component {
                 update={(client, data) => this.updateCache(client, data)}
             >
                 {registerUser => (
-                    <div>
-                        <form
+                    <div className="login-page-wrap">
+                        <div className="signup-form-container">
+                        <div className="login-form-top">
+                            <div className="login-logo">
+                                UNSHELLED
+                                </div>
+                            <div className="login-logo-bottom">
+                                EAT SOCIALLY
+                                </div>
+                        </div>
+                            <form className="signup-form-middle"
                             onSubmit={e => {
                                 e.preventDefault();
                                 registerUser({
@@ -55,34 +64,46 @@ export default class Register extends Component {
                                 });
                             }}
                         >
+                        <div className="signup-inputs">
                             <input
+                                className="signup-input"
                                 value={this.state.username}
                                 onChange={this.update("username")}
                                 placeholder="Username"
                             />
                             <input
+                                className="signup-input"
                                 value={this.state.firstName}
                                 onChange={this.update("firstName")}
                                 placeholder="First Name"
                             />
                             <input
+                                className="signup-input"
                                 value={this.state.lastName}
                                 onChange={this.update("lastName")}
                                 placeholder="Last Name"
                             />
                             <input
+                                className="signup-input"
                                 value={this.state.email}
                                 onChange={this.update("email")}
                                 placeholder="Email"
                             />
                             <input
+                                className="signup-input"
                                 value={this.state.password}
                                 onChange={this.update("password")}
                                 type="password"
                                 placeholder="Password"
                             />
-                            <button type="submit">Register</button>
+                            <button className="signup-form-button" type="submit">Sign Up</button>
+                        </div>
                         </form>
+                            <div className="login-form-bottom">
+                                Already a member? &nbsp;
+                                <Link className="login-link" to="/login">Log In!</Link>
+                            </div>
+                        </div>
                     </div>
                 )}
             </Mutation>
