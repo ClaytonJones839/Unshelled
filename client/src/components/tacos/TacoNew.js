@@ -1,8 +1,36 @@
 import React, { Component } from "react";
 import { Mutation } from "react-apollo";
+import gql from "graphql-tag";
+
+// import Queries from "../../graphql/queries";
 
 import Mutations from "../../graphql/mutations";
+import { FETCH_TACOS } from "../../graphql/queries";
+
 const { NEW_TACO } = Mutations;
+
+
+// const NEW_TACO = gql`
+//   mutation NewTaco(
+//     $name: String
+//     $style: String
+//     $price: Number
+//     $description: String
+//   ) {
+//     newTaco(
+//       name: $name
+//       style: $stlye
+//       price: $price
+//       description: $description
+//     ) {
+//       _id
+//       name
+//       style
+//       price
+//       description
+//     }
+//   }
+// `;
 
 class TacoNew extends Component {
   constructor(props) {
@@ -27,6 +55,8 @@ class TacoNew extends Component {
   handleSubmit(e, newTaco) {
     e.preventDefault();
     let name = this.state.name;
+
+  
 
     // our newTaco function will accept an object with the key of "variables" pointing to an object with all our passed in variables.
     newTaco({
@@ -84,9 +114,9 @@ class TacoNew extends Component {
         mutation={NEW_TACO}
         update={(cache, data) => this.updateCache(cache, data)}
       >
-        {(newTaco, { data })} => (
+        {(newTaco, { data }) => (
         <div>
-          <form onSubmit={e => this.handleSubmit(e, newGod)}>
+          <form onSubmit={e => this.handleSubmit(e, newTaco)}>
             <input
               onChange={this.update("name")}
               value={this.state.name}
@@ -99,9 +129,9 @@ class TacoNew extends Component {
             />
             <input
               type="number"
-              onChange={this.update("style")}
-              value={this.state.style}
-              placeholder="Style"
+              onChange={this.update("price")}
+              value={this.state.price}
+              placeholder="0"
             />
             <textarea
               value={this.state.description}
@@ -112,7 +142,7 @@ class TacoNew extends Component {
           </form>
           <p>{this.state.message}</p>
         </div>
-        )
+        )}
       </Mutation>
     );
   }
