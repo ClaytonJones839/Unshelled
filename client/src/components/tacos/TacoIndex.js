@@ -40,6 +40,13 @@ class TacoIndex extends React.Component {
               } else {
                 price = <div><i class='fas fa-dollar-sign'></i> <i class='fas fa-dollar-sign'></i> <i class='fas fa-dollar-sign'></i> <i class='fas fa-dollar-sign'></i></div>
               };
+
+              let restaurant;
+              if (taco.restaurant) {
+                restaurant = <li>Restaurant: {taco.restaurant.name}</li>;
+              } else {
+                restaurant = <li>Restaurant: Unknown</li>;
+              }
               
 
               return (
