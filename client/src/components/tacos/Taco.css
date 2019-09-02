@@ -1,0 +1,82 @@
+.taco-index-page {
+    width: 100%;
+    height: 800px;
+    position: absolute;
+    background-color: #F5F2E8;
+}
+
+.taco-index-container {
+    background-color: white;
+    box-sizing: border-box;
+    width: 740px;
+    display: flex;
+    justify-content: center;
+
+    height: auto;
+    max-height: 700px;
+    margin: 70px 20px 0px 20px;
+    overflow: auto;
+}
+
+.taco-index-list {
+    list-style: none;
+    padding: 0px;
+}
+
+.taco-index-image{
+    height: 100px;
+    width: 100px;
+    background-color: lightgray;
+    margin-right: 10px;
+}
+.taco-index-item {
+    height: 150px;
+    margin-top: 20px;
+    width: 650px;
+    display: flex;
+    border-bottom: 1px solid lightgray;
+}
+
+.taco-index-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.taco-item-name {
+    color: #c60;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.taco-item-rest {
+    color: #c60;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.taco-item-top {
+    margin-bottom: 20px;
+}
+
+.taco-item-desc {
+    font-size: 16px;
+}
+
+.taco-item-stats{
+    display: flex;
+    width: 540px;
+    margin-bottom: 5px;
+}
+
+.taco-index-rating {
+    margin-right: 20px;
+
+}
+
+.fa-dollar-sign {
+    font-size: 18px;
+    font-weight: bold;
+    color: green;
+}
