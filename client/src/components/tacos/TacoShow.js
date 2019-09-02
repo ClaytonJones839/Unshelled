@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Query } from "react-apollo";
-// import Queries from "../../graphql/queries";
-import { FETCH_TACO } from "../../graphql/queries";
+import Queries from "../../graphql/queries";
+const { FETCH_TACO } = Queries;
 
 
 class TacoShow extends Component {
