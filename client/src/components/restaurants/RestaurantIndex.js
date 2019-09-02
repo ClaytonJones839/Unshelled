@@ -1,6 +1,7 @@
 import React from "react";
-import { FETCH_RESTAURANTS } from "../../graphql/queries";
+import Queries from "../../graphql/queries";
 import { Query } from "react-apollo";
+const { FETCH_RESTAURANTS } = Queries;
 
 class RestaurantIndex extends React.Component {
   render() {

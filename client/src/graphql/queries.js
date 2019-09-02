@@ -1,7 +1,8 @@
 import gql from "graphql-tag";
 
 
-export const FETCH_TACOS = gql`
+export default {
+  FETCH_TACOS: gql`
          {
            tacos {
              _id
@@ -15,16 +16,18 @@ export const FETCH_TACOS = gql`
              }
            }
          }
-       `;
+       `,
 
-export const IS_LOGGED_IN = gql`
+ IS_LOGGED_IN: gql`
     query IsUserLoggedIn {
       isLoggedIn @client
+      id @client
     }
-  `;
 
-export const FETCH_RESTAURANTS = gql`
+  `,
 
+
+ FETCH_RESTAURANTS: gql`
   {
     restaurants {
       _id
@@ -37,15 +40,9 @@ export const FETCH_RESTAURANTS = gql`
       }
     }
   }
-
-  `;
-  export const IS_LOGGED_IN = gql `
-    query IsUserLoggedIn {
-      isLoggedIn @client
-    }
-  `     
+  `,
   
-  export const FETCH_TACO = gql`
+   FETCH_TACO: gql`
     query fetchTaco($id: ID!) {
       taco(_id: $id) {
         _id
@@ -61,7 +58,18 @@ export const FETCH_RESTAURANTS = gql`
         }
       }
     }
-    `
+    `,
+  FETCH_USER: gql`
+    query fetchUser($id: ID!) {
+      user(_id: $id) {
+        _id
+        firstName
+        lastName
+        username
+        email
+      }
+    }
+  `
   
-
+}
 

@@ -1,0 +1,113 @@
+.profile-container {
+    margin-top: 52px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: flex-start;
+    background-color: black;
+    min-width: 980px;
+    height: 256px;
+    align-items: flex-end;
+    background-image: url("https://s3-media1.fl.yelpcdn.com/bphoto/VniQNi8Apom6TkKWWrlGkQ/o.jpg");
+    background-size: stretch;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-img {
+    border-radius: 60px;
+    width: 80px;
+    height: 80px;
+    border: 2px solid white;
+    margin: 20px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+.profile-info p {
+    font-size: 35px;
+    line-height: 1.2em;
+
+}
+
+.profile-info span {
+    /* font-size: 20px; */
+    padding-top: 5px;
+}
+
+.user-stats {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+.user-stat {
+    /* font-size: 15px; */
+    padding-right: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.user-stat:hover {
+    text-shadow: 0 0 20px rgba(255, 255, 255, .8);
+    cursor: pointer;
+}
+
+.stat-name {
+    font-size: 15px;
+    padding-right: 5px;
+}
+
+.stat-count {
+    padding-right: 5px;
+    font-size: 25px;
+}
+
+.profile-main {
+    margin-top: 10px;
+    min-width: 980px;
+    max-width: 980px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-activity {
+    background-color: white;
+    box-sizing: border-box;
+    padding: 0 25px 25px;
+    width: 70%;
+    margin-right: 15px;
+}
+
+.profile-sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 0 0 5px 0;
+    margin-bottom: 10px;
+}
+
+.profile-sidebar-item {
+    font-size: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0, .1);
+    background-color: white;
+    padding: 20px;
+}
+
+.profile-sidebar-item p {
+    border-bottom: 1px solid #e5e5e5;
+    font-weight: 500;
+}

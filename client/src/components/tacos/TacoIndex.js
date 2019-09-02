@@ -1,11 +1,11 @@
 import React from 'react';
 
 import Queries from '../../graphql/queries';
-import { Link, withRouter } from "react-router-dom";
-import { ApolloConsumer } from "react-apollo";
+import { withRouter } from "react-router-dom";
+// import { ApolloConsumer } from "react-apollo";
 // import { FETCH_TACOS } from '../../graphql/queries';
 import { Query } from 'react-apollo';
-import { FETCH_TACOS } from '../../graphql/queries'
+const { FETCH_TACOS } = Queries;
 
 
 class TacoIndex extends React.Component {

@@ -5,9 +5,7 @@ import Queries from "../../graphql/queries";
 
 class TacoShow extends Component {
 
-    constructor(props) {
-        super(props);
-    }
+   
 
     render() {
         // debugger;

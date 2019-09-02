@@ -5,7 +5,7 @@ import ApolloClient from "apollo-client";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { createHttpLink } from "apollo-link-http";
 import { ApolloProvider } from "react-apollo";
-import { onError } from "apollo-link-error";
+// import { onError } from "apollo-link-error";
 // import { ApolloLink } from "apollo-link";
 import Mutations from "./graphql/mutations"; 
 import "./css/loader.css";
@@ -25,9 +25,9 @@ const token = localStorage.getItem("auth-token");
 const cache = new InMemoryCache({
   dataIdFromObject: object => object._id || null
 });
-const errorLink = onError(({ graphQLErrors }) => {
-  if (graphQLErrors) graphQLErrors.map(({ message }) => console.log(message));
-});
+// const errorLink = onError(({ graphQLErrors }) => {
+//   if (graphQLErrors) graphQLErrors.map(({ message }) => console.log(message));
+// });
 
 const client = new ApolloClient({
   link: httpLink,
@@ -43,7 +43,8 @@ const client = new ApolloClient({
 // before our mutation goes through we can set it up here
 cache.writeData({
   data: {
-    isLoggedIn: Boolean(token)
+    isLoggedIn: Boolean(token),
+    id: null
   }
 });
 
