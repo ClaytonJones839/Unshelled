@@ -10,7 +10,7 @@ class TacoShow extends Component {
     }
 
     render() {
-        debugger;
+        // debugger;
           return (
             // there we are getting the `id` for our query from React Router
             <Query query={Queries.FETCH_TACO} variables={{ id: this.props.match.params.id }}>
@@ -18,11 +18,19 @@ class TacoShow extends Component {
                 if (loading) return <p>Loading...</p>;
                 if (error) return <p>Error</p>;
                 // debugger;
-
                 return (
-                <div className="detail">
-                    hello
-                </div>
+                  <div className="detail">
+                    hello im a taco
+                    <div>{data.taco._id}</div>
+                    <div>{data.taco.name}</div>
+                    <div>{data.taco.description}</div>
+                    <div>{data.taco.style}</div>
+                    <div>{data.taco.rating}</div>
+                    <div>{data.taco.price}</div>
+                    <div>{data.taco.restaurant._id}</div>
+                    <div>{data.taco.restaurant.name}</div>
+                    <div>{data.taco.restaurant.location}</div>
+                  </div>
                 );
             }}
             </Query>

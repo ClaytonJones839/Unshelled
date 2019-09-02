@@ -12,7 +12,7 @@ export default {
   
   FETCH_TACO: gql`
     query fetchTaco($id: ID!) {
-      taco(id: $id) {
+      taco(_id: $id) {
         _id
         name
         style
