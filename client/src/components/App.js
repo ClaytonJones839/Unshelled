@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import gql from "graphql-tag";
 import TacoIndex from './tacos/TacoIndex';
+import TacoNew from './tacos/TacoNew';
 import Login from "./Login";
 import Register from "./Register";
 import RestuarantIndex from './restaurants/RestaurantIndex';
@@ -11,6 +12,7 @@ const App = () => {
       <HashRouter>
         <Route exact path="/" component={RestuarantIndex} />
         <Route exact path="/" component={TacoIndex} />
+        <Route exact path="/" component={TacoNew} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
       </HashRouter>

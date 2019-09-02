@@ -30,4 +30,18 @@ REGISTER_USER: gql`
     }
   }
 `,
+
+NEW_TACO: gql`
+  mutation NewTaco($name: String, $style: String, $price: Number, $description: String) {
+    newTaco(name: $name, style: $stlye, price: $price, description: $description) {
+      _id
+      name
+      style
+      price
+      description
+    }
+  }
+`
+
+
 }
