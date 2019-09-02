@@ -11,11 +11,11 @@
     width: 740px;
     display: flex;
     justify-content: center;
-
     height: auto;
     max-height: 700px;
     margin: 70px 20px 0px 20px;
     overflow: auto;
+    padding-bottom: 25px;
 }
 
 .taco-index-list {
