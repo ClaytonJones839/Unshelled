@@ -9,29 +9,6 @@ import { FETCH_TACOS } from "../../graphql/queries";
 
 const { NEW_TACO } = Mutations;
 
-
-// const NEW_TACO = gql`
-//   mutation NewTaco(
-//     $name: String
-//     $style: String
-//     $price: Number
-//     $description: String
-//   ) {
-//     newTaco(
-//       name: $name
-//       style: $stlye
-//       price: $price
-//       description: $description
-//     ) {
-//       _id
-//       name
-//       style
-//       price
-//       description
-//     }
-//   }
-// `;
-
 class TacoNew extends Component {
   constructor(props) {
     super(props);
@@ -54,6 +31,7 @@ class TacoNew extends Component {
 
   handleSubmit(e, newTaco) {
     e.preventDefault();
+    debugger
     let name = this.state.name;
 
   
@@ -63,7 +41,7 @@ class TacoNew extends Component {
       variables: {
         name: name,
         style: this.state.style,
-        price: this.state.price,
+        price: parseInt(this.state.price),
         description: this.state.description
       }
     })
@@ -92,7 +70,9 @@ class TacoNew extends Component {
       // We only want to update the data if it's in the cache already - totally fine if the data will
       // be fetched fresh later
       tacos = cache.readQuery({ query: FETCH_TACOS });
+      // debugger
     } catch (err) {
+      // debugger
       return;
     }
 
@@ -109,6 +89,7 @@ class TacoNew extends Component {
 
 
   render() {
+    // debugger
     return (
       <Mutation
         mutation={NEW_TACO}
@@ -125,7 +106,7 @@ class TacoNew extends Component {
             <input
               onChange={this.update("style")}
               value={this.state.style}
-              placeholder="Style"
+              placeholder="Style (Optional)"
             />
             <input
               type="number"
@@ -136,7 +117,7 @@ class TacoNew extends Component {
             <textarea
               value={this.state.description}
               onChange={this.update("description")}
-              placeholder="description"
+              placeholder="Description"
             />
             <button type="submit">Create Taco</button>
           </form>

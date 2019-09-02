@@ -8,7 +8,7 @@ const TacoSchema = new Schema({
     },
     style: {
         type: String,
-        required: true
+        // required: true
     },
     description: {
         type: String,

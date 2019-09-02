@@ -5,17 +5,19 @@ import TacoNew from './tacos/TacoNew';
 import Login from "./Login";
 import Register from "./Register";
 import RestuarantIndex from './restaurants/RestaurantIndex';
+import RestuarantNew from "./restaurants/RestaurantNew";
 import { Route, HashRouter, Switch } from 'react-router-dom';
 
 const App = () => {
   return (
-      <HashRouter>
-        <Route exact path="/" component={RestuarantIndex} />
-        <Route exact path="/" component={TacoIndex} />
-        <Route exact path="/" component={TacoNew} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Register} />
-      </HashRouter>
+    <HashRouter>
+      <Route exact path="/" component={RestuarantIndex} />
+      <Route exact path="/" component={RestuarantNew} />
+      <Route exact path="/" component={TacoIndex} />
+      <Route exact path="/" component={TacoNew} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/register" component={Register} />
+    </HashRouter>
   );
 };
 

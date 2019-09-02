@@ -24,6 +24,7 @@ class RestaurantIndex extends React.Component {
                   {taco._id}
                 </li> */}
                     <li key={`${restaurant.name}`}>Name: {restaurant.name}</li>
+                    <li>Location: {restaurant.location}</li>
                     <li key={`${restaurant.description}` + `${i}`}>
                       Description: {restaurant.description}
                     </li>

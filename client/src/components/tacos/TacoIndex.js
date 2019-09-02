@@ -35,6 +35,13 @@ class TacoIndex extends React.Component {
               } else {
                 price = "$$$$"
               };
+
+              let restaurant;
+              if (taco.restaurant) {
+                restaurant = <li>Restaurant: {taco.restaurant.name}</li>;
+              } else {
+                restaurant = <li>Restaurant: Unknown</li>;
+              }
               
 
               return (
@@ -48,7 +55,7 @@ class TacoIndex extends React.Component {
                   </li>
                   {rating}
                   <li>Price: {price}</li>
-                  <li>Restaurant: {taco.restaurant.name}</li>
+                  {restaurant}
                   <br />
                 </div>
               );})}
