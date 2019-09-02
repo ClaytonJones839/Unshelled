@@ -3,7 +3,6 @@ import React from 'react';
 import Queries from '../../graphql/queries';
 import { Link, withRouter } from "react-router-dom";
 import { ApolloConsumer } from "react-apollo";
-// import { FETCH_TACOS } from '../../graphql/queries';
 import { Query } from 'react-apollo';
 import { FETCH_TACOS } from '../../graphql/queries'
 import TacoCSS from './Taco.css'
@@ -48,8 +47,10 @@ class TacoIndex extends React.Component {
                   <div className="taco-index-image"></div>
                   <div className="taco-index-details">
                   <div className="taco-item-top">
-                    <div className="taco-item-name">{taco.name}</div>
-                    <div className="taco-item-rest">{taco.restaurant.name}</div>
+                    <Link to={`/tacoshow/${taco._id}`} 
+                      className="taco-item-name">{taco.name}</Link>
+                    <Link to={`/tacoshow/${taco._id}`}
+                      className="taco-item-rest">{taco.restaurant.name}</Link>
                   </div>
                   {/* <div className="taco-item-style">{taco.style}</div> */}
                   <div className="taco-item-desc">{taco.description}</div>
