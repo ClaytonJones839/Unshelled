@@ -1,0 +1,110 @@
+div {
+
+    .detail {
+        display: flex;
+        margin-left: 155px;
+        margin-top: 80px;
+    }
+
+    .center-boxes {
+        border: 1px solid red;
+        width: 690px;
+
+        .taco-info-box {
+            border: 1px solid black;
+            font-size: 20px;
+            height: 280px;
+            width: 690px;
+            margin-bottom: 15px;
+        }
+
+        .taco-pics {
+            border: 1px solid black;
+            font-size: 20px;
+            height: 130px;
+            width: 684px;
+            margin-left: 3px;
+            margin-bottom: 15px;
+        }
+
+        .taco-activity-box {
+            border: 1px solid black;
+            font-size: 20px;
+            width: 640px;
+            padding-left: 25px;
+            padding-right: 25px;
+
+            .header {
+                // border: 1px solid black;
+                border-bottom: 1px solid gray;
+                font-weight: bold;
+                margin-top: 24px;
+                font-size: 21px;
+            }
+
+            .activity-box {
+                border: 1px solid black;
+                margin-top: 3px;
+                margin-bottom: 3px;
+            }
+
+            .footer {
+                // border: 1px solid black;
+                border-top: 1px solid gray;
+                height: 85px;
+                .show-more {
+                    font-size: 17px;
+                    color: white;
+                    font-weight: bold;
+                    background-color: rgb(255, 205, 40);
+                    margin: auto;
+                    margin-top: 24px;
+                    display: block;
+                    width: 199px;
+                    padding-top: 9px;
+                    padding-bottom: 9px;
+                    border-radius: 3px;
+                    border: none;
+
+                }
+
+                .show-more:hover {
+                    cursor: pointer;
+                    background-color: rgb(238, 182, 0);
+                }
+            }
+        }
+    }
+
+    .right-boxes {
+        width: 300px;
+        border: 1px solid red;
+        margin-left: 40px;
+
+        .proposal-box {
+            border: 1px solid black;
+            font-size: 20px;
+            height: 90px;
+        }
+
+        .taco-loyalists-box {
+            border: 1px solid black;
+            font-size: 20px;
+        }
+
+        .similar-tacos-box {
+            border: 1px solid black;
+            font-size: 20px;
+        }
+
+        .nearby-locations-box {
+            border: 1px solid black;
+            font-size: 20px;
+        }
+
+        .popular-locations-box {
+            border: 1px solid black;
+            font-size: 20px;
+        }
+    }
+}
