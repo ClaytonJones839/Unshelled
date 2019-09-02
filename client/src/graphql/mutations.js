@@ -10,7 +10,7 @@ export default {
     }
   }
 `,
-VERIFY_USER: gql`
+  VERIFY_USER: gql`
   mutation VerifyUser($token: String!) {
     verifyUser(token: $token) {
       loggedIn
@@ -18,7 +18,7 @@ VERIFY_USER: gql`
   }
 `,
  
-REGISTER_USER: gql`
+  REGISTER_USER: gql`
   mutation RegisterUser($username: String!, 
     $email: String!, 
     $password: String!,
