@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import { Mutation } from "react-apollo";
 import gql from "graphql-tag";
-
-// import Queries from "../../graphql/queries";
-
+import Queries from "../../graphql/queries";
 import Mutations from "../../graphql/mutations";
-import { FETCH_TACOS } from "../../graphql/queries";
-
+// import { FETCH_TACOS } from "../../graphql/queries";
+const { FETCH_TACOS } = Queries;
 const { NEW_TACO } = Mutations;
 
 class TacoNew extends Component {

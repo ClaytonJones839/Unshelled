@@ -5,7 +5,9 @@ import { withRouter, Link } from "react-router-dom";
 // import { ApolloConsumer } from "react-apollo";
 // import { FETCH_TACOS } from '../../graphql/queries';
 import { Query } from 'react-apollo';
+import TacoCSS from "./Taco.css";
 const { FETCH_TACOS } = Queries;
+
 
 
 class TacoIndex extends React.Component {

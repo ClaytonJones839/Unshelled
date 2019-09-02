@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { Mutation } from "react-apollo";
 import gql from "graphql-tag";
 
-// import Queries from "../../graphql/queries";
+import Queries from "../../graphql/queries";
 
 import Mutations from "../../graphql/mutations";
-import { FETCH_RESTAURANTS } from "../../graphql/queries";
+// import { FETCH_RESTAURANTS } from "../../graphql/queries";
 
 const { NEW_RESTAURANT } = Mutations;
 
@@ -63,7 +63,7 @@ class RestaurantNew extends Component {
       // we'll try to read from our cache but if the query isn't in there no sweat!
       // We only want to update the data if it's in the cache already - totally fine if the data will
       // be fetched fresh later
-      restaurants = cache.readQuery({ query: FETCH_RESTAURANTS });
+      restaurants = cache.readQuery({ query: Queries.FETCH_RESTAURANTS });
     } catch (err) {
       return;
     }
@@ -73,7 +73,7 @@ class RestaurantNew extends Component {
       let restaurantArray = restaurants.restaurants;
 
       cache.writeQuery({
-        query: FETCH_RESTAURANTS,
+        query: Queries.FETCH_RESTAURANTS,
         data: { restaurants: restaurantArray.concat(newRestaurant) }
       });
     }
