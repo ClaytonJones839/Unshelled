@@ -74,6 +74,7 @@
     color: white;
     background-color: #3b5998;
     border-radius: 5px;
+    outline: none;
 }
 
 .login-form-demo:hover, .login-form-button:hover {
