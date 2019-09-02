@@ -1,16 +1,39 @@
 import gql from "graphql-tag";
 
-  export default {
-    FETCH_TACOS: gql`
-    {
-      tacos {
-        _id
-        name
-      }
-    }`, 
-  IS_LOGGED_IN: gql`
+export const FETCH_TACOS = gql`
+         {
+           tacos {
+             _id
+             name
+             description
+             rating
+             price
+             restaurant {
+               name
+               description
+             }
+           }
+         }
+       `;
+
+export const IS_LOGGED_IN = gql`
     query IsUserLoggedIn {
       isLoggedIn @client
     }
   `
   };
+
+export const FETCH_RESTAURANTS = gql`
+  {
+    restaurants {
+      _id
+      name
+      description
+      location
+      tacos {
+        name
+      }
+    }
+  }
+`
+
