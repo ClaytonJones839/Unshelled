@@ -1,0 +1,144 @@
+.navbar-container {
+    width: 100%;
+    height: 52px;
+    background-color: #FFCB00;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+
+}
+
+.navbar {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-evenly;
+}
+
+.leftside-nav {
+    display: flex;
+    padding-right: 50px;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    padding-right: 20px;
+}
+
+.nav-logo-title {
+    text-decoration: none;
+    font-size: 30px;
+    position: relative;
+    padding-top: 5px;
+    color: white;
+    text-transform: uppercase;
+    vertical-align: baseline;
+}
+
+.nav-logo-span {
+    font-size: 8px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+}
+
+.navlink {
+    font-size: 20px;
+    position: relative;
+    padding-top: 5px;
+    display: flex;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+.navlink-item {
+    text-decoration: none;
+    color: white;
+}
+
+.rightside-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 50px;
+}
+
+.nav-login {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;    
+}
+
+.nav-avatar {
+    width: 36px;
+    height: 36px;
+    display: block;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    top: 1px;
+    margin-right: 10px;
+}
+
+.nav-dropdown {
+    position: relative;
+    display: flex;
+}
+
+.dropdown-content {
+    visibility: hidden;
+    position: absolute;
+    min-width: 200px;
+    z-index: 1;
+    background-color: #2c2c2c;
+    top: 45px;
+    transition: .1s .1s;
+}
+
+.dropdown-list {
+    list-style: none;
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+
+}
+
+.dropdown-link {
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    padding: 12px;
+    color: white;
+    box-sizing: border-box;
+    font-size: 1.2em;
+    border-bottom: 1px solid #444;
+}
+
+.dropdown-list > div {
+    cursor: pointer;
+    display: block;
+    padding: 12px;
+    color: white;
+    box-sizing: border-box;
+    font-size: 1.2em;
+    border-bottom: 1px solid #444;
+}
+
+.logout-btn {
+    padding: 10px;
+    border-style: none;
+    border-radius: 5px;
+}
+
+.nav-dropdown:hover .dropdown-content {
+    visibility: visible;
+}
+
+.searchbar-container {
+    width: 100%;
+    margin-right: 10px;
+}
+

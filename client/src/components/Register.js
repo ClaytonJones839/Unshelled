@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Mutation } from "react-apollo";
 import Mutations from "../graphql/mutations";
-import SessionCSS from "../Session.css"
-import { Link, withRouter } from "react-router-dom";
+// import SessionCSS from "../Session.css"
+import { Link } from "react-router-dom";
 
 export default class Register extends Component {
     constructor(props) {
@@ -22,7 +22,7 @@ export default class Register extends Component {
     }
 
     updateCache(client, { data }) {
-        console.log(data);
+        // console.log(data);
         client.writeData({
             data: { isLoggedIn: data.register.loggedIn }
         });

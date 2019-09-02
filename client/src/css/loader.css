@@ -1,0 +1,8 @@
+body {
+    background-color: #F5F2E8;
+}
+
+@import "./reset.css";
+@import "./navbar.css";
+@import "./Session.css";
+@import "./user-profile.css";
