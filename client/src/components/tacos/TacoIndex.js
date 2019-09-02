@@ -3,6 +3,7 @@ import Queries from '../../graphql/queries';
 import { Link, withRouter } from "react-router-dom";
 import { ApolloConsumer } from "react-apollo";
 import { Query } from 'react-apollo';
+import { FETCH_TACOS } from '../../graphql/queries'
 
 class TacoIndex extends React.Component {
 
@@ -55,8 +56,8 @@ class TacoIndex extends React.Component {
         );
     }}
 </Query>
-)}
+)} }
 
 
 
-export default withRouter(TacoIndex);
+export default withRouter(TacoIndex)
