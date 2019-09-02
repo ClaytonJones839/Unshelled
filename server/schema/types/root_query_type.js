@@ -41,7 +41,6 @@ const RootQueryType = new GraphQLObjectType({
         },
         restaurants: {
             type: new GraphQLList(RestaurantType),
-            args: { _id: { type: new GraphQLNonNull(GraphQLID) } },
             resolve(_, args) {
                 return Restaurant.find({});
             }
