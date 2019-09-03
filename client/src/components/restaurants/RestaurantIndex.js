@@ -2,6 +2,7 @@ import React from "react";
 import Queries from "../../graphql/queries";
 import { withRouter, Link } from "react-router-dom";
 import { Query } from "react-apollo";
+import TopTacos from "./TopTacos"
 const { FETCH_RESTAURANTS } = Queries;
 
 class RestaurantIndex extends React.Component {
@@ -13,6 +14,7 @@ class RestaurantIndex extends React.Component {
           if (error) return `Error! ${error.message}`;
           return (
             <div className="rest-index-container">
+            <div className="rest-index-right">
               <ul className="rest-index-list">
                 {data.restaurants.map((restaurant, i) => {
                   let tacos = restaurant.tacos.map(taco => (
@@ -44,6 +46,10 @@ class RestaurantIndex extends React.Component {
                 );
               })}
             </ul>
+            </div>
+            <div className="rest-index-left">
+              <TopTacos />
+            </div>
             </div>
           );
         }}
