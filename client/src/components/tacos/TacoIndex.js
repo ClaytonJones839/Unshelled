@@ -32,13 +32,13 @@ class TacoIndex extends React.Component {
 
               let price;
               if (taco.price <= 2) {
-                price = <i class='fas fa-dollar-sign'></i>;
+                price = <i className='fas fa-dollar-sign'></i>;
               } else if (taco.price <= 4) {
-                price = <div><i class='fas fa-dollar-sign'></i> <i class='fas fa-dollar-sign'></i></div>
+                price = <div><i className='fas fa-dollar-sign'></i> <i className='fas fa-dollar-sign'></i></div>
               } else if (taco.price <= 6) {
-                price = <div><i class='fas fa-dollar-sign'></i> <i class='fas fa-dollar-sign'></i> <i class='fas fa-dollar-sign'></i></div>
+                price = <div><i className='fas fa-dollar-sign'></i> <i className='fas fa-dollar-sign'></i> <i className='fas fa-dollar-sign'></i></div>
               } else {
-                price = <div><i class='fas fa-dollar-sign'></i> <i class='fas fa-dollar-sign'></i> <i class='fas fa-dollar-sign'></i> <i class='fas fa-dollar-sign'></i></div>
+                price = <div><i className='fas fa-dollar-sign'></i> <i className='fas fa-dollar-sign'></i> <i className='fas fa-dollar-sign'></i> <i class='fas fa-dollar-sign'></i></div>
               };
 
               let restaurant;
@@ -56,8 +56,8 @@ class TacoIndex extends React.Component {
                   <div className="taco-item-top">
                     <Link to={`/tacoshow/${taco._id}`} 
                       className="taco-item-name">{taco.name}</Link>
-                    <Link to={`/restaurant/${taco.restaurant._id}`}
-                      className="taco-item-rest">{taco.restaurant.name}</Link>
+                    {/* <Link to={`/restaurant/${taco.restaurant._id}`} */}
+                      {/* className="taco-item-rest">{taco.restaurant.name}</Link> */}
                   </div>
                   {/* <div className="taco-item-style">{taco.style}</div> */}
                   <div className="taco-item-desc">{taco.description}</div>

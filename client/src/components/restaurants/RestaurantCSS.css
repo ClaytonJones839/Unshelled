@@ -99,6 +99,16 @@
     background-color: #FFCC01;
 }
 
+.fa-plus-circle:before{
+  font-size: 45px;
+}
+
+.add-taco-btn{
+  display: flex;
+  justify-content: flex-end;
+  margin: -45px 51px 0px 0px;
+}
+
 /* restaurant-index */
 
 .rest-index-container {

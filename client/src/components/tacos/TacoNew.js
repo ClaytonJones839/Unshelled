@@ -10,12 +10,13 @@ const { NEW_TACO } = Mutations;
 class TacoNew extends Component {
   constructor(props) {
     super(props);
-
+    // debugger
     this.state = {
       name: "",
       style: "",
       price: 0,
       description: "",
+      restaurantId: this.props.restaurantId,
       message: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,10 +30,9 @@ class TacoNew extends Component {
 
   handleSubmit(e, newTaco) {
     e.preventDefault();
-    debugger
+    // debugger
     let name = this.state.name;
 
-  
 
     // our newTaco function will accept an object with the key of "variables" pointing to an object with all our passed in variables.
     newTaco({
@@ -40,7 +40,8 @@ class TacoNew extends Component {
         name: name,
         style: this.state.style,
         price: parseInt(this.state.price),
-        description: this.state.description
+        description: this.state.description,
+        restaurantId: this.state.restaurantId
       }
     })
       // after our mutation has run we want to reset our state and show our user the success message

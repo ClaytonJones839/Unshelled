@@ -36,8 +36,8 @@ mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err))
-  .then(Restaurant.collection.insert(restaurantSeeds))
-  .then(console.log("Successfully seeded MongoDB with Restaurants"))
+  // .then(Restaurant.collection.insert(restaurantSeeds))
+  // .then(console.log("Successfully seeded MongoDB with Restaurants"))
 
 
 app.use(bodyParser.json());

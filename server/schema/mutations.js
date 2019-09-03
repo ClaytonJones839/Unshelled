@@ -61,10 +61,12 @@ const mutation = new GraphQLObjectType({
                 name: { type: GraphQLString },
                 style: { type: GraphQLString },
                 price: { type: GraphQLInt },
-                description: { type: GraphQLString }
+                description: { type: GraphQLString },
+                restaurantId: { type: GraphQLID }
             },
-            resolve(_, { name, style, price, description}) {
-                return new Taco({ name, style, price, description }).save();
+            resolve(_, { name, style, price, description, restaurantId}) {
+              // console.log(restaurantId)
+                return new Taco({ name, style, price, description, restaurant: restaurantId }).save();
             }
         },
         deleteTaco: {
