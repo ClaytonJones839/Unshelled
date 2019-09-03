@@ -1,0 +1,98 @@
+.rest-show-page {
+    margin-top: 100px;
+    background-color: white;
+    box-sizing: border-box;
+    width: 740px;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    margin: 70px 20px 0px 20px;
+    overflow: auto;
+    padding-bottom: 25px;
+}
+
+.rest-show-top {
+    display: flex;
+}
+
+.rest-show-image {
+    width: 125px;
+    height: 125px;
+    background-color: lightgray;
+    margin: 20px;
+
+}
+
+.rest-show-details {
+    margin-top: 20px;
+}
+
+.rest-show-name {
+    font-family: 'Lexend Exa', sans-serif;
+    color: black;
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 2px;
+    text-decoration: none;
+}
+
+.rest-show-location {
+    font-family: 'Lexend Exa', sans-serif;
+    color: #999999;
+    font-size: 18px;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+
+.rest-show-bottom {
+    display: flex;
+}
+
+.rest-show-desc{
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 20px;
+    width: 450px;
+    height: 110px;
+    overflow: auto;
+    color: #999999;
+}
+
+.rest-show-social {  
+    margin-left: 10px;
+    height: 55px;
+    width: 250px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.fa-facebook-f, .fa-twitter, .fa-instagram, .fa-link {
+    height: 50px; 
+    width: 50px; 
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.fa-facebook-f:hover, 
+.fa-twitter:hover, 
+.fa-instagram:hover, 
+.fa-link:hover {
+    cursor: pointer;
+    filter: brightness(0.8)
+}
+
+.fa-facebook-f {
+    background-color: #3B5997;
+}
+.fa-twitter {
+    background-color: #2CAAE1;
+}
+.fa-instagram {
+    background-color: #517FA4;
+}
+.fa-link {
+    background-color: #FFCC01;
+}
