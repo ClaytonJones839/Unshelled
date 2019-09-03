@@ -24,7 +24,7 @@ export default class Register extends Component {
     updateCache(client, { data }) {
         // console.log(data);
         client.writeData({
-            data: { isLoggedIn: data.register.loggedIn }
+            data: { isLoggedIn: data.register.loggedIn, id: data.register._id }
         });
     }
 
