@@ -24,8 +24,8 @@ export default {
     $password: String!,
     $firstName: String!,
     $lastName: String!) {
-    register(username: $username, email: $email, password: $password
-        firstName: $firstName, lastName: $lastName){
+    register(username: $username, email: $email, password: $password, firstName: $firstName, lastName: $lastName){
+      _id
       token
       loggedIn
     }

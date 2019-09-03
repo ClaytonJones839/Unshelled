@@ -5,7 +5,7 @@ const db = require("../config/keys").MONGO_URI;
 const models = require('./models/index');
 const schema = require('./schema/schema');
 const cors = require("cors");
-const restaurantSeeds = require("./restaurant_seeds");
+const Seeds = require("./seeds");
 const User = require('./models/User');
 const Taco = require('./models/Taco');
 const Restaurant = require('./models/Restaurant');
@@ -36,8 +36,11 @@ mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err))
-  .then(Restaurant.collection.insert(restaurantSeeds))
-  .then(console.log("Successfully seeded MongoDB with Restaurants"))
+  // .then(Restaurant.collection.insert(Seeds.restaurants))
+  // .then(console.log("Successfully seeded MongoDB with Restaurants"))
+  // .then(Taco.collection.insert(Seeds.tacos))
+  // .then(console.log("Successfully seeded MongoDB with Tacos"))
+  
 
 
 app.use(bodyParser.json());
