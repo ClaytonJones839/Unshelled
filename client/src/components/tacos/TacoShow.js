@@ -38,16 +38,16 @@ class TacoShow extends Component {
                             {/* <div className="restaurant-location">{data.taco.restaurant.location}</div> */}
                           </div>
                           <div className="taco-check-ins">
-                              <div className="total"></div>
-                              <div className="unique"></div>
-                              <div className="monthly"></div>
-                              <div className="you"></div>
+                              <div className="total">TOTAL</div>
+                              <div className="unique">UNIQUE</div>
+                              <div className="monthly">MONTHLY</div>
+                              <div className="you">YOU</div>
                           </div>
                         </div>
                         
                         <div className="info-bar">Info bar</div>
                         
-                        <div className="show-more">Show more</div>
+                        <div className="description">Show more</div>
                       </div>
 
                       <div className="taco-pics">taco pics</div>
