@@ -122,12 +122,48 @@ div {
             .info-bar {
                 border: 1px solid black;
                 height: 48px;
-                padding-left: 15px;
+                padding-left: 13px;
+                display: flex;
+                font-size: 15px;
+                color: gray;
+
+                .rating {
+                    border: 1px solid black;
+                    width: 336px;
+                    padding-top: 12px;
+                    text-align: center;
+                    
+                }
+
+                .total-ratings {
+                    // float: right;
+                    text-align: right;
+                    border: 1px solid black;
+                    width: 300px;
+                    padding-top: 12px;
+                    padding-right: 20px;
+                }
+
             }
 
             .description {
                 border: 1px solid black;
                 height: 82px;
+                color: gray;
+                font-size: 17px;
+                font-weight: 500;
+                display: flex;
+
+                .description-text {
+                    border: 1px solid black;
+                    height: 82px;
+                    width: 550px;
+                }
+
+                .taco-buttons {
+                    border: 1px solid black;
+                    width: 134px;
+                }
             }
         }
 

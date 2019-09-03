@@ -45,9 +45,15 @@ class TacoShow extends Component {
                           </div>
                         </div>
                         
-                        <div className="info-bar">Info bar</div>
+                        <div className="info-bar">
+                            <div className="rating">Avg rating</div>
+                            <div className="total-ratings">Ratings</div>
+                        </div>
                         
-                        <div className="description">Show more</div>
+                        <div className="description">
+                            <div className="description-text">Description: {data.taco.description}</div>
+                            <div className="taco-buttons"></div>
+                        </div>
                       </div>
 
                       <div className="taco-pics">taco pics</div>
