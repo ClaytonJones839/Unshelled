@@ -2,10 +2,9 @@ import React from 'react';
 
 import Queries from '../../graphql/queries';
 import { withRouter, Link } from "react-router-dom";
-// import { ApolloConsumer } from "react-apollo";
-// import { FETCH_TACOS } from '../../graphql/queries';
 import { Query } from 'react-apollo';
 import TacoCSS from "./Taco.css";
+import TopRestaurants from "./TopRestaurants"
 const { FETCH_TACOS } = Queries;
 
 
@@ -21,7 +20,7 @@ class TacoIndex extends React.Component {
     
       return (
         <div className="taco-index-page">
-          <div className="taco-index-container">
+          <div className="taco-index-right">
         <ul className="taco-index-list">
             {data.tacos.map((taco, i) => {
               
@@ -61,7 +60,6 @@ class TacoIndex extends React.Component {
                     <Link to={`/restaurant/${taco.restaurant._id}`}
                       className="taco-item-rest">{taco.restaurant.name}</Link>
                   </div>
-                  {/* <div className="taco-item-style">{taco.style}</div> */}
                   <div className="taco-item-desc">{taco.description}</div>
                     <div className="taco-item-stats">
                       <div className="taco-index-rating">{rating}</div>
@@ -72,6 +70,13 @@ class TacoIndex extends React.Component {
                 </div>
               );})}
           </ul>
+            </div>
+            <div className="taco-index-left">
+              <div className="top-rest-text">
+                Top Restaurants
+                <div className="top-rest-border"></div>
+              </div>
+              <TopRestaurants />
             </div>
         </div>
         );

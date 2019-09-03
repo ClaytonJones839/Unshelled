@@ -12,7 +12,7 @@ const RestaurantType = new GraphQLObjectType({
         description: { type: GraphQLString },
         rating: { type: GraphQLInt },
         location: { type: GraphQLString },
-        photo: {type: GraphQLString},
+        photo: { type: GraphQLString },
         tacos: {
             type: new GraphQLList(require("./taco_type")),
             resolve(parentValue) {

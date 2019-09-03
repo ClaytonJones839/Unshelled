@@ -40,7 +40,7 @@ mongoose
   // .then(console.log("Successfully seeded MongoDB with Restaurants"))
   // .then(Taco.collection.insert(Seeds.tacos))
   // .then(console.log("Successfully seeded MongoDB with Tacos"))
-  
+
 
 
 app.use(bodyParser.json());
