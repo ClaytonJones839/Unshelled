@@ -23,7 +23,7 @@ const App = () => {
         <Route exact path="/newtaco" component={TacoNew} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
-        <Route exact path="/tacoshow/:id" component={TacoShow} />
+        <Route exact path="/taco/:id" component={TacoShow} />
         <Route exact path="/users/:id" component={UserProfile} />
       </HashRouter>
   );

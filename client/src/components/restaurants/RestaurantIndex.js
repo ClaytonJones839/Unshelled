@@ -20,7 +20,7 @@ class RestaurantIndex extends React.Component {
                   let tacos = restaurant.tacos.map(taco => (
                     <Link 
                       className="rest-taco-link"
-                      to={`/tacoshow/${taco._id}`}>
+                      to={`/taco/${taco._id}`}>
                       {taco.name}
                     </Link>
                   ))
