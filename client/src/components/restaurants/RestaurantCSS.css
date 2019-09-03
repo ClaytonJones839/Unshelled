@@ -127,7 +127,7 @@
 .rest-index-image{
     height: 100px;
     width: 100px;
-    background-color: lightgray;
+    /* background-color: lightgray; */
     margin-right: 10px;
 }
 
