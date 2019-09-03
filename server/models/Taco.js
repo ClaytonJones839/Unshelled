@@ -25,6 +25,10 @@ const TacoSchema = new Schema({
         type: Number,
         required: true,
     },
+    photo: {
+        type: String,
+        required: true
+    },
     restaurant: {
         type: Schema.Types.ObjectId,
         ref: "restaurants"
