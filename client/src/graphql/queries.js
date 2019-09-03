@@ -34,6 +34,7 @@ export default {
       name
       description
       location
+      photo
       tacos {
         _id
         name
@@ -50,6 +51,7 @@ export default {
         description
         rating
         location
+        photo
         tacos {
           _id
           name
