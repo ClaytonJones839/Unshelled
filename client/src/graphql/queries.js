@@ -11,6 +11,7 @@ export default {
             rating
             price
             restaurant {
+              _id
               name
               description
             }
