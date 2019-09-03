@@ -36,8 +36,6 @@ const Nav = (props) => {
                                                 <div className="nav-dropdown">
                                                     <img className="nav-avatar" src="https://gravatar.com/avatar/80b1bf3f675731ac5dd63a7f8144610f?size=100&d=https%3A%2F%2Funtappd.akamaized.net%2Fsite%2Fassets%2Fimages%2Fdefault_avatar_v3_gravatar.jpg%3Fv%3D2" alt=""/>
 
-                                                    {/* <Query query={FETCH_USER} variables={{ id: props.match.params._id }}>
-                                                        console.log(data); */}
                                                         <div className="dropdown-content">
                                                             <ul className="dropdown-list">
                                                                 <Link className="dropdown-link" to="/">Recent Activity</Link>
@@ -50,7 +48,6 @@ const Nav = (props) => {
                                                                 }}>Logout</div>
                                                             </ul>
                                                         </div>
-                                                    {/* </Query> */}
                                                 </div>
                                                 
                                                 <p></p>
@@ -65,7 +62,7 @@ const Nav = (props) => {
                                                         e.preventDefault();
                                                         localStorage.removeItem("auth-token");
                                                         client.writeData({ data: { isLoggedIn: false } });
-                                                        props.history.push("/");
+                                                        props.history.push("/login");
                                                     }}
                                                         > Logout </button>
                                             </div>
