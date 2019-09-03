@@ -7,6 +7,13 @@ const { FETCH_RESTAURANT } = Queries;
 
 
 class RestaurantShow extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+        addTaco: false
+    };
+  } 
 
     render() {
       return (
@@ -14,6 +21,15 @@ class RestaurantShow extends Component {
                 {({ loading, error, data }) => {
                   if (loading) return <p>Loading...</p>;
                   if (error) return <p>Error</p>;
+
+                  let taco;
+                  if (this.state.addTaco) {
+                    taco = <TacoNew restaurantId={this.props.match.params.id} />;
+                  } else {
+                    taco = <div></div>
+                  }
+
+
                   // debugger
                     return (
                       <div>
@@ -46,12 +62,21 @@ class RestaurantShow extends Component {
                               <i className="fas fa-link"></i>
                             </div>
                           </div>
-                          <div className="add-taco-btn">
-                              <h2>Add A Taco</h2>
+                       
+                            <div
+                              className="add-taco-flex"
+                              onClick={e => {
+                                e.preventDefault();
+                                this.setState({ addTaco: true });
+                              }}
+                            >
+                              <div className="add-taco-btn">
+                              <h2 className="add-taco">Add A Taco</h2>
                               <i className="fas fa-plus-circle"></i>
+                              </div>
+                            </div>
                           </div>
-                        </div>
-                        <TacoNew restaurantId={this.props.match.params.id} />
+                        {taco}
                       </div>
                     );
                 }}
