@@ -27,7 +27,6 @@ class RestaurantIndex extends React.Component {
                     <div className="rest-item-top2">
                       <img className="rest-index-image"
                         src={restaurant.photo}></img>
-                        {console.log(restaurant)}
                       <div className="rest-index-details">
                           <Link to={`/restaurant/${restaurant._id}`}
                             className="rest-item-name">{restaurant.name}</Link>
