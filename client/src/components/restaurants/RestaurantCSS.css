@@ -1,3 +1,5 @@
+/* restaurant-show */
+
 .rest-show-page {
     margin-top: 100px;
     background-color: white;
@@ -95,4 +97,81 @@
 }
 .fa-link {
     background-color: #FFCC01;
+}
+
+/* restaurant-index */
+
+.rest-index-container {
+    background-color: white;
+    box-sizing: border-box;
+    width: 740px;
+    display: flex;
+    height: auto;
+    max-height: 700px;
+    margin: 70px 20px 0px 20px;
+    overflow: auto;
+    padding: 20px;
+
+}
+
+.rest-index-item {
+    display: flex;
+    
+}
+
+.rest-index-list {
+    list-style: none;
+    padding: 0px;
+}
+
+.rest-index-image{
+    height: 100px;
+    width: 100px;
+    background-color: lightgray;
+    margin-right: 10px;
+}
+
+.rest-index-item {
+    height: 150px;
+    margin-top: 20px;
+    width: 650px;
+    display: flex;
+    border-bottom: 1px solid lightgray;
+}
+
+.rest-index-details {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    width: 500px;
+}
+
+.rest-item-name {
+    font-family: 'Lexend Exa', sans-serif;
+    color: #c60;
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 2px;
+    text-decoration: none;
+}
+
+.rest-item-loc {
+    font-family: 'Lexend Exa', sans-serif;
+    color: black;
+    font-size: 18px;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+
+.rest-item-name:visited {
+    color: #c60;
+}
+
+.rest-item-top2 {
+    display: flex;
+}
+
+.rest-item-desc {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
 }

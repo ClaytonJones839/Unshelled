@@ -7,8 +7,6 @@ const { FETCH_RESTAURANT } = Queries;
 
 class RestaurantShow extends Component {
 
-
-
     render() {
         return (
             <Query query={FETCH_RESTAURANT} variables={{ id: this.props.match.params.id }}>
