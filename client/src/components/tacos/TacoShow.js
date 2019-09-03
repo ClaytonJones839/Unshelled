@@ -29,30 +29,39 @@ class TacoShow extends Component {
                           <div className="logo-box">Im logo</div>
                           <div className="taco-info">
                             <div className="taco-name">{data.taco.name}</div>
-                            <div className="restaurant-name">{data.taco.restaurant.name}</div>
+                            <div className="restaurant-name">
+                              {data.taco.restaurant.name}
+                            </div>
                             {/* <div className="taco-description">{data.taco.description}</div> */}
                             <div className="taco-style">{data.taco.style}</div>
-                            <div className="taco-rating">{data.taco.rating}</div>
+                            <div className="taco-rating">
+                              {data.taco.rating}
+                            </div>
                             {/* <div className="taco-price">{data.taco.price}</div> */}
                             {/* <div>{data.taco.restaurant._id}</div> */}
                             {/* <div className="restaurant-location">{data.taco.restaurant.location}</div> */}
                           </div>
                           <div className="taco-check-ins">
-                              <div className="total">TOTAL</div>
-                              <div className="unique">UNIQUE</div>
-                              <div className="monthly">MONTHLY</div>
-                              <div className="you">YOU</div>
+                            <div className="total">TOTAL</div>
+                            <div className="unique">UNIQUE</div>
+                            <div className="monthly">MONTHLY</div>
+                            <div className="you">YOU</div>
                           </div>
                         </div>
-                        
+
                         <div className="info-bar">
-                            <div className="rating">Avg rating</div>
-                            <div className="total-ratings">Ratings</div>
+                          <div className="rating">Avg rating</div>
+                          <div className="total-ratings">Ratings</div>
                         </div>
-                        
+
                         <div className="description">
-                            <div className="description-text">Description: {data.taco.description}</div>
-                            <div className="taco-buttons"></div>
+                          <div className="description-text">
+                            Description: {data.taco.description}
+                          </div>
+                          <div className="taco-buttons">
+                            <button className="check-in">✓</button>
+                            <button className="add-to-list">+</button>
+                          </div>
                         </div>
                       </div>
 
