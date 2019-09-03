@@ -34,6 +34,7 @@ export default {
       name
       description
       location
+      photo
       tacos {
         _id
         name

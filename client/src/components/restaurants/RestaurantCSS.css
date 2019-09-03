@@ -116,7 +116,7 @@
 
 .rest-index-item {
     display: flex;
-    
+    flex-direction: column;
 }
 
 .rest-index-list {
@@ -127,12 +127,13 @@
 .rest-index-image{
     height: 100px;
     width: 100px;
-    /* background-color: lightgray; */
+    background-color: lightgray;
     margin-right: 10px;
+    object-fit: cover;
 }
 
 .rest-index-item {
-    height: 150px;
+    height: 175px;
     margin-top: 20px;
     width: 650px;
     display: flex;
@@ -173,5 +174,27 @@
 
 .rest-item-desc {
     font-size: 16px;
+    /* color: darkgray; */
     font-family: 'Roboto', sans-serif;
+}
+
+.rest-item-tacos {
+    margin: 10px 0px 2px 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.rest-item-taco-list {
+    margin-left: 30px;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.rest-taco-link {
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: #c60;
+}
+.rest-taco-link:visited {
+    color: #c60;
 }
