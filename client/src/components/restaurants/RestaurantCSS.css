@@ -52,15 +52,13 @@
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
     margin-left: 20px;
-    border: 1px solid red;
     width: 450px;
     height: 110px;
     overflow: auto;
     color: #999999;
 }
 
-.rest-show-social {
-    border: 1px solid blue;    
+.rest-show-social {  
     margin-left: 10px;
     height: 55px;
     width: 250px;
@@ -75,7 +73,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: lightcoral; */
     color: white;
 }
 
