@@ -22,6 +22,7 @@
     height: 125px;
     background-color: lightgray;
     margin: 20px;
+    object-fit: cover;
 
 }
 

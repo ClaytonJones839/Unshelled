@@ -16,7 +16,8 @@ class RestaurantShow extends Component {
                     return (
                         <div className="rest-show-page">
                             <div className="rest-show-top">
-                                <img className="rest-show-image" src="https://i.redd.it/l85uj6f0hfa01.jpg"></img>
+                                <img className="rest-show-image"
+                                    src={data.restaurant.photo}></img>
                                 <div className="rest-show-details">
                                     <div className="rest-show-name">{data.restaurant.name}</div>
                                     <div className="rest-show-location">{data.restaurant.location}</div>
