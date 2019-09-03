@@ -5,7 +5,9 @@ import { withRouter, Link } from "react-router-dom";
 // import { ApolloConsumer } from "react-apollo";
 // import { FETCH_TACOS } from '../../graphql/queries';
 import { Query } from 'react-apollo';
+import TacoCSS from "./Taco.css";
 const { FETCH_TACOS } = Queries;
+
 
 
 class TacoIndex extends React.Component {
@@ -40,6 +42,13 @@ class TacoIndex extends React.Component {
               } else {
                 price = <div><i class='fas fa-dollar-sign'></i> <i class='fas fa-dollar-sign'></i> <i class='fas fa-dollar-sign'></i> <i class='fas fa-dollar-sign'></i></div>
               };
+
+              let restaurant;
+              if (taco.restaurant) {
+                restaurant = <li>Restaurant: {taco.restaurant.name}</li>;
+              } else {
+                restaurant = <li>Restaurant: Unknown</li>;
+              }
               
 
               return (

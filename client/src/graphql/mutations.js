@@ -31,4 +31,29 @@ export default {
     }
   }
 `,
+
+NEW_TACO: gql`
+  mutation NewTaco($name: String, $style: String, $price: Int, $description: String) {
+    newTaco(name: $name, style: $style, price: $price, description: $description) {
+      _id
+      name
+      style
+      price
+      description
+    }
+  }
+`,
+
+NEW_RESTAURANT: gql`
+  mutation NewRestaurant($name: String, $description: String, $location: String) {
+    newRestaurant(name: $name, description: $description, location: $location) {
+      _id
+      name
+      description
+      location
+    }
+  }
+`
+
+
 }
