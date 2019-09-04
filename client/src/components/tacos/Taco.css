@@ -11,14 +11,14 @@
 .taco-index-right {
     background-color: white;
     box-sizing: border-box;
-    width: 740px;
+    width: 680px;
     display: flex;
     justify-content: center;
     height: auto;
-    /* max-height: 700px; */
+    padding-left: 20px;
     margin: 70px 10px 0px 20px;
     overflow: auto;
-    padding-bottom: 25px;
+
 }
 
 
@@ -133,9 +133,8 @@
     box-sizing: border-box;
     width: 350px;
     justify-content: center;
-    height: auto;
-    max-height: 590px;
-    margin: 70px 0px 0px 50px;
+    max-height: 448px;
+    margin: 70px 0px 0px 40px;
     overflow: auto;
     padding-bottom: 25px;
 }

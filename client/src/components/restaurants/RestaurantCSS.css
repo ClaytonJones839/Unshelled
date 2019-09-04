@@ -1,10 +1,12 @@
 /* restaurant-show */
 .rest-show-page {
     display: flex;
+    justify-content: center;
 }
 .rest-show-left {
     box-sizing: border-box;
     width: 740px;
+    max-height: 550px;
     display: flex;
     flex-direction: column;
     margin: 100px 20px 0px 20px;
@@ -18,7 +20,7 @@
 .rest-show-right {
     margin: 100px 0px 0px 20px;
     background-color: white;
-    height: 550px;
+    max-height: 500px;
     width: 350px;
     display: flex;
     flex-direction: column;
@@ -216,7 +218,7 @@
     box-sizing: border-box;
     display: flex;
     height: auto;
-    max-height: 700px;
+    justify-content: center;
     margin: 70px 20px 0px 20px;
     overflow: auto;
 
@@ -225,6 +227,7 @@
 
 .rest-index-right {
     background-color: white;
+    max-height: 550px;
     width: 680px;
     padding-left: 20px;
     overflow: auto;
@@ -328,9 +331,9 @@
     background-color: white;
     display: flex;
     flex-direction: column;
-    max-height: 570px;
+    max-height: 488px;
     overflow: auto;
-    margin: 0px 20px 0px 80px;
+    margin: 0px 20px 0px 40px;
 }
 
 .top-taco-list {
