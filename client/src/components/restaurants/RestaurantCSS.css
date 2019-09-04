@@ -213,16 +213,22 @@
 /* restaurant-index */
 
 .rest-index-container {
-    background-color: white;
     box-sizing: border-box;
-    width: 740px;
     display: flex;
     height: auto;
     max-height: 700px;
     margin: 70px 20px 0px 20px;
     overflow: auto;
-    padding-left: 20px;
 
+
+}
+
+.rest-index-right {
+    background-color: white;
+    width: 680px;
+    padding-left: 20px;
+    margin-right: 40px;
+    overflow: auto;
 }
 
 .rest-index-item {
@@ -318,4 +324,58 @@
     width: 70px;
     height: 70px;
     object-fit: cover;
+    margin: 10px 10px 0px -5px; 
+}
+
+.top-taco {
+    width: 350px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    max-height: 570px;
+    overflow: auto;
+}
+
+.top-taco-list {
+    font-family: 'Roboto', sans-serif;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.top-taco-item {
+    width: 300px;
+    display: flex;
+}
+
+.top-taco-top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: start;
+}
+
+.top-taco-details {
+    display: flex;
+    align-items: center;
+}
+
+.top-taco-name, .top-taco-rest {
+    font-family: 'Lexend Exa', sans-serif;
+    text-decoration: none;
+    color: #c60;
+}
+
+.top-taco-rest {
+    font-size: 14px;
+}
+
+.top-taco-name {
+    font-size: 18px;
 }
