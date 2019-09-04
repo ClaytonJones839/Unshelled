@@ -23,6 +23,7 @@ export default {
     query IsUserLoggedIn {
       isLoggedIn @client
       id @client
+      photo @client
     }
 
   `,
@@ -88,6 +89,7 @@ export default {
         lastName
         username
         email
+        photo
       }
     }
   `

@@ -13,7 +13,8 @@ export default class Register extends Component {
             password: "",
             username: "",
             firstName: "",
-            lastName: ""
+            lastName: "",
+            photo: "https://unshelled-dev.s3-us-west-1.amazonaws.com/users/untapped-avatar.jpg"
         };
     }
 
@@ -24,7 +25,7 @@ export default class Register extends Component {
     updateCache(client, { data }) {
         // console.log(data);
         client.writeData({
-            data: { isLoggedIn: data.register.loggedIn, id: data.register._id }
+            data: { isLoggedIn: data.register.loggedIn, id: data.register._id, photo: data.register.photo }
         });
     }
 
@@ -60,6 +61,7 @@ export default class Register extends Component {
                                         username: this.state.username,
                                         firstName: this.state.firstName,
                                         lastName: this.state.lastName,
+                                        photo: this.state.photo
                                     }
                                 });
                             }}
@@ -95,6 +97,13 @@ export default class Register extends Component {
                                 onChange={this.update("password")}
                                 type="password"
                                 placeholder="Password"
+                            />
+                            <input
+                                className="signup-input"
+                                value={this.state.photo}
+                                onChange={this.update("photo")}
+                                type="text"
+                                placeholder="Photo Url"
                             />
                             <button className="signup-form-button" type="submit">Sign Up</button>
                         </div>

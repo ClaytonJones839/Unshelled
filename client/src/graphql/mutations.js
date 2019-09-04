@@ -7,6 +7,7 @@ export default {
         token
         _id
         loggedIn
+        photo
       }
     }
   `,
@@ -25,6 +26,7 @@ export default {
       $password: String!
       $firstName: String!
       $lastName: String!
+      $photo: String!
     ) {
       register(
         username: $username
@@ -32,9 +34,12 @@ export default {
         password: $password
         firstName: $firstName
         lastName: $lastName
+        photo: $photo
       ) {
         token
         loggedIn
+        _id
+        photo
       }
     }
   `,

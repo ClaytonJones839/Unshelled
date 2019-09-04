@@ -22,7 +22,7 @@ export default class Login extends Component {
     updateCache(client, { data }) {
         // console.log(data.login);
         client.writeData({
-            data: { isLoggedIn: data.login.loggedIn, id: data.login._id }
+            data: { isLoggedIn: data.login.loggedIn, id: data.login._id, photo: data.login.photo}
         });
     }
 

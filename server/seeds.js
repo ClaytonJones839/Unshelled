@@ -3,7 +3,38 @@ const Restaurant = mongoose.model('restaurants');
 const Taco = mongoose.model('tacos');
 const User = mongoose.model("users");
 
-new User({})
+
+// ------------------ Users -------------------------- /
+
+// const user_photos = [
+//     "https://unshelled-dev.s3-us-west-1.amazonaws.com/users/untapped-avatar.jpg",
+//     "https://unshelled-dev.s3-us-west-1.amazonaws.com/users/female.png",
+//     "https://unshelled-dev.s3-us-west-1.amazonaws.com/users/male.png",
+//     "https://unshelled-dev.s3-us-west-1.amazonaws.com/users/santa-hat.jpg"
+// ].sort( () => Math.random() - .5)
+
+// const firstNames = ["Kevin", "Leap", "Clay", "Cameron", "Carne"]
+
+// const lastNames = ["Carnitas", "Pollo", "Barbacoa", "Pastor", "Asada" ]
+
+// const usernames = ["CarnitasCrazy", "PeaceAndPollo", "BarbacoaBandit", "PastorParty", "Asaaada"]
+
+// const emails = ["kevin@carnitas.com", "leap@pollo.com", "clay@barbacoa.com", "cameron@pastor.com", "carne@asada.com"];
+
+// let user_objs = firstNames.map((firstname, i) => {
+//     return new User({
+//         firstName: firstname,
+//         lastName: lastNames[i],
+//         username: usernames[i],
+//         email: emails[i],
+//         password: "password123",
+//         photo: user_photos[i % user_photos.length]
+//     })
+// })
+
+
+
+// ------------------ Restaurants -------------------------- /
 
 const restaurant_names = [
     "La Victoria Taqueria",
@@ -155,6 +186,6 @@ taco_objs.forEach((taco, i) => {
 
 
 
-
-module.exports.tacos = taco_objs
+// module.exports.users = user_objs;
+module.exports.tacos = taco_objs;
 module.exports.restaurants = restaurant_objs;
