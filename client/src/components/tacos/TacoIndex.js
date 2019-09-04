@@ -60,8 +60,8 @@ class TacoIndex extends React.Component {
                   <div className="taco-item-top">
                     <Link to={`/taco/${taco._id}`} 
                       className="taco-item-name">{taco.name}</Link>
-                    {/* <Link to={`/restaurant/${taco.restaurant._id}`} */}
-                      {/* className="taco-item-rest">{taco.restaurant.name}</Link> */}
+                    <Link to={`/restaurant/${taco.restaurant._id}`}
+                      className="taco-item-rest">{taco.restaurant.name}</Link>
                   </div>
                     <div className="taco-item-stats">
                       <div className="taco-item-desc">{taco.description}</div>
