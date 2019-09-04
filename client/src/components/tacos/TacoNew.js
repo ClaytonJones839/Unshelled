@@ -6,7 +6,7 @@ import Queries from "../../graphql/queries";
 import Mutations from "../../graphql/mutations";
 // import { FETCH_TACOS } from "../../graphql/queries";
 const { FETCH_TACOS } = Queries;
-const { NEW_TACO } = Mutations;
+const { NEW_TACO, UPDATE_REST_TACOS } = Mutations;
 
 class TacoNew extends Component {
   constructor(props) {
@@ -43,8 +43,15 @@ class TacoNew extends Component {
         photo: this.state.photo,
         restaurantId: this.state.restaurantId
       }
-    })
-      // after our mutation has run we want to reset our state and show our user the success message
+    // }).then(data => {
+    //   <Mutation 
+    //     mutation={UPDATE_REST_TACOS}
+    //     variables={
+    //       {restaurantId: this.state.restaurantId, tacoId: data.taco._id }
+    //     }
+    //     >
+    //     </Mutation>
+    }) 
       .then(data => {
         this.setState({
           message: `New taco "${name}" created successfully`,
@@ -88,34 +95,42 @@ class TacoNew extends Component {
         update={(cache, data) => this.updateCache(cache, data)}
       >
         {(newTaco, { data }) => (
-          <div>
+          <div className="new-taco-form">
+            <div className="taco-form-text">
+              New Taco
+            </div>
             <form
               onSubmit={e => this.handleSubmit(e, newTaco)}
-              className="taco-new-form"
+              className="inner-taco-form"
             >
               <input
+                className="taco-form-input"
                 onChange={this.update("name")}
                 value={this.state.name}
                 placeholder="Name"
               />
               <input
+                className="taco-form-input"
                 onChange={this.update("style")}
                 value={this.state.style}
                 placeholder="Style (Optional)"
               />
               <input
+                className="taco-form-input"
                 type="number"
                 onChange={this.update("price")}
                 value={this.state.price}
                 placeholder="0"
               />
               <input
+                className="taco-form-input"
                 type="text"
                 onChange={this.update("photo")}
                 value={this.state.photo}
                 placeholder="photo url"
               />
               <textarea
+                className="taco-form-textarea"
                 value={this.state.description}
                 onChange={this.update("description")}
                 placeholder="Description"

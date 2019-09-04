@@ -102,16 +102,21 @@
     color: green;
 }
 
-.taco-new-form{
+.new-taco-form{
     box-sizing: border-box;
     background-color: white;
-    display: grid;
-    width: 740px;
-    height: 200px;
-    padding: 25px 82px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
     margin: 20px 0px 0px 0px;
     align-content: center;
     z-index: 10;
+}
+
+.inner-taco-form {
+    display: flex;
+    flex-direction: column;
 }
 
 .top-index-item {
@@ -167,4 +172,24 @@
     border-bottom: 1px solid black;
     width: 90%;
     margin-top: 20px;
+}
+
+.taco-form-text {
+    font-family: 'Lexend Exa', sans-serif;
+    color: #c60;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.taco-form-input {
+    width: 50%;
+    margin: 5px 0px 0px 20px;
+}
+
+.taco-form-textarea {
+    resize: none;
+    width: 50%;
+    margin: 5px 0px 0px 20px;
+    height: 50px;
+    border: 1px solid grey;
 }

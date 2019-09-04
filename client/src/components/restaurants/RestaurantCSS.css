@@ -230,10 +230,6 @@
     overflow: auto;
 }
 
-.rest-index-item {
-    display: flex;
-    flex-direction: column;
-}
 
 .rest-index-list {
     list-style: none;
@@ -249,10 +245,11 @@
 }
 
 .rest-index-item {
-    height: 175px;
+    min-height: 175px;
     margin-top: 20px;
     width: 650px;
     display: flex;
+    flex-direction: column;
     border-bottom: 1px solid lightgray;
 }
 

@@ -69,6 +69,23 @@ export default {
     }
   `,
 
+  UPDATE_REST_TACOS: gql`
+    mutation UpdateRestTacos(
+      $restaurantId: ID!,
+      $tacoId: ID!,
+    ) {
+      updateTacoRestaurant (
+        restaurantId: $restaurantId
+        tacoId: $tacoId
+      ) {
+        _id
+        restaurant {
+          name
+          _id
+        }
+      }
+    }
+  `,
   NEW_RESTAURANT: gql`
     mutation NewRestaurant(
       $name: String
