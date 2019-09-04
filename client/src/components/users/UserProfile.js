@@ -13,11 +13,11 @@ class UserProfile extends React.Component {
                 {({ loading, error, data }) => {
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error</p>;
-
+                    console.log(data);
                     return (
                         <div className="profile-container">
                             <div className="profile-header">
-                                <img className="profile-img" src="https://gravatar.com/avatar/80b1bf3f675731ac5dd63a7f8144610f?size=100&d=https%3A%2F%2Funtappd.akamaized.net%2Fsite%2Fassets%2Fimages%2Fdefault_avatar_v3_gravatar.jpg%3Fv%3D2"></img>
+                                <img className="profile-img" src={data.user.photo}></img>
                                 <div className="profile-info">
                                     
                                     <p>{data.user.firstName} {data.user.lastName}</p>
