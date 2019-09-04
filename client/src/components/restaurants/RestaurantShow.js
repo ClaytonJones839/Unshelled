@@ -65,15 +65,18 @@ class RestaurantShow extends Component {
                               </div>
                           </div>
                             
+
+                        </div>
+                          <div className="new-taco-container">
+                            {taco}
+                          </div>
+                          <div className="rest-show-tacos">
+                          </div>
                         </div>
 
 
-                          
-                        </div>
 
-                        <div className="new-taco-container">
-                          {taco}
-                        </div>
+
                         <div className="rest-show-right">
                             <div className="rest-show-r-top">
                                 <div className="rest-show-num-likes">

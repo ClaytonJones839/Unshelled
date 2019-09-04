@@ -44,12 +44,14 @@ export default {
       $name: String
       $style: String
       $price: Int
+      $photo: String
       $description: String
       $restaurantId: ID
     ) {
       newTaco(
         name: $name
         style: $style
+        photo: $photo
         price: $price
         description: $description
         restaurantId: $restaurantId

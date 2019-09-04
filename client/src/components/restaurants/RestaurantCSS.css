@@ -3,20 +3,17 @@
     display: flex;
 }
 .rest-show-left {
-    background-color: white;
     box-sizing: border-box;
     width: 740px;
     display: flex;
     flex-direction: column;
-    height: 300px;
     margin: 100px 20px 0px 20px;
     overflow: auto;
     padding-bottom: 25px;
 }
 
 .new-taco-container {
-    position: absolute;
-    top: 400px;
+    width: 100%;
 }
 .rest-show-right {
     margin: 100px 0px 0px 20px;
@@ -89,6 +86,7 @@
 
 .rest-show-top {
     display: flex;
+    background-color: white;
 }
 
 .rest-show-image {
@@ -121,7 +119,9 @@
 }
 
 .rest-show-bottom {
+    background-color: white;
     display: flex;
+    padding-bottom: 20px;
 }
 
 .rest-show-desc{
@@ -173,10 +173,6 @@
     background-color: #FFCC01;
 }
 
-.fa-plus-circle:before{
-  font-size: 45px;
-}
-
 .add-taco-btn{
     display: flex;
     align-items: center;
@@ -185,24 +181,28 @@
     background-color: rgb(255, 203, 0);
     padding: 3px 6px 3px 6px;
     border-radius: 5px; 
+    height: 40px;
+    margin-top:5px;
     width: 200px;
 }
 
 .add-taco-btn:hover{
-  cursor: pointer;
+    cursor: pointer;
+    filter: brightness(0.8)
 }
 
 .add-taco-flex{
-  display: flex;
-  margin-top: 5px;
-  justify-content: center;
+    display: flex;
+    margin-top: 5px;
+    justify-content: flex-end;
+    margin-right: 9px;
 }
 
 .add-taco{
-  display: inline;
-  margin: 0px 13px 0px 0px;
-  font-size: 24px;
-  font-weight: 600;
+    display: inline;
+    margin: 0px 13px 0px 0px;
+    font-size: 24px;
+    font-weight: 600;
 }
 
 .social-top {
@@ -378,4 +378,17 @@
 
 .top-taco-name {
     font-size: 18px;
+}
+
+.fa-plus-circle {
+    font-size: 30px;
+}
+
+/* rest show tacos */
+
+.rest-show-tacos {
+    margin-top: 20px;
+    height: 300px;
+    width: 100%;
+    background-color: white;
 }
