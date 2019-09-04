@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 const Restaurant = mongoose.model('restaurants');
 const Taco = mongoose.model('tacos');
+const User = mongoose.model("users");
+
+new User({})
 
 const restaurant_names = [
     "La Victoria Taqueria",
