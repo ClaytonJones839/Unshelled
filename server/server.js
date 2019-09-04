@@ -42,7 +42,6 @@ mongoose
   // .then(console.log("Successfully seeded MongoDB with Tacos"))
 
 
-
 app.use(bodyParser.json());
 
 module.exports = app;

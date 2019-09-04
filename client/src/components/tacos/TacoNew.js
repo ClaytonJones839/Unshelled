@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Mutation } from "react-apollo";
+import TacoCSS from "./Taco.css";
 import gql from "graphql-tag";
 import Queries from "../../graphql/queries";
 import Mutations from "../../graphql/mutations";
@@ -10,12 +11,13 @@ const { NEW_TACO } = Mutations;
 class TacoNew extends Component {
   constructor(props) {
     super(props);
-
+    // debugger
     this.state = {
       name: "",
       style: "",
       price: 0,
       description: "",
+      restaurantId: this.props.restaurantId,
       message: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,10 +31,9 @@ class TacoNew extends Component {
 
   handleSubmit(e, newTaco) {
     e.preventDefault();
-    debugger
+    // debugger
     let name = this.state.name;
 
-  
 
     // our newTaco function will accept an object with the key of "variables" pointing to an object with all our passed in variables.
     newTaco({
@@ -40,7 +41,8 @@ class TacoNew extends Component {
         name: name,
         style: this.state.style,
         price: parseInt(this.state.price),
-        description: this.state.description
+        description: this.state.description,
+        restaurantId: this.state.restaurantId
       }
     })
       // after our mutation has run we want to reset our state and show our user the success message
@@ -94,33 +96,36 @@ class TacoNew extends Component {
         update={(cache, data) => this.updateCache(cache, data)}
       >
         {(newTaco, { data }) => (
-        <div>
-          <form onSubmit={e => this.handleSubmit(e, newTaco)}>
-            <input
-              onChange={this.update("name")}
-              value={this.state.name}
-              placeholder="Name"
-            />
-            <input
-              onChange={this.update("style")}
-              value={this.state.style}
-              placeholder="Style (Optional)"
-            />
-            <input
-              type="number"
-              onChange={this.update("price")}
-              value={this.state.price}
-              placeholder="0"
-            />
-            <textarea
-              value={this.state.description}
-              onChange={this.update("description")}
-              placeholder="Description"
-            />
-            <button type="submit">Create Taco</button>
-          </form>
-          <p>{this.state.message}</p>
-        </div>
+          <div>
+            <form
+              onSubmit={e => this.handleSubmit(e, newTaco)}
+              className="taco-new-form"
+            >
+              <input
+                onChange={this.update("name")}
+                value={this.state.name}
+                placeholder="Name"
+              />
+              <input
+                onChange={this.update("style")}
+                value={this.state.style}
+                placeholder="Style (Optional)"
+              />
+              <input
+                type="number"
+                onChange={this.update("price")}
+                value={this.state.price}
+                placeholder="0"
+              />
+              <textarea
+                value={this.state.description}
+                onChange={this.update("description")}
+                placeholder="Description"
+              />
+              <button type="submit">Create Taco</button>
+            </form>
+            <p>{this.state.message}</p>
+          </div>
         )}
       </Mutation>
     );
