@@ -17,9 +17,10 @@ class TopTacos extends React.Component {
                     if (error) return `Error! ${error.message}`;
 
                     return (
-                        <div className="top-taco-page">
-                            <div className="top-taco-right">
+                            <div className="top-taco">
                                 <ul className="top-taco-list">
+                                Top Restaurants
+                                <div className="top-rest-border"></div>
                                     {data.tacos.map((taco, i) => {
                                         return (
                                             <div className="top-taco-item">
@@ -37,7 +38,6 @@ class TopTacos extends React.Component {
                                     })}
                                 </ul>
                             </div>
-                        </div>
                     );
                 }}
 
