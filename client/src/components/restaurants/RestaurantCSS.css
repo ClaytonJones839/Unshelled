@@ -14,6 +14,10 @@
     padding-bottom: 25px;
 }
 
+.new-taco-container {
+    position: absolute;
+    top: 400px;
+}
 .rest-show-right {
     margin: 100px 0px 0px 20px;
     background-color: white;
@@ -132,9 +136,9 @@
 
 .rest-show-social {  
     margin-left: 10px;
-    height: 55px;
     width: 250px;
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
 }
 
@@ -174,9 +178,14 @@
 }
 
 .add-taco-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
     background-color: rgb(255, 203, 0);
     padding: 3px 6px 3px 6px;
-    border-radius: 5px;
+    border-radius: 5px; 
+    width: 200px;
 }
 
 .add-taco-btn:hover{
@@ -185,9 +194,8 @@
 
 .add-taco-flex{
   display: flex;
-  justify-content: flex-end;
-  /* display: inline; */
-  margin: -45px 45px 0px 0px;
+  margin-top: 5px;
+  justify-content: center;
 }
 
 .add-taco{
@@ -195,6 +203,11 @@
   margin: 0px 13px 0px 0px;
   font-size: 24px;
   font-weight: 600;
+}
+
+.social-top {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 /* restaurant-index */

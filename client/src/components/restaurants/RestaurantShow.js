@@ -29,61 +29,50 @@ class RestaurantShow extends Component {
                     taco = <div></div>
                   }
                     return (
-                      <div>
-                        <div className="rest-show-page">
-                          <div className="rest-show-top">
-                            <img
-                              className="rest-show-image"
-                              src={data.restaurant.photo}
-                            ></img>
-                            <div className="rest-show-details">
-                              <div className="rest-show-name">
-                                {data.restaurant.name}
-                              </div>
-                              <div className="rest-show-location">
-                                {data.restaurant.location}
-                              </div>
-                              <div className="rest-show-rating">
-                                ### resturant rating? {data.restaurant.rating}
-                              </div>
-                            </div>
-                          </div>
-                          <div className="rest-show-bottom">
-                            <div className="rest-show-desc">
-                              {data.restaurant.description}
-                            </div>
-                            <div className="rest-show-social">
-                              <i className="fab fa-facebook-f"></i>
-                              <i className="fab fa-twitter"></i>
-                              <i className="fab fa-instagram"></i>
-                              <i className="fas fa-link"></i>
+                      <div className="rest-show-page">
                         <div className="rest-show-left">
-                            <div className="rest-show-top">
-                                <img className="rest-show-image"
-                                    src={data.restaurant.photo}></img>
-                                <div className="rest-show-details">
-                                    <div className="rest-show-name">{data.restaurant.name}</div>
-                                    <div className="rest-show-location">{data.restaurant.location}</div>
-                                    <div className="rest-show-rating">
-                                    ### resturant rating? {data.restaurant.rating}</div>
-                                </div>
+                          <div className="rest-show-top">
+                            <img className="rest-show-image"
+                              src={data.restaurant.photo}></img>
+                            <div className="rest-show-details">
+                              <div className="rest-show-name">{data.restaurant.name}</div>
+                              <div className="rest-show-location">{data.restaurant.location}</div>
+                              <div className="rest-show-rating">
+                                ### restaurant rating? {data.restaurant.rating}</div>
                             </div>
                           </div>
-                            <div
-                              className="add-taco-flex"
-                              onClick={e => {
-                                e.preventDefault();
-                                this.setState({ addTaco: true });
-                              }}
-                            >
-                              <div className="add-taco-btn">
-                              <h2 className="add-taco">Add A Taco</h2>
-                              <i className="fas fa-plus-circle"></i>
+
+
+                          <div className="rest-show-bottom">
+                            <div className="rest-show-desc">{data.restaurant.description}</div>
+                            <div className="rest-show-social">
+                              <div className="social-top">
+                                <i class='fab fa-facebook-f'></i>
+                                <i class='fab fa-twitter'></i>
+                                <i class='fab fa-instagram'></i>
+                                <i class='fas fa-link'></i>
                               </div>
-                            </div>
+                              <div className="add-taco-flex"
+                                  onClick={e => {
+                                  e.preventDefault();
+                                  this.setState({ addTaco: true });
+                                }}
+                              >
+                                <div className="add-taco-btn">
+                                  <h2 className="add-taco">Add A Taco</h2>
+                                  <i className="fas fa-plus-circle"></i>
+                                </div>
+                              </div>
                           </div>
-                        {taco}
-                      </div>
+                            
+                        </div>
+
+
+                          
+                        </div>
+
+                        <div className="new-taco-container">
+                          {taco}
                         </div>
                         <div className="rest-show-right">
                             <div className="rest-show-r-top">

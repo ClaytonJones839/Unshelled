@@ -103,12 +103,15 @@
 }
 
 .taco-new-form{
+    box-sizing: border-box;
     background-color: white;
     display: grid;
-    width: 40%;
+    width: 740px;
+    height: 200px;
     padding: 25px 82px;
     margin: 15px 0px 0px 20px;
     align-content: center;
+    z-index: 10;
 }
 
 .top-index-item {
