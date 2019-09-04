@@ -66,7 +66,9 @@ const mutation = new GraphQLObjectType({
             },
             resolve(_, { name, style, price, description, restaurantId}) {
               // console.log(restaurantId)
-                return new Taco({ name, style, price, description, restaurant: restaurantId }).save();
+                const newTaco = new Taco({ name, style, price, description, restaurant: restaurantId }).save();
+                console.log(newTaco);
+                return newTaco;
             }
         },
         deleteTaco: {
