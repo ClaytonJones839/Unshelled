@@ -17,19 +17,19 @@ class TopTacos extends React.Component {
                     if (error) return `Error! ${error.message}`;
 
                     return (
-                        <div className="taco-index-page">
-                            <div className="taco-index-right">
-                                <ul className="taco-index-list">
+                        <div className="top-taco-page">
+                            <div className="top-taco-right">
+                                <ul className="top-taco-list">
                                     {data.tacos.map((taco, i) => {
                                         return (
-                                            <div className="taco-index-item">
-                                                <img src={taco.photo} className="taco-index-image"></img>
-                                                <div className="taco-index-details">
-                                                    <div className="taco-item-top">
+                                            <div className="top-taco-item">
+                                                <img src={taco.photo} className="top-taco-image"></img>
+                                                <div className="top-taco-details">
+                                                    <div className="top-taco-top">
                                                         <Link to={`/taco/${taco._id}`}
-                                                            className="taco-item-name">{taco.name}</Link>
+                                                            className="top-taco-name">{taco.name}</Link>
                                                         <Link to={`/restaurant/${taco.restaurant._id}`}
-                                                            className="taco-item-rest">{taco.restaurant.name}</Link>
+                                                            className="top-taco-rest">{taco.restaurant.name}</Link>
                                                     </div>
                                                 </div>
                                             </div>

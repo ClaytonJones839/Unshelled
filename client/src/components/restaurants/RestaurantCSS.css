@@ -256,6 +256,8 @@
 
 .rest-item-taco-list {
     margin-left: 30px;
+    display: flex;
+    flex-direction: column;
     list-style: none;
     font-family: 'Roboto', sans-serif;
 }
@@ -269,3 +271,10 @@
     color: #c60;
 }
 
+/* top tacos */
+
+.top-taco-image {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+}
