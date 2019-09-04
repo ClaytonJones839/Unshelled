@@ -70,6 +70,7 @@
 .rest-show-like-btn:hover, .rest-show-like-image:hover {
     filter: brightness(0.8);
     cursor: pointer;
+    /* cursor: url("https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/emojipedia/132/taco_1f32e.png"), auto; */
 }
 
 .rest-show-r-bottom {
@@ -227,7 +228,6 @@
 
 .rest-index-right {
     background-color: white;
-    max-height: 550px;
     width: 680px;
     padding-left: 20px;
     overflow: auto;
