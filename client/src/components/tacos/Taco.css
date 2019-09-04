@@ -4,6 +4,8 @@
     position: absolute;
     background-color: #F5F2E8;
     display: flex;
+    justify-content: center;
+
 }
 
 .taco-index-right {
@@ -13,8 +15,8 @@
     display: flex;
     justify-content: center;
     height: auto;
-    max-height: 700px;
-    margin: 70px 20px 0px 20px;
+    /* max-height: 700px; */
+    margin: 70px 10px 0px 20px;
     overflow: auto;
     padding-bottom: 25px;
 }
@@ -102,16 +104,21 @@
     color: green;
 }
 
-.taco-new-form{
+.new-taco-form{
     box-sizing: border-box;
     background-color: white;
-    display: grid;
-    width: 740px;
-    height: 200px;
-    padding: 25px 82px;
-    margin: 15px 0px 0px 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0px 0px 0px;
     align-content: center;
     z-index: 10;
+}
+
+.inner-taco-form {
+    display: flex;
+    flex-direction: column;
 }
 
 .top-index-item {
@@ -128,7 +135,7 @@
     justify-content: center;
     height: auto;
     max-height: 590px;
-    margin: 70px 20px 0px 80px;
+    margin: 70px 0px 0px 50px;
     overflow: auto;
     padding-bottom: 25px;
 }
@@ -167,4 +174,41 @@
     border-bottom: 1px solid black;
     width: 90%;
     margin-top: 20px;
+}
+
+.taco-form-text {
+    font-family: 'Lexend Exa', sans-serif;
+    color: #c60;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.taco-form-input {
+    width: 50%;
+    height: 20px;
+    margin: 5px 0px 0px 20px;
+    border-radius: 4px;
+}
+
+.taco-form-textarea {
+    resize: none;
+    width: 50%;
+    margin: 5px 0px 5px 20px;
+    height: 50px;
+    border-radius: 4px;
+    border: 1px solid grey;
+}
+
+.create-taco-btn {
+    width: 51%;
+    margin: 5px 0px 5px 20px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    background-color: #FFCC01;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Lexend Exa', sans-serif;
+    border-radius: 5px;
 }

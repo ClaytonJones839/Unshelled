@@ -10,12 +10,13 @@ import RestaurantShow from "./restaurants/RestaurantShow";
 import UserProfile from "./users/UserProfile";
 import TacoShow from './tacos/TacoShow';
 
-import { Route, HashRouter, Switch } from 'react-router-dom';
+import { Route, HashRouter } from 'react-router-dom';
+import Footer from "./footer/footer";
 
 const App = () => {
   return (
       <HashRouter>
-      <Route exact path="/restaurants" component={RestaurantIndex} />
+        <Route exact path="/restaurants" component={RestaurantIndex} />
         <Route path="/" component={Nav} />
         <Route exact path="/" component={TacoIndex} />
         <Route exact path="/newrestaurant" component={RestaurantNew} />
@@ -25,6 +26,7 @@ const App = () => {
         <Route exact path="/register" component={Register} />
         <Route exact path="/taco/:id" component={TacoShow} />
         <Route exact path="/users/:id" component={UserProfile} />
+        <Route path="/" component={Footer} />
       </HashRouter>
   );
 };

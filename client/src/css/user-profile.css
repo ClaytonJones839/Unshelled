@@ -14,7 +14,7 @@
     height: 256px;
     align-items: flex-end;
     background-image: url("https://s3-media1.fl.yelpcdn.com/bphoto/VniQNi8Apom6TkKWWrlGkQ/o.jpg");
-    filter: brightness(.8);
+    /* filter: brightness(.8); */
     background-size: stretch;
     background-repeat: no-repeat;
     background-position: center center;

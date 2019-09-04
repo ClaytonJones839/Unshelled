@@ -55,6 +55,7 @@ export default {
         tacos {
           _id
           name
+          photo
         }
       }
     }

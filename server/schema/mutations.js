@@ -60,15 +60,16 @@ const mutation = new GraphQLObjectType({
             args: {
                 name: { type: GraphQLString },
                 style: { type: GraphQLString },
+                photo: { type: GraphQLString },
                 price: { type: GraphQLInt },
                 description: { type: GraphQLString },
                 restaurantId: { type: GraphQLID }
             },
-            resolve(_, { name, style, price, description, restaurantId}) {
-              // console.log(restaurantId)
-                const newTaco = new Taco({ name, style, price, description, restaurant: restaurantId }).save();
-                console.log(newTaco);
-                return newTaco;
+            resolve(_, { name, style, price, photo, description, restaurantId}) {
+                const newTaco = new Taco({ name, style, price, photo, description, restaurant: restaurantId })
+                newTaco.save().then((response) => {
+                    Taco.updateTacoRestaurant(newTaco._doc._id, restaurantId)
+                })
             }
         },
         deleteTaco: {

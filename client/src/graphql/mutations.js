@@ -44,12 +44,14 @@ export default {
       $name: String
       $style: String
       $price: Int
+      $photo: String
       $description: String
       $restaurantId: ID
     ) {
       newTaco(
         name: $name
         style: $style
+        photo: $photo
         price: $price
         description: $description
         restaurantId: $restaurantId
@@ -67,6 +69,23 @@ export default {
     }
   `,
 
+  UPDATE_REST_TACOS: gql`
+    mutation UpdateRestTacos(
+      $restaurantId: ID!,
+      $tacoId: ID!,
+    ) {
+      updateTacoRestaurant (
+        restaurantId: $restaurantId
+        tacoId: $tacoId
+      ) {
+        _id
+        restaurant {
+          name
+          _id
+        }
+      }
+    }
+  `,
   NEW_RESTAURANT: gql`
     mutation NewRestaurant(
       $name: String
