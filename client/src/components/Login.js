@@ -13,7 +13,6 @@ export default class Login extends Component {
             password: ""
         };
 
-        // this.demoUser = this.demoUser.bind(this)
     }
 
     update(field) {
@@ -27,13 +26,6 @@ export default class Login extends Component {
         });
     }
 
-    // demoUser(e) {
-    //     e.preventDefault();
-    //     this.props.processForm({
-    //         username: 'Unshelled_Demo',
-    //         password: 'test123'
-    //     })
-    // }
 
     render() {
         return (
@@ -68,7 +60,16 @@ export default class Login extends Component {
                                     });
                                 }}
                             >
-                                <button className="login-form-demo">Demo Login</button>
+                                <button className="login-form-demo" onClick={e => {
+                                      e.preventDefault();
+                                      this.setState({ email: "carne@asada.com", password: "password" });
+                                      loginUser({
+                                          variables: {
+                                              email: this.state.email,
+                                              password: this.state.password
+                                          }
+                                      });
+                                }}>Demo Login</button>
                                 <div className="demo-or-login">
                                     OR
                                 </div>
