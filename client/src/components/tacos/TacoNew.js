@@ -47,7 +47,6 @@ class TacoNew extends Component {
     })
       // after our mutation has run we want to reset our state and show our user the success message
       .then(data => {
-        console.log(data);
         this.setState({
           message: `New taco "${name}" created successfully`,
           name: "",

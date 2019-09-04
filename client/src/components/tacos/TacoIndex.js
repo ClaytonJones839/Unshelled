@@ -39,7 +39,7 @@ class TacoIndex extends React.Component {
               } else if (taco.price <= 6) {
                 price = <div><i className='fas fa-dollar-sign'></i> <i className='fas fa-dollar-sign'></i> <i className='fas fa-dollar-sign'></i></div>
               } else {
-                price = <div><i className='fas fa-dollar-sign'></i> <i className='fas fa-dollar-sign'></i> <i className='fas fa-dollar-sign'></i> <i class='fas fa-dollar-sign'></i></div>
+                price = <div><i className='fas fa-dollar-sign'></i> <i className='fas fa-dollar-sign'></i> <i className='fas fa-dollar-sign'></i> <i className='fas fa-dollar-sign'></i></div>
               };
 
               let restaurant;
@@ -52,18 +52,23 @@ class TacoIndex extends React.Component {
 
               return (
                 <div className="taco-index-item">
-                  <div className="taco-index-image"></div>
+                  <img 
+                  src={taco.photo}
+                  className="taco-index-image">
+                  </img>
                   <div className="taco-index-details">
                   <div className="taco-item-top">
-                    <Link to={`/tacoshow/${taco._id}`} 
+                    <Link to={`/taco/${taco._id}`} 
                       className="taco-item-name">{taco.name}</Link>
                     {/* <Link to={`/restaurant/${taco.restaurant._id}`} */}
                       {/* className="taco-item-rest">{taco.restaurant.name}</Link> */}
                   </div>
-                  <div className="taco-item-desc">{taco.description}</div>
                     <div className="taco-item-stats">
-                      <div className="taco-index-rating">{rating}</div>
-                      <div className="taco-index-price">{price}</div>
+                      <div className="taco-item-desc">{taco.description}</div>
+                      <div className="taco-item-stats-btn">
+                        <div className="taco-index-rating">{rating}</div>
+                        <div className="taco-index-price">{price}</div>
+                      </div>
                     </div>
                 </div>
 

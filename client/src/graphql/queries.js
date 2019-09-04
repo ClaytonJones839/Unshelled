@@ -10,6 +10,7 @@ export default {
             description
             rating
             price
+            photo
             restaurant {
               _id
               name
@@ -25,7 +26,6 @@ export default {
     }
 
   `,
-
 
  FETCH_RESTAURANTS: gql`
   {
@@ -69,6 +69,7 @@ export default {
         description
         rating
         price
+        photo
         restaurant {
           _id
           name

@@ -27,8 +27,6 @@ const Nav = (props) => {
                                 ({ loading, error, data }) => {
                                     if (loading) return <p>Loading</p>;
                                     if (error) return <p>Error</p>;
-
-                                    // console.log(data)
                                     if (data.isLoggedIn) {
                                         return (
                                             <div className="rightside-nav">
