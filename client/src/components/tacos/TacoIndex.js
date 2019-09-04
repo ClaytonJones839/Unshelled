@@ -65,7 +65,7 @@ class TacoIndex extends React.Component {
                   </div>
                     <div className="taco-item-stats">
                       <div className="taco-item-desc">{taco.description}</div>
-                      <div className="taco-item-stats">
+                      <div className="taco-item-stats-btn">
                         <div className="taco-index-rating">{rating}</div>
                         <div className="taco-index-price">{price}</div>
                       </div>

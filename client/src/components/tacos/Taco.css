@@ -19,10 +19,6 @@
     padding-bottom: 25px;
 }
 
-.taco-item-stats {
-    display: flex;
-    flex-direction: column;
-}
 
 .taco-index-list {
     list-style: none;
@@ -37,7 +33,7 @@
     object-fit: cover;
 }
 .taco-index-item {
-    height: 150px;
+    height: 160px;
     margin-top: 20px;
     width: 650px;
     display: flex;
@@ -47,7 +43,6 @@
 .taco-index-details {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
 }
 
 .taco-item-name {
@@ -74,7 +69,7 @@
 .taco-item-top {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .taco-item-desc {
@@ -84,8 +79,16 @@
 
 .taco-item-stats{
     display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
     width: 540px;
     margin-bottom: 5px;
+}
+
+.taco-item-stats-btn {
+    margin: 5px 0px;
+    display: flex;
 }
 
 .taco-index-rating {
