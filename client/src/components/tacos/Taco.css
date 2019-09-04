@@ -19,6 +19,11 @@
     padding-bottom: 25px;
 }
 
+.taco-item-stats {
+    display: flex;
+    flex-direction: column;
+}
+
 .taco-index-list {
     list-style: none;
     padding: 0px;
@@ -27,8 +32,9 @@
 .taco-index-image{
     height: 100px;
     width: 100px;
-    background-color: lightgray;
+    /* background-color: lightgray; */
     margin-right: 10px;
+    object-fit: cover;
 }
 .taco-index-item {
     height: 150px;

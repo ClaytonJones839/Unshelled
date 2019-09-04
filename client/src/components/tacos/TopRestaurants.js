@@ -27,7 +27,6 @@ class TopRestaurants extends React.Component {
                                         <div className="top-index-item">
                                                 <img className="top-index-image"
                                                     src={restaurant.photo}></img>
-                                                {console.log(restaurant)}
                                                 <div className="top-index-details">
                                                     <Link to={`/restaurant/${restaurant._id}`}
                                                         className="top-item-name">{restaurant.name}</Link>

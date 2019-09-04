@@ -12,6 +12,7 @@ const TacoType = new GraphQLObjectType({
         name: { type: GraphQLString },
         style: { type: GraphQLString },
         description: { type: GraphQLString },
+        photo: { type: GraphQLString },
         rating: { type: GraphQLInt },
         price: { type: GraphQLInt },
         restaurant: {
