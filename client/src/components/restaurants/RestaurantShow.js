@@ -4,6 +4,7 @@ import Queries from "../../graphql/queries";
 import RestaurantCSS from "./RestaurantCSS.css"
 import { Link } from "react-router-dom";
 import TacoNew from '../tacos/TacoNew';
+import ReviewNew from '../reviews/ReviewNew';
 const { FETCH_RESTAURANT } = Queries;
 
 
@@ -51,6 +52,10 @@ class RestaurantShow extends Component {
                   } else {
                     taco = <div></div>
                   }
+
+      
+
+
                     return (
                       <div className="rest-show-page">
                         <div className="rest-show-left">
@@ -91,6 +96,7 @@ class RestaurantShow extends Component {
                                   <i className="fas fa-plus-circle"></i>
                                 </div>
                               </div>
+                        <ReviewNew restaurantId={this.props.match.params.id} />
                           </div>
                             
 
