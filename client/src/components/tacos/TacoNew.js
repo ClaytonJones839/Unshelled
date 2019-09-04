@@ -4,9 +4,8 @@ import TacoCSS from "./Taco.css";
 import gql from "graphql-tag";
 import Queries from "../../graphql/queries";
 import Mutations from "../../graphql/mutations";
-// import { FETCH_TACOS } from "../../graphql/queries";
 const { FETCH_TACOS } = Queries;
-const { NEW_TACO, UPDATE_REST_TACOS } = Mutations;
+const { NEW_TACO } = Mutations;
 
 class TacoNew extends Component {
   constructor(props) {
@@ -43,14 +42,6 @@ class TacoNew extends Component {
         photo: this.state.photo,
         restaurantId: this.state.restaurantId
       }
-    // }).then(data => {
-    //   <Mutation 
-    //     mutation={UPDATE_REST_TACOS}
-    //     variables={
-    //       {restaurantId: this.state.restaurantId, tacoId: data.taco._id }
-    //     }
-    //     >
-    //     </Mutation>
     }) 
       .then(data => {
         this.setState({
@@ -135,7 +126,11 @@ class TacoNew extends Component {
                 onChange={this.update("description")}
                 placeholder="Description"
               />
-              <button type="submit">Create Taco</button>
+              <button 
+                className="create-taco-btn"
+                type="submit">
+                  Create Taco
+              </button>
             </form>
             <p>{this.state.message}</p>
           </div>
