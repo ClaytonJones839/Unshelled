@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Mutation } from "react-apollo";
+import TacoCSS from "./Taco.css";
 import gql from "graphql-tag";
 import Queries from "../../graphql/queries";
 import Mutations from "../../graphql/mutations";
@@ -95,33 +96,36 @@ class TacoNew extends Component {
         update={(cache, data) => this.updateCache(cache, data)}
       >
         {(newTaco, { data }) => (
-        <div>
-          <form onSubmit={e => this.handleSubmit(e, newTaco)}>
-            <input
-              onChange={this.update("name")}
-              value={this.state.name}
-              placeholder="Name"
-            />
-            <input
-              onChange={this.update("style")}
-              value={this.state.style}
-              placeholder="Style (Optional)"
-            />
-            <input
-              type="number"
-              onChange={this.update("price")}
-              value={this.state.price}
-              placeholder="0"
-            />
-            <textarea
-              value={this.state.description}
-              onChange={this.update("description")}
-              placeholder="Description"
-            />
-            <button type="submit">Create Taco</button>
-          </form>
-          <p>{this.state.message}</p>
-        </div>
+          <div>
+            <form
+              onSubmit={e => this.handleSubmit(e, newTaco)}
+              className="taco-new-form"
+            >
+              <input
+                onChange={this.update("name")}
+                value={this.state.name}
+                placeholder="Name"
+              />
+              <input
+                onChange={this.update("style")}
+                value={this.state.style}
+                placeholder="Style (Optional)"
+              />
+              <input
+                type="number"
+                onChange={this.update("price")}
+                value={this.state.price}
+                placeholder="0"
+              />
+              <textarea
+                value={this.state.description}
+                onChange={this.update("description")}
+                placeholder="Description"
+              />
+              <button type="submit">Create Taco</button>
+            </form>
+            <p>{this.state.message}</p>
+          </div>
         )}
       </Mutation>
     );
