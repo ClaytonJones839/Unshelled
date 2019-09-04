@@ -78,7 +78,12 @@ class RestaurantShow extends Component {
                               <div className="add-taco-flex"
                                   onClick={e => {
                                   e.preventDefault();
-                                  this.setState({ addTaco: true });
+                                  if (this.state.addTaco) {
+                                    this.setState({ addTaco: false });
+                                  } else {
+                                    this.setState({ addTaco: true });
+                                  }
+
                                 }}
                               >
                                 <div className="add-taco-btn">
