@@ -19,6 +19,18 @@ export default {
           }
         }
       `,
+  // FETCH_REST_TACOS: gql`
+  //   query fetchRestaurant($id: ID!) {
+  //     restaurant(_id: $id) {
+  //       tacos {
+  //         _id
+  //         name
+  //         photo
+  //         description
+  //       }
+  //     }
+  //   }
+  //   `,
   IS_LOGGED_IN: gql`
     query IsUserLoggedIn {
       isLoggedIn @client
@@ -55,6 +67,7 @@ export default {
         tacos {
           _id
           name
+          photo
         }
       }
     }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Query } from "react-apollo";
 import Queries from "../../graphql/queries";
 import RestaurantCSS from "./RestaurantCSS.css"
+import { Link } from "react-router-dom";
 import TacoNew from '../tacos/TacoNew';
 const { FETCH_RESTAURANT } = Queries;
 
@@ -21,6 +22,28 @@ class RestaurantShow extends Component {
                 {({ loading, error, data }) => {
                   if (loading) return <p>Loading...</p>;
                   if (error) return <p>Error</p>;
+
+                  let restTacos;
+                  if (data.restaurant.tacos) 
+                    restTacos = <div className="rest-taco-list"> 
+                      {data.restaurant.tacos.map((taco) => {
+                        return (
+                          <div className="rest-taco-item">
+                            <img 
+                              src={taco.photo}
+                              className="rest-taco-photo"></img>
+                            <Link 
+                              to={`/taco/${taco._id}`}
+                              className="rest-taco-name">
+                              {taco.name}
+                            </Link>
+                          </div>
+                        )}
+                      )}
+                    </div>
+                    else {
+                      restTacos = <div></div>
+                    }
 
                   let taco;
                   if (this.state.addTaco) {
@@ -71,6 +94,10 @@ class RestaurantShow extends Component {
                             {taco}
                           </div>
                           <div className="rest-show-tacos">
+                            <div className="rest-taco-feat">
+                              Featured Tacos
+                            </div>
+                            {restTacos}
                           </div>
                         </div>
 

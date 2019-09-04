@@ -388,7 +388,39 @@
 
 .rest-show-tacos {
     margin-top: 20px;
-    height: 300px;
     width: 100%;
     background-color: white;
+}
+
+.rest-taco-item {
+    display: flex;
+}
+
+.rest-taco-photo {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.rest-taco-item {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.rest-taco-feat {
+    font-family: 'Lexend Exa', sans-serif;
+    margin: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #c60;
+}
+
+.rest-taco-name {
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
 }
