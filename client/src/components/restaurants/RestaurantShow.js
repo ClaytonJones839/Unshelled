@@ -60,6 +60,16 @@ class RestaurantShow extends Component {
                               <i className="fab fa-twitter"></i>
                               <i className="fab fa-instagram"></i>
                               <i className="fas fa-link"></i>
+                        <div className="rest-show-left">
+                            <div className="rest-show-top">
+                                <img className="rest-show-image"
+                                    src={data.restaurant.photo}></img>
+                                <div className="rest-show-details">
+                                    <div className="rest-show-name">{data.restaurant.name}</div>
+                                    <div className="rest-show-location">{data.restaurant.location}</div>
+                                    <div className="rest-show-rating">
+                                    ### resturant rating? {data.restaurant.rating}</div>
+                                </div>
                             </div>
                           </div>
                        
@@ -78,6 +88,34 @@ class RestaurantShow extends Component {
                           </div>
                         {taco}
                       </div>
+                        </div>
+                        <div className="rest-show-right">
+                            <div className="rest-show-r-top">
+                                <div className="rest-show-num-likes">
+                                    ###
+                                </div>
+                                <div className="rest-show-likes-text">
+                                    People Like This Restaurant
+                                </div>
+                            </div>
+                            <div className="rest-show-r-mid">
+                                <button className="rest-show-like-btn">
+                                    Like This Restaurant
+                                </button>
+                            </div>
+                            <div className="rest-show-r-bottom">
+                                <img src="https://cdn.shopify.com/s/files/1/2584/0356/products/taco_800x.jpg?v=1537876074" className="rest-show-like-image"></img>
+                                <img src="https://cdn.shopify.com/s/files/1/2584/0356/products/taco_800x.jpg?v=1537876074" className="rest-show-like-image"></img>
+                                <img src="https://cdn.shopify.com/s/files/1/2584/0356/products/taco_800x.jpg?v=1537876074" className="rest-show-like-image"></img>
+                                <img src="https://cdn.shopify.com/s/files/1/2584/0356/products/taco_800x.jpg?v=1537876074" className="rest-show-like-image"></img>
+                                <img src="https://cdn.shopify.com/s/files/1/2584/0356/products/taco_800x.jpg?v=1537876074" className="rest-show-like-image"></img>
+                                <img src="https://cdn.shopify.com/s/files/1/2584/0356/products/taco_800x.jpg?v=1537876074" className="rest-show-like-image"></img>
+                                <img src="https://cdn.shopify.com/s/files/1/2584/0356/products/taco_800x.jpg?v=1537876074" className="rest-show-like-image"></img>
+                                <img src="https://cdn.shopify.com/s/files/1/2584/0356/products/taco_800x.jpg?v=1537876074" className="rest-show-like-image"></img>
+                                <img src="https://cdn.shopify.com/s/files/1/2584/0356/products/taco_800x.jpg?v=1537876074" className="rest-show-like-image"></img>
+                            </div>
+                        </div>
+                    </div>
                     );
                 }}
             </Query>

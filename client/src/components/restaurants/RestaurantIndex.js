@@ -11,15 +11,16 @@ class RestaurantIndex extends React.Component {
         {({ loading, error, data }) => {
           if (loading) return "Loading...";
           if (error) return `Error! ${error.message}`;
-          // debugger;
           return (
             <div className="rest-index-container">
               <ul className="rest-index-list">
                 {data.restaurants.map((restaurant, i) => {
                   let tacos = restaurant.tacos.map(taco => (
-                    <li>
+                    <Link 
+                      className="rest-taco-link"
+                      to={`/tacoshow/${taco._id}`}>
                       {taco.name}
-                    </li>
+                    </Link>
                   ))
                 return (
                   <div className="rest-index-item">
@@ -30,7 +31,7 @@ class RestaurantIndex extends React.Component {
                           <Link to={`/restaurant/${restaurant._id}`}
                             className="rest-item-name">{restaurant.name}</Link>
                       <div className="rest-item-loc">{restaurant.location}</div>
-                      <div className="rest-item-dec">{restaurant.description}</div>
+                      <div className="rest-item-desc">{restaurant.description}</div>
                       </div>
                     </div>
                     <div className="rest-item-bottom2">

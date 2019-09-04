@@ -1,16 +1,86 @@
 /* restaurant-show */
-
 .rest-show-page {
-    margin-top: 100px;
+    display: flex;
+}
+.rest-show-left {
     background-color: white;
     box-sizing: border-box;
     width: 740px;
     display: flex;
     flex-direction: column;
     height: 300px;
-    margin: 70px 20px 0px 20px;
+    margin: 100px 20px 0px 20px;
     overflow: auto;
     padding-bottom: 25px;
+}
+
+.rest-show-right {
+    margin: 100px 0px 0px 20px;
+    background-color: white;
+    height: 550px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+.rest-show-r-top {
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.rest-show-num-likes {
+    font-size: 42px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.rest-show-likes-text {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.rest-show-r-mid {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.rest-show-like-btn {
+    font-family: 'Roboto', sans-serif;
+    width: 250px;
+    margin: 12px auto 24px;
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+    background-color: #ffcc00;
+    font-size: 18px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    font-weight: 600;
+    outline: none;
+}
+
+.rest-show-like-btn:hover, .rest-show-like-image:hover {
+    filter: brightness(0.8);
+    cursor: pointer;
+}
+
+.rest-show-r-bottom {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.rest-show-like-image {
+    width: 80px;
+    height: 80px;
+    background-color: lightblue;
+    margin: 10px;
+    object-fit: cover;
 }
 
 .rest-show-top {
@@ -22,7 +92,7 @@
     height: 125px;
     background-color: lightgray;
     margin: 20px;
-
+    object-fit: cover;
 }
 
 .rest-show-details {
@@ -144,7 +214,7 @@
 
 .rest-index-item {
     display: flex;
-    
+    flex-direction: column;
 }
 
 .rest-index-list {
@@ -155,12 +225,13 @@
 .rest-index-image{
     height: 100px;
     width: 100px;
-    /* background-color: lightgray; */
+    background-color: lightgray;
     margin-right: 10px;
+    object-fit: cover;
 }
 
 .rest-index-item {
-    height: 150px;
+    height: 175px;
     margin-top: 20px;
     width: 650px;
     display: flex;
@@ -201,5 +272,28 @@
 
 .rest-item-desc {
     font-size: 16px;
+    /* color: darkgray; */
     font-family: 'Roboto', sans-serif;
 }
+
+.rest-item-tacos {
+    margin: 10px 0px 2px 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.rest-item-taco-list {
+    margin-left: 30px;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.rest-taco-link {
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: #c60;
+}
+.rest-taco-link:visited {
+    color: #c60;
+}
+
