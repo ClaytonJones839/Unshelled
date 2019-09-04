@@ -102,6 +102,14 @@
     color: green;
 }
 
+.taco-new-form{
+  background-color: white;
+  display: grid;
+  width: 40%;
+  padding: 25px 82px;
+  margin: 15px 0px 0px 20px;
+  align-content: center;
+=======
 .top-index-item {
     box-sizing: border-box;
     width: 100%;
