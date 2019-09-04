@@ -28,16 +28,13 @@ class RestaurantShow extends Component {
                   } else {
                     taco = <div></div>
                   }
-
-
-                  // debugger
                     return (
                       <div>
                         <div className="rest-show-page">
                           <div className="rest-show-top">
                             <img
                               className="rest-show-image"
-                              src="https://i.redd.it/l85uj6f0hfa01.jpg"
+                              src={data.restaurant.photo}
                             ></img>
                             <div className="rest-show-details">
                               <div className="rest-show-name">
@@ -72,7 +69,6 @@ class RestaurantShow extends Component {
                                 </div>
                             </div>
                           </div>
-                       
                             <div
                               className="add-taco-flex"
                               onClick={e => {
