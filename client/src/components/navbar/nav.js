@@ -1,16 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { Query, ApolloConsumer } from 'react-apollo'
 import Queries from "../../graphql/queries";
 // import { LocalState } from "apollo-client/core/LocalState";
 const { IS_LOGGED_IN } = Queries;
 
 const Nav = (props) => {
+    // debugger;
     return (
         <ApolloConsumer>
             
             {client => {
                 // debugger;
+                // console.log("helllllllllo");
                 return (
                     <div className="navbar-container">
                         <nav className="navbar">
@@ -28,11 +30,11 @@ const Nav = (props) => {
                             <Query query={IS_LOGGED_IN}>
                                 {
                                     ({ loading, error, data }) => {
-
+                                        debugger;
                                         if (loading) return <p>Loading</p>;
-                                        console.log("hello");
+                                        // console.log("hello");
                                         if (error) return <p>Error</p>;
-                                        console.log(data);
+                                        // console.log("hello", data.isLoggedIn);
                                         if (data.isLoggedIn) {
                                             return (
                                                 <div className="rightside-nav">
@@ -42,7 +44,7 @@ const Nav = (props) => {
                                                         <div className="dropdown-content">
                                                             <ul className="dropdown-list">
                                                                 <Link className="dropdown-link" to="/">Recent Activity</Link>
-                                                                <Link className="dropdown-link" to={`/users/${data.id}`}>Profile</Link>
+                                                                <Link className="dropdown-link" to={`/users/${data._id}`}>Profile</Link>
                                                                 <div onClick={e => {
                                                                     e.preventDefault();
                                                                     localStorage.removeItem("auth-token");
@@ -88,4 +90,4 @@ const Nav = (props) => {
     
 };
 
-export default Nav;
+export default withRouter(Nav);

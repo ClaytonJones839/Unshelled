@@ -108,11 +108,11 @@ const mutation = new GraphQLObjectType({
             resolve(_, { description, rating, tacoId, userId }) {
                 console.log(tacoId);
                 return Taco.findById(tacoId).then((taco) => {
-                    let name = taco.name;
+                    // let name = taco.name;
                     let restaurant = taco.restaurant;
 
                     return User.findById(userId).then((user) => {
-                        
+                        let name = user.firstName + " " + user.lastName.slice(0, 1);
                     
                         let tacoCheckin = new TacoCheckin({ name, restaurant, description, rating });
                         taco.tacoCheckin.push(tacoCheckin._id);
