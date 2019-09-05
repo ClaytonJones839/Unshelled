@@ -83,6 +83,11 @@ export default {
           name
           photo
         }
+        reviews {
+          _id
+          body
+          rating
+        }
       }
     }
     `,
@@ -113,6 +118,34 @@ export default {
       }
     }
     `,
+
+  FETCH_REVIEW: gql`
+  query fetchReview($id: ID!) {
+    review(_id: $id) {
+      _id
+      body
+      rating
+      restaurant {
+        _id
+        name
+      }
+    }
+  }
+  `,
+
+  FETCH_REVIEWS: gql`
+  {
+    reviews {
+      _id
+      body
+      rating
+      restaurant {
+        _id
+        name
+      }
+    }
+  }
+  `,
 
   FETCH_USER: gql`
     query fetchUser($id: ID!) {

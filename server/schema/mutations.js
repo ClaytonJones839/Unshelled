@@ -5,7 +5,9 @@ const { GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLID } = graphql;
 const UserType = require("./types/user_type");
 const RestaurantType = require("./types/restaurant_type");
 const TacoType = require("./types/taco_type");
+
 const TacoCheckinType = require("./types/checkin_type");
+const ReviewType = require("./types/review_type");
 
 const AuthService = require("./services/auth");
 
@@ -13,6 +15,7 @@ const User = mongoose.model("users");
 const Taco = mongoose.model("tacos");
 const Restaurant = mongoose.model("restaurants");
 const TacoCheckin = mongoose.model("tacoCheckins");
+const Review = mongoose.model("reviews");
 
 const mutation = new GraphQLObjectType({
     name: "Mutation",
@@ -58,6 +61,20 @@ const mutation = new GraphQLObjectType({
             resolve(_, args) {
                 return AuthService.verifyUser(args);
             }
+          },
+        newReview: {
+          type: ReviewType, 
+          args: {
+            body: { type: GraphQLString },
+            rating: { type: GraphQLInt },
+            restaurantId: { type: GraphQLID }
+          },
+          resolve(_, { body, rating, restaurantId }) {
+            const newReview = new Review({ body, rating, restaurant: restaurantId })
+            newReview.save().then((respone) => {
+              Review.updateReviewRestaurant(newReview._doc._id, restaurantId)
+            })
+          }
         },
         newTaco: {
             type: TacoType,
@@ -141,6 +158,13 @@ const mutation = new GraphQLObjectType({
             }
         },
 
+        updateReviewRestaurant: {
+          type: ReviewType,
+          args: {
+            reviewId: { type: GraphQLID },
+            restaurantId: { type: GraphQLID }
+          }
+        },
         newRestaurant: {
             type: RestaurantType,
             args: {
@@ -158,7 +182,7 @@ const mutation = new GraphQLObjectType({
             resolve(_, { _id }) {
                 return Restaurant.remove({ _id });
             }
-        }
+        },
     }
 });
 

@@ -4,6 +4,7 @@ import Queries from "../../graphql/queries";
 import RestaurantCSS from "./RestaurantCSS.css"
 import { Link } from "react-router-dom";
 import TacoNew from '../tacos/TacoNew';
+import ReviewNew from '../reviews/ReviewNew';
 const { FETCH_RESTAURANT } = Queries;
 
 
@@ -22,7 +23,8 @@ class RestaurantShow extends Component {
                 {({ loading, error, data }) => {
                   if (loading) return <p>Loading...</p>;
                   if (error) return <p>Error</p>;
-
+                  
+                  // debugger
                   let restTacos;
                   if (data.restaurant.tacos) 
                     restTacos = <div className="rest-taco-list"> 
@@ -51,6 +53,26 @@ class RestaurantShow extends Component {
                   } else {
                     taco = <div></div>
                   }
+                  // debugger
+                  let reviewArray = [];
+                  let reviewSum;
+                  let reviewRating;
+                  if (data.restaurant.reviews) {
+                    data.restaurant.reviews.forEach(review => {
+                      // debugger
+                      reviewArray.push(review.rating)
+                    }
+                      );
+                      reviewSum = reviewArray.reduce((a, b) => a + b, 0);
+                      reviewRating = reviewSum / reviewArray.length;
+                  } else {
+                    reviewRating = <div></div>
+                  }
+                  
+
+      
+
+
                     return (
                       <div className="rest-show-page">
                         <div className="rest-show-left">
@@ -61,7 +83,7 @@ class RestaurantShow extends Component {
                               <div className="rest-show-name">{data.restaurant.name}</div>
                               <div className="rest-show-location">{data.restaurant.location}</div>
                               <div className="rest-show-rating">
-                                ### restaurant rating? {data.restaurant.rating}</div>
+                                Rating: {reviewRating}</div>
                             </div>
                           </div>
 
@@ -91,6 +113,7 @@ class RestaurantShow extends Component {
                                   <i className="fas fa-plus-circle"></i>
                                 </div>
                               </div>
+                        <ReviewNew restaurantId={this.props.match.params.id} />
                           </div>
                             
 

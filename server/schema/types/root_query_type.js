@@ -6,11 +6,13 @@ const UserType = require("./user_type");
 const TacoType = require("./taco_type");
 const RestaurantType = require("./restaurant_type");
 const TacoCheckinType = require("./checkin_type");
+const ReviewType = require("./review_type");
 
 const User = mongoose.model("users");
 const Taco = mongoose.model("tacos");
 const Restaurant = mongoose.model("restaurants");
 const TacoCheckin = mongoose.model("tacoCheckins");
+const Review = mongoose.model("reviews");
 
 const RootQueryType = new GraphQLObjectType({
     name: "RootQueryType",
@@ -61,9 +63,22 @@ const RootQueryType = new GraphQLObjectType({
             type: RestaurantType,
             args: { _id: { type: new GraphQLNonNull(GraphQLID) } },
             resolve(_, args) {
-                return Restaurant.findById(args._id);
+              return Restaurant.findById(args._id);
             }
         },
+        reviews: {
+          type: new GraphQLList(ReviewType), 
+          resolve(_, args) {
+            return Review.find({});
+          }
+        },
+        review: {
+          type: ReviewType,
+          args: { _id: { type: new GraphQLNonNull(GraphQLID) } },
+          resolve(_, args) {
+            return Review.findById(args._id);
+          }
+        }
     })
 });
 
