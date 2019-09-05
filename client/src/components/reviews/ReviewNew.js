@@ -11,7 +11,7 @@ class ReviewNew extends Component {
     super(props);
     this.state = {
       body: "",
-      rating: 3,
+      rating: 0,
       restaurantId: this.props.restaurantId,
       message: ""
     };
@@ -31,15 +31,15 @@ class ReviewNew extends Component {
     newReview({
       variables: {
         body: body,
-        rating: this.state.rating,
+        rating: parseInt(this.state.rating),
         restaurantId: this.state.restaurantId
       }
     }).then(data => {
       this.setState({
         message: `New review created successfully`,
         body: "",
-        rating: 3,
       });
+      setTimeout(() => document.location.reload(true), 1000);
     });
   }
 
@@ -80,7 +80,6 @@ class ReviewNew extends Component {
             >
               <input
                 className="review-form-input"
-                type="number"
                 onChange={this.update("rating")}
                 value={this.state.rating}
                 placeholder="Rating goes here (1-5)"
@@ -91,7 +90,7 @@ class ReviewNew extends Component {
                 onChange={this.update("body")}
                 placeholder="Review goes here (Optional)"
               />
-              <button className="create-review-btn" type="submit">
+              <button className="create-review-btn" type="submit" >
                 Create Review
               </button>
             </form>

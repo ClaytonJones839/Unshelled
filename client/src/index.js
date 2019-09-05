@@ -66,7 +66,7 @@ if (token) {
     // user is loggedIn
     .mutate({ mutation: VERIFY_USER, variables: { token } })
     .then(({ data }) => {
-      debugger;
+      // debugger;
       cache.writeData({
         data: {
           _id: data.verifyUser.id,
@@ -78,10 +78,6 @@ if (token) {
         }
       });
     });
-    // await persistCache({
-    //   cache,
-    //   storage: window.localStorage,
-    // });
   // debugger;
 } else {
   // otherwise we can just set isLoggedIn to false
