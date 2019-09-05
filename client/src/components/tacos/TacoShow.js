@@ -42,7 +42,7 @@ class TacoShow extends Component {
                             // console.log(data);
                             // console.log(rdata);
                 let tacoCheckins;
-                            debugger;
+                            // debugger;
                 tacoCheckins = data.taco.tacoCheckin.map((checkin) => {
                     return (
                         <div className="taco-checkin-box">

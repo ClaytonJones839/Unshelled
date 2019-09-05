@@ -14,7 +14,7 @@
     width: 680px;
     display: flex;
     justify-content: center;
-    height: auto;
+    height: -webkit-fill-available;
     padding-left: 20px;
     margin: 70px 10px 100px 20px;
     overflow: auto;
