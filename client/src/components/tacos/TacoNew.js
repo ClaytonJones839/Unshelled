@@ -13,7 +13,7 @@ class TacoNew extends Component {
     this.state = {
       name: "",
       style: "",
-      price: 0,
+      price: "",
       description: "",
       photo: "https://i.pinimg.com/474x/75/80/b0/7580b09940eed1450661b4856eac0c24.jpg",
       restaurantId: this.props.restaurantId,
@@ -88,32 +88,34 @@ class TacoNew extends Component {
       >
         {(newTaco, { data }) => (
           <div className="new-taco-form">
-            <div className="taco-form-text">
-              New Taco
-            </div>
+            <div className="taco-form-text">New Taco</div>
             <form
               onSubmit={e => this.handleSubmit(e, newTaco)}
               className="inner-taco-form"
             >
+              {" "}
+              <div className="taco-form-desc">Name</div>
               <input
                 className="taco-form-input"
                 onChange={this.update("name")}
                 value={this.state.name}
                 placeholder="Name"
               />
+              <div className="taco-form-desc">Style</div>
               <input
                 className="taco-form-input"
                 onChange={this.update("style")}
                 value={this.state.style}
                 placeholder="Style (Optional)"
               />
+              <div className="taco-form-desc">Price</div>
               <input
                 className="taco-form-input"
-                type="number"
                 onChange={this.update("price")}
                 value={this.state.price}
-                placeholder="0"
+                placeholder="0.00"
               />
+              <div className="taco-form-desc">Photo Url</div>
               <input
                 className="taco-form-input"
                 type="text"
@@ -121,16 +123,15 @@ class TacoNew extends Component {
                 value={this.state.photo}
                 placeholder="photo url"
               />
+              <div className="taco-form-desc">Description</div>
               <textarea
                 className="taco-form-textarea"
                 value={this.state.description}
                 onChange={this.update("description")}
                 placeholder="Description"
               />
-              <button 
-                className="create-taco-btn"
-                type="submit">
-                  Create Taco
+              <button className="create-taco-btn" type="submit">
+                Create Taco
               </button>
             </form>
             <p>{this.state.message}</p>

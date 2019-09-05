@@ -36,130 +36,140 @@ class RestaurantIndex extends React.Component {
                     reviewRating = <div></div>;
                   }
 
-                  let stars;
-                  if (reviewRating > 4.75) {
-                    // 5
-                    stars = (
-                      <div>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                      </div>
-                    );
-                  } else if (reviewRating > 4.25) {
-                    //4.5
-                    stars = (
-                      <div>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                      </div>
-                    );
-                  } else if (reviewRating > 3.75) {
-                    // 4
-                    stars = (
-                      <div>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                      </div>
-                    );
-                  } else if (reviewRating > 3.25) {
-                    //3.5
-                    stars = (
-                      <div>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <i class="far fa-star"></i>
-                      </div>
-                    );
-                  } else if (reviewRating > 2.75) {
-                    // 3
-                    stars = (
-                      <div>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                      </div>
-                    );
-                  } else if (reviewRating > 2.25) {
-                    //2.5
-                    stars = (
-                      <div>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                      </div>
-                    );
-                  } else if (reviewRating > 1.75) {
-                    // 2
-                    stars = (
-                      <div>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                      </div>
-                    );
-                  } else if (reviewRating > 1.25) {
-                    // 1.5
-                    stars = (
-                      <div>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                      </div>
-                    );
-                  } else if (reviewRating > 0.75) {
-                    // 1
-                    stars = (
-                      <div>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                      </div>
-                    );
-                  } else if (reviewRating > 0) {
-                    // 0.5
-                    stars = (
-                      <div>
-                        <i class="fas fa-star-half-alt"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                      </div>
-                    );
-                  } else {
-                    // 0
-                    stars = (
-                      <div>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <p className="star-rev">Be the first to review!</p>
-                      </div>
-                    );
-                  } 
+let stars;
+if (reviewRating > 4.75) {
+  // 5
+  stars = (
+    <div>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <p className="star-div"> ({reviewArray.length})</p>
+    </div>
+  );
+} else if (reviewRating > 4.25) {
+  //4.5
+  stars = (
+    <div>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <p className="star-div"> ({reviewArray.length})</p>
+    </div>
+  );
+} else if (reviewRating > 3.75) {
+  // 4
+  stars = (
+    <div>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="far fa-star"></i>
+      <p className="star-div"> ({reviewArray.length})</p>
+    </div>
+  );
+} else if (reviewRating > 3.25) {
+  //3.5
+  stars = (
+    <div>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <i class="far fa-star"></i>
+      <p className="star-div"> ({reviewArray.length})</p>
+    </div>
+  );
+} else if (reviewRating > 2.75) {
+  // 3
+  stars = (
+    <div>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+      <p className="star-div"> ({reviewArray.length})</p>
+    </div>
+  );
+} else if (reviewRating > 2.25) {
+  //2.5
+  stars = (
+    <div>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+      <p className="star-div"> ({reviewArray.length})</p>
+    </div>
+  );
+} else if (reviewRating > 1.75) {
+  // 2
+  stars = (
+    <div>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+      <p className="star-div"> ({reviewArray.length})</p>
+    </div>
+  );
+} else if (reviewRating > 1.25) {
+  // 1.5
+  stars = (
+    <div>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+      <p className="star-div"> ({reviewArray.length})</p>
+    </div>
+  );
+} else if (reviewRating > 0.75) {
+  // 1
+  stars = (
+    <div>
+      <i class="fas fa-star"></i>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+      <p className="star-div"> ({reviewArray.length})</p>
+    </div>
+  );
+} else if (reviewRating > 0) {
+  // 0.5
+  stars = (
+    <div>
+      <i class="fas fa-star-half-alt"></i>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+      <p className="star-div"> ({reviewArray.length})</p>
+    </div>
+  );
+} else {
+  // 0
+  stars = (
+    <div>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+      <p className="star-div"> ({reviewArray.length})</p>
+    </div>
+  );
+}
 
 
 
@@ -170,7 +180,7 @@ class RestaurantIndex extends React.Component {
 
 
 
-                  let tacos = restaurant.tacos.map(taco => (
+                  let tacos = restaurant.tacos.slice(0,2).map(taco => (
                     <Link 
                       className="rest-taco-link"
                       to={`/taco/${taco._id}`}>
