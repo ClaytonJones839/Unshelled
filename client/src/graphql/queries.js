@@ -43,7 +43,7 @@ export default {
   IS_LOGGED_IN: gql`
     query IsUserLoggedIn {
       isLoggedIn @client
-      id @client
+      _id @client
       photo @client
       firstName @client
       lastName @client

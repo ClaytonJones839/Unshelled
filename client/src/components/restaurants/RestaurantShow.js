@@ -13,8 +13,10 @@ class RestaurantShow extends Component {
     super(props);
 
     this.state = {
-        addTaco: false
+        addTaco: false,
+        reviewArray: []
     };
+    // debugger
   } 
 
     render() {
@@ -66,8 +68,22 @@ class RestaurantShow extends Component {
                     reviewSum = reviewArray.reduce((a, b) => a + b, 0);
                     reviewRating = reviewSum / reviewArray.length;
                   } else {
-                    reviewRating = <div></div>
+                    reviewRating = <div>0</div>
                   }
+
+                  // debugger
+                  // let reviewArray1 = []; // 3, 5
+                  //   if (data.restaurant.reviews) {
+                  //     data.restaurant.reviews.forEach(review => {
+                  //       reviewArray1.push(review.rating)
+                  //     })
+
+                  //       if (reviewArray1 !== this.state.reviewArray) {                          
+                  //         this.setState({
+                  //           reviewArray: reviewArray1
+                  //         });
+                  //       }
+                  //   }
                   
                   let stars;
                   if (reviewRating > 4.75) {

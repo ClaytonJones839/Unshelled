@@ -52,6 +52,7 @@ class TacoNew extends Component {
           price: 0,
           description: ""
         });
+        setTimeout(() => document.location.reload(true), 1000);
       });
   }
 
