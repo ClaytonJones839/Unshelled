@@ -29,18 +29,18 @@ export default {
         }
       `,
   
-  // FETCH_TACO_CHECKINS: gql`
+  FETCH_TACO_CHECKINS: gql`
     
-  //     query fetchTacoCheckins($id: ID!) {
-  //       tacoCheckins(_id: $id) {
-  //         _id
-  //         name
-  //         description
-  //         rating
-  //       }
-  //     }
+      query fetchTacoCheckins($id: ID!) {
+        tacoCheckins(_id: $id) {
+          _id
+          name
+          description
+          rating
+        }
+      }
     
-  // `,
+  `,
 
   IS_LOGGED_IN: gql`
     query IsUserLoggedIn {

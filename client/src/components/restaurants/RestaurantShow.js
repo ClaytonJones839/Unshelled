@@ -16,7 +16,6 @@ class RestaurantShow extends Component {
         addTaco: false,
         reviewArray: []
     };
-    // debugger
   } 
 
     render() {
@@ -26,7 +25,6 @@ class RestaurantShow extends Component {
                   if (loading) return <p>Loading...</p>;
                   if (error) return <p>Error</p>;
                   
-                  // debugger
                   let restTacos;
                   if (data.restaurant.tacos) 
                     restTacos = <div className="rest-taco-list"> 
@@ -55,13 +53,11 @@ class RestaurantShow extends Component {
                   } else {
                     taco = <div></div>
                   }
-                  // debugger
                   let reviewArray = [];
                   let reviewSum;
                   let reviewRating;
                   if (data.restaurant.reviews) {
                     data.restaurant.reviews.forEach(review => {
-                      // debugger
                       reviewArray.push(review.rating)
                     }
                       );
@@ -70,24 +66,6 @@ class RestaurantShow extends Component {
                   } else {
                     reviewRating = <div>0</div>
                   }
-
-                  // debugger
-                  // let reviewArray1 = []; // 3, 5
-                  //   if (data.restaurant.reviews) {
-                  //     data.restaurant.reviews.forEach(review => {
-                  //       reviewArray1.push(review.rating)
-                  //     })
-
-                  //       if (reviewArray1 !== this.state.reviewArray) {                          
-                  //         this.setState({
-                  //           reviewArray: reviewArray1
-                  //         });
-                  //       }
-                  //   }
-                  
-
-      
-
 
                     return (
                       <div className="rest-show-page">
@@ -105,7 +83,10 @@ class RestaurantShow extends Component {
 
 
                           <div className="rest-show-bottom">
-                            <div className="rest-show-desc">{data.restaurant.description}</div>
+                            <div className="rest-show-bottom-left">
+                              <div className="rest-show-desc">{data.restaurant.description}</div>
+                              <ReviewNew restaurantId={this.props.match.params.id} />
+                            </div>
                             <div className="rest-show-social">
                               <div className="social-top">
                                 <i class='fab fa-facebook-f'></i>
@@ -129,7 +110,7 @@ class RestaurantShow extends Component {
                                   <i className="fas fa-plus-circle"></i>
                                 </div>
                               </div>
-                        <ReviewNew restaurantId={this.props.match.params.id} />
+
                           </div>
                             
 
@@ -144,10 +125,6 @@ class RestaurantShow extends Component {
                             {restTacos}
                           </div>
                         </div>
-
-
-
-
                         <div className="rest-show-right">
                             <div className="rest-show-r-top">
                                 <div className="rest-show-num-likes">
