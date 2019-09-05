@@ -21,9 +21,9 @@ export default class Login extends Component {
 
     updateCache(client, { data }) {
         // console.log(data.login);
-        debugger;
+        // debugger;
         client.writeData({
-            data: { isLoggedIn: data.login.loggedIn, id: data.login._id, photo: data.login.photo, firstName: data.login.firstName, lastName: data.login.lastName }
+            data: { isLoggedIn: data.login.isLoggedIn, _id: data.login._id, photo: data.login.photo, firstName: data.login.firstName, lastName: data.login.lastName }
         });
         debugger;
     }
@@ -35,9 +35,9 @@ export default class Login extends Component {
                 mutation={Mutations.LOGIN_USER}
                 onCompleted={data => {
                     const { token } = data.login;
-                    // console.log()
+                    console.log("wof", data);
                     localStorage.setItem("auth-token", token);
-                    console.log(localStorage);
+                    // console.log(localStorage);
                     this.props.history.push("/");
                 }}
                 update={(client, data) => this.updateCache(client, data)}
@@ -66,13 +66,15 @@ export default class Login extends Component {
                             >
                                 <button className="login-form-demo" onClick={e => {
                                       e.preventDefault();
-                                      this.setState({ email: "carne@asada.com", password: "password" });
-                                      loginUser({
-                                          variables: {
+                                    this.setState({ email: "carne@asada.com", password: "password" }, () => {
+                                          loginUser({
+                                            variables: {
                                               email: this.state.email,
                                               password: this.state.password
-                                          }
+                                            }
+                                          });
                                       });
+                                      
                                 }}>Demo Login</button>
                                 <div className="demo-or-login">
                                     OR

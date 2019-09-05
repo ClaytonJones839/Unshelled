@@ -13,7 +13,7 @@ const UserType = new GraphQLObjectType({
         lastName: { type: GraphQLString },
         email: { type: GraphQLString },
         token: { type: GraphQLString },
-        loggedIn: { type: GraphQLBoolean },
+        isLoggedIn: { type: GraphQLBoolean },
         photo: { type: GraphQLString },
         tacoCheckin: {
             type: new GraphQLList(require("./checkin_type")),

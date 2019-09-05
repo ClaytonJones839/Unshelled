@@ -34,6 +34,7 @@ const { VERIFY_USER } = Mutations;
 const client = new ApolloClient({
   link: httpLink,
   cache,
+  resolvers: {},
   onError: ({ networkError, graphQLErrors }) => {
     console.log("graphQLErrors", graphQLErrors);
     console.log("networkError", networkError);
@@ -47,9 +48,12 @@ const token = localStorage.getItem("auth-token");
 // before our mutation goes through we can set it up here
 cache.writeData({
   data: {
+    _id: "",
     isLoggedIn: Boolean(token),
-
-    banana: "banana"
+    cart: [],
+    firstName: "",
+    lastName: "",
+    photo: ""
   }
 });
 
@@ -60,11 +64,11 @@ if (token) {
     // user is loggedIn
     .mutate({ mutation: VERIFY_USER, variables: { token } })
     .then(({ data }) => {
-      debugger;
+      // debugger;
       cache.writeData({
         data: {
-          _id: data.verifyUser.id,
-          isLoggedIn: data.verifyUser.loggedIn,
+          _id: data.verifyUser._id,
+          isLoggedIn: data.verifyUser.isLoggedIn,
           cart: [],
           firstName: data.verifyUser.firstName,
           lastName: data.verifyUser.lastName,
@@ -72,7 +76,7 @@ if (token) {
         }
       });
     });
-  debugger;
+  // debugger;
 } else {
   // otherwise we can just set isLoggedIn to false
   cache.writeData({
@@ -84,6 +88,8 @@ if (token) {
 }
 
 const Root = () => {
+  // debugger;
+  const isLoggedIn = client.cache.data.data.ROOT_QUERY.lastName;
   return (
     <ApolloProvider client={client}>
       <App />
