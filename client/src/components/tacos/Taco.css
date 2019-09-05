@@ -164,6 +164,7 @@
 .top-rest-text {
     width: 100%;
     height: 75px;
+    font-weight: bold;
     margin-top: 10px;
     display: flex;
     justify-content: center;
