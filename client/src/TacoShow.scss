@@ -203,7 +203,47 @@ div {
   transform: translate(-50%,-50%);
   font-size: 20px;
 
-  
+  .header {
+    border: 1px solid;
+
+    .text {
+        font-size: 18px;
+        font-weight: 500;
+        height: 31px;
+        width: 100%;
+        padding-top: 3px;
+        padding-left: 10px;
+        background-color: black;
+        color: white;
+    }
+
+    .exit {
+        font-size: 26px;
+        background-color: black;
+        color: white;
+        height: 34px;
+        font-weight: 100
+    }
+  }
+
+  .new-checkin-form {
+    border: 1px solid black;
+    height: 50px;
+    width: 100%;
+
+    .checkin-inputs {
+
+        .description-input {
+            border: 1px solid black;
+
+        }
+
+        .rating-input {
+            border: 1px solid black;
+        }
+    }
+
+  }
 
 }
 }

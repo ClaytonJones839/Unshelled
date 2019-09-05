@@ -106,7 +106,7 @@ const mutation = new GraphQLObjectType({
                 // user: {type: GraphQLString}
             },
             resolve(_, { description, rating, tacoId, userId }) {
-                console.log(tacoId);
+                console.log("string", tacoId);
                 return Taco.findById(tacoId).then((taco) => {
                     // let name = taco.name;
                     let restaurant = taco.restaurant;

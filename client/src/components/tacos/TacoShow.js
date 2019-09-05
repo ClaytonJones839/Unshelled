@@ -38,11 +38,11 @@ class TacoShow extends Component {
                     {({ loading: loadingTwo, error, data: rdata }) => {
                 if (loadingTwo) return <p>Loading...</p>;
                 if (error) return <p>Error</p>;
-                
+                      // debugger;
                             // console.log(data);
-                            // console.log(rdata);
+                            console.log("string", rdata);
                 let tacoCheckins;
-                            debugger;
+                            // debugger;
                 tacoCheckins = data.taco.tacoCheckin.map((checkin) => {
                     return (
                         <div className="taco-checkin-box">
@@ -105,7 +105,7 @@ class TacoShow extends Component {
                               
                                         
                         
-                            <Modal show={this.state.show} handleClose={this.hideModal}>
+                            <Modal tacoId={this.props.match.params.id} userId={rdata._id} show={this.state.show} handleClose={this.hideModal}>
                                 
                             </Modal>
                             <button className="check-in" onClick={this.showModal}>✓</button>

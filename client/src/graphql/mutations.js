@@ -136,8 +136,8 @@ export default {
   `,
 
   NEW_TACO_CHECKIN: gql`
-    mutation NewTacoCheckin($name: String, $description: String, $rating: Int) {
-      newTacoCheckin(name: $name, description: $description, rating: $rating) {
+    mutation NewTacoCheckin($name: String, $description: String, $rating: Int, $tacoId: ID, $userId: ID) {
+      newTacoCheckin(name: $name, description: $description, rating: $rating, tacoId: $tacoId, userId: $userId) {
         _id
         name
         description
