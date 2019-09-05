@@ -74,6 +74,27 @@ export default {
     }
   `,
 
+  NEW_REVIEW: gql`
+    mutation NewReview(
+      $body: String
+      $rating: Int
+      $restaurantId: ID
+    ) {
+      newReview(
+        body: $body
+        rating: $rating
+        restaurantId: $restaurantId
+      ) {
+        _id
+        body
+        rating
+        restaurant {
+          _id
+          name
+        }
+      }
+    }
+  `,
   UPDATE_REST_TACOS: gql`
     mutation UpdateRestTacos(
       $restaurantId: ID!,
