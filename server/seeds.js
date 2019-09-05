@@ -73,6 +73,66 @@ r_loc["Chipotle"] = "Tampa Bay, Florida";
 r_loc["Baja Fresh"] = "Sacramento, California";
 r_loc["Tacos El Gordo"] = "Las Vegas, Nevada";
 
+const r_facebook = {}; // Facebook Link
+r_facebook["La Victoria Taqueria"] = "https://www.facebook.com/LA-VICTORIA-TAQUERIA-131921148047/";
+r_facebook["Del Taco"] = "https://www.facebook.com/deltaco/";
+r_facebook["Super Taqueria"] = "https://www.facebook.com/SuperTaqueria/";
+r_facebook["Tacos Al Pastor"] = "https://www.facebook.com/tacosalpastorak/";
+r_facebook["Tacomania"] = "https://www.facebook.com/tacomaniastreettacos/?__tn__=%2Cd%2CP-R&eid=ARD0cL6DKYBZs8ZpZAhmNBpubBl44P14LwjZQsPcMmPxnr9NQKzMfaV28nqAJUEMsmRI6mvnZHYkpdcJ";
+r_facebook["Taqueria Revolucion"] = "https://www.facebook.com/Taqueria-Revolucion-286261074849851/?__tn__=%2Cd%2CP-R&eid=ARDhCAmbK1suuSc97j5CT7CD7sc1tQg2iM6-ON_lYQPIJr79z6W7QAvbRwmn6cV7p2GjTSNITf6b4Ga8";
+r_facebook["Taco Bell"] = "https://www.facebook.com/tacobell/";
+r_facebook["Chipotle"] = "https://www.facebook.com/chipotle/";
+r_facebook["Baja Fresh"] = "https://www.facebook.com/bajafresh/";
+r_facebook["Tacos El Gordo"] = "https://www.facebook.com/tacoselgordobc/";
+
+const r_twitter = {}; // Twitter Link
+r_twitter["La Victoria Taqueria"] = "https://twitter.com/search?q=La%20Victoria%20Taqueria&src=typed_query&f=user";
+r_twitter["Del Taco"] = "https://twitter.com/DelTaco";
+r_twitter["Super Taqueria"] = "https://twitter.com/SUPERTAQUERIA";
+r_twitter["Tacos Al Pastor"] = "https://twitter.com/search?q=Tacos%20Al%20Pastor&src=typed_query&f=user";
+r_twitter["Tacomania"] = "https://twitter.com/TacomaniaInc";
+r_twitter["Taqueria Revolucion"] = "https://twitter.com/taqueriarevo";
+r_twitter["Taco Bell"] = "https://twitter.com/tacobell";
+r_twitter["Chipotle"] = "https://twitter.com/ChipotleTweets";
+r_twitter["Baja Fresh"] = "https://twitter.com/BajaFresh";
+r_twitter["Tacos El Gordo"] = "https://twitter.com/tacoselgordo_";
+
+const r_instagram = {}; // Instagram Link
+r_instagram["La Victoria Taqueria"] = "https://www.instagram.com/la_victoria_taqueria/";
+r_instagram["Del Taco"] = "https://www.instagram.com/deltaco/";
+r_instagram["Super Taqueria"] = "https://www.instagram.com/explore/tags/supertaqueria/";
+r_instagram["Tacos Al Pastor"] = "https://www.instagram.com/tacosalpastoraz/";
+r_instagram["Tacomania"] = "https://www.instagram.com/tacomania_tuesdays/";
+r_instagram["Taqueria Revolucion"] = "https://www.instagram.com/taqueriarevolucion/";
+r_instagram["Taco Bell"] = "https://www.instagram.com/tacobell/";
+r_instagram["Chipotle"] = "https://www.instagram.com/chipotle/";
+r_instagram["Baja Fresh"] = "https://www.instagram.com/boldbajafresh/";
+r_instagram["Tacos El Gordo"] = "https://www.instagram.com/tacoselgordo_/";
+
+const r_homepage = {}; // Homepage Link
+r_homepage["La Victoria Taqueria"] = "http://www.lavicsj.com/";
+r_homepage["Del Taco"] = "https://www.deltaco.com/";
+r_homepage["Super Taqueria"] = "https://www.yelp.com/biz/super-taqueria-san-jose-2";
+r_homepage["Tacos Al Pastor"] = "http://www.tacosalpastorsj.com/";
+r_homepage["Tacomania"] = "http://tacomaniainc.com/";
+r_homepage["Taqueria Revolucion"] = "http://www.tacosrevo.com/";
+r_homepage["Taco Bell"] = "https://www.tacobell.com/";
+r_homepage["Chipotle"] = "https://www.chipotle.com/";
+r_homepage["Baja Fresh"] = "https://www.bajafresh.com/";
+r_homepage["Tacos El Gordo"] = "http://tacoselgordobc.com/";
+
+const r_destLink = {}; // Google Maps Link
+r_destLink["La Victoria Taqueria"] = "https://www.google.com/maps/place/La+Victoria+Taqueria/@37.3325636,-121.8865885,17z/data=!3m1!4b1!4m5!3m4!1s0x808fccb98b6102ad:0x2ed95c6808bbfb89!8m2!3d37.3325636!4d-121.8843945";
+r_destLink["Del Taco"] = "https://www.google.com/maps/place/Del+Taco/@37.4219081,-122.1466471,11z/data=!4m8!1m2!2m1!1sdel+taco+near+San+Jose,+CA!3m4!1s0x808fbe5aa0c37ee3:0xaf6736920900f846!8m2!3d37.5493295!4d-122.0497014";
+r_destLink["Super Taqueria"] = "https://www.google.com/maps/place/Super+Taqueria/@37.4217428,-122.1473344,11z/data=!4m8!1m2!2m1!1sSuper+Taqueria!3m4!1s0x808fccc88534a7b5:0x70c5d66b9b3a6ff6!8m2!3d37.3335299!4d-121.8754735";
+r_destLink["Tacos Al Pastor"] = "https://www.google.com/maps/place/Tacos+Al+Pastor/@37.4215775,-122.1480218,11z/data=!4m8!1m2!2m1!1sTacos+Al+Pastor!3m4!1s0x808fcb3b8b162283:0xebf2132e5c2e4c0a!8m2!3d37.3218344!4d-121.9316881";
+r_destLink["Tacomania"] = "https://www.google.com/maps/place/TacoMania/@37.4214122,-122.1487091,11z/data=!4m8!1m2!2m1!1sTacomania!3m4!1s0x808fcb6529d5c073:0xeb46af32e27ba7a4!8m2!3d37.3419758!4d-121.9100841";
+r_destLink["Taqueria Revolucion"] = "https://www.google.com/maps/place/Taqueria+Revolucion/@32.5995,-117.0849075,12z/data=!4m8!1m2!2m1!1sTaqueria+Revolucion!3m4!1s0x80d94e1922b614b5:0x63c9e144ca34a1cc!8m2!3d32.6483254!4d-117.059361";
+r_destLink["Taco Bell"] = "https://www.google.com/maps/place/Taco+Bell/@32.5994611,-117.085251,12z/data=!4m8!1m2!2m1!1staco+bell!3m4!1s0x80d94f927a68975d:0x4cf6500bd3803db!8m2!3d32.6448363!4d-116.9973748";
+r_destLink["Chipotle"] = "";
+r_destLink["Baja Fresh"] = "https://www.google.com/maps/place/Baja+Fresh/@33.456134,-117.8844184,10z/data=!3m1!5s0x80dcf39be9fa4765:0xb825fcec0f5c9db0!4m8!1m2!2m1!1sBaja+Fresh!3m4!1s0x80dcf39bc74e7727:0xdaafb871af0517e5!8m2!3d33.456134!4d-117.604267";
+r_destLink["Tacos El Gordo"] = "https://www.google.com/maps/place/TACOS+EL+GORDO/@33.4507492,-118.7289248,8z/data=!4m8!1m2!2m1!1sTacos+El+Gordo!3m4!1s0x80d94c3fb1b4efdb:0xcbcfc7b9de9d7480!8m2!3d32.5835364!4d-117.0629506";
+
 const r_pho = {} // Photos
 r_pho["La Victoria Taqueria"] = "https://unshelled-dev.s3-us-west-1.amazonaws.com/la-victoria-taqueria.jpg";
 r_pho["Del Taco"] = "https://unshelled-dev.s3-us-west-1.amazonaws.com/del-taco.jpg";
@@ -146,6 +206,8 @@ t_pho["Baja Taco"] = "https://unshelled-dev.s3-us-west-1.amazonaws.com/tacos/baj
 t_pho["Cabeza Taco"] = "https://unshelled-dev.s3-us-west-1.amazonaws.com/tacos/cabeza-taco.jpeg";
 
 
+
+
 const min_price = 1;
 const max_price = 5;
 
@@ -173,6 +235,11 @@ var restaurant_objs = restaurant_names.map((name, idx) => (
         description: r_des[name],
         location: r_loc[name],
         photo: r_pho[name],
+        facebookLink: r_facebook[name],
+        twitterLink: r_twitter[name],
+        homepageLink: r_homepage[name],
+        instagramLink: r_instagram[name],
+        destinationLink: r_destLink[name],
         tacos: []
     })
 ))

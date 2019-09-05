@@ -19,7 +19,6 @@ class RestaurantIndex extends React.Component {
             <div className="rest-index-right">
               <ul className="rest-index-list">
                 {data.restaurants.map((restaurant, i) => {
-            // debugger
 
 
                   let reviewArray = [];
@@ -27,7 +26,6 @@ class RestaurantIndex extends React.Component {
                   let reviewRating;
                   if (restaurant.reviews) {
                     restaurant.reviews.forEach(review => {
-                      // debugger
                       reviewArray.push(review.rating);
                     });
                     reviewSum = reviewArray.reduce((a, b) => a + b, 0);
@@ -171,16 +169,8 @@ if (reviewRating > 4.75) {
   );
 }
 
-
-
-
-
-
-
-
-
-
                   let tacos = restaurant.tacos.slice(0,2).map(taco => (
+
                     <Link 
                       className="rest-taco-link"
                       to={`/taco/${taco._id}`}>

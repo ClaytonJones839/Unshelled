@@ -14,6 +14,12 @@
     padding-bottom: 25px;
 }
 
+.taco-man {
+    width: 200px;
+    height: 200px;
+    margin-right: 70px;
+}
+
 .star-rev{
       font-weight: 900;
     font-family: 'Lexend Exa', sans-serif;
@@ -83,7 +89,6 @@
 .rest-show-like-btn:hover, .rest-show-like-image:hover {
     filter: brightness(0.8);
     cursor: pointer;
-    /* cursor: url("https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/emojipedia/132/taco_1f32e.png"), auto; */
 }
 
 .rest-show-r-bottom {
@@ -165,6 +170,11 @@
     justify-content: center;
     align-items: center;
     color: white;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
 }
 
 .fa-facebook-f:hover, 
@@ -307,7 +317,6 @@
 
 .rest-item-desc {
     font-size: 16px;
-    /* color: darkgray; */
     font-family: 'Roboto', sans-serif;
 }
 
@@ -447,9 +456,6 @@
     margin: 15px 0px;
 }
 
-/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
-   follow these rules. Every browser that supports :checked also supports :not(), so
-   it doesn’t make the test unnecessarily selective */
 .rating-stars:not(:checked) > input {
     position:absolute;
     top:-9999px;
@@ -525,5 +531,14 @@
     width: 150px;
     border-radius: 5px;
     font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.review-confirm {
+    margin-top: 5px;
+    width: 200px;
+    margin-left: 15px;
+    font-size: 16px;
+    font-weight: bold;
     font-family: 'Roboto', sans-serif;
 }

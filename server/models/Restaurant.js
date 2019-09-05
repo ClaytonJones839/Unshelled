@@ -18,6 +18,26 @@ const RestaurantSchema = new Schema({
         type: String,
         required: true
     },
+    facebookLink: {
+        type: String,
+        required: true
+    },
+    twitterLink: {
+        type: String,
+        required: true
+    },
+    instagramLink: {
+        type: String,
+        required: true
+    },
+    destinationLink: {
+        type: String,
+        required: true
+    },
+    homepageLink: {
+        type: String,
+        required: true
+    },
     tacos: [
         {
             type: Schema.Types.ObjectId,

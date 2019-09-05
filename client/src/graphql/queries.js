@@ -68,6 +68,11 @@ export default {
         description
         rating
         location
+        facebookLink
+        instagramLink
+        twitterLink
+        homepageLink
+        destinationLink
         photo
         tacos {
           _id

@@ -12,6 +12,11 @@ const RestaurantType = new GraphQLObjectType({
         description: { type: GraphQLString },
         rating: { type: GraphQLInt },
         location: { type: GraphQLString },
+        facebookLink: { type: GraphQLString },
+        twitterLink: { type: GraphQLString },
+        instagramLink: { type: GraphQLString },
+        homepageLink: { type: GraphQLString },
+        destinationLink: { type: GraphQLString },
         photo: { type: GraphQLString },
         tacos: {
             type: new GraphQLList(require("./taco_type")),
