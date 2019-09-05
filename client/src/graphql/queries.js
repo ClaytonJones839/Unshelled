@@ -3,42 +3,31 @@ import gql from "graphql-tag";
 
 export default {
   FETCH_TACOS: gql`
-    {
-      tacos {
-        _id
-        name
-        description
-        rating
-        price
-        photo
-        restaurant {
-          _id
-          name
-          description
+        {
+          tacos {
+            _id
+            name
+            description
+            rating
+            price
+            photo
+            restaurant {
+              _id
+              name
+              description
+            }
+          tacoCheckin {
+            _id
+            name
+            restaurant
+            description
+            rating
+          }
+          
+            
+          }
         }
-        tacoCheckin {
-          _id
-          name
-          restaurant
-          description
-          rating
-        }
-      }
-    }
-  `,
-
-  // FETCH_TACO_CHECKINS: gql`
-
-  //     query fetchTacoCheckins($id: ID!) {
-  //       tacoCheckins(_id: $id) {
-  //         _id
-  //         name
-  //         description
-  //         rating
-  //       }
-  //     }
-
-  // `,
+      `,
 
   IS_LOGGED_IN: gql`
     query IsUserLoggedIn {

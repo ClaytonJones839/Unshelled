@@ -9,7 +9,7 @@
     max-height: 740px;
     display: flex;
     flex-direction: column;
-    margin: 100px 20px 0px 20px;
+    margin: 100px 20px 100px 20px;
     overflow: auto;
     padding-bottom: 25px;
 }
@@ -24,6 +24,7 @@
   display: inline;
   font-weight: 600;
   font-family: 'Lexend Exa', sans-serif;
+
 }
 
 .new-taco-container {
@@ -143,8 +144,7 @@
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
     margin-left: 20px;
-    width: 450px;
-    height: 110px;
+    margin-bottom: 20px;
     overflow: auto;
     color: #999999;
 }
@@ -234,13 +234,19 @@
     justify-content: center;
     margin: 70px 20px 0px 20px;
     overflow: auto;
+}
 
-
+.review-form-text {
+    margin-left: 15px;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 16px;
 }
 
 .rest-index-right {
     background-color: white;
     width: 680px;
+    height: 80vh;
+    margin-bottom: 100px;
     padding-left: 20px;
     overflow: auto;
 }
@@ -271,7 +277,6 @@
 .rest-index-details {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-around; */
     width: 500px;
 }
 
@@ -435,4 +440,90 @@
     font-weight: bold;
     text-decoration: none;
     color: black;
+}
+
+.rating-stars {
+    float:right;
+    margin: 15px 0px;
+}
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating-stars:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+.rating-stars:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+    color:#ddd;
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating-stars:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rating-stars > input:checked ~ label {
+    color: #FFCC01;
+    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating-stars:not(:checked) > label:hover,
+.rating-stars:not(:checked) > label:hover ~ label {
+    color: #FFCC01;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating-stars > input:checked + label:hover,
+.rating-stars > input:checked + label:hover ~ label,
+.rating-stars > input:checked ~ label:hover,
+.rating-stars > input:checked ~ label:hover ~ label,
+.rating-stars > label:hover ~ input:checked ~ label {
+    color: #FFCC01;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating-stars > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+
+.inner-review-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-review-form {
+    width: 200px;
+}
+
+.review-form-textarea {
+    float: right;
+    width: 225px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    resize: none;
+    height: 40px;
+}
+
+.create-review-btn {
+    margin-left: 15px;
+    background-color: #FFCC01;
+    color: white;
+    height: 25px;
+    width: 150px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
 }
