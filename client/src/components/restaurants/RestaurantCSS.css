@@ -9,13 +9,13 @@
     max-height: 550px;
     display: flex;
     flex-direction: column;
-    margin: 100px 20px 0px 20px;
+    margin: 100px 20px 100px 20px;
     overflow: auto;
     padding-bottom: 25px;
 }
 
 .star-rev{
-  font-weight: 600
+    font-weight: 600
 }
 
 .new-taco-container {
@@ -237,6 +237,7 @@
     background-color: white;
     width: 680px;
     height: 80vh;
+    margin-bottom: 100px;
     padding-left: 20px;
     overflow: auto;
 }
