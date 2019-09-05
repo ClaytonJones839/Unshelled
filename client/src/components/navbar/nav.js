@@ -26,6 +26,7 @@ const Nav = (props) => {
                             {
                                 ({ loading, error, data }) => {
                                     if (loading) return <p>Loading</p>;
+                                    console.log("hello");
                                     if (error) return <p>Error</p>;
                                     console.log(data);
                                     if (data.isLoggedIn) {
