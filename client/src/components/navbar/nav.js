@@ -10,7 +10,7 @@ const Nav = (props) => {
         <ApolloConsumer>
             
             {client => {
-                debugger;
+                // debugger;
                 return (
                     <div className="navbar-container">
                         <nav className="navbar">
