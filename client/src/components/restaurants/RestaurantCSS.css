@@ -15,13 +15,13 @@
 }
 
 .taco-man {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     margin-right: 70px;
 }
 
 .star-rev{
-      font-weight: 900;
+    font-weight: 900;
     font-family: 'Lexend Exa', sans-serif;
     font-size: 13px;
 }
