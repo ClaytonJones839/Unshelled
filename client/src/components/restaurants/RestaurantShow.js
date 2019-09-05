@@ -203,9 +203,12 @@ class RestaurantShow extends Component {
                               src={data.restaurant.photo}></img>
                             <div className="rest-show-details">
                               <div className="rest-show-name">{data.restaurant.name}</div>
-                              <div className="rest-show-location">{data.restaurant.location}</div>
-                              {/* <div className="rest-show-rating">
-                                Rating: {reviewRating}</div> */}
+                              <a
+                                href={data.restaurant.destinationLink}
+                                target="_blank"
+                              >
+                                <div className="rest-show-location">{data.restaurant.location}</div>
+                              </a>
                               {stars}
                             </div>
                           </div>
@@ -218,10 +221,30 @@ class RestaurantShow extends Component {
                             </div>
                             <div className="rest-show-social">
                               <div className="social-top">
-                                <i class='fab fa-facebook-f'></i>
-                                <i class='fab fa-twitter'></i>
-                                <i class='fab fa-instagram'></i>
-                                <i class='fas fa-link'></i>
+                                <a
+                                  href={data.restaurant.facebookLink}
+                                  target="_blank"
+                                >
+                                  <i class='fab fa-facebook-f'></i>
+                                </a>
+                                <a
+                                  href={data.restaurant.twitterLink}
+                                  target="_blank"
+                                >
+                                  <i class='fab fa-twitter'></i>
+                                </a>
+                                <a
+                                  href={data.restaurant.instagramLink}
+                                  target="_blank"
+                                >
+                                  <i class='fab fa-instagram'></i>
+                                </a>
+                                <a
+                                  href={data.restaurant.homepageLink}
+                                  target="_blank"
+                                >
+                                  <i class='fas fa-link'></i>
+                                </a>
                               </div>
                               <div className="add-taco-flex"
                                   onClick={e => {

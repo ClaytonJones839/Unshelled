@@ -95,6 +95,7 @@ class TacoNew extends Component {
               onSubmit={e => this.handleSubmit(e, newTaco)}
               className="inner-taco-form"
             >
+              <div className="taco-inner-left">
               <input
                 className="taco-form-input"
                 onChange={this.update("name")}
@@ -132,8 +133,14 @@ class TacoNew extends Component {
                 type="submit">
                   Create Taco
               </button>
+              </div>
+              <div className="taco-inner-right">
+                <img 
+                className="taco-man"
+                src="https://previews.123rf.com/images/larryrains/larryrains1606/larryrains160601376/57935346-taco-with-thumbs-up.jpg"/>
+              </div>
             </form>
-            <p>{this.state.message}</p>
+            <div className="review-confirm">{this.state.message}</div>
           </div>
         )}
       </Mutation>

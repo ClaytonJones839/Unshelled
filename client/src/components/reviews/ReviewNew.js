@@ -140,7 +140,7 @@ class ReviewNew extends Component {
                 Create Review
               </button>
             </form>
-            <p>{this.state.message}</p>
+            <div className="review-confirm">{this.state.message}</div>
           </div>
         )}
       </Mutation>
