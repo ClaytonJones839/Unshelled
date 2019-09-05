@@ -5,10 +5,19 @@ import ApolloClient from "apollo-client";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { createHttpLink } from "apollo-link-http";
 import { ApolloProvider } from "react-apollo";
-// import { onError } from "apollo-link-error";
+import { onError } from "apollo-link-error";
 // import { ApolloLink } from "apollo-link";
 import Mutations from "./graphql/mutations"; 
+// import { persistCache } from 'apollo-cache-persist';
+// import AsyncStorage from '@react-native-community/async-storage';
+
 import "./css/loader.css";
+
+const cache = new InMemoryCache({
+  dataIdFromObject: object => object._id || null
+});
+
+
 
 const httpLink = createHttpLink({
   uri: "http://localhost:5000/graphql",
@@ -17,17 +26,15 @@ const httpLink = createHttpLink({
     authorization: localStorage.getItem("auth-token")
   }
 });
+
 // make sure we log any additional errors we receive
+const errorLink = onError(({ graphQLErrors }) => {
+  if (graphQLErrors) graphQLErrors.map(({ message }) => console.log(message));
+});
+
+
 const { VERIFY_USER } = Mutations;
 // if we have a token we want to verify the user is actually logged in
-const token = localStorage.getItem("auth-token");
-
-const cache = new InMemoryCache({
-  dataIdFromObject: object => object._id || null
-});
-// const errorLink = onError(({ graphQLErrors }) => {
-//   if (graphQLErrors) graphQLErrors.map(({ message }) => console.log(message));
-// });
 
 const client = new ApolloClient({
   link: httpLink,
@@ -35,17 +42,20 @@ const client = new ApolloClient({
   onError: ({ networkError, graphQLErrors }) => {
     console.log("graphQLErrors", graphQLErrors);
     console.log("networkError", networkError);
-  }
+  },
+  connectToDevTools: true
 });
+
+const token = localStorage.getItem("auth-token");
 
 // to avoid components async problems where
 // a component would try to read the cache's value of isLoggedIn
 // before our mutation goes through we can set it up here
 cache.writeData({
   data: {
-    isLoggedIn: Boolean(token),
-    id: "",
-    banana: "baannana"
+    isLoggedIn: !Boolean(token),
+
+    banana: "banana"
   }
 });
 
@@ -56,14 +66,23 @@ if (token) {
     // user is loggedIn
     .mutate({ mutation: VERIFY_USER, variables: { token } })
     .then(({ data }) => {
+      debugger;
       cache.writeData({
         data: {
+          _id: data.verifyUser.id,
           isLoggedIn: data.verifyUser.loggedIn,
-          cart: []
+          cart: [],
+          firstName: data.verifyUser.firstName,
+          lastName: data.verifyUser.lastName,
+          photo: data.verifyUser.photo
         }
       });
     });
-  debugger;
+    // await persistCache({
+    //   cache,
+    //   storage: window.localStorage,
+    // });
+  // debugger;
 } else {
   // otherwise we can just set isLoggedIn to false
   cache.writeData({

@@ -8,32 +8,36 @@ const { IS_LOGGED_IN } = Queries;
 const Nav = (props) => {
     return (
         <ApolloConsumer>
-            {client => (
-                <div className="navbar-container">
-                    <nav className="navbar">
-                        <div className="leftside-nav">
-                            <div className="nav-logo">
-                                <Link to="/" className="nav-logo-title">Unshelled</Link>
-                                <span className="nav-logo-span">Eat Socially</span>
+            
+            {client => {
+                // debugger;
+                return (
+                    <div className="navbar-container">
+                        <nav className="navbar">
+                            <div className="leftside-nav">
+                                <div className="nav-logo">
+                                    <Link to="/" className="nav-logo-title">Unshelled</Link>
+                                    <span className="nav-logo-span">Eat Socially</span>
+                                </div>
+                                <div className="navlink">
+                                    <Link className="navlink-item" to="/restaurants">Restaurants</Link>
+                                </div>
                             </div>
-                            <div className="navlink">
-                                <Link className="navlink-item" to="/restaurants">Restaurants</Link>
-                            </div>
-                        </div>
                                 
                         
-                        <Query query={IS_LOGGED_IN}>
-                            {
-                                ({ loading, error, data }) => {
-                                    if (loading) return <p>Loading</p>;
-                                    console.log("hello");
-                                    if (error) return <p>Error</p>;
-                                    console.log(data);
-                                    if (data.isLoggedIn) {
-                                        return (
-                                            <div className="rightside-nav">
-                                                <div className="nav-dropdown">
-                                                    <img className="nav-avatar" src={data.photo} alt=""/>
+                            <Query query={IS_LOGGED_IN}>
+                                {
+                                    ({ loading, error, data }) => {
+
+                                        if (loading) return <p>Loading</p>;
+                                        console.log("hello");
+                                        if (error) return <p>Error</p>;
+                                        console.log(data);
+                                        if (data.isLoggedIn) {
+                                            return (
+                                                <div className="rightside-nav">
+                                                    <div className="nav-dropdown">
+                                                        <img className="nav-avatar" src={data.photo} alt="" />
 
                                                         <div className="dropdown-content">
                                                             <ul className="dropdown-list">
@@ -47,38 +51,38 @@ const Nav = (props) => {
                                                                 }}>Logout</div>
                                                             </ul>
                                                         </div>
-                                                </div>
+                                                    </div>
                                                 
-                                                <p></p>
+                                                    <p></p>
 
-                                                <div className="searchbar-container">
-                                                    <input type="text" placeholder="Search for tacos"></input>
+                                                    <div className="searchbar-container">
+                                                        <input type="text" placeholder="Search for tacos"></input>
+                                                    </div>
+
+                                                    <button
+                                                        className="logout-btn"
+                                                        onClick={e => {
+                                                            e.preventDefault();
+                                                            localStorage.removeItem("auth-token");
+                                                            client.writeData({ data: { isLoggedIn: false } });
+                                                            props.history.push("/login");
+                                                        }}
+                                                    > Logout </button>
                                                 </div>
-
-                                                <button
-                                                    className="logout-btn"
-                                                    onClick={e => {
-                                                        e.preventDefault();
-                                                        localStorage.removeItem("auth-token");
-                                                        client.writeData({ data: { isLoggedIn: false } });
-                                                        props.history.push("/login");
-                                                    }}
-                                                        > Logout </button>
-                                            </div>
-                                    );
-                                    } else {
+                                            );
+                                        } else {
                                             return (
                                                 <div className="rightside-nav">
                                                     <Link to="/login" className="nav-login"> Login </Link>
                                                 </div>
-                                        );
+                                            );
+                                        }
                                     }
                                 }
-                            }
-                        </Query>
-                    </nav>
-                </div>
-            )}
+                            </Query>
+                        </nav>
+                    </div>
+                )}}
         </ApolloConsumer>
     );
     

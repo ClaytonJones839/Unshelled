@@ -5,12 +5,18 @@ const { GraphQLObjectType, GraphQLString, GraphQLID, GraphQLList, GraphQLInt } =
 const Review = mongoose.model("reviews");
 
 const ReviewType = new GraphQLObjectType({
-    name: "ReviewType",
-    fields: () => ({
-        _id: { type: GraphQLID },
-        body: { type: GraphQLString },
-        rating: { type: GraphQLInt },
-    })
+  name: "ReviewType",
+  fields: () => ({
+    _id: { type: GraphQLID },
+    body: { type: GraphQLString },
+    rating: { type: GraphQLInt },
+    restaurant: {
+      type: require("./restaurant_type"),
+      resolve(parentValue) {
+        return Review.findRestaurant(parentValue._id);
+      }
+    }
+  })
 });
 
 module.exports = ReviewType;

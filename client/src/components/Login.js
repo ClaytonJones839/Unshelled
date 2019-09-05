@@ -21,9 +21,11 @@ export default class Login extends Component {
 
     updateCache(client, { data }) {
         // console.log(data.login);
+        debugger;
         client.writeData({
-            data: { isLoggedIn: data.login.loggedIn, id: data.login._id, photo: data.login.photo}
+            data: { isLoggedIn: data.login.loggedIn, id: data.login._id, photo: data.login.photo, firstName: data.login.firstName, lastName: data.login.lastName }
         });
+        debugger;
     }
 
 
@@ -33,7 +35,9 @@ export default class Login extends Component {
                 mutation={Mutations.LOGIN_USER}
                 onCompleted={data => {
                     const { token } = data.login;
+                    // console.log()
                     localStorage.setItem("auth-token", token);
+                    console.log(localStorage);
                     this.props.history.push("/");
                 }}
                 update={(client, data) => this.updateCache(client, data)}
