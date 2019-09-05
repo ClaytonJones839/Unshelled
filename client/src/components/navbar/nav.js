@@ -12,7 +12,7 @@ const Nav = (props) => {
             
             {client => {
                 // debugger;
-                // console.log("helllllllllo");
+
                 return (
                     <div className="navbar-container">
                         <nav className="navbar">
