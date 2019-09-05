@@ -6,7 +6,7 @@ export default {
     login(email: $email, password: $password) {
       token
       _id
-      loggedIn
+      isLoggedIn
       photo
       firstName
       lastName
@@ -15,8 +15,8 @@ export default {
   VERIFY_USER: gql`
   mutation VerifyUser($token: String!) {
     verifyUser(token: $token) {
-      id
-      loggedIn
+      _id
+      isLoggedIn
       firstName
       lastName
       photo
@@ -41,7 +41,7 @@ export default {
         photo: $photo
       ) {
         token
-        loggedIn
+        isLoggedIn
         _id
         photo
       }

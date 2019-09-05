@@ -22,12 +22,12 @@ const TacoCheckinType = new GraphQLObjectType({
         //         return TacoCheckin.findRestaurant(parentValue._id)
         //     }
         // },
-        taco: {
-            type: require("./taco_type"),
-            resolve(parentValue) {
-                return Taco.findById
-            }
-        },
+        // taco: {
+        //     type: require("./taco_type"),
+        //     resolve(parentValue) {
+        //         return Taco.findById
+        //     }
+        // },
         // user: {
         //     type: require("./user_type"),
         //     resolve(parentValue) {
