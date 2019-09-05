@@ -120,16 +120,7 @@ const verifyUser = async data => {
             const _id = id;
 
             // debugger;
-<<<<<<< HEAD
-            console.log(loggedIn)
-            console.log(id)
-            console.log(firstName)
-            console.log(lastName)
-            console.log(photo)
-            return { loggedIn, id, firstName, lastName, photo }
-=======
             return { isLoggedIn, _id, firstName, lastName, photo }
->>>>>>> 2a01665c511dcd3c5394ad03f7ae7bfc58da6e36
         }
         
     } catch (err) {
