@@ -60,13 +60,141 @@ class RestaurantShow extends Component {
                     data.restaurant.reviews.forEach(review => {
                       reviewArray.push(review.rating)
                     }
-                      );
-                      reviewSum = reviewArray.reduce((a, b) => a + b, 0);
-                      reviewRating = reviewSum / reviewArray.length;
+                    );
+                    reviewSum = reviewArray.reduce((a, b) => a + b, 0);
+                    reviewRating = reviewSum / reviewArray.length;
                   } else {
                     reviewRating = <div>0</div>
                   }
 
+
+                  let stars;
+                  if (reviewRating > 4.75) {
+                    // 5
+                    stars = (
+                      <div>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+                    );
+                  } else if (reviewRating > 4.25) {
+                    //4.5
+                    stars = (
+                      <div>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                      </div>
+                    );
+                  } else if (reviewRating > 3.75) {
+                    // 4
+                    stars = (
+                      <div>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+                    );
+                  } else if (reviewRating > 3.25) {
+                    //3.5
+                    stars = (
+                      <div>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+                    );
+                  } else if (reviewRating > 2.75) {
+                    // 3
+                    stars = (
+                      <div>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+                    );
+                  } else if (reviewRating > 2.25) {
+                    //2.5
+                    stars = (
+                      <div>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+                    );
+                  } else if (reviewRating > 1.75) {
+                    // 2
+                    stars = (
+                      <div>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+                    );
+                  } else if (reviewRating > 1.25) {
+                    // 1.5
+                    stars = (
+                      <div>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+                    );
+                  } else if (reviewRating > 0.75) {
+                    // 1
+                    stars = (
+                      <div>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+                    );
+                  } else if (reviewRating > 0) {
+                    // 0.5
+                    stars = (
+                      <div>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+                    );
+                  } else {
+                    // 0
+                    stars = (
+                      <div>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <p className="star-rev">Be the first to review!</p>
+                      </div>
+                    );
+                  } 
+                  
+                  
+       
                     return (
                       <div className="rest-show-page">
                         <div className="rest-show-left">
@@ -76,8 +204,9 @@ class RestaurantShow extends Component {
                             <div className="rest-show-details">
                               <div className="rest-show-name">{data.restaurant.name}</div>
                               <div className="rest-show-location">{data.restaurant.location}</div>
-                              <div className="rest-show-rating">
-                                Rating: {reviewRating}</div>
+                              {/* <div className="rest-show-rating">
+                                Rating: {reviewRating}</div> */}
+                              {stars}
                             </div>
                           </div>
 

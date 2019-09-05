@@ -14,11 +14,11 @@ import ReviewNew from './reviews/ReviewNew';
 import { Route, HashRouter } from 'react-router-dom';
 import Footer from "./footer/footer";
 
-const App = () => {
+const App = (props) => {
   return (
       <HashRouter>
         <Route exact path="/restaurants" component={RestaurantIndex} />
-        <Route path="/" component={Nav} />
+        <Nav />
         <Route exact path="/" component={TacoIndex} />
         <Route exact path="/newrestaurant" component={RestaurantNew} />
         <Route exact path="/restaurant/:id" component={RestaurantShow} />

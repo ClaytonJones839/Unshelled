@@ -48,7 +48,7 @@ const register = async data => {
 
         const token = jwt.sign({ id: user._id }, keys);
 
-        return { token, loggedIn: true, ...user._doc, password: null };
+        return { token, isLoggedIn: true, ...user._doc, password: null };
     } catch (err) {
         throw err;
     }
@@ -63,7 +63,7 @@ const logout = async data => {
 
         const token = "";
 
-        return { token, loggedIn: false, ...user._doc, password: null };
+        return { token, isLoggedIn: false, ...user._doc, password: null };
     } catch (err) {
         throw err;
     }
@@ -85,9 +85,9 @@ const login = async data => {
         const isValidPassword = await bcrypt.compareSync(password, user.password);
         if (!isValidPassword) throw new Error("Invalid password");
         // debugger;
-        const token = jwt.sign({ id: user.id }, keys);
+        const token = jwt.sign({ id: user._id }, keys);
 
-        return { token, loggedIn: true, ...user._doc, password: null };
+        return { token, isLoggedIn: true, ...user._doc, password: null };
     } catch (err) {
         throw err;
     }
@@ -95,15 +95,16 @@ const login = async data => {
 
 const verifyUser = async data => {
     try {
+        console.log(data);
         const { token } = data;
         const decoded = jwt.verify(token, keys);
         const { id } = decoded;
 
-        const loggedIn = await User.findById(id).then(user => {
+        const isLoggedIn = await User.findById(id).then(user => {
             return user ? true : false;
         });
 
-        if (loggedIn) {
+        if (isLoggedIn) {
             const firstName = await User.findById(id).then(user => {
                 return user.firstName;
             });
@@ -116,15 +117,23 @@ const verifyUser = async data => {
                 return user.photo;
             });
 
-            // const id = await (id).then(id => {
-            //     return id;
-            // });
+            const _id = id;
+
             // debugger;
+<<<<<<< HEAD
+            console.log(loggedIn)
+            console.log(id)
+            console.log(firstName)
+            console.log(lastName)
+            console.log(photo)
             return { loggedIn, id, firstName, lastName, photo }
+=======
+            return { isLoggedIn, _id, firstName, lastName, photo }
+>>>>>>> 2a01665c511dcd3c5394ad03f7ae7bfc58da6e36
         }
         
     } catch (err) {
-        return { loggedIn: false };
+        return { isLoggedIn: false };
     }
 };
 
