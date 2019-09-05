@@ -3,23 +3,65 @@ import { Link } from "react-router-dom";
 import React, { Component } from "react";
 import { Query } from "react-apollo";
 import Queries from "../../graphql/queries";
-const { FETCH_TACO } = Queries;
+import Modal from "./TacoModal";
+const { FETCH_TACO, IS_LOGGED_IN } = Queries;
 
 
 class TacoShow extends Component {
 
-   
+    state = { show: false };
+
+    showModal = () => {
+        this.setState({ show: true });
+    };
+
+    hideModal = () => {
+        this.setState({ show: false });
+    };
+
 
     render() {
         // debugger;
-          return (
+
+        return (
+            // tacotime,
+            // random
+
             // there we are getting the `id` for our query from React Router
             <Query query={FETCH_TACO} variables={{ id: this.props.match.params.id }}>
-            {({ loading, error, data }) => {
-                if (loading) return <p>Loading...</p>;
-                if (error) return <p>Error</p>;
-                // debugger;
+            {({ loading: loadingOne, error, data }) => {
+                if (loadingOne) return <p>Loading...</p>
+                    // debugger;
+                            
                 return (
+                <Query query={IS_LOGGED_IN}>
+                    {({ loading: loadingTwo, error, data: rdata }) => {
+                if (loadingTwo) return <p>Loading...</p>;
+                if (error) return <p>Error</p>;
+                            console.log(data);
+                            console.log(rdata);
+                let tacoCheckins;
+                            // debugger;
+                tacoCheckins = data.taco.tacoCheckin.map((checkin) => {
+                    return (
+                        <div className="taco-checkin-box">
+                            <div className="profile-pic">prof pic</div>
+                            <div className="checkin-info">
+                                <Link>{rdata.firstName} {rdata.lastName.slice(0, 1)}</Link> is eating a 
+                                <Link to={`/tacoshow/${data.taco._id}`}> {data.taco.name}</Link> by
+                                <Link to={`/restaurant/${data.taco.restaurant._id}`}> {data.taco.restaurant.name}</Link>
+                            </div>
+                            
+                            <div className="description-and-rating">{checkin.description}</div>
+                            <div className="taco-pic">taco pic</div>
+                        </div>
+                    )
+                });
+                // debugger;
+                            // console.log(rdata);
+                            // console.log(data);
+                return (
+                    
                   <div className="detail">
                     <div className="center-boxes">
                       <div className="taco-info-box">
@@ -34,9 +76,9 @@ class TacoShow extends Component {
                             </div>
                             {/* <div className="taco-description">{data.taco.description}</div> */}
                             <div className="taco-style">{data.taco.style}</div>
-                            <div className="taco-rating">
+                            {/* <div className="taco-rating">
                               {data.taco.rating}
-                            </div>
+                            </div> */}
                             {/* <div className="taco-price">{data.taco.price}</div> */}
                             {/* <div>{data.taco.restaurant._id}</div> */}
                             {/* <div className="restaurant-location">{data.taco.restaurant.location}</div> */}
@@ -50,7 +92,7 @@ class TacoShow extends Component {
                         </div>
 
                         <div className="info-bar">
-                          <div className="rating">Avg rating</div>
+                          <div className="rating">Avg rating: {data.taco.rating}</div>
                           <div className="total-ratings">Ratings</div>
                         </div>
 
@@ -59,7 +101,26 @@ class TacoShow extends Component {
                             Description: {data.taco.description}
                           </div>
                           <div className="taco-buttons">
-                            <button className="check-in">✓</button>
+                              
+                                        
+                        
+                            <Modal show={this.state.show} handleClose={this.hideModal}>
+                                <p>Modal</p>
+                                <p>Data</p>
+                            </Modal>
+                            <button className="check-in" onClick={this.showModal}>✓</button>
+
+                                        
+                        
+                            {/* <div id="myModal" className="modal">            
+                            <div className="modal-content">
+                                <span class="close">&times;</span>
+                                <p>Some text in the Modal..</p>
+                            </div> */}
+
+                            {/* </div> */}
+                            
+                                        
                             <button className="add-to-list">+</button>
                           </div>
                         </div>
@@ -70,7 +131,7 @@ class TacoShow extends Component {
                       <div className="taco-activity-box">
                         <div className="header">Global Recent Activity</div>
                         <div className="activity-box">
-                          activity box index goes here
+                          {tacoCheckins}
                         </div>
                         <div className="footer">
                           <button className="show-more">Show More</button>
@@ -118,10 +179,14 @@ class TacoShow extends Component {
                           </div>
                         </div>
                       </div>
+                      
+                            {/* <div>{rdata.firstName}</div> */}
                     </div>
                   </div>
                 );
-            }}
+                        }}
+                </Query>)      
+    }}
             </Query>
         );
     }

@@ -2,22 +2,26 @@ import gql from "graphql-tag";
 
 export default {
   LOGIN_USER: gql`
-    mutation LoginUser($email: String!, $password: String!) {
-      login(email: $email, password: $password) {
-        token
-        _id
-        loggedIn
-        photo
-      }
+  mutation LoginUser($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      token
+      _id
+      loggedIn
+      photo
+      firstName
+      lastName
     }
-  `,
+  }`,
   VERIFY_USER: gql`
-    mutation VerifyUser($token: String!) {
-      verifyUser(token: $token) {
-        loggedIn
-      }
+  mutation VerifyUser($token: String!) {
+    verifyUser(token: $token) {
+      _id
+      loggedIn
+      firstName
+      lastName
+      photo
     }
-  `,
+  }`,
 
   REGISTER_USER: gql`
     mutation RegisterUser(
@@ -129,5 +133,17 @@ export default {
         location
       }
     }
+  `,
+
+  NEW_TACO_CHECKIN: gql`
+    mutation NewTacoCheckin($name: String, $description: String, $rating: Int) {
+      newTacoCheckin(name: $name, description: $description, rating: $rating) {
+        _id
+        name
+        description
+        rating
+      }
+    }
   `
+
 };

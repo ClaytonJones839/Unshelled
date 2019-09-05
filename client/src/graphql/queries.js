@@ -16,14 +16,39 @@ export default {
               name
               description
             }
+          tacoCheckin {
+            _id
+            name
+            restaurant
+            description
+            rating
+          }
+          
+            
           }
         }
       `,
+  
+  // FETCH_TACO_CHECKINS: gql`
+    
+  //     query fetchTacoCheckins($id: ID!) {
+  //       tacoCheckins(_id: $id) {
+  //         _id
+  //         name
+  //         description
+  //         rating
+  //       }
+  //     }
+    
+  // `,
+
   IS_LOGGED_IN: gql`
     query IsUserLoggedIn {
       isLoggedIn @client
       id @client
       photo @client
+      firstName @client
+      lastName @client
     }
 
   `,
@@ -81,6 +106,14 @@ export default {
           _id
           name
           location
+
+        }
+        tacoCheckin {
+          _id
+          name
+          restaurant
+          description
+          rating
         }
       }
     }
@@ -123,6 +156,13 @@ export default {
         username
         email
         photo
+        tacoCheckin {
+          _id
+          name
+          restaurant
+          description
+          rating
+        }
       }
     }
   `
