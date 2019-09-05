@@ -78,6 +78,7 @@ class RestaurantShow extends Component {
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
+                        <p className="star-div"> ({reviewArray.length})</p>
                       </div>
                     );
                   } else if (reviewRating > 4.25) {
@@ -89,6 +90,7 @@ class RestaurantShow extends Component {
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
+                        <p className="star-div"> ({reviewArray.length})</p>
                       </div>
                     );
                   } else if (reviewRating > 3.75) {
@@ -100,6 +102,7 @@ class RestaurantShow extends Component {
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="far fa-star"></i>
+                        <p className="star-div"> ({reviewArray.length})</p>
                       </div>
                     );
                   } else if (reviewRating > 3.25) {
@@ -111,17 +114,19 @@ class RestaurantShow extends Component {
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                         <i class="far fa-star"></i>
+                        <p className="star-div"> ({reviewArray.length})</p>
                       </div>
                     );
                   } else if (reviewRating > 2.75) {
                     // 3
                     stars = (
-                      <div>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
+                      <div>    
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="far fa-star"></i>
+                          <i class="far fa-star"></i>
+                          <p className="star-div"> ({reviewArray.length})</p>
                       </div>
                     );
                   } else if (reviewRating > 2.25) {
@@ -133,6 +138,7 @@ class RestaurantShow extends Component {
                         <i class="fas fa-star-half-alt"></i>
                         <i class="far fa-star"></i>
                         <i class="far fa-star"></i>
+                        <p className="star-div"> ({reviewArray.length})</p>
                       </div>
                     );
                   } else if (reviewRating > 1.75) {
@@ -144,6 +150,7 @@ class RestaurantShow extends Component {
                         <i class="far fa-star"></i>
                         <i class="far fa-star"></i>
                         <i class="far fa-star"></i>
+                        <p className="star-div"> ({reviewArray.length})</p>
                       </div>
                     );
                   } else if (reviewRating > 1.25) {
@@ -155,6 +162,7 @@ class RestaurantShow extends Component {
                         <i class="far fa-star"></i>
                         <i class="far fa-star"></i>
                         <i class="far fa-star"></i>
+                        <p className="star-div"> ({reviewArray.length})</p>
                       </div>
                     );
                   } else if (reviewRating > 0.75) {
@@ -166,6 +174,7 @@ class RestaurantShow extends Component {
                         <i class="far fa-star"></i>
                         <i class="far fa-star"></i>
                         <i class="far fa-star"></i>
+                        <p className="star-div"> ({reviewArray.length})</p>
                       </div>
                     );
                   } else if (reviewRating > 0) {
@@ -177,6 +186,7 @@ class RestaurantShow extends Component {
                         <i class="far fa-star"></i>
                         <i class="far fa-star"></i>
                         <i class="far fa-star"></i>
+                        <p className="star-div"> ({reviewArray.length})</p>
                       </div>
                     );
                   } else {
@@ -188,6 +198,7 @@ class RestaurantShow extends Component {
                         <i class="far fa-star"></i>
                         <i class="far fa-star"></i>
                         <i class="far fa-star"></i>
+                        <p className="star-div"> ({reviewArray.length})</p>
                         <p className="star-rev">Be the first to review!</p>
                       </div>
                     );
