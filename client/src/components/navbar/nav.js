@@ -12,7 +12,7 @@ const Nav = (props) => {
             
             {client => {
                 // debugger;
-                // console.log("helllllllllo");
+
                 return (
                     <div className="navbar-container">
                         <nav className="navbar">
@@ -30,7 +30,7 @@ const Nav = (props) => {
                             <Query query={IS_LOGGED_IN}>
                                 {
                                     ({ loading, error, data }) => {
-                                        debugger;
+                                        // debugger;
                                         if (loading) return <p>Loading</p>;
                                         // console.log("hello");
                                         if (error) return <p>Error</p>;

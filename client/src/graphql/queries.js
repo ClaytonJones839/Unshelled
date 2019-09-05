@@ -28,19 +28,6 @@ export default {
           }
         }
       `,
-  
-  // FETCH_TACO_CHECKINS: gql`
-    
-  //     query fetchTacoCheckins($id: ID!) {
-  //       tacoCheckins(_id: $id) {
-  //         _id
-  //         name
-  //         description
-  //         rating
-  //       }
-  //     }
-    
-  // `,
 
   IS_LOGGED_IN: gql`
     query IsUserLoggedIn {
@@ -50,23 +37,27 @@ export default {
       firstName @client
       lastName @client
     }
-
   `,
 
- FETCH_RESTAURANTS: gql`
-  {
-    restaurants {
-      _id
-      name
-      description
-      location
-      photo
-      tacos {
+  FETCH_RESTAURANTS: gql`
+    {
+      restaurants {
         _id
         name
+        description
+        location
+        photo
+        tacos {
+          _id
+          name
+        }
+        reviews {
+          _id
+          body
+          rating
+        }
       }
     }
-  }
   `,
 
   FETCH_RESTAURANT: gql`
@@ -90,8 +81,8 @@ export default {
         }
       }
     }
-    `,
-  
+  `,
+
   FETCH_TACO: gql`
     query fetchTaco($id: ID!) {
       taco(_id: $id) {
@@ -106,7 +97,6 @@ export default {
           _id
           name
           location
-
         }
         tacoCheckin {
           _id
@@ -117,34 +107,34 @@ export default {
         }
       }
     }
-    `,
+  `,
 
   FETCH_REVIEW: gql`
-  query fetchReview($id: ID!) {
-    review(_id: $id) {
-      _id
-      body
-      rating
-      restaurant {
+    query fetchReview($id: ID!) {
+      review(_id: $id) {
         _id
-        name
+        body
+        rating
+        restaurant {
+          _id
+          name
+        }
       }
     }
-  }
   `,
 
   FETCH_REVIEWS: gql`
-  {
-    reviews {
-      _id
-      body
-      rating
-      restaurant {
+    {
+      reviews {
         _id
-        name
+        body
+        rating
+        restaurant {
+          _id
+          name
+        }
       }
     }
-  }
   `,
 
   FETCH_USER: gql`
@@ -166,6 +156,5 @@ export default {
       }
     }
   `
-  
-}
+};
 
