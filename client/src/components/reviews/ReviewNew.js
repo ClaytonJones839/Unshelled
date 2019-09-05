@@ -78,7 +78,7 @@ class ReviewNew extends Component {
               onSubmit={e => this.handleSubmit(e, newReview)}
               className="inner-review-form"
             >
-              <fieldset class="rating">
+              <fieldset class="rating-stars">
                 <input
                   onChange={this.update("rating")}
                   type="radio"

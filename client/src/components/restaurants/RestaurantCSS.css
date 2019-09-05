@@ -432,7 +432,7 @@
     color: black;
 }
 
-.rating {
+.rating-stars {
     float:right;
     margin: 15px 0px;
 }
@@ -440,13 +440,13 @@
 /* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
    follow these rules. Every browser that supports :checked also supports :not(), so
    it doesn’t make the test unnecessarily selective */
-.rating:not(:checked) > input {
+.rating-stars:not(:checked) > input {
     position:absolute;
     top:-9999px;
     clip:rect(0,0,0,0);
 }
 
-.rating:not(:checked) > label {
+.rating-stars:not(:checked) > label {
     float:right;
     width:1em;
     padding:0 .1em;
@@ -459,31 +459,31 @@
     text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
 }
 
-.rating:not(:checked) > label:before {
+.rating-stars:not(:checked) > label:before {
     content: '★ ';
 }
 
-.rating > input:checked ~ label {
+.rating-stars > input:checked ~ label {
     color: #FFCC01;
     text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
 }
 
-.rating:not(:checked) > label:hover,
-.rating:not(:checked) > label:hover ~ label {
+.rating-stars:not(:checked) > label:hover,
+.rating-stars:not(:checked) > label:hover ~ label {
     color: #FFCC01;
     text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
 }
 
-.rating > input:checked + label:hover,
-.rating > input:checked + label:hover ~ label,
-.rating > input:checked ~ label:hover,
-.rating > input:checked ~ label:hover ~ label,
-.rating > label:hover ~ input:checked ~ label {
+.rating-stars > input:checked + label:hover,
+.rating-stars > input:checked + label:hover ~ label,
+.rating-stars > input:checked ~ label:hover,
+.rating-stars > input:checked ~ label:hover ~ label,
+.rating-stars > label:hover ~ input:checked ~ label {
     color: #FFCC01;
     text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
 }
 
-.rating > label:active {
+.rating-stars > label:active {
     position:relative;
     top:2px;
     left:2px;
