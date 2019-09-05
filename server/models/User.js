@@ -30,8 +30,16 @@ const UserSchema = new Schema({
     },
     photo: {
         type: String
-    }
+    },
+    tacoCheckin: [{
+        type: Schema.Types.ObjectId,
+        ref: "tacoCheckins"
+    }]
 });
+
+UserSchema.statics.findTacoCheckins = function (userId) {
+    return this.findById(userId).populate("tacoCheckin").then(user => user.tacoCheckin)
+}
 
 module.exports = mongoose.model("users", UserSchema);
 

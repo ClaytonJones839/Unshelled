@@ -1,5 +1,8 @@
 const graphql = require("graphql");
-const { GraphQLObjectType, GraphQLString, GraphQLID, GraphQLBoolean } = graphql;
+const mongoose = require("mongoose");
+const { GraphQLObjectType, GraphQLString, GraphQLID, GraphQLBoolean, GraphQLList } = graphql;
+const Taco = mongoose.model("tacos");
+const User = mongoose.model("users");
 
 const UserType = new GraphQLObjectType({
     name: "UserType",
@@ -11,7 +14,13 @@ const UserType = new GraphQLObjectType({
         email: { type: GraphQLString },
         token: { type: GraphQLString },
         loggedIn: { type: GraphQLBoolean },
-        photo: { type: GraphQLString }
+        photo: { type: GraphQLString },
+        tacoCheckin: {
+            type: new GraphQLList(require("./checkin_type")),
+            resolve(parentValue) {
+                return User.findTacoCheckins(parentValue._id)
+            }
+        }
     }
 });
 

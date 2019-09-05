@@ -5,11 +5,14 @@ const { GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLID } = graphql;
 const UserType = require("./types/user_type");
 const RestaurantType = require("./types/restaurant_type");
 const TacoType = require("./types/taco_type");
+const TacoCheckinType = require("./types/checkin_type");
 
 const AuthService = require("./services/auth");
 
+const User = mongoose.model("users");
 const Taco = mongoose.model("tacos");
 const Restaurant = mongoose.model("restaurants");
+const TacoCheckin = mongoose.model("tacoCheckins");
 
 const mutation = new GraphQLObjectType({
     name: "Mutation",
@@ -73,6 +76,42 @@ const mutation = new GraphQLObjectType({
                 })
             }
         },
+
+        newTacoCheckin: {
+            type: TacoCheckinType,
+            args: {
+                name: { type: GraphQLString },
+                description: { type: GraphQLString },
+                rating: { type: GraphQLInt },
+                tacoId: { type: GraphQLID },
+                userId: {type: GraphQLID}
+                // restaurant: { type: GraphQLString },
+                // user: {type: GraphQLString}
+            },
+            resolve(_, { description, rating, tacoId, userId }) {
+                console.log(tacoId);
+                return Taco.findById(tacoId).then((taco) => {
+                    let name = taco.name;
+                    let restaurant = taco.restaurant;
+
+                    return User.findById(userId).then((user) => {
+                        
+                    
+                        let tacoCheckin = new TacoCheckin({ name, restaurant, description, rating });
+                        taco.tacoCheckin.push(tacoCheckin._id);
+                        user.tacoCheckin.push(tacoCheckin._id);
+
+                        return tacoCheckin.save().then(() => {
+                            taco.save();
+                            user.save();
+                            return tacoCheckin;
+                        })
+                    })
+                })
+                // return new TacoCheckin({ name, description, rating }).save();
+            }
+        },
+
         deleteTaco: {
             type: TacoType,
             args: { _id: { type: GraphQLID } },
@@ -90,6 +129,18 @@ const mutation = new GraphQLObjectType({
                 return Taco.updateTacoRestaurant(tacoId, restaurantId);
             }
         },
+
+        updateTacoCheckin: {
+            type: TacoType,
+            args: {
+                tacoId: { type: GraphQLID },
+                tacoCheckinId: {type: GraphQLID}
+            },
+            resolve(_, { tacoId, tacoCheckinId }) {
+                return Taco.updateTacoCheckin(tacoId, tacoCheckinId);
+            }
+        },
+
         newRestaurant: {
             type: RestaurantType,
             args: {

@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
 const graphql = require("graphql");
-const { GraphQLObjectType, GraphQLString, GraphQLID, GraphQLInt, GraphQLFloat } = graphql;
+const { GraphQLObjectType, GraphQLString, GraphQLID, GraphQLInt, GraphQLFloat, GraphQLList } = graphql;
 
 const Taco = mongoose.model("tacos");
+const TacoCheckin = mongoose.model("tacoCheckins");
 const Restaurant = mongoose.model('restaurants');
 
 const TacoType = new GraphQLObjectType({
@@ -19,6 +20,12 @@ const TacoType = new GraphQLObjectType({
             type: require("./restaurant_type"),
             resolve(parentValue) {
                 return Taco.findRestaurant(parentValue._id)
+            }
+        },
+        tacoCheckin: {
+            type: new GraphQLList(require("./checkin_type")),
+            resolve(parentValue) {
+                return Taco.findTacoCheckins(parentValue._id)
             }
         }
 
