@@ -10,7 +10,7 @@ class Footer extends React.Component {
             <footer className="unshelled-footer">
                 <div className="footer-nav">
                     <div className="footer-inner">
-                        <ul>
+                        <ul className="footer-top">
                             <li>
                                 <Link to="/">Home</Link>
                             </li>

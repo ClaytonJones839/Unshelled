@@ -189,6 +189,14 @@
     border-radius: 4px;
 }
 
+.taco-form-desc {
+    width: 50%;
+    height: 20px;
+    margin: 5px 0px 0px 20px;
+    border-radius: 4px;
+    font-family: 'Lexend Exa', sans-serif;
+}
+
 .taco-form-textarea {
     resize: none;
     width: 50%;

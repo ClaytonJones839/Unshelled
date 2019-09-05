@@ -6,7 +6,7 @@
 .rest-show-left {
     box-sizing: border-box;
     width: 740px;
-    max-height: 550px;
+    max-height: 740px;
     display: flex;
     flex-direction: column;
     margin: 100px 20px 100px 20px;
@@ -15,8 +15,16 @@
 }
 
 .star-rev{
-    font-family: 'Roboto', sans-serif;
-    font-weight: 600
+      font-weight: 900;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 13px;
+}
+
+.star-div {
+  display: inline;
+  font-weight: 600;
+  font-family: 'Lexend Exa', sans-serif;
+
 }
 
 .new-taco-container {
