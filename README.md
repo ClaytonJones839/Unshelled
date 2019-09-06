@@ -2,9 +2,9 @@
 Unshelled is a web application focuses on helping it's users find the best taco's in their area. Unshelled is inspired from the popular site [Untapped](https://untappd.com). User's are able to search for resturants in their area that serve tacos. User's are also able to review the tacos, leave reviews, and check-in to show others where they have been!
 test
 
-![Image description](./client/public/rest_index.png)
-![Image description](link-to-image)
-![Image description](link-to-image)
+![Restaurant Index Page](./client/public/rest_index.png)
+![Restaurant Page](./client/public/rest_show.png)
+![Login Page](./client/public/login.png)
 
 
 ## Team Members
