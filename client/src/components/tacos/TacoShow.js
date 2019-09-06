@@ -31,7 +31,7 @@ class TacoShow extends Component {
             <Query query={FETCH_TACO} variables={{ id: this.props.match.params.id }}>
             {({ loading: loadingOne, error, data }) => {
                 if (loadingOne) return <p>Loading...</p>
-                    // debugger;
+                    debugger;
                             
                 return (
                 <Query query={IS_LOGGED_IN}>

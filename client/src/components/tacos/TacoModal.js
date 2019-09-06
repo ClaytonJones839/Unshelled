@@ -1,6 +1,7 @@
 import React, { Component, useState } from "react";
 import { Mutation } from "react-apollo";
 import Mutations from "../../graphql/mutations";
+import Queries from "../../graphql/queries";
 import { Link } from "react-router-dom";
 
 const Modal = ({ handleClose, show, children, userId, tacoId }) => {
@@ -12,6 +13,26 @@ const Modal = ({ handleClose, show, children, userId, tacoId }) => {
   
   const [rating, setRating] =
     useState("");
+  
+  // updateCache(cache, data) {
+  //   let taco;
+  //   try {
+  //     taco = cache.readQuery({ query: Mutations.FETCH_TACO, variables: {tacoId}})
+  //   } catch (err) {
+  //     return;
+  //   }
+  //   const newTacoCheckinToCache = data.data.taco.newTacoCheckin;
+
+  //   if (taco) {
+  //     const tacoCheckinArray = taco.taco.tacoCheckin;
+  //     cache.writeQuery({
+  //       query: FETCH_TACO,
+  //       variables: { tacoId },
+  //       data: { taco: tacoCheckinArray.concat(newTacoCheckinToCache) }
+  //     });
+  //   }
+  // }
+  
   // debugger;
   return (
     <div className={showHideClassName}>
@@ -23,6 +44,31 @@ const Modal = ({ handleClose, show, children, userId, tacoId }) => {
 
         <Mutation
           mutation={Mutations.NEW_TACO_CHECKIN}
+          update={(cache, data) => {
+            let taco;
+            // let tacooos;
+            // debugger;
+            // tacooos = cache.readQuery({ query: Mutations.FETCH_TACOS });
+            // console.log(tacooos);
+            // debugger;
+            try {
+              taco = cache.readQuery({ query: Queries.FETCH_TACO, variables: {id: tacoId} });
+              // debugger;
+            } catch (err) {
+              return;
+            }
+            const newTacoCheckinToCache = data.data.newTacoCheckin;
+
+            if (taco) {
+              debugger;
+              const tacoCheckinArray = taco.taco.tacoCheckin;
+              cache.writeQuery({
+                query: Queries.FETCH_TACO,
+                variables: { id: tacoId },
+                data: { taco: tacoCheckinArray.concat(newTacoCheckinToCache) }
+              });
+            }
+          }}
           variables={{}}
           onCompleted={data => {
             debugger;
