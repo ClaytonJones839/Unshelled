@@ -57,7 +57,7 @@ r_des["Tacos Al Pastor"] = "Filling burritos, enchiladas & other Mexican favorit
 r_des["Tacomania"] = "Bare-bones food truck turning out tacos & casual Latin American favorites on paper plates.";
 r_des["Taqueria Revolucion"] = "Popular taqueria offering familiar Mexican eats in an easygoing space with counter service.";
 r_des["Taco Bell"] = "Fast-food chain serving Mexican-inspired fare such as tacos, quesadillas & nachos.";
-r_des["Chipotle"] = "Fast-food chain offering Mexican fare, including design-your-own burritos, tacos & bowls.";
+// r_des["Chipotle"] = "Fast-food chain offering Mexican fare, including design-your-own burritos, tacos & bowls.";
 r_des["Baja Fresh"] = "Mexican fast-food chain featuring fish tacos, burritos, quesadillas & other Baja-inspired entrees.";
 r_des["Tacos El Gordo"] = "No-frills Mexican counter-serve joint featuring Tijuana tacos, mulas, loaded fries & more.";
 
@@ -69,7 +69,7 @@ r_loc["Tacos Al Pastor"] = "San Jose, California";
 r_loc["Tacomania"] = "San Jose, California";
 r_loc["Taqueria Revolucion"] = "San Diego, California";
 r_loc["Taco Bell"] = "Pleasanton, California";
-r_loc["Chipotle"] = "Tampa Bay, Florida";
+// r_loc["Chipotle"] = "Tampa Bay, Florida";
 r_loc["Baja Fresh"] = "Sacramento, California";
 r_loc["Tacos El Gordo"] = "Las Vegas, Nevada";
 
@@ -81,7 +81,7 @@ r_facebook["Tacos Al Pastor"] = "https://www.facebook.com/tacosalpastorak/";
 r_facebook["Tacomania"] = "https://www.facebook.com/tacomaniastreettacos/?__tn__=%2Cd%2CP-R&eid=ARD0cL6DKYBZs8ZpZAhmNBpubBl44P14LwjZQsPcMmPxnr9NQKzMfaV28nqAJUEMsmRI6mvnZHYkpdcJ";
 r_facebook["Taqueria Revolucion"] = "https://www.facebook.com/Taqueria-Revolucion-286261074849851/?__tn__=%2Cd%2CP-R&eid=ARDhCAmbK1suuSc97j5CT7CD7sc1tQg2iM6-ON_lYQPIJr79z6W7QAvbRwmn6cV7p2GjTSNITf6b4Ga8";
 r_facebook["Taco Bell"] = "https://www.facebook.com/tacobell/";
-r_facebook["Chipotle"] = "https://www.facebook.com/chipotle/";
+// r_facebook["Chipotle"] = "https://www.facebook.com/chipotle/";
 r_facebook["Baja Fresh"] = "https://www.facebook.com/bajafresh/";
 r_facebook["Tacos El Gordo"] = "https://www.facebook.com/tacoselgordobc/";
 
@@ -93,7 +93,7 @@ r_twitter["Tacos Al Pastor"] = "https://twitter.com/search?q=Tacos%20Al%20Pastor
 r_twitter["Tacomania"] = "https://twitter.com/TacomaniaInc";
 r_twitter["Taqueria Revolucion"] = "https://twitter.com/taqueriarevo";
 r_twitter["Taco Bell"] = "https://twitter.com/tacobell";
-r_twitter["Chipotle"] = "https://twitter.com/ChipotleTweets";
+// r_twitter["Chipotle"] = "https://twitter.com/ChipotleTweets";
 r_twitter["Baja Fresh"] = "https://twitter.com/BajaFresh";
 r_twitter["Tacos El Gordo"] = "https://twitter.com/tacoselgordo_";
 
@@ -105,7 +105,7 @@ r_instagram["Tacos Al Pastor"] = "https://www.instagram.com/tacosalpastoraz/";
 r_instagram["Tacomania"] = "https://www.instagram.com/tacomania_tuesdays/";
 r_instagram["Taqueria Revolucion"] = "https://www.instagram.com/taqueriarevolucion/";
 r_instagram["Taco Bell"] = "https://www.instagram.com/tacobell/";
-r_instagram["Chipotle"] = "https://www.instagram.com/chipotle/";
+// r_instagram["Chipotle"] = "https://www.instagram.com/chipotle/";
 r_instagram["Baja Fresh"] = "https://www.instagram.com/boldbajafresh/";
 r_instagram["Tacos El Gordo"] = "https://www.instagram.com/tacoselgordo_/";
 
@@ -117,7 +117,7 @@ r_homepage["Tacos Al Pastor"] = "http://www.tacosalpastorsj.com/";
 r_homepage["Tacomania"] = "http://tacomaniainc.com/";
 r_homepage["Taqueria Revolucion"] = "http://www.tacosrevo.com/";
 r_homepage["Taco Bell"] = "https://www.tacobell.com/";
-r_homepage["Chipotle"] = "https://www.chipotle.com/";
+// r_homepage["Chipotle"] = "https://www.chipotle.com/";
 r_homepage["Baja Fresh"] = "https://www.bajafresh.com/";
 r_homepage["Tacos El Gordo"] = "http://tacoselgordobc.com/";
 
@@ -129,7 +129,7 @@ r_destLink["Tacos Al Pastor"] = "https://www.google.com/maps/place/Tacos+Al+Past
 r_destLink["Tacomania"] = "https://www.google.com/maps/place/TacoMania/@37.4214122,-122.1487091,11z/data=!4m8!1m2!2m1!1sTacomania!3m4!1s0x808fcb6529d5c073:0xeb46af32e27ba7a4!8m2!3d37.3419758!4d-121.9100841";
 r_destLink["Taqueria Revolucion"] = "https://www.google.com/maps/place/Taqueria+Revolucion/@32.5995,-117.0849075,12z/data=!4m8!1m2!2m1!1sTaqueria+Revolucion!3m4!1s0x80d94e1922b614b5:0x63c9e144ca34a1cc!8m2!3d32.6483254!4d-117.059361";
 r_destLink["Taco Bell"] = "https://www.google.com/maps/place/Taco+Bell/@32.5994611,-117.085251,12z/data=!4m8!1m2!2m1!1staco+bell!3m4!1s0x80d94f927a68975d:0x4cf6500bd3803db!8m2!3d32.6448363!4d-116.9973748";
-r_destLink["Chipotle"] = "";
+// r_destLink["Chipotle"] = "";
 r_destLink["Baja Fresh"] = "https://www.google.com/maps/place/Baja+Fresh/@33.456134,-117.8844184,10z/data=!3m1!5s0x80dcf39be9fa4765:0xb825fcec0f5c9db0!4m8!1m2!2m1!1sBaja+Fresh!3m4!1s0x80dcf39bc74e7727:0xdaafb871af0517e5!8m2!3d33.456134!4d-117.604267";
 r_destLink["Tacos El Gordo"] = "https://www.google.com/maps/place/TACOS+EL+GORDO/@33.4507492,-118.7289248,8z/data=!4m8!1m2!2m1!1sTacos+El+Gordo!3m4!1s0x80d94c3fb1b4efdb:0xcbcfc7b9de9d7480!8m2!3d32.5835364!4d-117.0629506";
 
@@ -141,7 +141,7 @@ r_pho["Tacos Al Pastor"] = "https://unshelled-dev.s3-us-west-1.amazonaws.com/tac
 r_pho["Tacomania"] = "https://unshelled-dev.s3-us-west-1.amazonaws.com/tacomania.jpg";
 r_pho["Taqueria Revolucion"] = "https://unshelled-dev.s3-us-west-1.amazonaws.com/taqueria-revolucion.jpg";
 r_pho["Taco Bell"] = "https://unshelled-dev.s3-us-west-1.amazonaws.com/taco-bell.jpeg";
-r_pho["Chipotle"] = "https://unshelled-dev.s3-us-west-1.amazonaws.com/chipotle.jpg";
+// r_pho["Chipotle"] = "https://unshelled-dev.s3-us-west-1.amazonaws.com/chipotle.jpg";
 r_pho["Baja Fresh"] = "https://unshelled-dev.s3-us-west-1.amazonaws.com/baja-fresh.jpg";
 r_pho["Tacos El Gordo"] = "https://unshelled-dev.s3-us-west-1.amazonaws.com/tacos-el-gordo.jpg";
 
