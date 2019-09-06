@@ -23,7 +23,9 @@ class TopTacos extends React.Component {
                                 <div className="top-rest-border"></div>
                                     {data.tacos.map((taco, i) => {
                                         return (
-                                            <div className="top-taco-item">
+                                            <div 
+                                                key={`${taco.name}`}
+                                            className="top-taco-item">
                                                 <img alt="" src={taco.photo} className="top-taco-image"></img>
                                                 <div className="top-taco-details">
                                                     <div className="top-taco-top">

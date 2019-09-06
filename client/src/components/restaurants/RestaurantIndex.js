@@ -3,7 +3,6 @@ import Queries from "../../graphql/queries";
 import { Link } from "react-router-dom";
 import { Query } from "react-apollo";
 import TopTacos from "./TopTacos"
-import RestaurantCSS from "./RestaurantCSS.css"
 const { FETCH_RESTAURANTS } = Queries;
 
 class RestaurantIndex extends React.Component {
@@ -173,13 +172,16 @@ if (reviewRating > 4.75) {
                   let tacos = restaurant.tacos.slice(0,2).map(taco => (
 
                     <Link 
+                      key={`${taco.name}`}
                       className="rest-taco-link"
                       to={`/taco/${taco._id}`}>
                       {taco.name}
                     </Link>
                   ))
                 return (
-                  <div className="rest-index-item">
+                  <div 
+                    key={`${restaurant.name}`}
+                    className="rest-index-item">
                     <div className="rest-item-top2">
                       <img
                         className="rest-index-image"
