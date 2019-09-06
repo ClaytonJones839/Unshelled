@@ -52,7 +52,7 @@ const Modal = ({ handleClose, show, children, userId, tacoId }) => {
             // console.log(tacooos);
             // debugger;
             try {
-              taco = cache.readQuery({ query: Queries.FETCH_TACO, variables: {id: tacoId} });
+              taco = cache.readQuery({ query: Queries.FETCH_TACO, variables: { id: tacoId } });
               // debugger;
             } catch (err) {
               return;
@@ -60,24 +60,27 @@ const Modal = ({ handleClose, show, children, userId, tacoId }) => {
             const newTacoCheckinToCache = data.data.newTacoCheckin;
 
             if (taco) {
-              debugger;
-              const tacoCheckinArray = taco.taco.tacoCheckin;
+              // debugger;
+              // let tacoCheckinArray;
+              // tacoCheckinArray = taco.taco.tacoCheckin;
+              taco.taco.tacoCheckin.push(newTacoCheckinToCache);
+
               cache.writeQuery({
                 query: Queries.FETCH_TACO,
                 variables: { id: tacoId },
-                data: { taco: tacoCheckinArray.concat(newTacoCheckinToCache) }
+                data: { taco: taco.taco }
               });
             }
           }}
           variables={{}}
           onCompleted={data => {
-            debugger;
-            // const { token } = data.login;
-            // console.log("wof", data);
-            // localStorage.setItem("auth-token", token);
-            // // console.log(localStorage);
-            // this.props.history.push("/");
+            // debugger;
+            // console.log(data);
+            // console.log(handleClose);
+            return handleClose();
           }}
+
+          // onCompleted={handleClose}
           // update={(client, data) => this.updateCache(client, data)}
         >
           {newTacoCheckin => (

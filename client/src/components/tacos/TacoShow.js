@@ -105,7 +105,7 @@ class TacoShow extends Component {
                               
                                         
                         
-                            <Modal tacoId={this.props.match.params.id} userId={rdata._id} show={this.state.show} handleClose={this.hideModal}>
+                            <Modal tacoId={this.props.match.params.id} userId={rdata._id} show={this.state.show} handleClose={this.hideModal.bind(this)}>
                                 
                             </Modal>
                             <button className="check-in" onClick={this.showModal}>✓</button>

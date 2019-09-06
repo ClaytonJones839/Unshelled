@@ -142,6 +142,9 @@ export default {
         name
         description
         rating
+        taco {
+          _id
+        }
       }
     }
   `

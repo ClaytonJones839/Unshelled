@@ -53,8 +53,12 @@ const TacoCheckinSchema = new Schema({
 //     });
 // };
 
-TacoCheckinSchema.statics.findRestaurant = function (tacoCheckinId) {
-    return this.findById(tacoCheckinId).populate("restaurant").then(tacoCheckin => tacoCheckin.restaurant)
+// TacoCheckinSchema.statics.findRestaurant = function (tacoCheckinId) {
+//     return this.findById(tacoCheckinId).populate("restaurant").then(tacoCheckin => tacoCheckin.restaurant)
+// }
+
+TacoCheckinSchema.statics.findTaco = function (tacoId) {
+    return this.findById(tacoId).populate("taco").then(tacoCheckin => tacoCheckin.taco)
 }
 
 // TacoCheckinSchema.statics.findTacoCheckins = function (tacoCheckinId) {
