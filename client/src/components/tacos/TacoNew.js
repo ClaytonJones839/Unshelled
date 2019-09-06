@@ -114,7 +114,7 @@ class TacoNew extends Component {
                 className="taco-form-input"
                 onChange={this.update("price")}
                 value={this.state.price}
-                placeholder="0.00"
+                placeholder="&#36;0.00"
               />
               <div className="taco-form-desc">Photo Url</div>
               <input
