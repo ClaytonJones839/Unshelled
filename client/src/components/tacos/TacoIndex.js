@@ -3,7 +3,6 @@ import React from 'react';
 import Queries from '../../graphql/queries';
 import { withRouter, Link } from "react-router-dom";
 import { Query } from 'react-apollo';
-import TacoCSS from "./Taco.css";
 import TopRestaurants from "./TopRestaurants"
 const { FETCH_TACOS } = Queries;
 
@@ -26,9 +25,9 @@ class TacoIndex extends React.Component {
               
               let rating;
               if (taco.rating) {
-                rating = <li key={`${taco.rating}`}>Rating: {taco.rating} / 5</li>;
+                rating = <li key={`${taco.name}`}>Rating: {taco.rating} / 5</li>;
               } else {
-                rating = <li>No Reviews Yet!</li>
+                rating = <li key={`${taco.name}`}>No Reviews Yet!</li>
               }
 
               let price;
@@ -51,7 +50,9 @@ class TacoIndex extends React.Component {
               
 
               return (
-                <div className="taco-index-item">
+                <div
+                  key={`${taco.name}`}
+                  className="taco-index-item">
                   <img 
                   alt=""
                   src={taco.photo}

@@ -77,7 +77,7 @@
     display: block;
     padding: 10px 0;
     text-align: center;
-    color: #fff;
+    color: black;
     background-color: #ffcc00;
     font-size: 18px;
     -webkit-border-radius: 4px;
@@ -329,6 +329,7 @@ a {
 
 .rest-item-taco-list {
     margin-left: 30px;
+    margin-bottom: 5px;
     display: flex;
     flex-direction: column;
     list-style: none;
@@ -419,10 +420,6 @@ a {
     background-color: white;
 }
 
-.rest-taco-item {
-    display: flex;
-}
-
 .rest-taco-photo {
     width: 75px;
     height: 75px;
@@ -435,6 +432,13 @@ a {
     display: flex;
     align-items: center;
 }
+
+.rest-taco-item:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+
 
 .rest-taco-feat {
     font-family: 'Lexend Exa', sans-serif;
@@ -527,13 +531,17 @@ a {
 .create-review-btn {
     margin-left: 15px;
     background-color: #FFCC01;
-    color: white;
+    color: black;
     height: 25px;
     width: 150px;
     border-radius: 5px;
     font-size: 16px;
     outline: none;
     font-family: 'Roboto', sans-serif;
+}
+.create-review-btn:hover {
+    cursor: pointer;
+    filter: brightness(0.8)
 }
 
 .review-confirm {
