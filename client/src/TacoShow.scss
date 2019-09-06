@@ -15,17 +15,18 @@ div {
             border: 1px solid black;
             background-color: white;
             font-size: 20px;
-            height: 280px;
+            min-height: 280px;
             width: 690px;
             margin-bottom: 15px;
 
-
             .header {
                 border: 1px solid black;
-                height: 145px;
+                min-height: 145px;
                 // width: 400px;
                 // float: right;
                 display: flex;
+                // resize: vertical;
+                // overflow: auto;
 
                 .logo-box {
                     border: 1px solid black;
@@ -34,10 +35,13 @@ div {
                 }
                 
                 .taco-info {
-                    border: 1px solid black;
+                    border: 1px solid red;
                     width: 350px;
+                    // height: 200px;
                     padding-left: 10px;
                     // float: right;
+                    // resize: vertical;
+                    // overflow: auto;
 
                     .taco-name {
                         // background-color: white;
@@ -45,6 +49,9 @@ div {
                         font-size: 32px;
                         margin-top: 15px;
                         font-weight: 425;
+                        // min-height: 20px;
+                        // resize: vertical;
+                        // overflow: auto;
                     }
 
                     .restaurant-name {
@@ -89,6 +96,12 @@ div {
                         width: 93px;
                         padding-left: 5px;
                         float: left;
+
+                        .total-number {
+                            font-size: 24px;
+                            font-weight: 500;
+
+                        }
                     }
 
                     .unique {
@@ -97,6 +110,12 @@ div {
                         width: 93px;
                         padding-left: 5px;
                         float: right;
+
+                        .unique-number {
+                            font-size: 24px;
+                            font-weight: 500;
+
+                        }
                     }
 
                     .monthly {
@@ -106,6 +125,12 @@ div {
                         padding-left: 5px;
                         padding-top: 4px;
                         float: left;
+
+                        .monthly-number {
+                            font-size: 24px;
+                            font-weight: 500;
+
+                        }
                     }
 
                     .you {
@@ -115,12 +140,18 @@ div {
                         padding-left: 5px;
                         padding-top: 4px;
                         float: right;
+
+                        .you-number {
+                            font-size: 24px;
+                            font-weight: 500;
+
+                        }
                     }
                 }
             }
 
             .info-bar {
-                border: 1px solid black;
+                border: 1px solid green;
                 height: 48px;
                 padding-left: 13px;
                 display: flex;
@@ -148,17 +179,19 @@ div {
 
             .description {
                 border: 1px solid red;
-                height: 67px;
+                min-height: 67px;
                 color: gray;
                 font-size: 17px;
                 font-weight: 500;
                 display: flex;
                 margin-left: 11px;
                 padding-top: 15px;
+                // resize: vertical;
 
                 .description-text {
                     border: 1px solid black;
                     width: 550px;
+                    // resize: vertical;
                 }
 
                 .taco-buttons {
@@ -334,7 +367,8 @@ div {
 
                     .checkin-info {
                         border: 1px solid black;
-                        height: 40px;
+                        // min-height: 40px;
+                        padding-bottom: 20px;
                         width: 500px;
                         margin-left: 6px;
 
