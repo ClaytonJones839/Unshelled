@@ -3,6 +3,7 @@ import Queries from "../../graphql/queries";
 import { Link } from "react-router-dom";
 import { Query } from "react-apollo";
 import TopTacos from "./TopTacos"
+import RestaurantCSS from "./RestaurantCSS.css"
 const { FETCH_RESTAURANTS } = Queries;
 
 class RestaurantIndex extends React.Component {

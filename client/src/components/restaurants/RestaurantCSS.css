@@ -532,6 +532,7 @@ a {
     width: 150px;
     border-radius: 5px;
     font-size: 16px;
+    outline: none;
     font-family: 'Roboto', sans-serif;
 }
 

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Query } from "react-apollo";
 import Queries from "../../graphql/queries";
-// import RestaurantCSS from "./RestaurantCSS.css"
+import RestaurantCSS from "./RestaurantCSS.css"
 import { Link } from "react-router-dom";
 import TacoNew from '../tacos/TacoNew';
 import ReviewNew from '../reviews/ReviewNew';
@@ -326,62 +326,8 @@ class RestaurantShow extends Component {
                             <img src="http://blog.fuzzystacoshop.com/wp-content/uploads/2015/07/fuzzys_1631-300x200.jpg" className="rest-show-like-image"></img>
                               <img src="https://www.ocregister.com/wp-content/uploads/2019/09/Rams-Cementing-Cornerstone-Football-1.jpg?w=552" className="rest-show-like-image"></img>
                             <img src="https://i.pinimg.com/originals/ee/c3/db/eec3dbbadb5adfc8e18a8ef811cfe337.jpg" className="rest-show-like-image"></img>
-
                             </div>
                           </div>
-                          <div className="rest-show-r-mid">
-                            <button className="rest-show-like-btn">
-                              Like This Restaurant
-                            </button>
-                          </div>
-                          <div className="rest-show-r-bottom">
-                            <img
-                              alt=""
-                              src="https://cdn.shopify.com/s/files/1/2584/0356/products/taco_800x.jpg?v=1537876074"
-                              className="rest-show-like-image"
-                            ></img>
-                            <img
-                              alt=""
-                              src="https://cdn.shopify.com/s/files/1/2584/0356/products/taco_800x.jpg?v=1537876074"
-                              className="rest-show-like-image"
-                            ></img>
-                            <img
-                              alt=""
-                              src="https://cdn.shopify.com/s/files/1/2584/0356/products/taco_800x.jpg?v=1537876074"
-                              className="rest-show-like-image"
-                            ></img>
-                            <img
-                              alt=""
-                              src="https://cdn.shopify.com/s/files/1/2584/0356/products/taco_800x.jpg?v=1537876074"
-                              className="rest-show-like-image"
-                            ></img>
-                            <img
-                              alt=""
-                              src="https://cdn.shopify.com/s/files/1/2584/0356/products/taco_800x.jpg?v=1537876074"
-                              className="rest-show-like-image"
-                            ></img>
-                            <img
-                              alt=""
-                              src="https://cdn.shopify.com/s/files/1/2584/0356/products/taco_800x.jpg?v=1537876074"
-                              className="rest-show-like-image"
-                            ></img>
-                            <img
-                              alt=""
-                              src="https://cdn.shopify.com/s/files/1/2584/0356/products/taco_800x.jpg?v=1537876074"
-                              className="rest-show-like-image"
-                            ></img>
-                            <img
-                              alt=""
-                              src="https://cdn.shopify.com/s/files/1/2584/0356/products/taco_800x.jpg?v=1537876074"
-                              className="rest-show-like-image"
-                            ></img>
-                            <img
-                              alt=""
-                              src="https://cdn.shopify.com/s/files/1/2584/0356/products/taco_800x.jpg?v=1537876074"
-                              className="rest-show-like-image"
-                            ></img>
-                          </div>
-                        </div>
                       </div>
                     );
                 }}

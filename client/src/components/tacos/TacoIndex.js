@@ -3,7 +3,7 @@ import React from 'react';
 import Queries from '../../graphql/queries';
 import { withRouter, Link } from "react-router-dom";
 import { Query } from 'react-apollo';
-// import TacoCSS from "./Taco.css";
+import TacoCSS from "./Taco.css";
 import TopRestaurants from "./TopRestaurants"
 const { FETCH_TACOS } = Queries;
 
