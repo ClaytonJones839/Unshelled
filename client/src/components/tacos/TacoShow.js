@@ -32,7 +32,7 @@ class TacoShow extends Component {
             <Query query={FETCH_TACO} variables={{ id: this.props.match.params.id }}>
             {({ loading: loadingOne, error, data }) => {
                 if (loadingOne) return <p>Loading...</p>
-                    debugger;
+                    // debugger;
                             
                 return (
                                 <Query query={IS_LOGGED_IN}>
@@ -49,7 +49,7 @@ class TacoShow extends Component {
                             // console.log(data);
                             console.log("string", rdata);
                 let tacoCheckins;
-                            debugger;
+                            // debugger;
                 tacoCheckins = data.taco.tacoCheckin.map((checkin) => {
                     return (
                         <div className="taco-checkin-box">
@@ -70,6 +70,7 @@ class TacoShow extends Component {
                       debugger;
                 let totalCheckins;
                 totalCheckins = tacoCheckins.length; 
+                
                 let userCheckins;
                 userCheckins = [];
                 udata.user.tacoCheckin.forEach(checkin => {
@@ -77,6 +78,15 @@ class TacoShow extends Component {
                     userCheckins.push(checkin);
                   }
                 });
+                      
+                let uniqueCheckins;
+                uniqueCheckins = {};
+                data.taco.tacoCheckin.forEach(checkin => {
+                  if (!uniqueCheckins[checkin.user._id]) {
+                    uniqueCheckins[checkin.user._id] = true;
+                  }
+                })
+                      
                 // debugger;
                             // console.log(rdata);
                             // console.log(data);
@@ -110,7 +120,7 @@ class TacoShow extends Component {
                               <div className="total-number">{totalCheckins}</div>
                             </div>
                             <div className="unique">UNIQUE
-                              <div className="unique-number">{totalCheckins}</div>
+                              <div className="unique-number">{Object.keys(uniqueCheckins).length}</div>
                             </div>
                             <div className="monthly">MONTHLY
                               <div className="monthly-number">{totalCheckins}</div>
