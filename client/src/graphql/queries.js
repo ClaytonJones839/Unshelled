@@ -19,7 +19,9 @@ export default {
           tacoCheckin {
             _id
             name
-            restaurant
+            taco {
+              _id
+            }
             description
             rating
           }
@@ -106,7 +108,17 @@ export default {
         tacoCheckin {
           _id
           name
-          restaurant
+          taco {
+            _id
+            photo
+          }
+          user {
+            _id
+            photo
+            tacoCheckin {
+              _id
+            }
+          }
           description
           rating
         }
@@ -154,7 +166,9 @@ export default {
         tacoCheckin {
           _id
           name
-          restaurant
+          taco {
+            _id
+          }
           description
           rating
         }

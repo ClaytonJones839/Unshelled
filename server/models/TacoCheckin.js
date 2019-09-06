@@ -53,16 +53,20 @@ const TacoCheckinSchema = new Schema({
 //     });
 // };
 
-TacoCheckinSchema.statics.findRestaurant = function (tacoCheckinId) {
-    return this.findById(tacoCheckinId).populate("restaurant").then(tacoCheckin => tacoCheckin.restaurant)
+// TacoCheckinSchema.statics.findRestaurant = function (tacoCheckinId) {
+//     return this.findById(tacoCheckinId).populate("restaurant").then(tacoCheckin => tacoCheckin.restaurant)
+// }
+
+TacoCheckinSchema.statics.findTaco = function (tacoId) {
+    return this.findById(tacoId).populate("taco").then(tacoCheckin => tacoCheckin.taco)
 }
 
 // TacoCheckinSchema.statics.findTacoCheckins = function (tacoCheckinId) {
 //     return this.findById(tacoCheckinId).populate("tacoCheckin").then(tacoCheckin => tacoCheckin.tacoCheckin)
 // }
 
-TacoCheckinSchema.statics.findUser = function (tacoCheckinId) {
-    return this.findById(tacoCheckinId).populate("user").then(tacoCheckin => tacoCheckin.user)
+TacoCheckinSchema.statics.findUser = function (userId) {
+    return this.findById(userId).populate("user").then(tacoCheckin => tacoCheckin.user)
 }
 
 module.exports = mongoose.model("tacoCheckins", TacoCheckinSchema);

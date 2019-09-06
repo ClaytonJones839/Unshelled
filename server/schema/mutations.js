@@ -101,20 +101,20 @@ const mutation = new GraphQLObjectType({
                 description: { type: GraphQLString },
                 rating: { type: GraphQLInt },
                 tacoId: { type: GraphQLID },
-                userId: {type: GraphQLID}
+                userId: { type: GraphQLID }
                 // restaurant: { type: GraphQLString },
                 // user: {type: GraphQLString}
             },
             resolve(_, { description, rating, tacoId, userId }) {
-                console.log(tacoId);
+                console.log("string", tacoId);
                 return Taco.findById(tacoId).then((taco) => {
                     // let name = taco.name;
                     let restaurant = taco.restaurant;
-
+                    console.log("bananaaaa", taco.restaurant);
                     return User.findById(userId).then((user) => {
                         let name = user.firstName + " " + user.lastName.slice(0, 1);
                     
-                        let tacoCheckin = new TacoCheckin({ name, restaurant, description, rating });
+                        let tacoCheckin = new TacoCheckin({ name, restaurant, description, rating, taco, user });
                         taco.tacoCheckin.push(tacoCheckin._id);
                         user.tacoCheckin.push(tacoCheckin._id);
 

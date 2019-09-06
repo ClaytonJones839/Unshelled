@@ -46,6 +46,14 @@ const RootQueryType = new GraphQLObjectType({
             }
         },
 
+        // userCheckins: {
+        //     type: new GraphQLList(TacoCheckinType),
+        //     args: { _id: { type: new GraphQLNonNull(GraphQLID) } },
+        //     resolve(_, args) {
+        //         return TacoCheckin.findById(args._id);
+        //     }
+        // },
+
         taco: {
             type: TacoType,
             args: { _id: { type: new GraphQLNonNull(GraphQLID) } },

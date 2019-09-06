@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import React, { Component } from "react";
 import { Query } from "react-apollo";
 import Queries from "../../graphql/queries";
+// import Mutations from "../../graphql/mutations";
 import Modal from "./TacoModal";
-const { FETCH_TACO, IS_LOGGED_IN } = Queries;
+const { FETCH_TACO, IS_LOGGED_IN, FETCH_USER } = Queries;
 
 
 class TacoShow extends Component {
@@ -34,19 +35,27 @@ class TacoShow extends Component {
                     // debugger;
                             
                 return (
-                <Query query={IS_LOGGED_IN}>
+                                <Query query={IS_LOGGED_IN}>
                     {({ loading: loadingTwo, error, data: rdata }) => {
                 if (loadingTwo) return <p>Loading...</p>;
                 if (error) return <p>Error</p>;
                 
+                return (
+                <Query query={FETCH_USER} variables={{id: rdata._id}}>
+                    {({ loading: loadingThree, error, data: udata }) => {
+                if (loadingThree) return <p>Loading...</p>;
+                if (error) return <p>Error</p>;
+                      // debugger;
                             // console.log(data);
-                            // console.log(rdata);
+                            console.log("string", rdata);
                 let tacoCheckins;
                             // debugger;
                 tacoCheckins = data.taco.tacoCheckin.map((checkin) => {
                     return (
                         <div className="taco-checkin-box">
-                            <div className="profile-pic">prof pic</div>
+                            {/* <div className="profile-pic">prof pic</div> */}
+                            <img className="profile-pic"
+                            src={checkin.user.photo}></img>
                             <div className="checkin-info">
                                 <Link>{checkin.name}</Link> is eating a 
                                 <Link to={`/tacoshow/${data.taco._id}`}> {data.taco.name}</Link> by
@@ -58,6 +67,26 @@ class TacoShow extends Component {
                         </div>
                     )
                 });
+                      debugger;
+                let totalCheckins;
+                totalCheckins = tacoCheckins.length; 
+                
+                let userCheckins;
+                userCheckins = [];
+                udata.user.tacoCheckin.forEach(checkin => {
+                  if (checkin.taco._id === data.taco._id) {
+                    userCheckins.push(checkin);
+                  }
+                });
+                      
+                let uniqueCheckins;
+                uniqueCheckins = {};
+                data.taco.tacoCheckin.forEach(checkin => {
+                  if (!uniqueCheckins[checkin.user._id]) {
+                    uniqueCheckins[checkin.user._id] = true;
+                  }
+                })
+                      
                 // debugger;
                             // console.log(rdata);
                             // console.log(data);
@@ -69,7 +98,9 @@ class TacoShow extends Component {
                         {/* <div>{data.taco._id}</div> */}
 
                         <div className="header">
-                          <div className="logo-box">Im logo</div>
+                          {/* <div className="logo-box">Im logo</div> */}
+                          <img className="logo-box"
+                          src={data.taco.photo}></img>
                           <div className="taco-info">
                             <div className="taco-name">{data.taco.name}</div>
                             <div className="restaurant-name">
@@ -85,10 +116,18 @@ class TacoShow extends Component {
                             {/* <div className="restaurant-location">{data.taco.restaurant.location}</div> */}
                           </div>
                           <div className="taco-check-ins">
-                            <div className="total">TOTAL</div>
-                            <div className="unique">UNIQUE</div>
-                            <div className="monthly">MONTHLY</div>
-                            <div className="you">YOU</div>
+                            <div className="total">TOTAL
+                              <div className="total-number">{totalCheckins}</div>
+                            </div>
+                            <div className="unique">UNIQUE
+                              <div className="unique-number">{Object.keys(uniqueCheckins).length}</div>
+                            </div>
+                            <div className="monthly">MONTHLY
+                              <div className="monthly-number">{totalCheckins}</div>
+                            </div>
+                            <div className="you">YOU
+                              <div className="you-number">{userCheckins.length}</div>
+                            </div>
                           </div>
                         </div>
 
@@ -105,7 +144,7 @@ class TacoShow extends Component {
                               
                                         
                         
-                            <Modal show={this.state.show} handleClose={this.hideModal}>
+                            <Modal tacoId={this.props.match.params.id} userId={rdata._id} show={this.state.show} handleClose={this.hideModal.bind(this)}>
                                 
                             </Modal>
                             <button className="check-in" onClick={this.showModal}>✓</button>
@@ -187,6 +226,10 @@ class TacoShow extends Component {
                         }}
                 </Query>)      
     }}
+            </Query>
+        );
+    }
+            }
             </Query>
         );
     }

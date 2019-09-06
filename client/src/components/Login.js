@@ -19,6 +19,7 @@ export default class Login extends Component {
         return e => this.setState({ [field]: e.target.value });
     }
 
+
     updateCache(client, { data }) {
         // console.log(data.login);
         // debugger;
@@ -37,6 +38,7 @@ export default class Login extends Component {
                     const { token } = data.login;
                     console.log("wof", data);
                     localStorage.setItem("auth-token", token);
+                    localStorage.setItem("currentUserId", data.login._id)
                     // console.log(localStorage);
                     this.props.history.push("/");
                 }}

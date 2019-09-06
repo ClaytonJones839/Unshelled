@@ -15,25 +15,25 @@ const TacoCheckinType = new GraphQLObjectType({
         name: { type: GraphQLString },
         description: { type: GraphQLString },
         rating: { type: GraphQLInt },
-        restaurant: { type: GraphQLInt },
+        // restaurant: { type: GraphQLInt },
         // restaurant: {
         //     type: require("./restaurant_type"),
         //     resolve(parentValue) {
         //         return TacoCheckin.findRestaurant(parentValue._id)
         //     }
         // },
-        // taco: {
-        //     type: require("./taco_type"),
-        //     resolve(parentValue) {
-        //         return Taco.findById
-        //     }
-        // },
-        // user: {
-        //     type: require("./user_type"),
-        //     resolve(parentValue) {
-        //         return TacoCheckin.findUser(parentValue._id)
-        //     }
-        // }
+        taco: {
+            type: require("./taco_type"),
+            resolve(parentValue) {
+                return TacoCheckin.findTaco(parentValue._id)
+            }
+        },
+        user: {
+            type: require("./user_type"),
+            resolve(parentValue) {
+                return TacoCheckin.findUser(parentValue._id)
+            }
+        }
 
     })
 });
