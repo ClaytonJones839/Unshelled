@@ -46,6 +46,7 @@ const Modal = ({ handleClose, show, children, userId, tacoId }) => {
           mutation={Mutations.NEW_TACO_CHECKIN}
           update={(cache, data) => {
             let taco;
+            let user;
             // let tacooos;
             // debugger;
             // tacooos = cache.readQuery({ query: Mutations.FETCH_TACOS });
@@ -53,11 +54,13 @@ const Modal = ({ handleClose, show, children, userId, tacoId }) => {
             // debugger;
             try {
               taco = cache.readQuery({ query: Queries.FETCH_TACO, variables: { id: tacoId } });
+              user = cache.readQuery({ query: Queries.FETCH_USER, variables: { id: userId } });
               // debugger;
             } catch (err) {
               return;
             }
             const newTacoCheckinToCache = data.data.newTacoCheckin;
+            
 
             if (taco) {
               // debugger;
@@ -71,12 +74,26 @@ const Modal = ({ handleClose, show, children, userId, tacoId }) => {
                 data: { taco: taco.taco }
               });
             }
+            
+            if (user) {
+              user.user.tacoCheckin.push(newTacoCheckinToCache);
+
+              cache.writeQuery({
+                query: Queries.FETCH_USER,
+                variables: { id: userId },
+                data: { user: user.user }
+              });
+            }
+            
+
           }}
           variables={{}}
           onCompleted={data => {
             // debugger;
             // console.log(data);
             // console.log(handleClose);
+            setDescription("");
+            setRating("");
             return handleClose();
           }}
 
