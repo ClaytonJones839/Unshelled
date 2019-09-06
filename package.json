@@ -36,7 +36,7 @@
     "nodemon": "^1.19.1",
     "validator": "^11.1.0"
   },
-  "devDependencies": {
-    "nodemon": "^1.19.1"
+  "engines": {
+    "node": "12.6.0"
   }
 }
