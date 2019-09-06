@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Query } from "react-apollo";
 import Queries from "../../graphql/queries";
-import RestaurantCSS from "./RestaurantCSS.css"
 import { Link } from "react-router-dom";
 import TacoNew from '../tacos/TacoNew';
 import ReviewNew from '../reviews/ReviewNew';
@@ -30,7 +29,9 @@ class RestaurantShow extends Component {
                     restTacos = <div className="rest-taco-list"> 
                       {data.restaurant.tacos.map((taco) => {
                         return (
-                          <div className="rest-taco-item">
+                          <div 
+                            key={`${taco.name}`}
+                          className="rest-taco-item">
                             <img
                               alt=""
                               src={taco.photo}
@@ -317,15 +318,15 @@ class RestaurantShow extends Component {
                             <div className="rest-show-r-bottom">
 
 
-                            <img src="http://s129178457.onlinehome.us/celebritieseating/uploaded_images/119-700469.jpg" className="rest-show-like-image"></img>
-                            <img src="https://pbs.twimg.com/media/CeTqmD3W8AAEsBc.jpg" className="rest-show-like-image"></img>
-                            <img src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2013/4/22/0/DV1701_Guy-Fieri-Tacos-and-Tots_s4x3.jpg.rend.hgtvcom.616.462.suffix/1371614297393.jpeg" className="rest-show-like-image"></img>
-                            <img src="https://assets.dnainfo.com/generated/chicago_photo/2015/07/taco-dog-1436995610.png/larger.jpg" className="rest-show-like-image"></img>
-                                <img src="http://tacocleanse.com/wp-content/uploads/2015/05/chinese-taco.jpg" className="rest-show-like-image"></img>
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW2AF6ZaSnVoDzrnarfVQRKuVsUZX2VTl3zAWdS9Dg2dSp2tG1Cw" className="rest-show-like-image"></img>
-                            <img src="http://blog.fuzzystacoshop.com/wp-content/uploads/2015/07/fuzzys_1631-300x200.jpg" className="rest-show-like-image"></img>
-                              <img src="https://www.ocregister.com/wp-content/uploads/2019/09/Rams-Cementing-Cornerstone-Football-1.jpg?w=552" className="rest-show-like-image"></img>
-                            <img src="https://i.pinimg.com/originals/ee/c3/db/eec3dbbadb5adfc8e18a8ef811cfe337.jpg" className="rest-show-like-image"></img>
+                            <img alt="" src="http://s129178457.onlinehome.us/celebritieseating/uploaded_images/119-700469.jpg" className="rest-show-like-image"></img>
+                            <img alt="" src="https://pbs.twimg.com/media/CeTqmD3W8AAEsBc.jpg" className="rest-show-like-image"></img>
+                            <img alt="" src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2013/4/22/0/DV1701_Guy-Fieri-Tacos-and-Tots_s4x3.jpg.rend.hgtvcom.616.462.suffix/1371614297393.jpeg" className="rest-show-like-image"></img>
+                            <img alt="" src="https://assets.dnainfo.com/generated/chicago_photo/2015/07/taco-dog-1436995610.png/larger.jpg" className="rest-show-like-image"></img>
+                                <img alt="" src="http://tacocleanse.com/wp-content/uploads/2015/05/chinese-taco.jpg" className="rest-show-like-image"></img>
+                                <img alt="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW2AF6ZaSnVoDzrnarfVQRKuVsUZX2VTl3zAWdS9Dg2dSp2tG1Cw" className="rest-show-like-image"></img>
+                            <img alt="" src="http://blog.fuzzystacoshop.com/wp-content/uploads/2015/07/fuzzys_1631-300x200.jpg" className="rest-show-like-image"></img>
+                              <img alt="" src="https://www.ocregister.com/wp-content/uploads/2019/09/Rams-Cementing-Cornerstone-Football-1.jpg?w=552" className="rest-show-like-image"></img>
+                            <img alt="" src="https://i.pinimg.com/originals/ee/c3/db/eec3dbbadb5adfc8e18a8ef811cfe337.jpg" className="rest-show-like-image"></img>
                             </div>
                           </div>
                       </div>

@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { Mutation } from "react-apollo";
-// import TacoCSS from "./Taco.css";
-// import gql from "graphql-tag";
 import Queries from "../../graphql/queries";
 import Mutations from "../../graphql/mutations";
 const { FETCH_TACOS } = Queries;
