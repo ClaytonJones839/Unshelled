@@ -78,65 +78,70 @@ class ReviewNew extends Component {
               onSubmit={e => this.handleSubmit(e, newReview)}
               className="inner-review-form"
             >
-              <fieldset class="rating-stars">
+              <fieldset className="rating-stars">
                 <input
                   onChange={this.update("rating")}
                   type="radio"
                   id="star1"
                   name="rating"
-                  hidden="true"
-                  value="5" />
-                <label for="star1">
-                  <i className='fas fa-star rad-1'></i>
+                  hidden={true}
+                  value="5"
+                />
+                <label htmlFor="star1">
+                  <i className="fas fa-star rad-1"></i>
                 </label>
                 <input
                   onChange={this.update("rating")}
                   type="radio"
                   id="star2"
                   name="rating"
-                  hidden="true"
-                  value="4" />
-                <label for="star2">
-                  <i className='fas fa-star rad-2'></i>
+                  hidden={true}
+                  value="4"
+                />
+                <label htmlFor="star2">
+                  <i className="fas fa-star rad-2"></i>
                 </label>
                 <input
                   onChange={this.update("rating")}
                   type="radio"
                   id="star3"
                   name="rating"
-                  hidden="true"
-                  value="3" />
-                <label for="star3">
-                  <i className='fas fa-star rad-3'></i>
+                  hidden={true}
+                  value="3"
+                />
+                <label htmlFor="star3">
+                  <i className="fas fa-star rad-3"></i>
                 </label>
                 <input
                   onChange={this.update("rating")}
                   type="radio"
                   id="star4"
                   name="rating"
-                  hidden="true"
-                  value="2" />
-                <label for="star4">
-                  <i className='fas fa-star rad-4'></i>
+                  hidden={true}
+                  value="2"
+                />
+                <label htmlFor="star4">
+                  <i className="fas fa-star rad-4"></i>
                 </label>
-                <input 
+                <input
                   onChange={this.update("rating")}
-                  type="radio" 
-                  id="star5" 
-                  name="rating" 
-                  hidden="true"
-                  value="1" />
-                <label for="star5">
-                  <i className='fas fa-star rad-5'></i>
+                  type="radio"
+                  id="star5"
+                  name="rating"
+                  hidden={true}
+                  value="1"
+                />
+                <label htmlFor="star5">
+                  <i className="fas fa-star rad-5"></i>
                 </label>
-                </fieldset>
+              </fieldset>
               <textarea
                 className="review-form-textarea"
                 value={this.state.description}
                 onChange={this.update("body")}
                 placeholder="Review goes here (Optional)"
               />
-              <button className="create-review-btn" type="submit" >
+              <button className="create-review-btn" type="submit">
                 Create Review
               </button>
             </form>

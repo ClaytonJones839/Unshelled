@@ -3,7 +3,7 @@ import React from 'react';
 import Queries from '../../graphql/queries';
 import { withRouter, Link } from "react-router-dom";
 import { Query } from 'react-apollo';
-import TacoCSS from "./Taco.css";
+// import TacoCSS from "./Taco.css";
 import TopRestaurants from "./TopRestaurants"
 const { FETCH_TACOS } = Queries;
 
@@ -42,17 +42,18 @@ class TacoIndex extends React.Component {
                 price = <div><i className='fas fa-dollar-sign'></i> <i className='fas fa-dollar-sign'></i> <i className='fas fa-dollar-sign'></i> <i className='fas fa-dollar-sign'></i></div>
               };
 
-              let restaurant;
-              if (taco.restaurant) {
-                restaurant = <li>Restaurant: {taco.restaurant.name}</li>;
-              } else {
-                restaurant = <li>Restaurant: Unknown</li>;
-              }
+              // let restaurant;
+              // if (taco.restaurant) {
+              //   restaurant = <li>Restaurant: {taco.restaurant.name}</li>;
+              // } else {
+              //   restaurant = <li>Restaurant: Unknown</li>;
+              // }
               
 
               return (
                 <div className="taco-index-item">
                   <img 
+                  alt=""
                   src={taco.photo}
                   className="taco-index-image">
                   </img>

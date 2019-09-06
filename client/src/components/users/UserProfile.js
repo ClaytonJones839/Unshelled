@@ -17,7 +17,7 @@ class UserProfile extends React.Component {
                     return (
                         <div className="profile-container">
                             <div className="profile-header">
-                                <img className="profile-img" src={data.user.photo}></img>
+                                <img alt="" className="profile-img" src={data.user.photo}></img>
                                 <div className="profile-info">
                                     
                                     <p>{data.user.firstName} {data.user.lastName}</p>
