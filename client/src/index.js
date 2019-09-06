@@ -5,7 +5,7 @@ import ApolloClient from "apollo-client";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { createHttpLink } from "apollo-link-http";
 import { ApolloProvider } from "react-apollo";
-import { onError } from "apollo-link-error";
+// import { onError } from "apollo-link-error";
 // import { ApolloLink } from "apollo-link";
 import Mutations from "./graphql/mutations"; 
 // import { persistCache } from 'apollo-cache-persist';
@@ -28,9 +28,9 @@ const httpLink = createHttpLink({
 });
 
 // make sure we log any additional errors we receive
-const errorLink = onError(({ graphQLErrors }) => {
-  if (graphQLErrors) graphQLErrors.map(({ message }) => console.log(message));
-});
+// const errorLink = onError(({ graphQLErrors }) => {
+//   if (graphQLErrors) graphQLErrors.map(({ message }) => console.log(message));
+// });
 
 
 const { VERIFY_USER } = Mutations;
@@ -95,7 +95,7 @@ if (token) {
 
 const Root = () => {
   // debugger;
-  const isLoggedIn = client.cache.data.data.ROOT_QUERY.lastName;
+  // const isLoggedIn = client.cache.data.data.ROOT_QUERY.lastName;
   return (
     <ApolloProvider client={client}>
       <App />

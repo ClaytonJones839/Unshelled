@@ -24,7 +24,7 @@ class TopTacos extends React.Component {
                                     {data.tacos.map((taco, i) => {
                                         return (
                                             <div className="top-taco-item">
-                                                <img src={taco.photo} className="top-taco-image"></img>
+                                                <img alt="" src={taco.photo} className="top-taco-image"></img>
                                                 <div className="top-taco-details">
                                                     <div className="top-taco-top">
                                                         <Link to={`/taco/${taco._id}`}

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Mutation } from "react-apollo";
-import TacoCSS from "./Taco.css";
-import gql from "graphql-tag";
+// import TacoCSS from "./Taco.css";
+// import gql from "graphql-tag";
 import Queries from "../../graphql/queries";
 import Mutations from "../../graphql/mutations";
 const { FETCH_TACOS } = Queries;
@@ -137,6 +137,7 @@ class TacoNew extends Component {
               </div>
               <div className="taco-inner-right">
                 <img 
+                alt=""
                 className="taco-man"
                 src="https://previews.123rf.com/images/larryrains/larryrains1606/larryrains160601376/57935346-taco-with-thumbs-up.jpg"/>
               </div>

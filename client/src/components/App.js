@@ -9,7 +9,7 @@ import RestaurantNew from "./restaurants/RestaurantNew";
 import RestaurantShow from "./restaurants/RestaurantShow";
 import UserProfile from "./users/UserProfile";
 import TacoShow from './tacos/TacoShow';
-import ReviewNew from './reviews/ReviewNew';
+// import ReviewNew from './reviews/ReviewNew';
 
 import { Route, HashRouter } from 'react-router-dom';
 import Footer from "./footer/footer";

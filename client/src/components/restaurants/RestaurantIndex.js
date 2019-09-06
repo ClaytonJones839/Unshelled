@@ -1,6 +1,6 @@
 import React from "react";
 import Queries from "../../graphql/queries";
-import { withRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Query } from "react-apollo";
 import TopTacos from "./TopTacos"
 const { FETCH_RESTAURANTS } = Queries;
@@ -39,11 +39,11 @@ if (reviewRating > 4.75) {
   // 5
   stars = (
     <div>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
+      <i className="fas fa-star"></i>
+      <i className="fas fa-star"></i>
+      <i className="fas fa-star"></i>
+      <i className="fas fa-star"></i>
+      <i className="fas fa-star"></i>
       <p className="star-div"> ({reviewArray.length})</p>
     </div>
   );
@@ -51,11 +51,11 @@ if (reviewRating > 4.75) {
   //4.5
   stars = (
     <div>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star-half-alt"></i>
+      <i className="fas fa-star"></i>
+      <i className="fas fa-star"></i>
+      <i className="fas fa-star"></i>
+      <i className="fas fa-star"></i>
+      <i className="fas fa-star-half-alt"></i>
       <p className="star-div"> ({reviewArray.length})</p>
     </div>
   );
@@ -63,11 +63,11 @@ if (reviewRating > 4.75) {
   // 4
   stars = (
     <div>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="far fa-star"></i>
+      <i className="fas fa-star"></i>
+      <i className="fas fa-star"></i>
+      <i className="fas fa-star"></i>
+      <i className="fas fa-star"></i>
+      <i className="far fa-star"></i>
       <p className="star-div"> ({reviewArray.length})</p>
     </div>
   );
@@ -75,11 +75,11 @@ if (reviewRating > 4.75) {
   //3.5
   stars = (
     <div>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star-half-alt"></i>
-      <i class="far fa-star"></i>
+      <i className="fas fa-star"></i>
+      <i className="fas fa-star"></i>
+      <i className="fas fa-star"></i>
+      <i className="fas fa-star-half-alt"></i>
+      <i className="far fa-star"></i>
       <p className="star-div"> ({reviewArray.length})</p>
     </div>
   );
@@ -87,11 +87,11 @@ if (reviewRating > 4.75) {
   // 3
   stars = (
     <div>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="far fa-star"></i>
-      <i class="far fa-star"></i>
+      <i className="fas fa-star"></i>
+      <i className="fas fa-star"></i>
+      <i className="fas fa-star"></i>
+      <i className="far fa-star"></i>
+      <i className="far fa-star"></i>
       <p className="star-div"> ({reviewArray.length})</p>
     </div>
   );
@@ -99,11 +99,11 @@ if (reviewRating > 4.75) {
   //2.5
   stars = (
     <div>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star-half-alt"></i>
-      <i class="far fa-star"></i>
-      <i class="far fa-star"></i>
+      <i className="fas fa-star"></i>
+      <i className="fas fa-star"></i>
+      <i className="fas fa-star-half-alt"></i>
+      <i className="far fa-star"></i>
+      <i className="far fa-star"></i>
       <p className="star-div"> ({reviewArray.length})</p>
     </div>
   );
@@ -111,11 +111,11 @@ if (reviewRating > 4.75) {
   // 2
   stars = (
     <div>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="far fa-star"></i>
-      <i class="far fa-star"></i>
-      <i class="far fa-star"></i>
+      <i className="fas fa-star"></i>
+      <i className="fas fa-star"></i>
+      <i className="far fa-star"></i>
+      <i className="far fa-star"></i>
+      <i className="far fa-star"></i>
       <p className="star-div"> ({reviewArray.length})</p>
     </div>
   );
@@ -123,11 +123,11 @@ if (reviewRating > 4.75) {
   // 1.5
   stars = (
     <div>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star-half-alt"></i>
-      <i class="far fa-star"></i>
-      <i class="far fa-star"></i>
-      <i class="far fa-star"></i>
+      <i className="fas fa-star"></i>
+      <i className="fas fa-star-half-alt"></i>
+      <i className="far fa-star"></i>
+      <i className="far fa-star"></i>
+      <i className="far fa-star"></i>
       <p className="star-div"> ({reviewArray.length})</p>
     </div>
   );
@@ -135,11 +135,11 @@ if (reviewRating > 4.75) {
   // 1
   stars = (
     <div>
-      <i class="fas fa-star"></i>
-      <i class="far fa-star"></i>
-      <i class="far fa-star"></i>
-      <i class="far fa-star"></i>
-      <i class="far fa-star"></i>
+      <i className="fas fa-star"></i>
+      <i className="far fa-star"></i>
+      <i className="far fa-star"></i>
+      <i className="far fa-star"></i>
+      <i className="far fa-star"></i>
       <p className="star-div"> ({reviewArray.length})</p>
     </div>
   );
@@ -147,11 +147,11 @@ if (reviewRating > 4.75) {
   // 0.5
   stars = (
     <div>
-      <i class="fas fa-star-half-alt"></i>
-      <i class="far fa-star"></i>
-      <i class="far fa-star"></i>
-      <i class="far fa-star"></i>
-      <i class="far fa-star"></i>
+      <i className="fas fa-star-half-alt"></i>
+      <i className="far fa-star"></i>
+      <i className="far fa-star"></i>
+      <i className="far fa-star"></i>
+      <i className="far fa-star"></i>
       <p className="star-div"> ({reviewArray.length})</p>
     </div>
   );
@@ -159,11 +159,11 @@ if (reviewRating > 4.75) {
   // 0
   stars = (
     <div>
-      <i class="far fa-star"></i>
-      <i class="far fa-star"></i>
-      <i class="far fa-star"></i>
-      <i class="far fa-star"></i>
-      <i class="far fa-star"></i>
+      <i className="far fa-star"></i>
+      <i className="far fa-star"></i>
+      <i className="far fa-star"></i>
+      <i className="far fa-star"></i>
+      <i className="far fa-star"></i>
       <p className="star-div"> ({reviewArray.length})</p>
     </div>
   );
@@ -180,21 +180,30 @@ if (reviewRating > 4.75) {
                 return (
                   <div className="rest-index-item">
                     <div className="rest-item-top2">
-                      <img className="rest-index-image"
-                        src={restaurant.photo}></img>
+                      <img
+                        className="rest-index-image"
+                        alt=""
+                        src={restaurant.photo}
+                      ></img>
                       <div className="rest-index-details">
-                          <Link to={`/restaurant/${restaurant._id}`}
-                            className="rest-item-name">{restaurant.name}</Link>
-                      {stars}
-                      <div className="rest-item-loc">{restaurant.location}</div>
-                      <div className="rest-item-desc">{restaurant.description}</div>
+                        <Link
+                          to={`/restaurant/${restaurant._id}`}
+                          className="rest-item-name"
+                        >
+                          {restaurant.name}
+                        </Link>
+                        {stars}
+                        <div className="rest-item-loc">
+                          {restaurant.location}
+                        </div>
+                        <div className="rest-item-desc">
+                          {restaurant.description}
+                        </div>
                       </div>
                     </div>
                     <div className="rest-item-bottom2">
                       <div className="rest-item-tacos">Featured Tacos: </div>
-                      <ul className="rest-item-taco-list">
-                        {tacos}
-                      </ul>
+                      <ul className="rest-item-taco-list">{tacos}</ul>
                     </div>
                   </div>
                 );
