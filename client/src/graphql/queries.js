@@ -115,6 +115,11 @@ export default {
           name
           taco {
             _id
+            photo
+          }
+          user {
+            _id
+            photo
           }
           description
           rating

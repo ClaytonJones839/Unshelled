@@ -114,7 +114,7 @@ const mutation = new GraphQLObjectType({
                     return User.findById(userId).then((user) => {
                         let name = user.firstName + " " + user.lastName.slice(0, 1);
                     
-                        let tacoCheckin = new TacoCheckin({ name, restaurant, description, rating, taco });
+                        let tacoCheckin = new TacoCheckin({ name, restaurant, description, rating, taco, user });
                         taco.tacoCheckin.push(tacoCheckin._id);
                         user.tacoCheckin.push(tacoCheckin._id);
 

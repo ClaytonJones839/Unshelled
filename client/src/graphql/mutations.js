@@ -144,6 +144,11 @@ export default {
         rating
         taco {
           _id
+          
+        }
+        user {
+          _id
+          
         }
       }
     }

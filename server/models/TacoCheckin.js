@@ -65,8 +65,8 @@ TacoCheckinSchema.statics.findTaco = function (tacoId) {
 //     return this.findById(tacoCheckinId).populate("tacoCheckin").then(tacoCheckin => tacoCheckin.tacoCheckin)
 // }
 
-TacoCheckinSchema.statics.findUser = function (tacoCheckinId) {
-    return this.findById(tacoCheckinId).populate("user").then(tacoCheckin => tacoCheckin.user)
+TacoCheckinSchema.statics.findUser = function (userId) {
+    return this.findById(userId).populate("user").then(tacoCheckin => tacoCheckin.user)
 }
 
 module.exports = mongoose.model("tacoCheckins", TacoCheckinSchema);

@@ -27,13 +27,13 @@ const TacoCheckinType = new GraphQLObjectType({
             resolve(parentValue) {
                 return TacoCheckin.findTaco(parentValue._id)
             }
+        },
+        user: {
+            type: require("./user_type"),
+            resolve(parentValue) {
+                return TacoCheckin.findUser(parentValue._id)
+            }
         }
-        // user: {
-        //     type: require("./user_type"),
-        //     resolve(parentValue) {
-        //         return TacoCheckin.findUser(parentValue._id)
-        //     }
-        // }
 
     })
 });

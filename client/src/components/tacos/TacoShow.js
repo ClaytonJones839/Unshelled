@@ -42,11 +42,13 @@ class TacoShow extends Component {
                             // console.log(data);
                             console.log("string", rdata);
                 let tacoCheckins;
-                            // debugger;
+                            debugger;
                 tacoCheckins = data.taco.tacoCheckin.map((checkin) => {
                     return (
                         <div className="taco-checkin-box">
-                            <div className="profile-pic">prof pic</div>
+                            {/* <div className="profile-pic">prof pic</div> */}
+                            <img className="profile-pic"
+                            src={checkin.user.photo}></img>
                             <div className="checkin-info">
                                 <Link>{checkin.name}</Link> is eating a 
                                 <Link to={`/tacoshow/${data.taco._id}`}> {data.taco.name}</Link> by
@@ -69,7 +71,9 @@ class TacoShow extends Component {
                         {/* <div>{data.taco._id}</div> */}
 
                         <div className="header">
-                          <div className="logo-box">Im logo</div>
+                          {/* <div className="logo-box">Im logo</div> */}
+                          <img className="logo-box"
+                          src={data.taco.photo}></img>
                           <div className="taco-info">
                             <div className="taco-name">{data.taco.name}</div>
                             <div className="restaurant-name">
