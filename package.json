@@ -1,7 +1,7 @@
 {
   "name": "unshelled",
   "version": "1.0.0",
-  "description": "Unshelled is a web application focuses on helping it's users find the best taco's in their area. Unshelled is inspired from the popular site [Untapped](https://untappd.com). User's are able to search for resturants in their area that serve tacos. User's are also able to review the tacos, leave reviews, and check-in to show others where they have been! test ## Proposal Should Include - A detailed plan of how you will spend your weekend laying the ground work for your project.",
+  "description": "Unshelled is a web application focuses on helping it's users find the best taco's in their area. Unshelled is inspired from the popular site [Untapped](https://untappd.com). User's are able to search for restaurants in their area that serve tacos. User's are also able to review the tacos, leave reviews, and check-in to show others where they have been! test ## Proposal Should Include - A detailed plan of how you will spend your weekend laying the ground work for your project.",
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
@@ -36,5 +36,8 @@
     "node-sass": "^4.12.0",
     "nodemon": "^1.19.1",
     "validator": "^11.1.0"
+  },
+    "engines": {
+      "node": "12.6.0"
   }
 }
