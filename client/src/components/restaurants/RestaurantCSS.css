@@ -329,6 +329,7 @@ a {
 
 .rest-item-taco-list {
     margin-left: 30px;
+    margin-bottom: 5px;
     display: flex;
     flex-direction: column;
     list-style: none;
