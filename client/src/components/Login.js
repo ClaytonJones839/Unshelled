@@ -38,7 +38,7 @@ export default class Login extends Component {
                     const { token } = data.login;
                     console.log("wof", data);
                     localStorage.setItem("auth-token", token);
-                    localStorage.setItem("currentUserId", data.login._id)
+                    // localStorage.setItem("currentUserId", data.login._id)
                     // console.log(localStorage);
                     this.props.history.push("/");
                 }}
