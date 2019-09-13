@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Mutation } from "react-apollo";
 import Mutations from "../graphql/mutations";
 import { Link } from "react-router-dom";
-// import SessionCSS from "../Session.css"
+import SessionCSS from "./session.css"
 
 export default class Login extends Component {
     constructor(props) {
