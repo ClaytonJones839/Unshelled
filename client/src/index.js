@@ -5,9 +5,9 @@ import ApolloClient from "apollo-client";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { createHttpLink } from "apollo-link-http";
 import { ApolloProvider } from "react-apollo";
-// import { onError } from "apollo-link-error";
-// import { ApolloLink } from "apollo-link";
-import Mutations from "./graphql/mutations"; 
+import { onError } from "apollo-link-error";
+import { ApolloLink } from "apollo-link";
+import Mutations from "./graphql/mutations";
 // import { persistCache } from 'apollo-cache-persist';
 // import AsyncStorage from '@react-native-community/async-storage';
 
@@ -18,26 +18,31 @@ const cache = new InMemoryCache({
 });
 
 
+let uri;
+if (process.env.NODE_ENV === "production") {
+  uri = `/graphql`;
+} else {
+  uri = "http://localhost:5000/graphql";
+}
 
 const httpLink = createHttpLink({
-  uri: "http://localhost:5000/graphql",
+  uri,
   headers: {
-    // pass our token into the header of each request
-    authorization: localStorage.getItem("auth-token")
+    // heroku can get a little buggy with headers and
+    // localStorage so we'll just ensure a value is always in the header
+    authorization: localStorage.getItem("auth-token") || ""
   }
 });
 
-// make sure we log any additional errors we receive
-// const errorLink = onError(({ graphQLErrors }) => {
-//   if (graphQLErrors) graphQLErrors.map(({ message }) => console.log(message));
-// });
+const errorLink = onError(({ graphQLErrors }) => {
+  if (graphQLErrors) graphQLErrors.map(({ message }) => console.log(message));
+});
 
 
 const { VERIFY_USER } = Mutations;
-// if we have a token we want to verify the user is actually logged in
 
 const client = new ApolloClient({
-  link: httpLink,
+  link: ApolloLink.from([errorLink, httpLink]),
   cache,
   resolvers: {},
   onError: ({ networkError, graphQLErrors }) => {
