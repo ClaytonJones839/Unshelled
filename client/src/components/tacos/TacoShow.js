@@ -55,7 +55,9 @@ class TacoShow extends Component {
                         <div className="taco-checkin-box">
                             {/* <div className="profile-pic">prof pic</div> */}
                             <img className="profile-pic"
-                            src={checkin.user.photo}></img>
+                            src={checkin.user.photo}
+                            alt=''
+                            ></img>
                             <div className="checkin-info">
                                 <Link>{checkin.name}</Link> is eating a 
                                 <Link to={`/tacoshow/${data.taco._id}`}> {data.taco.name}</Link> by
@@ -100,6 +102,7 @@ class TacoShow extends Component {
                         <div className="header">
                           {/* <div className="logo-box">Im logo</div> */}
                           <img className="logo-box"
+                          alt=''
                           src={data.taco.photo}></img>
                           <div className="taco-info">
                             <div className="taco-name">{data.taco.name}</div>
