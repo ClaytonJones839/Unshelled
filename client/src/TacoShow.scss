@@ -1,63 +1,46 @@
 div {
-    // background-color: rgb(250, 247, 234);
     .detail {
         background-color: rgb(250, 247, 234);
         display: flex;
         padding-left: 155px;
         padding-top: 80px;
+        font-family: 'Roboto', sans-serif;
+
     }
 
     .center-boxes {
-        border: 1px solid red;
-        width: 690px;
+        width: 730px;
 
         .taco-info-box {
-            border: 1px solid black;
             background-color: white;
             font-size: 20px;
             min-height: 280px;
-            width: 690px;
+            width: 100%;
             margin-bottom: 15px;
+            font-family: 'Lexend Exa', sans-serif;
+            padding: 20px;
+            box-sizing: border-box;
 
             .header {
-                border: 1px solid black;
                 min-height: 145px;
-                // width: 400px;
-                // float: right;
                 display: flex;
-                // resize: vertical;
-                // overflow: auto;
 
                 .logo-box {
-                    border: 1px solid black;
                     height: 110px;
                     width: 110px;
                 }
                 
                 .taco-info {
-                    border: 1px solid red;
                     width: 350px;
-                    // height: 200px;
                     padding-left: 10px;
-                    // float: right;
-                    // resize: vertical;
-                    // overflow: auto;
 
                     .taco-name {
-                        // background-color: white;
-                        border: 1px solid black;
                         font-size: 32px;
                         margin-top: 15px;
                         font-weight: 425;
-                        // min-height: 20px;
-                        // resize: vertical;
-                        // overflow: auto;
                     }
 
                     .restaurant-name {
-                        // background-color: white;
-                        // float: right;
-                        border: 1px solid black;
                         padding-top: 10px;
                         padding-bottom: 10px;
                         font-size: 20px;
@@ -66,8 +49,6 @@ div {
                     }
 
                     .taco-style {
-                        // background-color: white;
-                        border: 1px solid black;
                         height: 40px;
                         color: rgb(124, 124, 124);
                         font-size: 16px;
@@ -75,19 +56,16 @@ div {
                     }
 
                     .taco-rating {
-                        // background-color: white;
                     }
 
                 }
 
                 .taco-check-ins {
-                    // border: 1px solid black;
                     width: 197px;
                     height: 90px;
                     margin-top: 15px;
                     font-size: 11px;
                     color: gray;
-                    // display: inline;
 
                     .total {
                         border-bottom: 1px solid rgb(214, 214, 214);
@@ -100,7 +78,6 @@ div {
                         .total-number {
                             font-size: 24px;
                             font-weight: 500;
-
                         }
                     }
 
@@ -114,7 +91,6 @@ div {
                         .unique-number {
                             font-size: 24px;
                             font-weight: 500;
-
                         }
                     }
 
@@ -134,7 +110,6 @@ div {
                     }
 
                     .you {
-                        // border-left: 1px solid gray;
                         height: 46px;
                         width: 93px;
                         padding-left: 5px;
@@ -151,7 +126,6 @@ div {
             }
 
             .info-bar {
-                border: 1px solid green;
                 height: 48px;
                 padding-left: 13px;
                 display: flex;
@@ -159,7 +133,6 @@ div {
                 color: gray;
 
                 .rating {
-                    border: 1px solid black;
                     width: 336px;
                     padding-top: 12px;
                     text-align: center;
@@ -167,9 +140,7 @@ div {
                 }
 
                 .total-ratings {
-                    // float: right;
                     text-align: right;
-                    border: 1px solid black;
                     width: 300px;
                     padding-top: 12px;
                     padding-right: 20px;
@@ -178,7 +149,6 @@ div {
             }
 
             .description {
-                border: 1px solid red;
                 min-height: 67px;
                 color: gray;
                 font-size: 17px;
@@ -186,21 +156,16 @@ div {
                 display: flex;
                 margin-left: 11px;
                 padding-top: 15px;
-                // resize: vertical;
 
                 .description-text {
-                    border: 1px solid black;
                     width: 550px;
-                    // resize: vertical;
                 }
 
                 .taco-buttons {
-                    border: 1px solid black;
                     width: 134px;
                     display: flex;
 
                     .check-in {
-                        border: 1px solid black;
                         height: 50px;
                         width: 50px;
                         margin-left: 5px;
@@ -211,33 +176,22 @@ div {
                         font-weight: 900;
                     }
 
-// .modal {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width:100%;
-//   height: 100%;
-//   background: rgba(0, 0, 0, 0.6);
-// }
+    .display-block {
+    display: block;
+    font-size: 20px;
 
+    .modal-main {
+    position:fixed;
+    background: white;
+    width: 500px;
+    height: 260px;
+    margin-top: 16px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 20px;
 
-  .display-block {
-  display: block;
-  font-size: 20px;
-
-  .modal-main {
-  border: 1px solid black;
-  position:fixed;
-  background: white;
-  width: 500px;
-  height: 260px;
-  margin-top: 16px;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  font-size: 20px;
-
-  .header {
-    border: 1px solid;
+    .header {
+        border: 1px solid;
 
     .text {
         font-size: 18px;
@@ -260,42 +214,24 @@ div {
   }
 
   .new-checkin-form {
-    border: 1px solid black;
     height: 50px;
     width: 100%;
-
-    .checkin-inputs {
-
-        .description-input {
-            border: 1px solid black;
-
-        }
-
-        .rating-input {
-            border: 1px solid black;
+        .checkin-inputs {
+            .description-input {
+            }
+            .rating-input {
+            }
         }
     }
 
-  }
-
 }
 }
-
-.display-none {
-  display: none;
-}
-
-
-
-
-
-
+    .display-none {
+        display: none;
+    }
                     .add-to-list {
-                        border: 1px solid black;
                         height: 50px;
                         width: 50px;
-                        // padding-bottom: 20px;
-                        // text-align: center;
                         background-color: rgb(255, 205, 40);
                         color: white;
                         font-size: 38px;
@@ -318,17 +254,15 @@ div {
         }
 
         .taco-pics {
-            border: 1px solid black;
             background-color: white;
             font-size: 20px;
             height: 130px;
-            width: 684px;
-            margin-left: 3px;
+            width: 100%;
+            padding-left: 3px;
             margin-bottom: 15px;
         }
 
         .taco-activity-box {
-            border: 1px solid black;
             background-color: white;
             font-size: 20px;
             width: 640px;
@@ -336,8 +270,6 @@ div {
             padding-right: 25px;
 
             .header {
-                // border: 1px solid black;
-                border-bottom: 1px solid gray;
                 background-color: white;
                 font-weight: bold;
                 margin-top: 24px;
@@ -345,7 +277,6 @@ div {
             }
 
             .activity-box {
-                border: 1px solid black;
                 background-color: white;
                 margin-top: 3px;
                 margin-bottom: 3px;
@@ -353,21 +284,16 @@ div {
                 .taco-checkin-box {
                     display: flex;
                     flex-wrap: wrap;
-                    border: 1px solid red;
                     font-size: 20px;
                     margin-top: 23px;
-                    border-bottom: 1px solid gray;
 
                     .profile-pic {
-                        border: 1px solid black;
                         font-size: 8px;
                         height: 50px;
                         width: 50px;
                     }
 
                     .checkin-info {
-                        border: 1px solid black;
-                        // min-height: 40px;
                         padding-bottom: 20px;
                         width: 500px;
                         margin-left: 6px;
@@ -379,7 +305,6 @@ div {
                     }
 
                     .description-and-rating {
-                        border: 1px solid black;
                         height: 60px;
                         width: 500px;
                         margin-left: 50px;
@@ -388,7 +313,6 @@ div {
                     }
 
                     .taco-pic {
-                        border: 1px solid black;
                         height: 240px;
                         width: 200px;
                         margin-left: 50px;
@@ -400,12 +324,12 @@ div {
             }
 
             .footer {
-                // border: 1px solid black;
-                border-top: 1px solid gray;
                 background-color: white;
                 height: 85px;
+                margin-bottom: 100px;
                 .show-more {
                     font-size: 17px;
+                    outline: none;
                     color: white;
                     font-weight: bold;
                     background-color: rgb(255, 205, 40);
@@ -430,17 +354,14 @@ div {
 
     .right-boxes {
         width: 300px;
-        border: 1px solid red;
         margin-left: 40px;
 
         .proposal-box {
-            border: 1px solid black;
             font-size: 20px;
             height: 90px;
 
             a {
                 margin: auto;
-                border: 1px solid black;
                 display: flex;
                 justify-content: center;
                 padding-top: 10px;
@@ -458,7 +379,6 @@ div {
         }
 
         .taco-loyalists-box {
-            border: 1px solid black;
             background-color: white;
             font-size: 18px;
             height: 255px;
@@ -467,7 +387,6 @@ div {
             padding-right: 14px;
 
             .header {
-                border-bottom: 1px solid gray;
                 background-color: white;
                 font-weight: 650;
                 padding-top: 12px;
@@ -476,11 +395,9 @@ div {
             }
 
             .tacoists-index {
-                border: 1px solid black;
                 height: 206px;
 
                 .tacoist {
-                    border: 1px solid black;
                     font-size: 8px;
                     height: 33%;
                     width: 25%;
@@ -491,7 +408,6 @@ div {
         }
 
         .similar-tacos-box {
-            border: 1px solid black;
             background-color: white;
             font-size: 18px;
             height: 355px;
@@ -500,7 +416,6 @@ div {
             margin-bottom: 23px;
 
             .header {
-                border-bottom: 1px solid gray;
                 background-color: white;
                 font-weight: 650;
                 padding-top: 13px;
@@ -508,18 +423,15 @@ div {
             }
 
             .similar-tacos-index {
-                border: 1px solid red;
                 height: 315px;
 
                 .similar-taco {
-                    border: 1px solid black;
                     height: 20%;
                 }
             }
         }
 
         .nearby-locations-box {
-            border: 1px solid black;
             background-color: white;
             height: 231px;
             font-size: 18px;
@@ -528,7 +440,6 @@ div {
             margin-bottom: 23px;
 
             .header {
-                border-bottom: 1px solid gray;
                 background-color: white;
                 font-weight: 650;
                 padding-top: 12px;
@@ -536,18 +447,15 @@ div {
             }
 
             .nearby-locations-index {
-                border: 1px solid black;
                 height: 192px;
 
                 .nearby-location {
-                    border: 1px solid black;
                     height: 33%;
                 }
             }
         }
 
         .popular-locations-box {
-            border: 1px solid black;
             background-color: white;
             font-size: 18px;
             padding-left: 14px;
@@ -555,7 +463,6 @@ div {
             height: 660px;
 
             .header {
-                border-bottom: 1px solid gray;
                 background-color: white;
                 font-weight: 650;
                 padding-top: 12px;
@@ -563,11 +470,9 @@ div {
             }
 
             .popular-locations-index {
-                border: 1px solid black;
                 height: 621px;
 
                 .popular-location {
-                    border: 1px solid black;
                     height: 10%;
                 }
             }
