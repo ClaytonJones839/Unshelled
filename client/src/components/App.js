@@ -10,6 +10,7 @@ import RestaurantNew from "./restaurants/RestaurantNew";
 import RestaurantShow from "./restaurants/RestaurantShow";
 import UserProfile from "./users/UserProfile";
 import TacoShow from './tacos/TacoShow';
+import ProposeEdit from "./static_pages/ProposeEdit"
 // import ReviewNew from './reviews/ReviewNew';
 
 import { Route, HashRouter } from 'react-router-dom';
@@ -31,6 +32,7 @@ const App = (props) => {
         <Route exact path="/register" component={Register} />
         <Route exact path="/taco/:id" component={TacoShow} />
         <Route exact path="/users/:id" component={UserProfile} />
+        <Route exact path="/taco/propose_edit/:tacoid" component={ProposeEdit} />
         <AuthRoute path="/" component={Footer} />
       </HashRouter>
   );

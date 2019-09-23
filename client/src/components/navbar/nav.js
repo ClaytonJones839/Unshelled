@@ -2,16 +2,14 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import { Query, ApolloConsumer } from 'react-apollo'
 import Queries from "../../graphql/queries";
-// import { LocalState } from "apollo-client/core/LocalState";
+
 const { IS_LOGGED_IN } = Queries;
 
 const Nav = (props) => {
-    // debugger;
     return (
         <ApolloConsumer>
             
             {client => {
-                // debugger;
 
                 return (
                     <div className="navbar-container">
@@ -30,11 +28,9 @@ const Nav = (props) => {
                             <Query query={IS_LOGGED_IN}>
                                 {
                                     ({ loading, error, data }) => {
-                                        // debugger;
                                         if (loading) return <p>Loading</p>;
-                                        // console.log("hello");
                                         if (error) return <p>Error</p>;
-                                        // console.log("hello", data.isLoggedIn);
+
                                         if (data.isLoggedIn) {
                                             return (
                                                 <div className="rightside-nav">
