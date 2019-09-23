@@ -50,8 +50,11 @@ class TacoShow extends Component {
                                 <Link to={`/restaurant/${data.taco.restaurant._id}`}> {data.taco.restaurant.name}</Link>
                             </div>
                             
-                            <div className="description-and-rating">{checkin.description}</div>
-                            <div className="taco-pic">taco pic</div>
+                            <div className="description-and-rating">
+                              <div class="speech-bubble">
+                                {checkin.description}
+                              </div>
+                          </div>
                         </div>
                     )
                 });

@@ -288,7 +288,7 @@ div {
                     display: flex;
                     flex-wrap: wrap;
                     font-size: 20px;
-                    margin-top: 23px;
+                    margin-top: 50px;
 
                     .profile-pic {
                         font-size: 8px;
@@ -337,7 +337,7 @@ div {
                     font-weight: bold;
                     background-color: rgb(255, 205, 40);
                     margin: auto;
-                    margin-top: 24px;
+                    margin-top: 44px;
                     display: block;
                     width: 199px;
                     padding-top: 9px;
@@ -441,6 +441,7 @@ div {
             background-color: white;
             height: 231px;
             font-size: 18px;
+            box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
             padding-left: 14px;
             padding-right: 14px;
             margin-bottom: 23px;
@@ -465,6 +466,7 @@ div {
             background-color: white;
             font-size: 18px;
             padding-left: 14px;
+            box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
             padding-right: 14px;
             height: 660px;
 
@@ -485,4 +487,27 @@ div {
 
         }
     }
+}
+
+.speech-bubble {
+    background: #efefef;
+    -webkit-border-radius: 4px;
+            border-radius: 4px;
+    font-size: 1.2rem;
+    margin: 0 auto 40px;
+    max-width: 400px;
+    padding: 15px;
+    position: relative;
+    margin-bottom: 5px;
+    box-shadow: 5px 2px 2px grey;
+
+}
+
+.speech-bubble::after {
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #efefef;
+    top: -20px;
+    content: "";
+    position: absolute;
+    left: 10px;
 }
