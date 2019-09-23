@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Mutation } from "react-apollo";
 import Mutations from "../../graphql/mutations";
 import { Link } from "react-router-dom";
+import { onError } from "apollo-link-error";
+
 
 export default class Login extends Component {
     constructor(props) {
@@ -20,7 +22,7 @@ export default class Login extends Component {
 
 
     updateCache(client, { data }) {
-        // console.log(data.login);
+        // console.log(data);
         // debugger;
         client.writeData({
             data: { isLoggedIn: data.login.isLoggedIn, _id: data.login._id, photo: data.login.photo, firstName: data.login.firstName, lastName: data.login.lastName }
@@ -41,7 +43,8 @@ export default class Login extends Component {
                     // console.log(localStorage);
                     this.props.history.push("/");
                 }}
-                update={(client, data) => this.updateCache(client, data)}
+                update={(client, data) => {
+                  return (this.updateCache(client, data))}}
             >
                 {loginUser => (
                     <div className="login-page-wrap">
@@ -56,13 +59,15 @@ export default class Login extends Component {
                             </div>
                             <form className="login-form-middle"
                                 onSubmit={e => {
-                                    e.preventDefault();
-                                    loginUser({
-                                        variables: {
-                                            email: this.state.email,
-                                            password: this.state.password
-                                        }
-                                    });
+                                  e.preventDefault();
+                                  loginUser({
+                                    variables: {
+                                      email: this.state.email,
+                                      password: this.state.password
+                                    }
+                                  });
+                                  debugger
+                                 console.log(onError);
                                 }}
                             >
                                 <button className="login-form-demo" onClick={e => {

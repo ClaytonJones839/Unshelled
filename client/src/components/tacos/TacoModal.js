@@ -1,8 +1,8 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import { Mutation } from "react-apollo";
 import Mutations from "../../graphql/mutations";
 import Queries from "../../graphql/queries";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const Modal = ({ handleClose, show, children, userId, tacoId }) => {
     let showHideClassName;
