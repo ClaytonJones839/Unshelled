@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Mutation } from "react-apollo";
-import Mutations from "../graphql/mutations";
-import SessionCSS from "./session.css"
+import Mutations from "../../graphql/mutations";
 import { Link } from "react-router-dom";
 
 export default class Register extends Component {
