@@ -1,0 +1,73 @@
+        .taco-activity-box {
+            border: 10px solid black;
+            background-color: white;
+            font-size: 20px;
+            width: 640px;
+            padding-left: 25px;
+            padding-right: 25px;
+
+            .header {
+                // border: 1px solid black;
+                border-bottom: 1px solid gray;
+                background-color: white;
+                font-weight: bold;
+                margin-top: 24px;
+                font-size: 21px;
+            }
+
+            .activity-box {
+                border: 1px solid black;
+                background-color: white;
+                margin-top: 3px;
+                margin-bottom: 3px;
+
+                .taco-checkin-box {
+                    display: flex;
+                    flex-wrap: wrap;
+                    border: 1px solid red;
+                    font-size: 20px;
+                    margin-top: 23px;
+                    border-bottom: 1px solid gray;
+
+                    .profile-pic {
+                        border: 1px solid black;
+                        font-size: 8px;
+                        height: 50px;
+                        width: 50px;
+                    }
+
+                    .checkin-info {
+                        border: 1px solid black;
+                        // min-height: 40px;
+                        padding-bottom: 20px;
+                        width: 500px;
+                        margin-left: 6px;
+
+                        a {
+                            text-decoration: none;
+                            color: rgb(194, 103, 0);
+                        }
+                    }
+
+                    .description-and-rating {
+                        border: 1px solid black;
+                        height: 60px;
+                        width: 500px;
+                        margin-left: 50px;
+                        margin-bottom: 10px;
+                        padding-left: 8px;
+                    }
+
+                    .taco-pic {
+                        border: 1px solid black;
+                        height: 240px;
+                        width: 200px;
+                        margin-left: 50px;
+                        padding-left: 8px;
+                    }
+
+                }
+
+            }
+
+        }

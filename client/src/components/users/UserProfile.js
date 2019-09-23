@@ -1,3 +1,4 @@
+import "../../UserProfile.scss";
 import React from 'react';
 import { Query } from 'react-apollo';
 import Queries from '../../graphql/queries';
@@ -14,6 +15,27 @@ class UserProfile extends React.Component {
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error</p>;
                     // console.log(data);
+
+                    let checkIns = [];
+ 
+                    checkIns = data.user.tacoCheckin.map(checkin => {
+                    return (
+                        <div className="taco-checkin-box">
+                            {/* <div className="profile-pic">prof pic</div> */}
+                            <img className="profile-pic"
+                            src={data.user.photo}></img>
+                            <div className="checkin-info">
+                                <Link>{checkin.name}</Link> is eating a 
+                                <Link to={`/tacoshow/${checkin.taco._id}`}> {checkin.taco.name}</Link> by
+                                <Link to={`/restaurant/${checkin.taco.restaurant._id}`}> {checkin.taco.restaurant.name}</Link>
+                            </div>
+                            
+                            <div className="description-and-rating">{checkin.description}</div>
+                            <div className="taco-pic">taco pic</div>
+                        </div>
+                        )
+                    }
+                    );
                     return (
                         <div className="profile-container">
                             <div className="profile-header">
@@ -45,8 +67,29 @@ class UserProfile extends React.Component {
 
                             <div className="profile-main">
                                 <div className="profile-activity">
-                                    <div className="profile-activity-title">Your Recent Activity</div>
+                                    {/* <div className="profile-activity-title">Your Recent Activity */}
+                                        <div className="taco-activity-box">
+                                            <div className="header">Your Recent Activity</div>
+                                            <div className="activity-box">
+                                            {checkIns}
+                                            </div>
+                                            <div className="footer">
+                                            <button className="show-more">Show More</button>
+                                            </div>
+                                        </div>
+                                    {/* </div> */}
                                 </div>
+    
+ 
+                                {/* <div className="taco-activity-box">
+                                    <div className="header">Global Recent Activity</div>
+                                    <div className="activity-box">
+                                    {checkIns}
+                                    </div>
+                                    <div className="footer">
+                                    <button className="show-more">Show More</button>
+                                    </div>
+                                </div> */}
 
                                 <div className="profile-sidebar">
                                     <div className="profile-sidebar-item">

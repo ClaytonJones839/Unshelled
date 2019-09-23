@@ -25,17 +25,18 @@ export default class Register extends Component {
     updateCache(client, { data }) {
         // console.log(data);
         client.writeData({
-            data: { isLoggedIn: data.register.isLoggedIn, id: data.register._id, photo: data.register.photo }
+            data: { isLoggedIn: data.register.isLoggedIn, _id: data.register._id, photo: data.register.photo }
         });
     }
-
+ 
     render() {
-        return (
+        return ( 
             <Mutation
                 mutation={Mutations.REGISTER_USER}
                 onCompleted={data => {
                     const { token } = data.register;
                     localStorage.setItem("auth-token", token);
+                    localStorage.setItem("currentUserId", data.register._id);
                     this.props.history.push("/");
                 }}
                 update={(client, data) => this.updateCache(client, data)}
