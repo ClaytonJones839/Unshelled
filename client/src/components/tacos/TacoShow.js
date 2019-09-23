@@ -85,9 +85,11 @@ class TacoShow extends Component {
                           src={data.taco.photo}></img>
                           <div className="taco-info">
                             <div className="taco-name">{data.taco.name}</div>
-                            <div className="restaurant-name">
-                              {data.taco.restaurant.name}
-                            </div>
+                            <Link to={`/restaurant/${data.taco.restaurant._id}`}>
+                              <div className="restaurant-name">
+                                {data.taco.restaurant.name}
+                              </div>
+                            </Link>
                             <div className="taco-style">{data.taco.style}</div>
                           </div>
                           <div className="taco-check-ins">
@@ -123,7 +125,7 @@ class TacoShow extends Component {
                         </div>
                       </div>
 
-                      <div className="taco-pics">taco pics</div>
+                      {/* <div className="taco-pics">taco pics</div> */}
 
                       <div className="taco-activity-box">
                         <div className="header">Global Recent Activity</div>

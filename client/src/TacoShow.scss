@@ -20,6 +20,7 @@ div {
             font-family: 'Lexend Exa', sans-serif;
             padding: 20px;
             box-sizing: border-box;
+            box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
 
             .header {
                 min-height: 145px;
@@ -41,8 +42,8 @@ div {
                     }
 
                     .restaurant-name {
-                        padding-top: 10px;
-                        padding-bottom: 10px;
+                        padding-top: 2px;
+                        padding-bottom: 2px;
                         font-size: 20px;
                         font-weight: 500;
                         color: rgb(194, 103, 0);
@@ -265,9 +266,11 @@ div {
         .taco-activity-box {
             background-color: white;
             font-size: 20px;
-            width: 640px;
+            width: 730px;
+            box-sizing: border-box;
             padding-left: 25px;
             padding-right: 25px;
+            box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
 
             .header {
                 background-color: white;
@@ -384,6 +387,7 @@ div {
             height: 255px;
             margin-bottom: 24px;
             padding-left: 14px;
+            box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
             padding-right: 14px;
 
             .header {
@@ -412,8 +416,10 @@ div {
             font-size: 18px;
             height: 355px;
             padding-left: 14px;
+            box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
             padding-right: 14px;
             margin-bottom: 23px;
+            
 
             .header {
                 background-color: white;
