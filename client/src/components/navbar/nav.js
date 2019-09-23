@@ -57,9 +57,9 @@ const Nav = (props) => {
                                                 
                                                     <p></p>
 
-                                                    <div className="searchbar-container">
+                                                    {/* <div className="searchbar-container">
                                                         <input type="text" placeholder="Search for tacos"></input>
-                                                    </div>
+                                                    </div> */}
 
                                                     <button
                                                         className="logout-btn"

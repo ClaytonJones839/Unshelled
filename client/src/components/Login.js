@@ -36,7 +36,7 @@ export default class Login extends Component {
                 mutation={Mutations.LOGIN_USER}
                 onCompleted={data => {
                     const { token } = data.login;
-                    console.log("wof", data);
+                    // console.log("wof", data);
                     localStorage.setItem("auth-token", token);
                     // localStorage.setItem("currentUserId", data.login._id)
                     // console.log(localStorage);
