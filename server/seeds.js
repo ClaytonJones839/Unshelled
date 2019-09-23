@@ -44,7 +44,7 @@ const restaurant_names = [
     "Tacomania",
     "Taqueria Revolucion",
     "Taco Bell",
-    "Chipotle",
+    // "Chipotle",
     "Baja Fresh",
     "Tacos El Gordo"
 ];
