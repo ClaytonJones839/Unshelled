@@ -87,6 +87,161 @@ class TacoShow extends Component {
                   }
                 })
                       
+                let avgRating;
+                let count;
+                count = 0;
+                let total;
+                total = 0;
+                
+                data.taco.tacoCheckin.forEach(checkin => {
+                  count += checkin.rating;
+                  total += 1;
+                })
+
+                if (count !== 0) {
+                  avgRating = count / total;
+                }
+                      
+                      
+                      
+                      
+                  let stars;
+                  if (avgRating > 4.75) {
+                    // 5
+                    stars = (
+                      <div>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <p className="star-div"> ({total})</p>
+                      </div>
+                    );
+                  } else if (avgRating > 4.25) {
+                    //4.5
+                    stars = (
+                      <div>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star-half-alt"></i>
+                        <p className="star-div"> ({total})</p>
+                      </div>
+                    );
+                  } else if (avgRating > 3.75) {
+                    // 4
+                    stars = (
+                      <div>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <p className="star-div"> ({total})</p>
+                      </div>
+                    );
+                  } else if (avgRating > 3.25) {
+                    //3.5
+                    stars = (
+                      <div>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star-half-alt"></i>
+                        <i className="far fa-star"></i>
+                        <p className="star-div"> ({total})</p>
+                      </div>
+                    );
+                  } else if (avgRating > 2.75) {
+                    // 3
+                    stars = (
+                      <div>    
+                          <i className="fas fa-star"></i>
+                          <i className="fas fa-star"></i>
+                          <i className="fas fa-star"></i>
+                          <i className="far fa-star"></i>
+                          <i className="far fa-star"></i>
+                          <p className="star-div"> ({total})</p>
+                      </div>
+                    );
+                  } else if (avgRating > 2.25) {
+                    //2.5
+                    stars = (
+                      <div>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star-half-alt"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <p className="star-div"> ({total})</p>
+                      </div>
+                    );
+                  } else if (avgRating > 1.75) {
+                    // 2
+                    stars = (
+                      <div>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <p className="star-div"> ({total})</p>
+                      </div>
+                    );
+                  } else if (avgRating > 1.25) {
+                    // 1.5
+                    stars = (
+                      <div>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star-half-alt"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <p className="star-div"> ({total})</p>
+                      </div>
+                    );
+                  } else if (avgRating > 0.75) {
+                    // 1
+                    stars = (
+                      <div>
+                        <i className="fas fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <p className="star-div"> ({total})</p>
+                      </div>
+                    );
+                  } else if (avgRating > 0) {
+                    // 0.5
+                    stars = (
+                      <div>
+                        <i className="fas fa-star-half-alt"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <p className="star-div"> ({total})</p>
+                      </div>
+                    );
+                  } else {
+                    // 0
+                    stars = (
+                      <div>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <p className="star-div"> ({total})</p>
+                        <p className="star-rev">Be the first to review!</p>
+                      </div>
+                    );
+                  } 
+                
+                      
                 // debugger;
                             // console.log(rdata);
                             // console.log(data);
@@ -132,8 +287,8 @@ class TacoShow extends Component {
                         </div>
 
                         <div className="info-bar">
-                          <div className="rating">Avg rating: {data.taco.rating}</div>
-                          <div className="total-ratings">Ratings</div>
+                          <div className="rating">Avg rating: {stars}</div>
+                          <div className="total-ratings">Ratings: {totalCheckins}</div>
                         </div>
 
                         <div className="description">
