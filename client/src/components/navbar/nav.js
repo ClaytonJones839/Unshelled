@@ -6,7 +6,7 @@ import Queries from "../../graphql/queries";
 const { IS_LOGGED_IN } = Queries;
 
 const Nav = (props) => {
-    // debugger;
+     
     return (
         <ApolloConsumer>
             {client => {

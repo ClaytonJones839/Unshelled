@@ -33,7 +33,7 @@ const Modal = ({ handleClose, show, children, userId, tacoId }) => {
   //   }
   // }
   
-  // debugger;
+   
   return (
     <div className={showHideClassName}>
       <section className="modal-main">
@@ -48,14 +48,14 @@ const Modal = ({ handleClose, show, children, userId, tacoId }) => {
             let taco;
             let user;
             // let tacooos;
-            // debugger;
+             
             // tacooos = cache.readQuery({ query: Mutations.FETCH_TACOS });
             // console.log(tacooos);
-            // debugger;
+             
             try {
               taco = cache.readQuery({ query: Queries.FETCH_TACO, variables: { id: tacoId } });
               user = cache.readQuery({ query: Queries.FETCH_USER, variables: { id: userId } });
-              // debugger;
+               
             } catch (err) {
               return;
             }
@@ -63,7 +63,7 @@ const Modal = ({ handleClose, show, children, userId, tacoId }) => {
             
 
             if (taco) {
-              // debugger;
+               
               // let tacoCheckinArray;
               // tacoCheckinArray = taco.taco.tacoCheckin;
               taco.taco.tacoCheckin.push(newTacoCheckinToCache);
@@ -89,7 +89,7 @@ const Modal = ({ handleClose, show, children, userId, tacoId }) => {
           }}
           variables={{}}
           onCompleted={data => {
-            // debugger;
+             
             // console.log(data);
             // console.log(handleClose);
             setDescription("");
