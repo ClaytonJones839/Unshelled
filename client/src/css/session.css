@@ -22,6 +22,10 @@
     align-items: center;
 }
 
+.li-errors {
+  list-style-type: none;
+}
+
 .login-form-container {
     height: 445px;
 }

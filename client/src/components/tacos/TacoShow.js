@@ -22,7 +22,7 @@ class TacoShow extends Component {
 
 
     render() {
-        // debugger;
+         
 
         return (
             // tacotime,
@@ -32,7 +32,7 @@ class TacoShow extends Component {
             <Query query={FETCH_TACO} variables={{ id: this.props.match.params.id }}>
             {({ loading: loadingOne, error, data }) => {
                 if (loadingOne) return <p>Loading...</p>
-                    // debugger;
+                     
                             
                 return (
                                 <Query query={IS_LOGGED_IN}>
@@ -45,11 +45,11 @@ class TacoShow extends Component {
                     {({ loading: loadingThree, error, data: udata }) => {
                 if (loadingThree) return <p>Loading...</p>;
                 if (error) return <p>Error</p>;
-                      // debugger;
+                       
                             // console.log(data);
                             console.log("string", rdata);
                 let tacoCheckins;
-                            // debugger;
+                             
                 tacoCheckins = data.taco.tacoCheckin.map((checkin) => {
                     return (
                         <div className="taco-checkin-box">
@@ -69,7 +69,7 @@ class TacoShow extends Component {
                         </div>
                     )
                 });
-                      debugger;
+                       
                 let totalCheckins;
                 totalCheckins = tacoCheckins.length; 
                 
@@ -89,7 +89,7 @@ class TacoShow extends Component {
                   }
                 })
                       
-                // debugger;
+                 
                             // console.log(rdata);
                             // console.log(data);
                 return (

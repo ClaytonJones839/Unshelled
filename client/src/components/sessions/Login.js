@@ -11,9 +11,9 @@ export default class Login extends Component {
 
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            errors: ""
         };
-
     }
 
     update(field) {
@@ -23,24 +23,36 @@ export default class Login extends Component {
 
     updateCache(client, { data }) {
         // console.log(data);
-        // debugger;
+         
         client.writeData({
             data: { isLoggedIn: data.login.isLoggedIn, _id: data.login._id, photo: data.login.photo, firstName: data.login.firstName, lastName: data.login.lastName }
         });
-        // debugger;
+         
     }
 
 
     render() {
+      // debugger
+      const errors = this.state.errors ? (
+        <li className='li-errors'>{this.state.errors.graphQLErrors[0].message}</li>
+      ) : (
+        <li className='li-errors'></li>
+      );
+
         return (
             <Mutation
                 mutation={Mutations.LOGIN_USER}
                 onCompleted={data => {
                     const { token } = data.login;
                     localStorage.setItem("auth-token", token);
-
+// debugger
                     this.props.history.push("/");
                 }}
+                onError={ err => {
+                  this.setState({errors: err})
+                }
+
+                }
                 update={(client, data) => {
                   return (this.updateCache(client, data))}}
             >
@@ -64,8 +76,8 @@ export default class Login extends Component {
                                       password: this.state.password
                                     }
                                   });
-                                  debugger
-                                 console.log(onError);
+                                   
+                                //  console.log(onError);
                                 }}
                             >
                                 <button className="login-form-demo" onClick={e => {
@@ -83,6 +95,9 @@ export default class Login extends Component {
                                 <div className="demo-or-login">
                                     OR
                                 </div>
+                                  <ul className='ul-errors'>
+                                    {errors}
+                                  </ul>
                                 <div className="login-inputs">
                                 <input
                                     className="login-input"
