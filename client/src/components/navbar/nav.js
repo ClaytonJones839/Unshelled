@@ -9,10 +9,7 @@ const Nav = (props) => {
     // debugger;
     return (
         <ApolloConsumer>
-            
             {client => {
-                // debugger;
-
                 return (
                     <div className="navbar-container">
                         <nav className="navbar">
@@ -23,18 +20,15 @@ const Nav = (props) => {
                                 </div>
                                 <div className="navlink">
                                     <Link className="navlink-item" to="/restaurants">Restaurants</Link>
+                                    <Link className="navlink-item" to="/tacos">Tacos</Link>
                                 </div>
                             </div>
-                                
                         
                             <Query query={IS_LOGGED_IN}>
                                 {
                                     ({ loading, error, data }) => {
-                                        // debugger;
                                         if (loading) return <p>Loading</p>;
-                                        // console.log("hello");
                                         if (error) return <p>Error</p>;
-                                        // console.log("hello", data.isLoggedIn);
                                         if (data.isLoggedIn) {
                                             return (
                                                 <div className="rightside-nav">
@@ -48,6 +42,7 @@ const Nav = (props) => {
                                                                 <div onClick={e => {
                                                                     e.preventDefault();
                                                                     localStorage.removeItem("auth-token");
+                                                                    
                                                                     client.writeData({ data: { isLoggedIn: false } });
                                                                     props.history.push("/");
                                                                 }}>Logout</div>
@@ -55,7 +50,6 @@ const Nav = (props) => {
                                                         </div>
                                                     </div>
                                                 
-                                                    <p></p>
 
                                                     {/* <div className="searchbar-container">
                                                         <input type="text" placeholder="Search for tacos"></input>
@@ -66,6 +60,7 @@ const Nav = (props) => {
                                                         onClick={e => {
                                                             e.preventDefault();
                                                             localStorage.removeItem("auth-token");
+                                                            
                                                             client.writeData({ data: { isLoggedIn: false } });
                                                             props.history.push("/login");
                                                         }}
