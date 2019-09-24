@@ -24,6 +24,12 @@
 
 .li-errors {
   list-style-type: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+.ul-errors-register{
+  padding-top: 20px;
+  padding-bottom: 5px;
 }
 
 .login-form-container {

@@ -50,8 +50,7 @@ export default class Login extends Component {
                 }}
                 onError={ err => {
                   this.setState({errors: err})
-                }
-
+                  }
                 }
                 update={(client, data) => {
                   return (this.updateCache(client, data))}}
