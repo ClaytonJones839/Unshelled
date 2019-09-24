@@ -50,9 +50,8 @@ const Nav = (props) => {
                                                         </div>
                                                     </div>
                                                 
-                                                    <p></p>
-{/* 
-                                                    <div className="searchbar-container">
+
+                                                    {/* <div className="searchbar-container">
                                                         <input type="text" placeholder="Search for tacos"></input>
                                                     </div> */}
 
