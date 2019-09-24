@@ -68,3 +68,19 @@
 .button-cont {
     margin-bottom: 160px;
 }
+
+.dupe-title {
+    font-weight: 900;
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.dupe-text {
+    height: 25px;
+    width: 550px;
+    resize: none;
+    border-radius: 6px;
+    background: #efefef;
+    outline: none;
+    font-size: 20px;
+}

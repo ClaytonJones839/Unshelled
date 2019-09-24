@@ -128,8 +128,6 @@ class TacoShow extends Component {
                         </div>
                       </div>
 
-                      {/* <div className="taco-pics">taco pics</div> */}
-
                       <div className="taco-activity-box">
                         <div className="header">Global Recent Activity</div>
                         <div className="activity-box">
