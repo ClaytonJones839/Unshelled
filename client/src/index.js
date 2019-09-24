@@ -64,7 +64,8 @@ cache.writeData({
     cart: [],
     firstName: "",
     lastName: "",
-    photo: ""
+    photo: "",
+    username: ""
   }
 });
 
@@ -83,7 +84,8 @@ if (token) {
           cart: [],
           firstName: data.verifyUser.firstName,
           lastName: data.verifyUser.lastName,
-          photo: data.verifyUser.photo
+          photo: data.verifyUser.photo,
+          username:data.verifyUser.username
         }
       });
     });

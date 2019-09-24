@@ -10,6 +10,7 @@ export default {
       photo
       firstName
       lastName
+      username
     }
   }`,
   VERIFY_USER: gql`

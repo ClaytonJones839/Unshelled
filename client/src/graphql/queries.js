@@ -38,6 +38,7 @@ export default {
       photo @client
       firstName @client
       lastName @client
+      username @client
     }
   `,
 

@@ -117,10 +117,14 @@ const verifyUser = async data => {
                 return user.photo;
             });
 
+            const username = await User.findById(id).then(user => {
+                return user.username;
+            });
+
             const _id = id;
 
             // debugger;
-            return { isLoggedIn, _id, firstName, lastName, photo }
+            return { isLoggedIn, _id, firstName, lastName, photo, username }
         }
         
     } catch (err) {

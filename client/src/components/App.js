@@ -10,9 +10,10 @@ import RestaurantNew from "./restaurants/RestaurantNew";
 import RestaurantShow from "./restaurants/RestaurantShow";
 import UserProfile from "./users/UserProfile";
 import TacoShow from './tacos/TacoShow';
+import Home from './home/home';
 // import ReviewNew from './reviews/ReviewNew';
 
-import { Route, HashRouter } from 'react-router-dom';
+import { Route, HashRouter, Switch } from 'react-router-dom';
 import Footer from "./footer/footer";
 
 
@@ -20,19 +21,22 @@ import Footer from "./footer/footer";
 
 const App = (props) => {
   return (
-      <HashRouter>
-        <Route exact path="/restaurants" component={RestaurantIndex} />
-        <AuthRoute path="/" component={Nav} />
-        <Route exact path="/" component={TacoIndex} />
-        <Route exact path="/newrestaurant" component={RestaurantNew} />
-        <Route exact path="/restaurant/:id" component={RestaurantShow} />
-        <Route exact path="/newtaco" component={TacoNew} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/taco/:id" component={TacoShow} />
-        <Route exact path="/users/:id" component={UserProfile} />
-        <AuthRoute path="/" component={Footer} />
-      </HashRouter>
+    <HashRouter>
+      <AuthRoute path="/" component={Nav} />
+      <Switch>
+          <AuthRoute exact path="/" component={Home} />
+          <AuthRoute path="/restaurants" component={RestaurantIndex} />
+          <AuthRoute path="/tacos" component={TacoIndex} />
+          <Route exact path="/newrestaurant" component={RestaurantNew} />
+          <AuthRoute path="/restaurant/:id" component={RestaurantShow} />
+          <Route exact path="/newtaco" component={TacoNew} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+          <AuthRoute path="/taco/:id" component={TacoShow} />
+          <AuthRoute path="/users/:id" component={UserProfile} />
+      </Switch>
+      <AuthRoute path="/" component={Footer} />
+    </HashRouter>
   );
 };
 
