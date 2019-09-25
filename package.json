@@ -1,0 +1,43 @@
+{
+  "name": "unshelled",
+  "version": "1.0.0",
+  "description": "Unshelled is a web application focuses on helping it's users find the best taco's in their area. Unshelled is inspired from the popular site [Untapped](https://untappd.com). User's are able to search for restaurants in their area that serve tacos. User's are also able to review the tacos, leave reviews, and check-in to show others where they have been! test ## Proposal Should Include - A detailed plan of how you will spend your weekend laying the ground work for your project.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "client-install": "npm install --prefix client",
+    "client": "npm start --prefix client",
+    "server": "nodemon index.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ClaytonJones839/Unshelled.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ClaytonJones839/Unshelled/issues"
+  },
+  "homepage": "https://github.com/ClaytonJones839/Unshelled#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "concurrently": "^4.1.2",
+    "cors": "^2.8.5",
+    "create-react-app": "^3.1.1",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^14.5.4",
+    "graphql-tag": "^2.10.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.6.11",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.19.1",
+    "validator": "^11.1.0"
+  },
+  "engines": {
+    "node": "12.6.0"
+  }
+}
