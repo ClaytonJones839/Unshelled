@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import React, { Component } from "react";
 import { Query } from "react-apollo";
 import Queries from "../../graphql/queries";
-// import Mutations from "../../graphql/mutations";
 import Modal from "./TacoModal";
 const { FETCH_TACO, IS_LOGGED_IN, FETCH_USER } = Queries;
 
@@ -22,38 +21,27 @@ class TacoShow extends Component {
 
 
     render() {
-         
 
         return (
-            // tacotime,
-            // random
-
-            // there we are getting the `id` for our query from React Router
             <Query query={FETCH_TACO} variables={{ id: this.props.match.params.id }}>
             {({ loading: loadingOne, error, data }) => {
                 if (loadingOne) return <p>Loading...</p>
-                     
-                            
                 return (
-                                <Query query={IS_LOGGED_IN}>
+                  <Query query={IS_LOGGED_IN}>
                     {({ loading: loadingTwo, error, data: rdata }) => {
-                if (loadingTwo) return <p>Loading...</p>;
-                if (error) return <p>Error</p>;
+                  if (loadingTwo) return <p>Loading...</p>;
+                  if (error) return <p>Error</p>;
                 
                 return (
                 <Query query={FETCH_USER} variables={{id: rdata._id}}>
                     {({ loading: loadingThree, error, data: udata }) => {
                 if (loadingThree) return <p>Loading...</p>;
                 if (error) return <p>Error</p>;
-                       
-                            // console.log(data);
                             console.log("string", rdata);
                 let tacoCheckins;
-                             
                 tacoCheckins = data.taco.tacoCheckin.map((checkin) => {
                     return (
                         <div className="taco-checkin-box">
-                            {/* <div className="profile-pic">prof pic</div> */}
                             <img className="profile-pic"
                             src={checkin.user.photo}
                             alt=''
@@ -64,12 +52,14 @@ class TacoShow extends Component {
                                 <Link to={`/restaurant/${data.taco.restaurant._id}`}> {data.taco.restaurant.name}</Link>
                             </div>
                             
-                            <div className="description-and-rating">{checkin.description}</div>
-                            <div className="taco-pic">taco pic</div>
+                            <div className="description-and-rating">
+                              <div class="speech-bubble">
+                                {checkin.description}
+                              </div>
+                          </div>
                         </div>
                     )
                 });
-                       
                 let totalCheckins;
                 totalCheckins = tacoCheckins.length; 
                 
@@ -88,35 +78,24 @@ class TacoShow extends Component {
                     uniqueCheckins[checkin.user._id] = true;
                   }
                 })
-                      
-                 
-                            // console.log(rdata);
-                            // console.log(data);
                 return (
                     
                   <div className="detail">
                     <div className="center-boxes">
                       <div className="taco-info-box">
-                        {/* <div>{data.taco._id}</div> */}
 
                         <div className="header">
-                          {/* <div className="logo-box">Im logo</div> */}
                           <img className="logo-box"
                           alt=''
                           src={data.taco.photo}></img>
                           <div className="taco-info">
                             <div className="taco-name">{data.taco.name}</div>
-                            <div className="restaurant-name">
-                              {data.taco.restaurant.name}
-                            </div>
-                            {/* <div className="taco-description">{data.taco.description}</div> */}
+                            <Link to={`/restaurant/${data.taco.restaurant._id}`}>
+                              <div className="restaurant-name">
+                                {data.taco.restaurant.name}
+                              </div>
+                            </Link>
                             <div className="taco-style">{data.taco.style}</div>
-                            {/* <div className="taco-rating">
-                              {data.taco.rating}
-                            </div> */}
-                            {/* <div className="taco-price">{data.taco.price}</div> */}
-                            {/* <div>{data.taco.restaurant._id}</div> */}
-                            {/* <div className="restaurant-location">{data.taco.restaurant.location}</div> */}
                           </div>
                           <div className="taco-check-ins">
                             <div className="total">TOTAL
@@ -133,42 +112,23 @@ class TacoShow extends Component {
                             </div>
                           </div>
                         </div>
-
                         <div className="info-bar">
                           <div className="rating">Avg rating: {data.taco.rating}</div>
                           <div className="total-ratings">Ratings</div>
                         </div>
-
                         <div className="description">
                           <div className="description-text">
                             Description: {data.taco.description}
                           </div>
                           <div className="taco-buttons">
-                              
-                                        
-                        
                             <Modal tacoId={this.props.match.params.id} userId={rdata._id} show={this.state.show} handleClose={this.hideModal.bind(this)}>
                                 
                             </Modal>
-                            <button className="check-in" onClick={this.showModal}>✓</button>
-
-                                        
-                        
-                            {/* <div id="myModal" className="modal">            
-                            <div className="modal-content">
-                                <span class="close">&times;</span>
-                                <p>Some text in the Modal..</p>
-                            </div> */}
-
-                            {/* </div> */}
-                            
-                                        
+                            <button className="check-in" onClick={this.showModal}>✓</button>         
                             <button className="add-to-list">+</button>
                           </div>
                         </div>
                       </div>
-
-                      <div className="taco-pics">taco pics</div>
 
                       <div className="taco-activity-box">
                         <div className="header">Global Recent Activity</div>
@@ -221,8 +181,6 @@ class TacoShow extends Component {
                           </div>
                         </div>
                       </div>
-                      
-                            {/* <div>{rdata.firstName}</div> */}
                     </div>
                   </div>
                 );
@@ -239,5 +197,3 @@ class TacoShow extends Component {
 }
 
 export default TacoShow;
-
-// id: props.match.params.id;
