@@ -26,7 +26,7 @@ class UserProfile extends React.Component {
                             src={data.user.photo}></img>
                             <div className="checkin-info">
                                 <Link>{checkin.name}</Link> is eating a 
-                                <Link to={`/tacoshow/${checkin.taco._id}`}> {checkin.taco.name}</Link> by
+                                <Link to={`/taco/${checkin.taco._id}`}> {checkin.taco.name}</Link> by
                                 <Link to={`/restaurant/${checkin.taco.restaurant._id}`}> {checkin.taco.restaurant.name}</Link>
                             </div>
                             

@@ -58,7 +58,7 @@ class TacoShow extends Component {
                             src={checkin.user.photo}></img>
                             <div className="checkin-info">
                                 <Link>{checkin.name}</Link> is eating a 
-                                <Link to={`/tacoshow/${data.taco._id}`}> {data.taco.name}</Link> by
+                                <Link to={`/taco/${data.taco._id}`}> {data.taco.name}</Link> by
                                 <Link to={`/restaurant/${data.taco.restaurant._id}`}> {data.taco.restaurant.name}</Link>
                             </div>
                             
@@ -287,7 +287,7 @@ class TacoShow extends Component {
                         </div>
 
                         <div className="info-bar">
-                          <div className="rating">Avg rating: {stars}</div>
+                          <div className="rating">Avg rating:{avgRating} {stars}</div>
                           <div className="total-ratings">Ratings: {totalCheckins}</div>
                         </div>
 
