@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Query } from "react-apollo";
 import Queries from "../../graphql/queries";
-import RestaurantCSS from "./RestaurantCSS.css"
-import { Link } from "react-router-dom";
-import { userInfo } from "os";
+// import RestaurantCSS from "./RestaurantCSS.css"
+// import { Link } from "react-router-dom";
+// import { userInfo } from "os";
 const mongoose = require('mongoose');
 const User = mongoose.model("users")
 const { FETCH_USERS, IS_LOGGED_IN } = Queries;

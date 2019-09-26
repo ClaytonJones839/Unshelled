@@ -22,7 +22,6 @@ const Nav = (props) => {
                                     <Link className="navlink-item" to="/tacos">Tacos</Link>
                                 </div>
                             </div>
-                        
                             <Query query={IS_LOGGED_IN}>
                                 {
                                     ({ loading, error, data }) => {
@@ -30,6 +29,7 @@ const Nav = (props) => {
                                         if (error) return <p>Error</p>;
                                         if (data.isLoggedIn) {
                                             return (
+                        
                                                 <div className="rightside-nav">
                                                     <div className="nav-dropdown">
                                                         <img className="nav-avatar" src={data.photo} alt="" />
