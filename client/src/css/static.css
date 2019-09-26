@@ -1,0 +1,86 @@
+.request-feat {
+    margin-top: 120px;
+    height: 400px;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+    flex-direction: column;
+}
+
+.req-title {
+    font-weight: 900;
+    color: #555555;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: -1.2px;
+    font-size: 4rem;
+    line-height: 1em;
+    margin-bottom: 40px;
+}
+
+
+.req-sub {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+    /* margin-top: -300px; */
+}
+
+.req-sub-text {
+    width: 500px;
+}
+
+.sent {
+    position: absolute;
+    top: 50%;
+}
+.req-text {
+    height: 250px;
+    width: 550px;
+    resize: none;
+    border-radius: 6px;
+    background: #efefef;
+    outline: none;
+    font-size: 20px;
+}
+
+.submit-req {
+    width: 558px;
+    height: 40px;
+    background-color: #ffcc00;
+    /* background-color: red; */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    outline: none;
+}
+
+.submit-req:hover {
+    cursor: pointer;
+    filter: brightness(0.8)
+}
+
+.button-cont {
+    margin-bottom: 160px;
+}
+
+.dupe-title {
+    font-weight: 900;
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.dupe-text {
+    height: 25px;
+    width: 550px;
+    resize: none;
+    border-radius: 6px;
+    background: #efefef;
+    outline: none;
+    font-size: 20px;
+}

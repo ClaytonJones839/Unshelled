@@ -37,6 +37,8 @@
     width: 100%;
 }
 .rest-show-right {
+    
+    box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
     margin: 100px 0px 0px 20px;
     background-color: white;
     max-height: 500px;
@@ -361,6 +363,7 @@ a {
     max-height: 488px;
     overflow: auto;
     margin: 0px 20px 0px 40px;
+    box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
 }
 
 .top-taco-list {
