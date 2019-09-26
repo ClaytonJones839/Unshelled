@@ -22,7 +22,8 @@ import Footer from "./footer/footer";
 const App = (props) => {
   return (
     <HashRouter>
-      <AuthRoute path="/" component={Nav} />
+      <AuthRoute exact path={["/", "/restaurants", "/tacos", "/restaurant/:id"]} component={Nav} />
+
       <Switch>
           <AuthRoute exact path="/" component={Home} />
           <AuthRoute path="/restaurants" component={RestaurantIndex} />
@@ -35,7 +36,7 @@ const App = (props) => {
           <AuthRoute path="/taco/:id" component={TacoShow} />
           <AuthRoute path="/users/:id" component={UserProfile} />
       </Switch>
-      <AuthRoute path="/" component={Footer} />
+      <AuthRoute path={["/", "/restaurants", "/tacos", "/restaurant/:id"]} component={Footer} />
     </HashRouter>
   );
 };

@@ -21,6 +21,7 @@ export default {
       firstName
       lastName
       photo
+      username
     }
   }`,
 
@@ -45,6 +46,10 @@ export default {
         isLoggedIn
         _id
         photo
+        username
+        firstName
+        lastName
+        email
       }
     }
   `,

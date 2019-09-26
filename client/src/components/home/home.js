@@ -12,7 +12,6 @@ class Home extends React.Component {
                 {({ loading, error, data }) => {
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error</p>;
-                    console.log(data);
 
                     return (
                       <div className="homepage">
@@ -52,11 +51,11 @@ class Home extends React.Component {
                                 <span className="title">Unique</span>
                               </a>
                               <a className="badges">
-                                <span className="stat">Count</span>
+                                <span className="stat">0</span>
                                 <span className="title">Badges</span>
                               </a>
                               <a className="friends">
-                                <span className="stat">Count</span>
+                                <span className="stat">0</span>
                                 <span className="title">Friends</span>
                               </a>
                             </div>

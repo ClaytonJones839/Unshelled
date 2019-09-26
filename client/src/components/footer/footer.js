@@ -17,6 +17,9 @@ class Footer extends React.Component {
                             <li>
                                 <Link to="/restaurants">Restaurants</Link>
                             </li>
+                            <li>
+                                <Link to="/tacos">Tacos</Link>
+                            </li>
                         </ul>
                     </div>
                 </div>
