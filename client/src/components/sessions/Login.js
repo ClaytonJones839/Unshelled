@@ -43,9 +43,13 @@ export default class Login extends Component {
             <Mutation
                 mutation={Mutations.LOGIN_USER}
                 onCompleted={data => {
-                    const { token } = data.login;
+                    const { token, _id, firstName, lastName, photo, username } = data.login;
                     localStorage.setItem("auth-token", token);
-// debugger
+                    localStorage.setItem("currentUserId", _id);
+                    localStorage.setItem("currentUserFName", firstName);
+                    localStorage.setItem("currentUserLName", lastName);
+                    localStorage.setItem("currentUserPhoto", photo);
+                    localStorage.setItem("currentUserUsername", username);
                     this.props.history.push("/");
                 }}
                 onError={ err => {

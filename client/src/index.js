@@ -59,12 +59,12 @@ const token = localStorage.getItem("auth-token");
 // before our mutation goes through we can set it up here
 cache.writeData({
   data: {
-    _id: null,
-    isLoggedIn: false,
-    firstName: "",
-    lastName: "",
-    photo: "",
-    username: ""
+    _id: localStorage.getItem("currentUserId"),
+    isLoggedIn: token ? true : false,
+    firstName: localStorage.getItem("currentUserFName"),
+    lastName: localStorage.getItem("currentUserLName"),
+    photo: localStorage.getItem("currentUserPhoto"),
+    username: localStorage.getItem("currentUserUsername")
   }
 });
 

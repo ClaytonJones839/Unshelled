@@ -42,7 +42,11 @@ const Nav = (props) => {
                                                                 <div onClick={e => {
                                                                     e.preventDefault();
                                                                     localStorage.removeItem("auth-token");
-                                                                    
+                                                                    localStorage.removeItem("currentUserId");
+                                                                    localStorage.removeItem("currentUserFName");
+                                                                    localStorage.removeItem("currentUserLName");
+                                                                    localStorage.removeItem("currentUserUsername");
+                                                                    localStorage.removeItem("currentUserPhoto");
                                                                     client.writeData({ data: { isLoggedIn: false } });
                                                                     props.history.push("/");
                                                                 }}>Logout</div>
@@ -60,7 +64,11 @@ const Nav = (props) => {
                                                         onClick={e => {
                                                             e.preventDefault();
                                                             localStorage.removeItem("auth-token");
-                                                            
+                                                            localStorage.removeItem("currentUserId");
+                                                            localStorage.removeItem("currentUserFName");
+                                                            localStorage.removeItem("currentUserLName");
+                                                            localStorage.removeItem("currentUserUsername");
+                                                            localStorage.removeItem("currentUserPhoto");
                                                             client.writeData({ data: { isLoggedIn: false } });
                                                             props.history.push("/login");
                                                         }}
