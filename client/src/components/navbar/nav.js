@@ -2,11 +2,10 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import { Query, ApolloConsumer } from 'react-apollo'
 import Queries from "../../graphql/queries";
-// import { LocalState } from "apollo-client/core/LocalState";
+
 const { IS_LOGGED_IN } = Queries;
 
 const Nav = (props) => {
-     
     return (
         <ApolloConsumer>
             {client => {

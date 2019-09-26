@@ -10,8 +10,9 @@ import RestaurantNew from "./restaurants/RestaurantNew";
 import RestaurantShow from "./restaurants/RestaurantShow";
 import UserProfile from "./users/UserProfile";
 import TacoShow from './tacos/TacoShow';
+import ProposeEdit from "./static_pages/ProposeEdit"
+import ProposeDupe from "./static_pages/ProposeDupe"
 import Home from './home/home';
-// import ReviewNew from './reviews/ReviewNew';
 
 import { Route, HashRouter, Switch } from 'react-router-dom';
 import Footer from "./footer/footer";
@@ -21,23 +22,21 @@ import Footer from "./footer/footer";
 
 const App = (props) => {
   return (
-    <HashRouter>
-      <AuthRoute exact path={["/", "/restaurants", "/tacos", "/restaurant/:id"]} component={Nav} />
-
-      <Switch>
-          <AuthRoute exact path="/" component={Home} />
-          <AuthRoute path="/restaurants" component={RestaurantIndex} />
-          <AuthRoute path="/tacos" component={TacoIndex} />
-          <Route exact path="/newrestaurant" component={RestaurantNew} />
-          <AuthRoute path="/restaurant/:id" component={RestaurantShow} />
-          <Route exact path="/newtaco" component={TacoNew} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-          <AuthRoute path="/taco/:id" component={TacoShow} />
-          <AuthRoute path="/users/:id" component={UserProfile} />
-      </Switch>
-      <AuthRoute path={["/", "/restaurants", "/tacos", "/restaurant/:id"]} component={Footer} />
-    </HashRouter>
+      <HashRouter>
+        <Route exact path="/restaurants" component={RestaurantIndex} />
+        <AuthRoute path="/" component={Nav} />
+        <Route exact path="/" component={TacoIndex} />
+        <Route exact path="/newrestaurant" component={RestaurantNew} />
+        <Route exact path="/restaurant/:id" component={RestaurantShow} />
+        <Route exact path="/newtaco" component={TacoNew} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/taco/:id" component={TacoShow} />
+        <Route exact path="/users/:id" component={UserProfile} />
+        <Route exact path="/taco/propose_edit/:tacoid" component={ProposeEdit} />
+        <Route exact path="/taco/propose_dupe/:tacoid" component={ProposeDupe} />
+        <AuthRoute path="/" component={Footer} />
+      </HashRouter>
   );
 };
 
