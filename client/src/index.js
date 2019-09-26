@@ -59,9 +59,8 @@ const token = localStorage.getItem("auth-token");
 // before our mutation goes through we can set it up here
 cache.writeData({
   data: {
-    _id: localStorage.getItem("currentUserId"),
-    isLoggedIn: Boolean(token),
-    cart: [],
+    _id: null,
+    isLoggedIn: false,
     firstName: "",
     lastName: "",
     photo: "",
@@ -81,7 +80,6 @@ if (token) {
         data: {
           _id: data.verifyUser._id,
           isLoggedIn: data.verifyUser.isLoggedIn,
-          cart: [],
           firstName: data.verifyUser.firstName,
           lastName: data.verifyUser.lastName,
           photo: data.verifyUser.photo,
@@ -95,7 +93,12 @@ if (token) {
   cache.writeData({
     data: {
       isLoggedIn: false,
-      cart: []
+      _id: null,
+      firstName: "",
+      lastName: "",
+      photo: "",
+      username:""
+
     }
   });
 }

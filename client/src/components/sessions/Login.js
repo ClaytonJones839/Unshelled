@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Mutation } from "react-apollo";
 import Mutations from "../../graphql/mutations";
 import { Link } from "react-router-dom";
-import { onError } from "apollo-link-error";
+// import { onError } from "apollo-link-error";
 
 
 export default class Login extends Component {
@@ -25,7 +25,7 @@ export default class Login extends Component {
         // console.log(data);
          
         client.writeData({
-            data: { isLoggedIn: data.login.isLoggedIn, _id: data.login._id, photo: data.login.photo, firstName: data.login.firstName, lastName: data.login.lastName }
+            data: { isLoggedIn: data.login.isLoggedIn, _id: data.login._id, photo: data.login.photo, firstName: data.login.firstName, lastName: data.login.lastName, username: data.login.username }
         });
          
     }
