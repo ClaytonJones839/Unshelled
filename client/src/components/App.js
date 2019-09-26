@@ -25,7 +25,8 @@ const App = (props) => {
       <HashRouter>
         <Route exact path="/restaurants" component={RestaurantIndex} />
         <AuthRoute path="/" component={Nav} />
-        <Route exact path="/" component={TacoIndex} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/tacos" component={TacoIndex} />
         <Route exact path="/newrestaurant" component={RestaurantNew} />
         <Route exact path="/restaurant/:id" component={RestaurantShow} />
         <Route exact path="/newtaco" component={TacoNew} />

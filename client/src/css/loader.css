@@ -11,7 +11,7 @@ body {
 @import "./reset.css";
 @import "./navbar.css";
 @import "./static.css";
-/* @import "./session.css"; */
+@import "./session.css";
 @import "./home.css";
 @import "./user-profile.css";
 @import "./footer.css";
