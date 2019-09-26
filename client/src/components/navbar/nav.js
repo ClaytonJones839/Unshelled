@@ -8,9 +8,7 @@ const { IS_LOGGED_IN } = Queries;
 const Nav = (props) => {
     return (
         <ApolloConsumer>
-            
             {client => {
-
                 return (
                     <div className="navbar-container">
                         <nav className="navbar">
@@ -21,16 +19,15 @@ const Nav = (props) => {
                                 </div>
                                 <div className="navlink">
                                     <Link className="navlink-item" to="/restaurants">Restaurants</Link>
+                                    <Link className="navlink-item" to="/tacos">Tacos</Link>
                                 </div>
                             </div>
-                                
                         
                             <Query query={IS_LOGGED_IN}>
                                 {
                                     ({ loading, error, data }) => {
                                         if (loading) return <p>Loading</p>;
                                         if (error) return <p>Error</p>;
-
                                         if (data.isLoggedIn) {
                                             return (
                                                 <div className="rightside-nav">
@@ -44,6 +41,7 @@ const Nav = (props) => {
                                                                 <div onClick={e => {
                                                                     e.preventDefault();
                                                                     localStorage.removeItem("auth-token");
+                                                                    
                                                                     client.writeData({ data: { isLoggedIn: false } });
                                                                     props.history.push("/");
                                                                 }}>Logout</div>
@@ -51,17 +49,17 @@ const Nav = (props) => {
                                                         </div>
                                                     </div>
                                                 
-                                                    <p></p>
 
-                                                    <div className="searchbar-container">
+                                                    {/* <div className="searchbar-container">
                                                         <input type="text" placeholder="Search for tacos"></input>
-                                                    </div>
+                                                    </div> */}
 
                                                     <button
                                                         className="logout-btn"
                                                         onClick={e => {
                                                             e.preventDefault();
                                                             localStorage.removeItem("auth-token");
+                                                            
                                                             client.writeData({ data: { isLoggedIn: false } });
                                                             props.history.push("/login");
                                                         }}

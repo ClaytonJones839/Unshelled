@@ -64,7 +64,8 @@ cache.writeData({
     cart: [],
     firstName: "",
     lastName: "",
-    photo: ""
+    photo: "",
+    username: ""
   }
 });
 
@@ -75,7 +76,7 @@ if (token) {
     // user is loggedIn
     .mutate({ mutation: VERIFY_USER, variables: { token } })
     .then(({ data }) => {
-      // debugger;
+       
       cache.writeData({
         data: {
           _id: data.verifyUser._id,
@@ -83,11 +84,12 @@ if (token) {
           cart: [],
           firstName: data.verifyUser.firstName,
           lastName: data.verifyUser.lastName,
-          photo: data.verifyUser.photo
+          photo: data.verifyUser.photo,
+          username:data.verifyUser.username
         }
       });
     });
-  // debugger;
+   
 } else {
   // otherwise we can just set isLoggedIn to false
   cache.writeData({
@@ -99,7 +101,7 @@ if (token) {
 }
 
 const Root = () => {
-  // debugger;
+   
   // const isLoggedIn = client.cache.data.data.ROOT_QUERY.lastName;
   return (
     <ApolloProvider client={client}>

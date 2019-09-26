@@ -106,11 +106,11 @@ const mutation = new GraphQLObjectType({
                 // user: {type: GraphQLString}
             },
             resolve(_, { description, rating, tacoId, userId }) {
-                console.log("string", tacoId);
+                // console.log("string", tacoId);
                 return Taco.findById(tacoId).then((taco) => {
                     // let name = taco.name;
                     let restaurant = taco.restaurant;
-                    console.log("bananaaaa", taco.restaurant);
+                    // console.log("bananaaaa", taco.restaurant);
                     return User.findById(userId).then((user) => {
                         let name = user.firstName + " " + user.lastName.slice(0, 1);
                     

@@ -84,7 +84,7 @@ const login = async data => {
 
         const isValidPassword = await bcrypt.compareSync(password, user.password);
         if (!isValidPassword) throw new Error("Invalid password");
-        // debugger;
+         
         const token = jwt.sign({ id: user._id }, keys);
 
         return { token, isLoggedIn: true, ...user._doc, password: null };
@@ -95,7 +95,7 @@ const login = async data => {
 
 const verifyUser = async data => {
     try {
-        console.log(data);
+        // console.log(data);
         const { token } = data;
         const decoded = jwt.verify(token, keys);
         const { id } = decoded;
@@ -117,10 +117,14 @@ const verifyUser = async data => {
                 return user.photo;
             });
 
+            const username = await User.findById(id).then(user => {
+                return user.username;
+            });
+
             const _id = id;
 
-            // debugger;
-            return { isLoggedIn, _id, firstName, lastName, photo }
+             
+            return { isLoggedIn, _id, firstName, lastName, photo, username }
         }
         
     } catch (err) {

@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Mutation } from "react-apollo";
-import Mutations from "../graphql/mutations";
+import Mutations from "../../graphql/mutations";
 import { Link } from "react-router-dom";
-import SessionCSS from "./session.css"
+import { onError } from "apollo-link-error";
+
 
 export default class Login extends Component {
     constructor(props) {
@@ -10,9 +11,9 @@ export default class Login extends Component {
 
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            errors: ""
         };
-
     }
 
     update(field) {
@@ -21,28 +22,38 @@ export default class Login extends Component {
 
 
     updateCache(client, { data }) {
-        // console.log(data.login);
-        // debugger;
+        // console.log(data);
+         
         client.writeData({
             data: { isLoggedIn: data.login.isLoggedIn, _id: data.login._id, photo: data.login.photo, firstName: data.login.firstName, lastName: data.login.lastName }
         });
-        // debugger;
+         
     }
 
 
     render() {
+      // debugger
+      const errors = this.state.errors ? (
+        <li className='li-errors'>{this.state.errors.graphQLErrors[0].message}</li>
+      ) : (
+        <li className='li-errors'></li>
+      );
+
         return (
             <Mutation
                 mutation={Mutations.LOGIN_USER}
                 onCompleted={data => {
                     const { token } = data.login;
-                    console.log("wof", data);
                     localStorage.setItem("auth-token", token);
-                    // localStorage.setItem("currentUserId", data.login._id)
-                    // console.log(localStorage);
+// debugger
                     this.props.history.push("/");
                 }}
-                update={(client, data) => this.updateCache(client, data)}
+                onError={ err => {
+                  this.setState({errors: err})
+                  }
+                }
+                update={(client, data) => {
+                  return (this.updateCache(client, data))}}
             >
                 {loginUser => (
                     <div className="login-page-wrap">
@@ -57,13 +68,15 @@ export default class Login extends Component {
                             </div>
                             <form className="login-form-middle"
                                 onSubmit={e => {
-                                    e.preventDefault();
-                                    loginUser({
-                                        variables: {
-                                            email: this.state.email,
-                                            password: this.state.password
-                                        }
-                                    });
+                                  e.preventDefault();
+                                  loginUser({
+                                    variables: {
+                                      email: this.state.email,
+                                      password: this.state.password
+                                    }
+                                  });
+                                   
+                                //  console.log(onError);
                                 }}
                             >
                                 <button className="login-form-demo" onClick={e => {
@@ -81,6 +94,9 @@ export default class Login extends Component {
                                 <div className="demo-or-login">
                                     OR
                                 </div>
+                                  <ul className='ul-errors'>
+                                    {errors}
+                                  </ul>
                                 <div className="login-inputs">
                                 <input
                                     className="login-input"

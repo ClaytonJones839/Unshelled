@@ -43,7 +43,9 @@ class TacoShow extends Component {
                     return (
                         <div className="taco-checkin-box">
                             <img className="profile-pic"
-                            src={checkin.user.photo}></img>
+                            src={checkin.user.photo}
+                            alt=''
+                            ></img>
                             <div className="checkin-info">
                                 <Link>{checkin.name}</Link> is eating a 
                                 <Link to={`/tacoshow/${data.taco._id}`}> {data.taco.name}</Link> by
@@ -76,7 +78,6 @@ class TacoShow extends Component {
                     uniqueCheckins[checkin.user._id] = true;
                   }
                 })
-
                 return (
                     
                   <div className="detail">
@@ -85,6 +86,7 @@ class TacoShow extends Component {
 
                         <div className="header">
                           <img className="logo-box"
+                          alt=''
                           src={data.taco.photo}></img>
                           <div className="taco-info">
                             <div className="taco-name">{data.taco.name}</div>

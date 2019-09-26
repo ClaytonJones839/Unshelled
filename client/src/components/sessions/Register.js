@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Mutation } from "react-apollo";
-import Mutations from "../graphql/mutations";
-import SessionCSS from "./session.css"
+import Mutations from "../../graphql/mutations";
 import { Link } from "react-router-dom";
 
 export default class Register extends Component {
@@ -14,7 +13,8 @@ export default class Register extends Component {
             username: "",
             firstName: "",
             lastName: "",
-            photo: "https://unshelled-dev.s3-us-west-1.amazonaws.com/users/untapped-avatar.jpg"
+            photo: "https://unshelled-dev.s3-us-west-1.amazonaws.com/users/untapped-avatar.jpg",
+            errors: ""
         };
     }
 
@@ -30,6 +30,13 @@ export default class Register extends Component {
     }
 
     render() {
+      const errors = this.state.errors ? (
+        <li className='li-errors'>{this.state.errors.graphQLErrors[0].message}</li>
+      ) : (
+        <li className='li-errors'></li>
+      );
+
+
         return (
             <Mutation
                 mutation={Mutations.REGISTER_USER}
@@ -38,6 +45,10 @@ export default class Register extends Component {
                     localStorage.setItem("auth-token", token);
                     this.props.history.push("/");
                 }}
+                onError={ err => {
+                  this.setState({errors: err})
+                  }
+                }
                 update={(client, data) => this.updateCache(client, data)}
             >
                 {registerUser => (
@@ -51,6 +62,9 @@ export default class Register extends Component {
                                 EAT SOCIALLY
                                 </div>
                         </div>
+                        <ul className='ul-errors ul-errors-register'>
+                                    {errors}
+                                  </ul>
                             <form className="signup-form-middle"
                             onSubmit={e => {
                                 e.preventDefault();
