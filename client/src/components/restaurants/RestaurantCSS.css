@@ -6,7 +6,7 @@
 .rest-show-left {
     box-sizing: border-box;
     width: 740px;
-    max-height: 775px;
+    max-height: 80vh;
     display: flex;
     flex-direction: column;
     margin: 100px 20px 100px 20px;
@@ -313,6 +313,8 @@ a {
 .rest-item-name:visited {
     color: #c60;
 }
+
+
 
 .rest-item-top2 {
     display: flex;
