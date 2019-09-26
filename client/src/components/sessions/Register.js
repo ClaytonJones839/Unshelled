@@ -41,8 +41,13 @@ export default class Register extends Component {
             <Mutation
                 mutation={Mutations.REGISTER_USER}
                 onCompleted={data => {
-                    const { token } = data.register;
+                    const { token, _id, firstName, lastName, photo, username } = data.register;
                     localStorage.setItem("auth-token", token);
+                    localStorage.setItem("currentUserId", _id);
+                    localStorage.setItem("currentUserFName", firstName);
+                    localStorage.setItem("currentUserLName", lastName);
+                    localStorage.setItem("currentUserPhoto", photo);
+                    localStorage.setItem("currentUserUsername", username);
                     this.props.history.push("/");
                 }}
                 onError={ err => {
