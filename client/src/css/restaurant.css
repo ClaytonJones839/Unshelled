@@ -246,7 +246,8 @@ a {
     width: 100%;
     /* height: auto; */
     justify-content: center;
-    margin: 70px 20px 0px 20px;
+    margin-top: 70px;
+    padding-bottom: 50px;
     overflow: auto;
 }
 
@@ -254,6 +255,14 @@ a {
     /* width: 100%; */
     display: flex;
     justify-content: center;
+}
+
+.rest-label {
+    font-size: 24px;
+    font-weight: 700;
+    padding: 20px;
+    background-color: #F9F9F9;
+    border-bottom: 1px solid #E2E2E2;
 }
 
 .review-form-text {
@@ -319,6 +328,7 @@ a {
 
 .rest-item-name {
     font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
     color: #c60;
     font-size: 24px;
     font-weight: 500;
@@ -425,12 +435,12 @@ a {
     flex-direction: column;
     max-height: 488px;
     overflow: auto;
-    margin: 0px 20px 0px 40px;
+    margin-left: 20px;
 }
 
 .top-taco-list {
     font-family: 'Roboto', sans-serif;
-    width: 350px;
+    /* width: 350px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
