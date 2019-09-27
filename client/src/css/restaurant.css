@@ -652,3 +652,16 @@ a {
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
 }
+
+.review-body-ul{
+  /* list-style-type: none; */
+  margin-left: 3vw;
+  margin-bottom: 5vh;
+  /* margin-left: 20px; */
+}
+
+.review-body{
+  font-family: 'Lexend Exa', sans-serif;
+  margin-bottom: 1vh;
+  /* border-bottom: 1px solid; */
+}

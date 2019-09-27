@@ -175,12 +175,12 @@ export default {
         }
       }
     }
-  `,
+  `
 
-  ALL_TACOS_SEARCH: gql`
-  query search($search: String!) {
-    tacos()
-  }
-`
+  // ALL_TACOS_SEARCH: gql`
+  // query search($search: String!) {
+  //   tacos()
+  // }
+
 };
 
