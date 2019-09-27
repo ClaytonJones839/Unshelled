@@ -1,58 +1,77 @@
 .taco-index-page {
     width: 100%;
-    height: 800px;
-    position: absolute;
-    background-color: #F5F2E8;
+    /* height: 800px; */
+    /* position: absolute; */
+    /* background-color: #F5F2E8; */
     display: flex;
     justify-content: center;
+    margin-top: 70px;
+    padding-bottom: 50px;
+    overflow: auto;
+}
 
+.taco-index-wrapper {
+    width: 80%;
+    max-width: 1000px;
+    min-width: 700px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
 }
 
 .taco-index-right {
     background-color: white;
     box-sizing: border-box;
-    width: 680px;
+    /* width: 680px; */
     display: flex;
     justify-content: center;
-    height: -webkit-fill-available;
-    padding-left: 20px;
-    margin: 70px 10px 100px 20px;
-    overflow: auto;
+    flex-direction: column;
+    /* max-height: 100%; */
+    /* margin: 70px 10px 100px 20px; */
+    /* overflow: auto; */
 
 }
 
 
 .taco-index-list {
     list-style: none;
-    padding: 0px;
+    /* padding: 20px; */
+    padding: 0 20px;
+
 }
 
 .taco-index-image{
-    height: 100px;
-    width: 100px;
+    height: 75px;
+    width: 75px;
     /* background-color: lightgray; */
     margin-right: 10px;
     object-fit: cover;
 }
 .taco-index-item {
-    height: 160px;
-    margin-top: 20px;
+    /* height: 160px; */
+    /* margin-top: 20px; */
+    padding: 20px 0;
     width: 650px;
     display: flex;
     border-bottom: 1px solid lightgray;
 }
 
+.taco-index-item:last-child {
+    border: none;
+}
+
 .taco-index-details {
     display: flex;
     flex-direction: column;
+    width: 90%;
 }
 
 .taco-item-name {
     font-family: 'Lexend Exa', sans-serif;
     color: #c60;
     font-size: 24px;
-    font-weight: 900;
-    margin-bottom: 2px;
+    font-weight: 700;
+    /* margin-bottom: 2px; */
     text-decoration: none;
 }
 
@@ -71,12 +90,14 @@
 .taco-item-top {
     display: flex;
     flex-direction: column;
-    margin-bottom: 5px;
+    min-height: 75px;
+    /* margin-bottom: 5px; */
 }
 
 .taco-item-desc {
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px;
 }
 
 .taco-item-stats{
@@ -84,12 +105,12 @@
     height: 100%;
     flex-direction: column;
     justify-content: space-between;
-    width: 540px;
-    margin-bottom: 5px;
+    width: 80%;
+    /* margin-bottom: 5px; */
 }
 
 .taco-item-stats-btn {
-    margin: 5px 0px;
+    /* margin: 5px 0px; */
     display: flex;
 }
 
@@ -125,11 +146,19 @@
     width: 80%;
 }
 
+.taco-label {
+    font-size: 24px;
+    font-weight: 700;
+    padding: 20px;
+    background-color: #F9F9F9;
+    border-bottom: 1px solid #E2E2E2;
+}
+
 .top-index-item {
     box-sizing: border-box;
-    width: 100%;
+    min-width: 300px;
     display: flex;
-    margin-top: 20px;
+    padding: 10px 0;
 }
 
 .taco-index-left {
@@ -137,47 +166,62 @@
     box-sizing: border-box;
     width: 350px;
     justify-content: center;
-    max-height: 448px;
-    margin: 70px 0px 0px 40px;
-    overflow: auto;
-    padding-bottom: 25px;
+    max-height: 700px;
+    /* margin: 70px 0px 0px 40px; */
+    margin-left: 20px;
+    padding: 20px;
+    /* overflow: auto; */
+    /* padding-bottom: 25px; */
 }
 
 .top-index-image {
     width: 50px;
     height: 50px;
     object-fit: cover;
-    margin: 0px 15px;
+    margin-right: 15px;
 }
 
 .top-item-name {
-    font-size: 18px;
+    font-size: 20px;
     text-decoration: none;
-    font-family: 'Lexend Exa', sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: #c60;
 }
 
+.top-item-name:hover {
+    color: rgb(255, 128, 1);
+}
+
 .top-item-loc {
-    font-family: 'Lexend Exa', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .top-rest-text {
     width: 100%;
-    height: 75px;
-    font-weight: bold;
-    margin-top: 10px;
+    /* height: 75px; */
+    /* font-weight: bold; */
+    /* margin-top: 10px; */
     display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: center;
-    font-family: 'Roboto', sans-serif;
-    font-size: 28px;
+    /* align-items: center; */
+    /* font-family: 'Roboto', sans-serif;
+    font-size: 28px; */
 }
 
+.top-rest-text h2 {
+    font-size: 24px;
+    font-family: "Roboto", "sans-serif";
+}
+
+/* .top-rest-container {
+    padding: 20px;
+} */
+
 .top-rest-border {
-    border-bottom: 1px solid black;
-    width: 90%;
-    margin-top: 20px;
+    border-bottom: 1px solid #E2E2E2;
+    width: 100%;
+    margin-top: 10px;
 }
 
 .taco-form-text {

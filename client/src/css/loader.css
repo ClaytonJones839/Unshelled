@@ -17,4 +17,5 @@ body {
 @import "./user-profile.css";
 @import "./footer.css";
 @import "./restaurant.css";
-@import "./taco.css"
+@import "./taco.css";
+@import "./TacoShow.scss";

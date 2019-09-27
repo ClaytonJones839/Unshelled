@@ -185,11 +185,13 @@ class RestaurantIndex extends React.Component {
                         className="rest-index-item">
                         <div className="rest-item-top2">
                           <div className="rest-index-details">
-                          <img
-                            className="rest-index-image"
-                            alt=""
-                            src={restaurant.photo}
-                            ></img>
+                            <Link to={`/restaurant/${restaurant._id}`}>
+                              <img
+                                className="rest-index-image"
+                                alt=""
+                                src={restaurant.photo}
+                                ></img>
+                            </Link>
                             <div className="rest-info">
                               <Link
                                 to={`/restaurant/${restaurant._id}`}

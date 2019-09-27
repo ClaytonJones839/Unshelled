@@ -22,7 +22,7 @@
 
 .star-rev{
     font-weight: 900;
-    font-family: 'Lexend Exa', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 13px;
 }
 
@@ -30,7 +30,7 @@
   display: inline;
   color: #999999;
   font-weight: 600;
-  font-family: 'Lexend Exa', sans-serif;
+  font-family: 'Roboto', sans-serif;
 
 }
 
@@ -252,7 +252,9 @@ a {
 }
 
 .rest-index-wrapper {
-    /* width: 100%; */
+    width: 80%;
+    max-width: 1000px;
+    min-width: 700px;
     display: flex;
     justify-content: center;
 }
@@ -273,7 +275,8 @@ a {
 
 .rest-index-right {
     background-color: white;
-    /* width: 60%; */
+    width: 70%;
+    min-width: 700px;
     /* height: 90vh; */
     margin-bottom: 80px;
     /* padding-left: 20px; */
@@ -281,13 +284,13 @@ a {
 }
 
 .rest-index-left {
-    /* width: 50%; */
+    /* width: 30%; */
 }
 
 
 .rest-index-list {
     list-style: none;
-    padding: 0px 20px 0 20px;
+    padding: 0px 20px;
 }
 
 .rest-index-image{
@@ -301,7 +304,7 @@ a {
 .rest-index-item {
     /* min-height: 120px; */
     padding: 20px 0;
-    width: 650px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid lightgray;
@@ -315,6 +318,7 @@ a {
     display: flex;
     /* flex-direction: column; */
     /* justify-content: center; */
+    border-right: 1px solid lightgray;
     width: 70%;
 }
 
@@ -323,7 +327,7 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-right: 1px solid lightgray;
+    /* border-right: 1px solid lightgray; */
 }
 
 .rest-item-name {
@@ -332,8 +336,12 @@ a {
     color: #c60;
     font-size: 24px;
     font-weight: 500;
-    margin-bottom: 2px;
+    /* margin-bottom: 2px; */
     text-decoration: none;
+}
+
+.rest-item-name:hover {
+    color: rgb(255, 128, 1);
 }
 
 .rest-item-loc {
@@ -358,7 +366,7 @@ a {
 }
 
 .rest-stats {
-    width: 30%;
+    width: 40%;
 }
 
 .rest-stats-taco {
@@ -367,6 +375,7 @@ a {
     border-right: 1px solid lightgray;
     color: #999999;
     text-align: center;
+    font-size: 16px;
 }
 
 .rest-stats-ratings {
@@ -380,6 +389,7 @@ a {
     padding: 8px;
     border-top: 1px solid lightgray;
     text-align: center;
+    /* width: 100%; */
 }
 
 .fill {
@@ -388,6 +398,11 @@ a {
 
 .stars .far {
     color: gray;
+}
+
+.stars i {
+    transform: scale(1.3);
+    padding: 3px;
 }
 
 .rest-item-desc {
@@ -422,64 +437,75 @@ a {
 /* top tacos */
 
 .top-taco-image {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     object-fit: cover;
-    margin: 10px 10px 0px -5px; 
+    margin-right: 15px; 
 }
 
 .top-taco {
-    width: 350px;
+    /* width: 350px; */
     background-color: white;
     display: flex;
     flex-direction: column;
-    max-height: 488px;
+    max-height: 700px;
     overflow: auto;
     margin-left: 20px;
 }
 
 .top-taco-list {
-    font-family: 'Roboto', sans-serif;
     /* width: 350px; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding-top: 20px;
-    font-size: 32px;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* text-align: left; */
+    padding: 20px;
+    /* font-size: 24px; */
     font-weight: bold;
 }
 
+.top-taco-list h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+}
+
 .top-taco-item {
-    width: 300px;
+    min-width: 300px;
     display: flex;
+    margin-top: 10px;
 }
 
 .top-taco-top {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    text-align: start;
+    justify-content: flex-start;
+    /* text-align: start; */
 }
 
 .top-taco-details {
     display: flex;
-    align-items: center;
+    /* align-items: ; */
 }
 
 .top-taco-name, .top-taco-rest {
-    font-family: 'Lexend Exa', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-decoration: none;
     color: #c60;
+    width: 100%;
 }
 
 .top-taco-rest {
-    font-size: 14px;
+    font-size: 15px;
+    color: #666666;
 }
 
 .top-taco-name {
-    font-size: 18px;
+    font-size: 20px;
+}
+
+.top-taco-name:hover {
+    color: rgb(255, 128, 1);
 }
 
 .fa-plus-circle {
