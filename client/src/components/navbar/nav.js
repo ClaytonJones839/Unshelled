@@ -2,6 +2,7 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import { Query, ApolloConsumer } from 'react-apollo'
 import Queries from "../../graphql/queries";
+import Search from '../search/search';
 
 const { IS_LOGGED_IN } = Queries;
 
@@ -54,9 +55,9 @@ const Nav = (props) => {
                                                     </div>
                                                 
 
-                                                    {/* <div className="searchbar-container">
-                                                        <input type="text" placeholder="Search for tacos"></input>
-                                                    </div> */}
+                                                    <div className="searchbar-container">
+                                                        <Search/>
+                                                    </div>
 
                                                     <button
                                                         className="logout-btn"

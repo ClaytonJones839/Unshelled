@@ -67,16 +67,17 @@
 }
 
 .taco-item-name {
-    font-family: 'Lexend Exa', sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: #c60;
     font-size: 24px;
     font-weight: 700;
     /* margin-bottom: 2px; */
     text-decoration: none;
+    letter-spacing: 1px;
 }
 
 .taco-item-rest {
-    font-family: 'Lexend Exa', sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: #c60;
     font-size: 18px;
     margin-bottom: 5px;
@@ -91,6 +92,7 @@
     display: flex;
     flex-direction: column;
     min-height: 75px;
+    justify-content: space-evenly;
     /* margin-bottom: 5px; */
 }
 
