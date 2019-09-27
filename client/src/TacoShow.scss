@@ -1,11 +1,135 @@
-div {
+.super-detail {
     // background-color: rgb(250, 247, 234);
     .detail {
         background-color: rgb(250, 247, 234);
         display: flex;
         padding-left: 155px;
         padding-top: 80px;
+        filter: brightness(100%);
     }
+
+    .detail-dark {
+        background-color: rgb(250, 247, 234);
+        display: flex;
+        padding-left: 155px;
+        padding-top: 80px;
+        filter: brightness(80%);
+     }
+
+    .display-none {
+        display: none;
+    }
+
+            .display-block {
+            display: block;
+            font-size: 20px;
+ 
+            .modal-main {
+            border: 1px solid black;
+            position:fixed;
+            z-index: 1000;
+            background: white;
+            width: 500px;
+            height: 260px;
+            margin-top: 15%;
+
+            left: 30%;
+            // transform: translate(-50%,-350%);
+            font-size: 20px;
+ 
+                .header1 {
+                    border: 1px solid red;
+
+                    .text {
+                        font-size: 18px;
+                        font-weight: 500;
+                        height: 31px;
+                        // width: 100%;
+                        padding-top: 3px;
+                        padding-left: 10px;
+                        background-color: black;
+                        color: white;
+                    }
+
+                    .exit {
+                        font-size: 26px;
+                        background-color: black;
+                        color: white;
+                        height: 34px;
+                        font-weight: 100;
+                        // padding-top: 20px;
+                    }
+                }
+
+                .new-checkin-form {
+                    // border: 10px solid black;
+                    height: 50px;
+                    width: 100%;
+
+                    .checkin-form-button {
+                        // display: flex;
+                        border: 1px solid black;
+                        margin-left: 350px;
+                        // float: right;
+                        height: 30px;
+                        width: 100px;
+                        background-color: rgb(255, 205, 40);
+                        color: white;
+                        font-size: 16px;
+                        font-weight: 700;
+                        border-radius: 5px;
+                    }
+
+                    .checkin-form-button:hover {
+                    // display: flex;
+                    border: 1px solid black;
+                    margin-left: 350px;
+                    // float: right;
+                    height: 30px;
+                    width: 100px;
+                    background-color: rgb(230, 184, 36);
+                    color: white;
+                    font-size: 16px;
+                    font-weight: 700;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    }
+
+
+
+                    .close-button {
+                        float: left;
+                        margin-top: 10px;
+                        // margin-left: 200px;
+                    }
+
+                    .checkin-inputs {
+
+                        .description-input {
+                            border: 1px solid black;
+                            font-size: 20px;
+                            // height: 100px;
+                            // width: 400px;
+                        }
+
+                        .rate-the-taco {
+                            text-align: center;
+                        }
+
+                        .rating-input {
+                            border: 1px solid black;
+                        }
+
+                        .rating-stars {
+                            border: 1px solid black;
+                            margin-right: 130px;
+                            margin-top: 1px;
+                            
+                        }
+                    }
+                }
+            }
+        }
 
     .center-boxes {
         border: 1px solid red;
@@ -219,125 +343,6 @@ div {
 //   height: 100%;
 //   background: rgba(0, 0, 0, 0.6);
 // }
-
-
-  .display-block {
-  display: block;
-  font-size: 20px;
-
-  .modal-main {
-  border: 1px solid black;
-  position:fixed;
-  background: white;
-  width: 500px;
-  height: 260px;
-  margin-top: 16px;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  font-size: 20px;
-
-  .header1 {
-    border: 1px solid red;
-
-    .text {
-        font-size: 18px;
-        font-weight: 500;
-        height: 31px;
-        // width: 100%;
-        padding-top: 3px;
-        padding-left: 10px;
-        background-color: black;
-        color: white;
-    }
-
-    .exit {
-        font-size: 26px;
-        background-color: black;
-        color: white;
-        height: 34px;
-        font-weight: 100;
-        // padding-top: 20px;
-    }
-  }
-
-  .new-checkin-form {
-    // border: 10px solid black;
-    height: 50px;
-    width: 100%;
-
-    .checkin-form-button {
-        // display: flex;
-        border: 1px solid black;
-        margin-left: 350px;
-        // float: right;
-        height: 30px;
-        width: 100px;
-        background-color: rgb(255, 205, 40);
-        color: white;
-        font-size: 16px;
-        font-weight: 700;
-        border-radius: 5px;
-    }
-
-        .checkin-form-button:hover {
-        // display: flex;
-        border: 1px solid black;
-        margin-left: 350px;
-        // float: right;
-        height: 30px;
-        width: 100px;
-        background-color: rgb(230, 184, 36);
-        color: white;
-        font-size: 16px;
-        font-weight: 700;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-
-
-    .close-button {
-        float: left;
-        margin-top: 10px;
-        // margin-left: 200px;
-    }
-
-    .checkin-inputs {
-
-        .description-input {
-            border: 1px solid black;
-            font-size: 20px;
-            // height: 100px;
-            // width: 400px;
-        }
-
-        .rate-the-taco {
-            text-align: center;
-        }
-
-        .rating-input {
-            border: 1px solid black;
-        }
-
-        .rating-stars {
-            border: 1px solid black;
-            margin-right: 130px;
-            margin-top: 1px;
-            
-        }
-    }
-
-  }
-
-}
-}
-
-.display-none {
-  display: none;
-}
-
-
-
 
 
 
@@ -625,4 +630,138 @@ div {
 
         }
     }
+
+
+
+
+
+
+
+
+
+//---------------------------------------------------------------------------------------------------------
+
+
+
+// .detail-dark {
+//         background-color: rgb(250, 247, 234);
+//         display: flex;
+//         padding-left: 155px;
+//         padding-top: 80px;
+//         filter: brightness(80%);
+
+//         // .display-none {
+//         //     display: none;
+//         // }
+
+//         .display-block {
+//             display: block;
+//             font-size: 20px;
+ 
+//             .modal-main {
+//             border: 1px solid black;
+//             position:fixed;
+//             background: white;
+//             width: 500px;
+//             height: 260px;
+//             margin-top: 16px;
+//             left: 50%;
+//             transform: translate(-50%,-50%);
+//             font-size: 20px;
+ 
+//                 .header1 {
+//                     border: 1px solid red;
+
+//                     .text {
+//                         font-size: 18px;
+//                         font-weight: 500;
+//                         height: 31px;
+//                         // width: 100%;
+//                         padding-top: 3px;
+//                         padding-left: 10px;
+//                         background-color: black;
+//                         color: white;
+//                     }
+
+//                     .exit {
+//                         font-size: 26px;
+//                         background-color: black;
+//                         color: white;
+//                         height: 34px;
+//                         font-weight: 100;
+//                         // padding-top: 20px;
+//                     }
+//                 }
+
+//                 .new-checkin-form {
+//                     // border: 10px solid black;
+//                     height: 50px;
+//                     width: 100%;
+
+//                     .checkin-form-button {
+//                         // display: flex;
+//                         border: 1px solid black;
+//                         margin-left: 350px;
+//                         // float: right;
+//                         height: 30px;
+//                         width: 100px;
+//                         background-color: rgb(255, 205, 40);
+//                         color: white;
+//                         font-size: 16px;
+//                         font-weight: 700;
+//                         border-radius: 5px;
+//                     }
+
+//                     .checkin-form-button:hover {
+//                     // display: flex;
+//                     border: 1px solid black;
+//                     margin-left: 350px;
+//                     // float: right;
+//                     height: 30px;
+//                     width: 100px;
+//                     background-color: rgb(230, 184, 36);
+//                     color: white;
+//                     font-size: 16px;
+//                     font-weight: 700;
+//                     border-radius: 5px;
+//                     cursor: pointer;
+//                     }
+
+
+
+//                     .close-button {
+//                         float: left;
+//                         margin-top: 10px;
+//                         // margin-left: 200px;
+//                     }
+
+//                     .checkin-inputs {
+
+//                         .description-input {
+//                             border: 1px solid black;
+//                             font-size: 20px;
+//                             // height: 100px;
+//                             // width: 400px;
+//                         }
+
+//                         .rate-the-taco {
+//                             text-align: center;
+//                         }
+
+//                         .rating-input {
+//                             border: 1px solid black;
+//                         }
+
+//                         .rating-stars {
+//                             border: 1px solid black;
+//                             margin-right: 130px;
+//                             margin-top: 1px;
+                            
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     }
 }

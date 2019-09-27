@@ -12,7 +12,7 @@ class TacoShow extends Component {
 
     state = { show: false };
 
-    showModal = () => {
+    showModal = () => { 
         this.setState({ show: true });
     };
 
@@ -102,7 +102,13 @@ class TacoShow extends Component {
                   avgRating = count / total;
                 }
                       
-                      
+                let background;
+                // background = document.getElementsByClassName("detail");
+                if (this.state.show === true) {
+                  background = "detail-dark";
+                } else {
+                  background = "detail"
+                }
                       
                       
                   let stars;
@@ -246,8 +252,11 @@ class TacoShow extends Component {
                             // console.log(rdata);
                             // console.log(data);
                 return (
-                    
-                  <div className="detail">
+                  <div className="super-detail">
+                    <Modal tacoId={this.props.match.params.id} userId={rdata._id} show={this.state.show} handleClose={this.hideModal.bind(this)}>
+                      
+                    </Modal>
+                  <div className={background}>
                     <div className="center-boxes">
                       <div className="taco-info-box">
                         {/* <div>{data.taco._id}</div> */}
@@ -299,21 +308,11 @@ class TacoShow extends Component {
                               
                                         
                         
-                            <Modal tacoId={this.props.match.params.id} userId={rdata._id} show={this.state.show} handleClose={this.hideModal.bind(this)}>
+                            {/* <Modal tacoId={this.props.match.params.id} userId={rdata._id} show={this.state.show} handleClose={this.hideModal.bind(this)}>
                                 
-                            </Modal>
+                            </Modal> */}
                             <button className="check-in" onClick={this.showModal}>✓</button>
-
-                                        
-                        
-                            {/* <div id="myModal" className="modal">            
-                            <div className="modal-content">
-                                <span class="close">&times;</span>
-                                <p>Some text in the Modal..</p>
-                            </div> */}
-
-                            {/* </div> */}
-                            
+            
                                         
                             <button className="add-to-list">+</button>
                           </div>
@@ -377,13 +376,18 @@ class TacoShow extends Component {
                             {/* <div>{rdata.firstName}</div> */}
                     </div>
                   </div>
+                    
+                  <Modal tacoId={this.props.match.params.id} userId={rdata._id} show={this.state.show} handleClose={this.hideModal.bind(this)}>
+                      
+                  </Modal>
+                  </div> 
                 );
                         }}
                 </Query>)      
     }}
             </Query>
         );
-    }
+    }   
             }
             </Query>
         );
