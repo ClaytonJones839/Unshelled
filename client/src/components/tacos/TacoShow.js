@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import { Query } from "react-apollo";
 import Queries from "../../graphql/queries";
 import Modal from "./TacoModal";
+import TopRestaurants from "./TopRestaurants"
 const { FETCH_TACO, IS_LOGGED_IN, FETCH_USER } = Queries;
 
 
@@ -150,7 +151,13 @@ class TacoShow extends Component {
                           Propose Duplicate
                         </Link>
                       </div>
-                      <div className="taco-loyalists-box">
+                      <div className="taco-show-top-rest">
+                        <div className="taco-show-top-text">
+                          Top Restaurants
+                        </div>
+                        <TopRestaurants />
+                      </div>
+                      {/* <div className="taco-loyalists-box">
                         <div className="header">Loyal Tacoists</div>
                         <div className="tacoists-index">
                           <div className="tacoist">Tacoist x12</div>
@@ -162,17 +169,17 @@ class TacoShow extends Component {
                         <div className="similar-tacos-index">
                           <div className="similar-taco">A similar taco x5</div>
                         </div>
-                      </div>
+                      </div> */}
 
-                      <div className="nearby-locations-box">
+                      {/* <div className="nearby-locations-box">
                         <div className="header">Nearby Verified Locations</div>
                         <div className="nearby-locations-index">
                           <div className="nearby-location">
                             Nearby Location x3
                           </div>
                         </div>
-                      </div>
-
+                      </div> */}
+{/* 
                       <div className="popular-locations-box">
                         <div className="header">Popular Locations</div>
                         <div className="popular-locations-index">
@@ -180,7 +187,7 @@ class TacoShow extends Component {
                             Popular Location x10
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 );

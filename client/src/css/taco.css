@@ -224,3 +224,9 @@
     font-family: 'Lexend Exa', sans-serif;
     border-radius: 5px;
 }
+
+.taco-show-top-rest {
+    background: white;
+    max-height: 330px;
+    overflow: auto;
+}
