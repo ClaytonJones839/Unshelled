@@ -63,7 +63,7 @@ class TacoShow extends Component {
                             </div>
                             
                             <div className="description-and-rating">{checkin.description}</div>
-                            <div className="taco-pic">taco pic</div>
+                            {/* <div className="taco-pic">taco pic</div> */}
                         </div>
                     )
                 });
@@ -319,7 +319,7 @@ class TacoShow extends Component {
                         </div>
                       </div>
 
-                      <div className="taco-pics">taco pics</div>
+                      {/* <div className="taco-pics">taco pics</div> */}
 
                       <div className="taco-activity-box">
                         <div className="header">Global Recent Activity</div>
