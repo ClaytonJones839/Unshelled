@@ -22,17 +22,13 @@ export default class Login extends Component {
 
 
     updateCache(client, { data }) {
-        // console.log(data);
-         
         client.writeData({
             data: { isLoggedIn: data.login.isLoggedIn, _id: data.login._id, photo: data.login.photo, firstName: data.login.firstName, lastName: data.login.lastName, username: data.login.username }
         });
-         
     }
 
 
     render() {
-      // debugger
       const errors = this.state.errors ? (
         <li className='li-errors'>{this.state.errors.graphQLErrors[0].message}</li>
       ) : (

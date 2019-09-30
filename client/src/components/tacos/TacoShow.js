@@ -48,13 +48,13 @@ class TacoShow extends Component {
                             alt=''
                             ></img>
                             <div className="checkin-info">
-                                <Link>{checkin.name}</Link> is eating a 
+                                <Link to={`/users/${checkin.user._id}`}>{checkin.name}</Link> is eating a 
                                 <Link to={`/taco/${data.taco._id}`}> {data.taco.name}</Link> by
                                 <Link to={`/restaurant/${data.taco.restaurant._id}`}> {data.taco.restaurant.name}</Link>
                             </div>
                             
                             <div className="description-and-rating">
-                              <div class="speech-bubble">
+                              <div className="speech-bubble">
                                 {checkin.description}
                               </div>
                           </div>
