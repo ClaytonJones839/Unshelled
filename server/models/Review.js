@@ -30,13 +30,16 @@ ReviewSchema.statics.updateReviewRestaurant = (reviewId, restaurantId) => {
   const Restaurant = mongoose.model("restaurants");
 
   return Review.findById(reviewId).then(review => {
-    if (review.restaurant) {
-      Restaurant.findById(review.restaurant).then(oldRestaurant => {
-        oldRestaurant.review.pull(review);
-        return oldRestaurant.save();
-      });
-    }
+    // console.log(review);
+    // if (review.restaurant) {
+    //   Restaurant.findById(review.restaurant).then(oldRestaurant => {
+    //     // console.log(oldRestaurant.review);
+    //     oldRestaurant.review.pull(review);
+    //     return oldRestaurant.save();
+    //   });
+    // }
     return Restaurant.findById(restaurantId).then(newRestaurant => {
+      // console.log(newRestaurant);
       review.restaurant = newRestaurant;
       newRestaurant.reviews.push(review);
 

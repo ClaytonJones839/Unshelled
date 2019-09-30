@@ -71,8 +71,8 @@ const mutation = new GraphQLObjectType({
           },
           resolve(_, { body, rating, restaurantId }) {
             const newReview = new Review({ body, rating, restaurant: restaurantId })
-            newReview.save().then((respone) => {
-              Review.updateReviewRestaurant(newReview._doc._id, restaurantId)
+            return newReview.save().then((response) => {
+              return Review.updateReviewRestaurant(newReview._doc._id, restaurantId)
             })
           }
         },
