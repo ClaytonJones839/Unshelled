@@ -87,24 +87,33 @@ class RestaurantShow extends Component {
                     })
                   }
 
+
                   let reviewBody = reviewBodyArray.length > 1 ? reviewBodyArray.map((review) => {
                     // debugger
                     if (review.user) {
                       // debugger
+
                       return (
                         <li className="review-body">
-                          <p>{review.body}</p>
-                          <p>{review.rating}</p>
-                          <p>{review.user.firstName}</p>
-                          <p>{review.user.lastName}</p>
+                          <div className="review-top">
+                            <p className="review-name">{review.firstName} &nbsp;{review.user.lastName}</p>
+                            <p className="review-rate">Rating: {review.rating}</p>
+                          </div>  
+                          <div className="review-bottom">
+                            <p className="review-review">{review.body}</p>
+                          </div>
                         </li>
                       );
                     } else {
                       return (
                         <li className="review-body">
-                          <p>{review.body}</p>
-                          <p>{review.rating}</p>
-                          <p>-Anonymous User</p>
+                          <div className="review-top">
+                            <p className="review-name">Anonymous User</p>
+                            <p className="review-rate">Rating: {review.rating}</p>
+                          </div>
+                          <div className="review-bottom">
+                            <p className="review-review">{review.body}</p>
+                          </div>
                         </li>
                       );
                     }
