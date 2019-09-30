@@ -22,14 +22,15 @@
 
 .star-rev{
     font-weight: 900;
-    font-family: 'Lexend Exa', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 13px;
 }
 
 .star-div {
   display: inline;
+  color: #999999;
   font-weight: 600;
-  font-family: 'Lexend Exa', sans-serif;
+  font-family: 'Roboto', sans-serif;
 
 }
 
@@ -249,10 +250,28 @@ a {
 .rest-index-container {
     box-sizing: border-box;
     display: flex;
-    height: auto;
+    width: 100%;
+    /* height: auto; */
     justify-content: center;
-    margin: 70px 20px 0px 20px;
+    margin-top: 70px;
+    padding-bottom: 50px;
     overflow: auto;
+}
+
+.rest-index-wrapper {
+    width: 80%;
+    max-width: 1000px;
+    min-width: 700px;
+    display: flex;
+    justify-content: center;
+}
+
+.rest-label {
+    font-size: 24px;
+    font-weight: 700;
+    padding: 20px;
+    background-color: #F9F9F9;
+    border-bottom: 1px solid #E2E2E2;
 }
 
 .review-form-text {
@@ -263,54 +282,78 @@ a {
 
 .rest-index-right {
     background-color: white;
-    width: 680px;
-    height: 90vh;
-    margin-bottom: 100px;
-    padding-left: 20px;
-    overflow: auto;
+    width: 70%;
+    min-width: 700px;
+    /* height: 90vh; */
+    margin-bottom: 80px;
+    /* padding-left: 20px; */
+    /* overflow: auto; */
+}
+
+.rest-index-left {
+    /* width: 30%; */
 }
 
 
 .rest-index-list {
     list-style: none;
-    padding: 0px;
+    padding: 0px 20px;
 }
 
 .rest-index-image{
-    height: 100px;
-    width: 100px;
+    height: 75px;
+    width: 75px;
     background-color: lightgray;
     margin-right: 10px;
     object-fit: cover;
 }
 
 .rest-index-item {
-    min-height: 175px;
-    margin-top: 20px;
-    width: 650px;
+    /* min-height: 120px; */
+    padding: 20px 0;
+    width: 100%;
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid lightgray;
 }
 
+.rest-index-item:last-child {
+    border: none;
+}
+
 .rest-index-details {
     display: flex;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    border-right: 1px solid lightgray;
+    width: 70%;
+}
+
+.rest-info {
+    width: 100%;
+    display: flex;
     flex-direction: column;
-    width: 500px;
+    justify-content: center;
+    /* border-right: 1px solid lightgray; */
 }
 
 .rest-item-name {
-    font-family: 'Lexend Exa', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
     color: #c60;
     font-size: 24px;
-    font-weight: 900;
-    margin-bottom: 2px;
+    font-weight: 500;
+    /* margin-bottom: 2px; */
     text-decoration: none;
 }
 
+.rest-item-name:hover {
+    color: rgb(255, 128, 1);
+}
+
 .rest-item-loc {
-    font-family: 'Lexend Exa', sans-serif;
-    color: black;
+    font-family: 'Roboto', sans-serif;
+    color: #666666;
     font-size: 18px;
     margin-bottom: 5px;
     text-decoration: none;
@@ -322,6 +365,51 @@ a {
 
 .rest-item-top2 {
     display: flex;
+    align-items: center;
+}
+
+.rest-stats-top {
+    display: flex;
+}
+
+.rest-stats {
+    width: 40%;
+}
+
+.rest-stats-taco {
+    width: 40%;
+    padding: 8px;
+    border-right: 1px solid lightgray;
+    color: #999999;
+    text-align: center;
+    font-size: 16px;
+}
+
+.rest-stats-ratings {
+    width: 60%;
+    padding: 8px;
+    color: #999999;
+    text-align: center;
+}
+
+.rest-stats-stars {
+    padding: 8px;
+    border-top: 1px solid lightgray;
+    text-align: center;
+    /* width: 100%; */
+}
+
+.fill {
+    color: #FBC71E;
+}
+
+.stars .far {
+    color: gray;
+}
+
+.stars i {
+    transform: scale(1.3);
+    padding: 3px;
 }
 
 .rest-item-desc {
@@ -356,64 +444,80 @@ a {
 /* top tacos */
 
 .top-taco-image {
+<<<<<<< HEAD
     width: 70px !important;
     height: 70px !important;
+=======
+    width: 50px;
+    height: 50px;
+>>>>>>> master
     object-fit: cover;
-    margin: 10px 10px 0px -5px; 
+    margin-right: 15px; 
 }
 
 .top-taco {
-    width: 350px;
+    /* width: 350px; */
     background-color: white;
     display: flex;
     flex-direction: column;
-    max-height: 488px;
+    max-height: 700px;
     overflow: auto;
-    margin: 0px 20px 0px 40px;
+    margin-left: 20px;
 }
 
 .top-taco-list {
-    font-family: 'Roboto', sans-serif;
-    width: 350px;
+    /* width: 350px; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding-top: 20px;
-    font-size: 32px;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* text-align: left; */
+    padding: 20px;
+    /* font-size: 24px; */
     font-weight: bold;
 }
 
+.top-taco-list h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+}
+
 .top-taco-item {
-    width: 300px;
+    min-width: 300px;
     display: flex;
+    margin-top: 10px;
 }
 
 .top-taco-top {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    text-align: start;
+    justify-content: flex-start;
+    /* text-align: start; */
 }
 
 .top-taco-details {
     display: flex;
-    align-items: center;
+    /* align-items: ; */
 }
 
 .top-taco-name, .top-taco-rest {
-    font-family: 'Lexend Exa', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-decoration: none;
     color: #c60;
+    width: 100%;
 }
 
 .top-taco-rest {
-    font-size: 14px;
+    font-size: 15px;
+    color: #666666;
 }
 
 .top-taco-name {
-    font-size: 18px;
+    font-size: 20px;
+}
+
+.top-taco-name:hover {
+    color: rgb(255, 128, 1);
 }
 
 .fa-plus-circle {

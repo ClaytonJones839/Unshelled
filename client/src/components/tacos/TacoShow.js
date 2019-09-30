@@ -1,4 +1,4 @@
-import "../../TacoShow.scss";
+import "../../css/TacoShow.scss";
 import { Link } from "react-router-dom";
 import React, { Component } from "react";
 import { Query } from "react-apollo";

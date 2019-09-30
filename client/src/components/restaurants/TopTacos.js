@@ -19,7 +19,7 @@ class TopTacos extends React.Component {
                     return (
                             <div className="top-taco">
                                 <ul className="top-taco-list">
-                                Top Tacos
+                                <h2>Top Tacos</h2>
                                 <div className="top-rest-border"></div>
                                     {data.tacos.map((taco, i) => {
                                         return (

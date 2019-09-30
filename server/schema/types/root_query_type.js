@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const graphql = require("graphql");
-const { GraphQLObjectType, GraphQLList, GraphQLID, GraphQLNonNull } = graphql;
+const { GraphQLString, GraphQLObjectType, GraphQLList, GraphQLID, GraphQLNonNull } = graphql;
 
 const UserType = require("./user_type");
 const TacoType = require("./taco_type");
@@ -86,8 +86,18 @@ const RootQueryType = new GraphQLObjectType({
           resolve(_, args) {
             return Review.findById(args._id);
           }
-        }
+        },
+        search: {
+            type: GraphQLString,
+            args:  {
+              search: { type : new GraphQLNonNull(GraphQLString) }
+            },
+            resolve(root, args) {
+              return args.search;
+            }
+          }
     })
 });
+
 
 module.exports = RootQueryType;
