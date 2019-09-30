@@ -161,6 +161,7 @@
     min-width: 300px;
     display: flex;
     padding: 10px 0;
+    margin-left: 20px;
 }
 
 .taco-index-left {
@@ -273,13 +274,14 @@
 
 .taco-show-top-rest {
     background: white;
-    max-height: 456px;
+    max-height: 472px;
     overflow: auto;
 }
 
 .taco-show-top-text {
     width: 100%;
     display: flex;
+    margin: 10px 0;
     justify-content: center;
     align-items: center;
     font-size: 28px;
