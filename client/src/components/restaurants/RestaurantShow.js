@@ -338,7 +338,7 @@ class RestaurantShow extends Component {
                           <div className="rest-show-r-bottom">
                             <img
                               alt=""
-                              src="https://s129178457.onlinehome.us/celebritieseating/uploaded_images/119-700469.jpg"
+                              src="http://s129178457.onlinehome.us/celebritieseating/uploaded_images/119-700469.jpg"
                               className="rest-show-like-image"
                             ></img>
                             <img
@@ -358,7 +358,7 @@ class RestaurantShow extends Component {
                             ></img>
                             <img
                               alt=""
-                              src="https://tacocleanse.com/wp-content/uploads/2015/05/chinese-taco.jpg"
+                              src="http://tacocleanse.com/wp-content/uploads/2015/05/chinese-taco.jpg"
                               className="rest-show-like-image"
                             ></img>
                             <img
@@ -368,7 +368,7 @@ class RestaurantShow extends Component {
                             ></img>
                             <img
                               alt=""
-                              src="https://blog.fuzzystacoshop.com/wp-content/uploads/2015/07/fuzzys_1631-300x200.jpg"
+                              src="http://blog.fuzzystacoshop.com/wp-content/uploads/2015/07/fuzzys_1631-300x200.jpg"
                               className="rest-show-like-image"
                             ></img>
                             <img
