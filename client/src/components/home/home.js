@@ -97,9 +97,11 @@ class Home extends React.Component {
                     if (loading2) return <p>Loading...</p>;
                     if (error2) return <p>Error</p>;
                     // console.log(user_data.user);
-                    let checkins = user_data.user ? user_data.user.tacoCheckin.map(checkin => {
+                    let checkins = user_data.user ? user_data.user.tacoCheckin.map((checkin, i) => {
                       return (
-                        <div className="taco-checkin-box">
+                        <div 
+                        key={i}
+                        className="taco-checkin-box">
                           <img className="profile-pic"
                             alt=""
                             src={user_data.user.photo}></img>
@@ -147,7 +149,7 @@ class Home extends React.Component {
                           <div className="user-info">
                             <div className="user-avatar">
                               <Link to={`/users/${log_data._id}`}>
-                                <img src={log_data.photo}></img>
+                                <img alt="" src={log_data.photo}></img>
                               </Link>
                             </div>
                             <div className="info">
@@ -156,22 +158,22 @@ class Home extends React.Component {
                             </div>
                           </div>
                           <div className="prof-stats">
-                            <a className="total">
+                            <div href="" className="total">
                               <span className="stat">Count</span>
                               <span className="title">Total</span>
-                            </a>
-                            <a className="unique">
+                            </div>
+                            <div className="unique">
                               <span className="stat">Count</span>
                               <span className="title">Unique</span>
-                            </a>
-                            <a className="badges">
+                            </div>
+                            <div className="badges">
                               <span className="stat">0</span>
                               <span className="title">Badges</span>
-                            </a>
-                            <a className="friends">
+                            </div>
+                            <div className="friends">
                               <span className="stat">0</span>
                               <span className="title">Friends</span>
-                            </a>
+                            </div>
                           </div>
                         </div>
                         <div className="home-lists">
