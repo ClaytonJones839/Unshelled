@@ -1,21 +1,24 @@
 import React, { Component } from "react";
-import { Mutation } from "react-apollo";
+import { Mutation, Query } from "react-apollo";
 // import gql from "graphql-tag";
 import Queries from "../../graphql/queries";
 import Mutations from "../../graphql/mutations";
-const { FETCH_REVIEWS } = Queries;
+const { FETCH_REVIEWS, IS_LOGGED_IN } = Queries;
 const { NEW_REVIEW } = Mutations;
 
 class ReviewNew extends Component {
   constructor(props) {
     super(props);
+    // debugger
     this.state = {
       body: "",
       rating: 0,
       restaurantId: this.props.restaurantId,
-      message: ""
+      message: "", 
+      // userId: this.props.userId
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    // this.currentUser = this.currentUser.bind(this);
   }
 
   update(type) {
@@ -32,7 +35,8 @@ class ReviewNew extends Component {
       variables: {
         body: body,
         rating: parseInt(this.state.rating),
-        restaurantId: this.state.restaurantId
+        restaurantId: this.state.restaurantId, 
+        // userId: this.currentUser()
       }
     }).then(data => {
       this.setState({
@@ -64,6 +68,23 @@ class ReviewNew extends Component {
       });
     }
   }
+
+  // currentUser() {
+  //   return (
+  //     <Query query={IS_LOGGED_IN}>
+  //       {({ loading, error, data }) => {
+  //         if (loading) return <p>Loading</p>;
+  //         if (error) return <p>Error</p>;
+  //         if (data.isLoggedIn) {
+  //           return (
+  //             data
+  //           )
+  //       }
+  //     }
+  //   }
+  //     </Query>
+  //   )
+  // }
 
   render() {
     return (

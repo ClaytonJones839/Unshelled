@@ -67,12 +67,18 @@ const mutation = new GraphQLObjectType({
           args: {
             body: { type: GraphQLString },
             rating: { type: GraphQLInt },
-            restaurantId: { type: GraphQLID }
+            restaurantId: { type: GraphQLID },
+            userId: { type: GraphQLID }
           },
-          resolve(_, { body, rating, restaurantId }) {
-            const newReview = new Review({ body, rating, restaurant: restaurantId })
-            newReview.save().then((respone) => {
-              Review.updateReviewRestaurant(newReview._doc._id, restaurantId)
+          resolve(_, { body, rating, restaurantId, userId }) {
+            const newReview = new Review({ body, rating, restaurant: restaurantId, user: userId})
+            newReview.save()
+            .then((response) => {
+              return Review.updateReviewRestaurant(newReview._doc._id, restaurantId)
+              .then((response) => {
+                // console.log(response);
+                return response;
+              })
             })
           }
         },

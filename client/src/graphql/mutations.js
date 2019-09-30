@@ -2,28 +2,30 @@ import gql from "graphql-tag";
 
 export default {
   LOGIN_USER: gql`
-  mutation LoginUser($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
-      token
-      _id
-      isLoggedIn
-      photo
-      firstName
-      lastName
-      username
+    mutation LoginUser($email: String!, $password: String!) {
+      login(email: $email, password: $password) {
+        token
+        _id
+        isLoggedIn
+        photo
+        firstName
+        lastName
+        username
+      }
     }
-  }`,
+  `,
   VERIFY_USER: gql`
-  mutation VerifyUser($token: String!) {
-    verifyUser(token: $token) {
-      _id
-      isLoggedIn
-      firstName
-      lastName
-      photo
-      username
+    mutation VerifyUser($token: String!) {
+      verifyUser(token: $token) {
+        _id
+        isLoggedIn
+        firstName
+        lastName
+        photo
+        username
+      }
     }
-  }`,
+  `,
 
   REGISTER_USER: gql`
     mutation RegisterUser(
@@ -76,7 +78,7 @@ export default {
         style
         price
         description
-        restaurant{
+        restaurant {
           _id
           name
         }
@@ -89,11 +91,13 @@ export default {
       $body: String
       $rating: Int
       $restaurantId: ID
+      $userId: ID
     ) {
       newReview(
         body: $body
         rating: $rating
         restaurantId: $restaurantId
+        userId: $userId
       ) {
         _id
         body
@@ -102,18 +106,15 @@ export default {
           _id
           name
         }
+        user {
+          _id
+        }
       }
     }
   `,
   UPDATE_REST_TACOS: gql`
-    mutation UpdateRestTacos(
-      $restaurantId: ID!,
-      $tacoId: ID!,
-    ) {
-      updateTacoRestaurant (
-        restaurantId: $restaurantId
-        tacoId: $tacoId
-      ) {
+    mutation UpdateRestTacos($restaurantId: ID!, $tacoId: ID!) {
+      updateTacoRestaurant(restaurantId: $restaurantId, tacoId: $tacoId) {
         _id
         restaurant {
           name
@@ -142,22 +143,31 @@ export default {
   `,
 
   NEW_TACO_CHECKIN: gql`
-    mutation NewTacoCheckin($name: String, $description: String, $rating: Int, $tacoId: ID, $userId: ID) {
-      newTacoCheckin(name: $name, description: $description, rating: $rating, tacoId: $tacoId, userId: $userId) {
+    mutation NewTacoCheckin(
+      $name: String
+      $description: String
+      $rating: Int
+      $tacoId: ID
+      $userId: ID
+    ) {
+      newTacoCheckin(
+        name: $name
+        description: $description
+        rating: $rating
+        tacoId: $tacoId
+        userId: $userId
+      ) {
         _id
         name
         description
         rating
         taco {
           _id
-          
         }
         user {
           _id
-          
         }
       }
     }
   `
-
 };
