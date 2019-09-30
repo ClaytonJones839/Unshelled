@@ -252,7 +252,6 @@ a {
     box-sizing: border-box;
     display: flex;
     width: 100%;
-    /* height: auto; */
     justify-content: center;
     margin-top: 70px;
     padding-bottom: 50px;
@@ -285,10 +284,7 @@ a {
     background-color: white;
     width: 70%;
     min-width: 700px;
-    /* height: 90vh; */
     margin-bottom: 80px;
-    /* padding-left: 20px; */
-    /* overflow: auto; */
 }
 
 .rest-index-left {
@@ -310,7 +306,6 @@ a {
 }
 
 .rest-index-item {
-    /* min-height: 120px; */
     padding: 20px 0;
     width: 100%;
     display: flex;
@@ -324,8 +319,6 @@ a {
 
 .rest-index-details {
     display: flex;
-    /* flex-direction: column; */
-    /* justify-content: center; */
     border-right: 1px solid lightgray;
     width: 70%;
 }
@@ -335,7 +328,6 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* border-right: 1px solid lightgray; */
 }
 
 .rest-item-name {
@@ -344,7 +336,6 @@ a {
     color: #c60;
     font-size: 24px;
     font-weight: 500;
-    /* margin-bottom: 2px; */
     text-decoration: none;
 }
 
@@ -397,7 +388,6 @@ a {
     padding: 8px;
     border-top: 1px solid lightgray;
     text-align: center;
-    /* width: 100%; */
 }
 
 .fill {
@@ -452,7 +442,6 @@ a {
 }
 
 .top-taco {
-    /* width: 350px; */
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -462,14 +451,9 @@ a {
 }
 
 .top-taco-list {
-    /* width: 350px; */
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* text-align: left; */
     padding: 20px;
-    /* font-size: 24px; */
     font-weight: bold;
 }
 
@@ -488,12 +472,10 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    /* text-align: start; */
 }
 
 .top-taco-details {
     display: flex;
-    /* align-items: ; */
 }
 
 .top-taco-name, .top-taco-rest {

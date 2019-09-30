@@ -1,8 +1,5 @@
 .taco-index-page {
     width: 100%;
-    /* height: 800px; */
-    /* position: absolute; */
-    /* background-color: #F5F2E8; */
     display: flex;
     justify-content: center;
     margin-top: 70px;
@@ -22,20 +19,14 @@
 .taco-index-right {
     background-color: white;
     box-sizing: border-box;
-    /* width: 680px; */
     display: flex;
     justify-content: center;
     flex-direction: column;
-    /* max-height: 100%; */
-    /* margin: 70px 10px 100px 20px; */
-    /* overflow: auto; */
-
 }
 
 
 .taco-index-list {
     list-style: none;
-    /* padding: 20px; */
     padding: 0 20px;
 
 }
@@ -43,13 +34,10 @@
 .taco-index-image{
     height: 75px;
     width: 75px;
-    /* background-color: lightgray; */
     margin-right: 10px;
     object-fit: cover;
 }
 .taco-index-item {
-    /* height: 160px; */
-    /* margin-top: 20px; */
     padding: 20px 0;
     width: 650px;
     display: flex;
@@ -71,7 +59,6 @@
     color: #c60;
     font-size: 24px;
     font-weight: 700;
-    /* margin-bottom: 2px; */
     text-decoration: none;
     letter-spacing: 1px;
 }
@@ -93,7 +80,6 @@
     flex-direction: column;
     min-height: 75px;
     justify-content: space-evenly;
-    /* margin-bottom: 5px; */
 }
 
 .taco-item-desc {
@@ -108,11 +94,9 @@
     flex-direction: column;
     justify-content: space-between;
     width: 80%;
-    /* margin-bottom: 5px; */
 }
 
 .taco-item-stats-btn {
-    /* margin: 5px 0px; */
     display: flex;
 }
 
@@ -141,7 +125,6 @@
 
 .inner-taco-form {
     display: flex;
-    /* flex-direction: column; */
 }
 
 .taco-inner-left {
@@ -170,11 +153,8 @@
     width: 350px;
     justify-content: center;
     max-height: 700px;
-    /* margin: 70px 0px 0px 40px; */
     margin-left: 20px;
     padding: 20px;
-    /* overflow: auto; */
-    /* padding-bottom: 25px; */
 }
 
 .top-index-image {
@@ -201,15 +181,9 @@
 
 .top-rest-text {
     width: 100%;
-    /* height: 75px; */
-    /* font-weight: bold; */
-    /* margin-top: 10px; */
     display: flex;
     justify-content: center;
     flex-direction: column;
-    /* align-items: center; */
-    /* font-family: 'Roboto', sans-serif;
-    font-size: 28px; */
 }
 
 .top-rest-text h2 {

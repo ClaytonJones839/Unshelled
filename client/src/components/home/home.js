@@ -96,12 +96,11 @@ class Home extends React.Component {
                   ({ loading2, error2, data: user_data }) => {
                     if (loading2) return <p>Loading...</p>;
                     if (error2) return <p>Error</p>;
-                    // console.log(user_data.user);
                     let checkins = user_data.user ? user_data.user.tacoCheckin.map(checkin => {
                       return (
                         <div className="taco-checkin-box">
                           <img className="profile-pic"
-                            src={user_data.user.photo}></img>
+                            src={user_data.user.photo} alt=""></img>
                           <div className="checkin-info">
                             <div className="checkin-statement">
                             <Link to={`/users/${log_data._id}`}>{checkin.name}</Link> is eating a

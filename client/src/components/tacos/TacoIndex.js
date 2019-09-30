@@ -16,7 +16,6 @@ class TacoIndex extends React.Component {
         {({ loading, error, data }) => {
           if (loading) return "Loading...";
           if (error) return `Error! ${error.message}`;
-          console.log(data)
       return (
         <div className="taco-index-page">
           <div className="taco-index-wrapper">

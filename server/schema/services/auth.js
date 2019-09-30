@@ -95,7 +95,6 @@ const login = async data => {
 
 const verifyUser = async data => {
     try {
-        // console.log(data);
         const { token } = data;
         const decoded = jwt.verify(token, keys);
         const { id } = decoded;

@@ -64,15 +64,11 @@ const Modal = ({ handleClose, show, children, userId, tacoId }) => {
           variables={{}}
           onCompleted={data => {
              
-            // console.log(data);
-            // console.log(handleClose);
             setDescription("");
             setRating("");
             return handleClose();
           }}
 
-          // onCompleted={handleClose}
-          // update={(client, data) => this.updateCache(client, data)}
         >
           {newTacoCheckin => (
             <form

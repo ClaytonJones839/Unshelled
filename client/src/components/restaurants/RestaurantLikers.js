@@ -24,7 +24,6 @@ class RestaurantLikers extends Component {
                 {({ loading, error, data }) => {
                      if (loading) return "Loading...";
                     if (error) return `Error! ${error.message}`;
-                    console.log(data);
                     return (
                         
             <div className="rest-show-right">
@@ -42,7 +41,6 @@ class RestaurantLikers extends Component {
                             onClick={(e) => {
                                 e.preventDefault();
                                 this.state.likers.push(data._id)
-                                console.log(this.state)
                             }}
                         >
                         Like This Restaurant

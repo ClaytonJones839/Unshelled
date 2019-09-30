@@ -23,7 +23,6 @@ export default class Register extends Component {
     }
 
     updateCache(client, { data }) {
-        // console.log(data);
         client.writeData({
             data: { isLoggedIn: data.register.isLoggedIn, _id: data.register._id, photo: data.register.photo, firstName: data.register.firstName, lastName: data.register.lastName, username: data.register.username }
         });

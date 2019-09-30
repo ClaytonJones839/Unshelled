@@ -1,19 +1,13 @@
 .unshelled-footer {
-      /* border-top: #e2e0d7 1px solid; */
     background-color: #F5F2E8;
     position: absolute;
     bottom: 0;
-    /* left: 0; */
     z-index: 5;
     overflow: hidden;
     display: flex;
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    /* padding: 25px; */
-    /* height: 18px; */
-    /* z-index: 10; */
-    /* margin-bottom: 10px; */
 }
 
 .footer-top{

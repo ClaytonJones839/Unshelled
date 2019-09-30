@@ -76,7 +76,6 @@ export default class Login extends Component {
                                     }
                                   });
                                    
-                                //  console.log(onError);
                                 }}
                             >
                                 <button className="login-form-demo" onClick={e => {

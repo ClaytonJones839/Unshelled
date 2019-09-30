@@ -38,7 +38,6 @@ class TacoShow extends Component {
                     {({ loading: loadingThree, error, data: udata }) => {
                 if (loadingThree) return <p>Loading...</p>;
                 if (error) return <p>Error</p>;
-                            console.log("string", rdata);
                 let tacoCheckins;
                 tacoCheckins = data.taco.tacoCheckin.map((checkin) => {
                     return (

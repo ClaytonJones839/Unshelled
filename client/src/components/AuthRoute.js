@@ -14,8 +14,6 @@ const AuthRoute = ({
         <Query query={IS_LOGGED_IN}>
             {({ data }) => {
                 if (routeType === "auth") {
-                    console.log(path);
-                    console.log(exact);
                     return (
                         <Route
                             path={path}
