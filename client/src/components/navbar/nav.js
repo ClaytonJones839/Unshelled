@@ -20,7 +20,6 @@ const Nav = (props) => {
                                 </div>
                                 <div className="navlink">
                                     <Link className="navlink-item" to="/restaurants">Restaurants</Link>
-                                    &nbsp;&nbsp;&nbsp; 
                                     <Link className="navlink-item" to="/tacos">Tacos</Link>
                                 </div>
                             </div>
@@ -55,11 +54,6 @@ const Nav = (props) => {
                                                         </div>
                                                     </div>
                                                 
-
-                                                    {/* <div className="searchbar-container">
-                                                        <Search/>
-                                                    </div> */}
-
                                                     <button
                                                         className="logout-btn"
                                                         onClick={e => {
