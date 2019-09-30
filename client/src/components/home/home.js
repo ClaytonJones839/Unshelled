@@ -6,7 +6,84 @@ const { IS_LOGGED_IN, FETCH_USER } = Queries;
 
 class Home extends React.Component {
 
+
+  ratingToStars(rating) {
+    let stars;
+    if (rating > 4.75) {
+      // 5
+      stars = (
+        <div className="stars">
+          <i className="fas fill fa-star"></i>
+          <i className="fas fill fa-star"></i>
+          <i className="fas fill fa-star"></i>
+          <i className="fas fill fa-star"></i>
+          <i className="fas fill fa-star"></i>
+        </div>
+      );
+    } else if (rating > 3.75) {
+      // 4
+      stars = (
+        <div className="stars">
+          <i className="fas fill fa-star"></i>
+          <i className="fas fill fa-star"></i>
+          <i className="fas fill fa-star"></i>
+          <i className="fas fill fa-star"></i>
+          <i className="far fa-star"></i>
+        </div>
+      );
+    } else if (rating > 2.75) {
+      // 3
+      stars = (
+        <div className="stars">
+          <i className="fas fill fa-star"></i>
+          <i className="fas fill fa-star"></i>
+          <i className="fas fill fa-star"></i>
+          <i className="far fa-star"></i>
+          <i className="far fa-star"></i>
+        </div>
+      );
+    } else if (rating > 1.75) {
+      // 2
+      stars = (
+        <div className="stars">
+          <i className="fas fill fa-star"></i>
+          <i className="fas fill fa-star"></i>
+          <i className="far fa-star"></i>
+          <i className="far fa-star"></i>
+          <i className="far fa-star"></i>
+        </div>
+      );
+    } else if (rating > 0.75) {
+      // 1
+      stars = (
+        <div className="stars">
+          <i className="fas fill fa-star"></i>
+          <i className="far fa-star"></i>
+          <i className="far fa-star"></i>
+          <i className="far fa-star"></i>
+          <i className="far fa-star"></i>
+        </div>
+      );
+    } else {
+      // 0
+      stars = (
+        <div className="stars">
+          <i className="far fa-star"></i>
+          <i className="far fa-star"></i>
+          <i className="far fa-star"></i>
+          <i className="far fa-star"></i>
+          <i className="far fa-star"></i>
+        </div>
+      );
+    }
+
+    return stars;
+  }
+
+
   render() {
+
+    
     return (
       <Query query={IS_LOGGED_IN} >
         {
@@ -26,11 +103,21 @@ class Home extends React.Component {
                           <img className="profile-pic"
                             src={user_data.user.photo}></img>
                           <div className="checkin-info">
-                            <Link>{checkin.name}</Link> is eating a
+                            <div className="checkin-statement">
+                            <Link to={`/users/${log_data._id}`}>{checkin.name}</Link> is eating a
                                     <Link to={`/taco/${checkin.taco._id}`}> {checkin.taco.name}</Link> by
                                     <Link to={`/restaurant/${checkin.taco.restaurant._id}`}> {checkin.taco.restaurant.name}</Link>
+
+                            </div>
                             
-                            <div className="description-and-rating">{checkin.description}</div>
+                            <div className="description-and-rating">
+                              <div className="checkin-desc">
+                                {checkin.description}
+                              </div>
+                              <div className="checkin-rating">
+                                {this.ratingToStars(checkin.rating)}
+                              </div>
+                            </div>
 
                           </div>
                             
