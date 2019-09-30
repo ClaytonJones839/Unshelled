@@ -77,20 +77,34 @@ class RestaurantShow extends Component {
                   // debugger
                   let reviewBodyArray = [];
                   if (data.restaurant.reviews) {
+                    // debugger
                     data.restaurant.reviews.forEach(review => {
                       // debugger
                       if (review.body) {
-                        reviewBodyArray.push(review.body)
+                        reviewBodyArray.push(review)
                       }
                     })
                   }
 
                   let reviewBody = reviewBodyArray.map((review) => {
-                    return (
-                      <li className='review-body'>
-                        {review}
-                      </li>
-                    )
+                    // debugger
+                    if (review.firstName) {
+                      return (
+                        <li className="review-body">
+                          <p>{review.body}</p>
+                          <p>{review.rating}</p>
+                          <p>{review.firstName}</p>
+                        </li>
+                      );
+                    } else {
+                      return (
+                        <li className="review-body">
+                          <p>{review.body}</p>
+                          <p>{review.rating}</p>
+                          <p>-Anonymous User</p>
+                        </li>
+                      );
+                    }
                   })
 
                   let taco;
