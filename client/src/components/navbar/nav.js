@@ -20,6 +20,7 @@ const Nav = (props) => {
                                 </div>
                                 <div className="navlink">
                                     <Link className="navlink-item" to="/restaurants">Restaurants</Link>
+                                    &nbsp;&nbsp;&nbsp; 
                                     <Link className="navlink-item" to="/tacos">Tacos</Link>
                                 </div>
                             </div>

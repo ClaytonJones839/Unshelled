@@ -43,14 +43,6 @@ class TacoIndex extends React.Component {
                   price = <div><i className='fas fa-dollar-sign'></i> <i className='fas fa-dollar-sign'></i> <i className='fas fa-dollar-sign'></i> <i className='fas fa-dollar-sign'></i></div>
                 };
 
-                // let restaurant;
-                // if (taco.restaurant) {
-                //   restaurant = <li>Restaurant: {taco.restaurant.name}</li>;
-                // } else {
-                //   restaurant = <li>Restaurant: Unknown</li>;
-                // }
-                
-
                 return (
                   <div
                     key={`${taco.name}`}
