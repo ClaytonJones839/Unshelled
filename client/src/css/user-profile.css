@@ -86,6 +86,7 @@
 }
 
 .profile-activity {
+    box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
     background-color: white;
     box-sizing: border-box;
     padding: 0 25px 25px;

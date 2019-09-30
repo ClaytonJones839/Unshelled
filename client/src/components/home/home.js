@@ -33,7 +33,7 @@ class Home extends React.Component {
                             <div className="user-info">
                               <div className="user-avatar">
                                 <Link to={`/users/${data._id}`}>
-                                  <img src={data.photo}></img>
+                                  <img alt="" src={data.photo}></img>
                                 </Link>
                               </div>
                               <div className="info">
@@ -42,22 +42,22 @@ class Home extends React.Component {
                               </div>
                             </div>
                             <div className="prof-stats">
-                              <a className="total">
+                              <div className="total">
                                 <span className="stat">Count</span>
                                 <span className="title">Total</span>
-                              </a>
-                              <a className="unique">
+                              </div>
+                              <div className="unique">
                                 <span className="stat">Count</span>
                                 <span className="title">Unique</span>
-                              </a>
-                              <a className="badges">
+                              </div>
+                              <div className="badges">
                                 <span className="stat">0</span>
                                 <span className="title">Badges</span>
-                              </a>
-                              <a className="friends">
+                              </div>
+                              <div className="friends">
                                 <span className="stat">0</span>
                                 <span className="title">Friends</span>
-                              </a>
+                              </div>
                             </div>
                           </div>
                           <div className="home-lists">

@@ -14,7 +14,7 @@ import ProposeEdit from "./static_pages/ProposeEdit"
 import ProposeDupe from "./static_pages/ProposeDupe"
 import Home from './home/home';
 
-import { Route, HashRouter, Switch } from 'react-router-dom';
+import { Route, HashRouter } from 'react-router-dom';
 import Footer from "./footer/footer";
 
 

@@ -1,13 +1,15 @@
 # [Unshelled](https://unshelled.herokuapp.com/#/login)
-Unshelled is a web application focuses on helping it's users find the best taco's in their area. Unshelled is inspired from the popular site [Untapped](https://untappd.com). User's are able to search for resturants in their area that serve tacos. User's are also able to review the tacos, leave reviews, and check-in to show others where they have been!
-test
+Unshelled is a web application that focuses on helping it's users find the best taco's in their area. Unshelled is inspired from the popular site [Untapped](https://untappd.com). User's are able to search for restaurants in their area that serve tacos. User's are also able to rate tacos, leave reviews, and check-in to show others where they have been!
 
-# Built With
+## Technologies
 - JavaScript
 - React
 - GraphQL
 - Node.js
 - Mongoose
+- Docker
+- MongoDB
+- Heroku Container Registry
 
 
 # Unshelled Features
@@ -23,26 +25,3 @@ Unshelled features a directory of some of the best Taco restaurants across the c
 ## Restaurant Show Pages
 Each restaurant featured on Unshelled has it's own show page. At this page, users are able to add tacos to that restaurants current menu directory, rate the restaurant, and access external social media links. 
 ![Restaurant Page](./client/public/rest_show.png)
-
-## MVP's
-- Drinks CRUD
-- Checkins / reviews
-- Review feed
-- Profile
-- Bonus: Friendships
-- Bonus: Search
-- Bonus: Venues
-- Bonus: Badges
-
-## Technologies
-
-- MongoDB
-- React
-- GraphQL
-- AWS S3
-- Docker
-- Heroku Container Registry
-
-## Backup Idea
-- Eventbrite
-- Wufoo

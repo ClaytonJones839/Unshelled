@@ -20,12 +20,16 @@ class UserProfile extends React.Component {
  
                     checkIns = data.user.tacoCheckin.map(checkin => {
                     return (
-                        <div className="taco-checkin-box">
-                            {/* <div className="profile-pic">prof pic</div> */}
-                            <img className="profile-pic"
-                            src={data.user.photo}></img>
+                        <div 
+                            id={checkin._id}
+                            className="taco-checkin-box">
+                            <img 
+                                alt=""
+                                className="profile-pic"
+                                src={data.user.photo}>
+                            </img>
                             <div className="checkin-info">
-                                <Link>{checkin.name}</Link> is eating a 
+                                <div>{checkin.name}</div> is eating a 
                                 <Link to={`/taco/${checkin.taco._id}`}> {checkin.taco.name}</Link> by
                                 <Link to={`/restaurant/${checkin.taco.restaurant._id}`}> {checkin.taco.restaurant.name}</Link>
                             </div>

@@ -24,7 +24,6 @@ class TacoIndex extends React.Component {
               <h2 className="taco-label">The Best Tacos</h2>
           <ul className="taco-index-list">
               {data.tacos.map((taco, i) => {
-                console.log(taco)
                 let rating;
                 if (taco.rating) {
                   rating = <li key={`${taco.name}`}>Rating: {taco.rating} / 5</li>;
