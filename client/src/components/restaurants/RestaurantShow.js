@@ -87,21 +87,28 @@ class RestaurantShow extends Component {
                   }
 
                   let reviewBody = reviewBodyArray.map((review) => {
-                    // debugger
                     if (review.firstName) {
                       return (
                         <li className="review-body">
-                          <p>{review.body}</p>
-                          <p>{review.rating}</p>
-                          <p>{review.firstName}</p>
+                          <div className="review-top">
+                            <p className="review-name">{review.firstName}</p>
+                            <p className="review-rate">Rating: {review.rating}</p>
+                          </div>  
+                          <div className="review-bottom">
+                            <p className="review-review">{review.body}</p>
+                          </div>
                         </li>
                       );
                     } else {
                       return (
                         <li className="review-body">
-                          <p>{review.body}</p>
-                          <p>{review.rating}</p>
-                          <p>-Anonymous User</p>
+                          <div className="review-top">
+                            <p className="review-name">Annoyamus User</p>
+                            <p className="review-rate">Rating: {review.rating}</p>
+                          </div>
+                          <div className="review-bottom">
+                            <p className="review-review">{review.body}</p>
+                          </div>
                         </li>
                       );
                     }
