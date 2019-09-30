@@ -137,7 +137,7 @@ class TacoNew extends Component {
                 <img 
                 alt=""
                 className="taco-man"
-                src="https://previews.123rf.com/images/larryrains/larryrains1606/larryrains160601376/57935346-taco-with-thumbs-up.jpg"/>
+                  src="https://cdn1.iconfinder.com/data/icons/restaurants-and-food/103/taco-512.png"/>
               </div>
             </form>
             <div className="review-confirm">{this.state.message}</div>
