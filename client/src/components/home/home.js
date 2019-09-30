@@ -101,6 +101,7 @@ class Home extends React.Component {
                       return (
                         <div className="taco-checkin-box">
                           <img className="profile-pic"
+                            alt=""
                             src={user_data.user.photo}></img>
                           <div className="checkin-info">
                             <div className="checkin-statement">
