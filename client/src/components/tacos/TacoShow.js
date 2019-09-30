@@ -282,7 +282,7 @@ class TacoShow extends Component {
                           </div>
                         </div>
                         <div className="info-bar">
-                          <div className="rating">Avg rating:{avgRating} {stars}</div>
+                          <div className="rating">Avg rating:{avgRating ? avgRating.toFixed(2) : 0} {stars}</div>
                           <div className="total-ratings">Ratings: {totalCheckins}</div>
                         </div>
                         <div className="description">

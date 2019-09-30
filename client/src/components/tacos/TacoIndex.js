@@ -16,18 +16,19 @@ class TacoIndex extends React.Component {
         {({ loading, error, data }) => {
           if (loading) return "Loading...";
           if (error) return `Error! ${error.message}`;
-    
+          console.log(data)
       return (
         <div className="taco-index-page">
           <div className="taco-index-wrapper">
             <div className="taco-index-right">
               <h2 className="taco-label">The Best Tacos</h2>
           <ul className="taco-index-list">
-              {data.tacos.map((taco, i) => {
-                
+              {data.tacos.map((taco) => {
+                let avgRating = taco.tacoCheckin.map(checkin => checkin.rating).reduce((a,b) => a + b, 0)/ taco.tacoCheckin.length;
+
                 let rating;
-                if (taco.rating) {
-                  rating = <li key={`${taco.name}`}>Rating: {taco.rating} / 5</li>;
+                if (avgRating) {
+                  rating = <li key={`${taco.name}`}>Rating: {avgRating.toFixed(2)}</li>;
                 } else {
                   rating = <li key={`${taco.name}`}>No Reviews Yet!</li>
                 }
