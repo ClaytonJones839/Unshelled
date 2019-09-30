@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const ReviewSchema = new Schema({
   body: {
-    type: String,
+    type: String
     // required: true
   },
   rating: {
@@ -16,8 +16,18 @@ const ReviewSchema = new Schema({
   restaurant: {
     type: Schema.Types.ObjectId,
     ref: "restaurants"
+  },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "users"
   }
 });
+
+ReviewSchema.statics.findUser = function(userId) {
+  return this.findById(userId)
+    .populate("user")
+    .then(review => review.user);
+};
 
 ReviewSchema.statics.findRestaurant = function(reviewId) {
   return this.findById(reviewId)
