@@ -64,7 +64,7 @@ cache.writeData({
     firstName: localStorage.getItem("currentUserFName"),
     lastName: localStorage.getItem("currentUserLName"),
     photo: localStorage.getItem("currentUserPhoto"),
-    username: localStorage.getItem("currentUserUsername")
+    username: localStorage.getItem("currentUserUsername"),
   }
 });
 
@@ -75,7 +75,7 @@ if (token) {
     // user is loggedIn
     .mutate({ mutation: VERIFY_USER, variables: { token } })
     .then(({ data }) => {
-       
+      console.log(data);
       cache.writeData({
         data: {
           _id: data.verifyUser._id,
@@ -83,7 +83,7 @@ if (token) {
           firstName: data.verifyUser.firstName,
           lastName: data.verifyUser.lastName,
           photo: data.verifyUser.photo,
-          username:data.verifyUser.username
+          username: data.verifyUser.username,
         }
       });
     });
@@ -97,8 +97,8 @@ if (token) {
       firstName: "",
       lastName: "",
       photo: "",
-      username:""
-
+      username:"",
+      tacoCheckin: ""
     }
   });
 }

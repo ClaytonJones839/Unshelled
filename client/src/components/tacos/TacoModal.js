@@ -115,7 +115,7 @@ const Modal = ({ handleClose, show, children, userId, tacoId }) => {
 
                               <fieldset className="rating-stars">
                 <input
-                  onChange={setRating(5)}  
+                  onChange={e => setRating(5)}  
                   type="radio"
                   id="star1"
                   name="rating"
@@ -126,7 +126,7 @@ const Modal = ({ handleClose, show, children, userId, tacoId }) => {
                   <i className="fas fa-star rad-1"></i>
                 </label>
                 <input
-                  onChange={setRating(4)}
+                  onChange={e => setRating(4)}
                   type="radio"
                   id="star2"
                   name="rating"
@@ -137,7 +137,7 @@ const Modal = ({ handleClose, show, children, userId, tacoId }) => {
                   <i className="fas fa-star rad-2"></i>
                 </label>
                 <input
-                  onChange={setRating(3)}
+                  onChange={e => setRating(3)}
                   type="radio"
                   id="star3"
                   name="rating"
@@ -148,7 +148,7 @@ const Modal = ({ handleClose, show, children, userId, tacoId }) => {
                   <i className="fas fa-star rad-3"></i>
                 </label>
                 <input
-                  onChange={setRating(2)}
+                  onChange={e => setRating(2)}
                   type="radio"
                   id="star4"
                   name="rating"
@@ -159,7 +159,7 @@ const Modal = ({ handleClose, show, children, userId, tacoId }) => {
                   <i className="fas fa-star rad-4"></i>
                 </label>
                 <input
-                  onChange={setRating(1)}
+                  onChange={e => setRating(1)}
                   type="radio"
                   id="star5"
                   name="rating"

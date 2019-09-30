@@ -3,7 +3,7 @@
     margin: auto;
     display: flex;
     justify-content: space-between;
-    margin-top: 72px;
+    margin-top: 52px;
 }
 
 .home-left {
@@ -17,13 +17,14 @@
     /* align-items: center; */
     flex-direction: column;
     padding: 20px;
+    height: 100%;
+
 }
 
 .recent-activity h3 {
     font-family: "Roboto", "sans-serif";
     font-weight: 600;
     font-size: 1.4em;
-    margin-bottom: 24px;
     padding-bottom: 8px;
     border-bottom: 1px solid #e5e5e5;
 
@@ -41,7 +42,6 @@
     width: 25%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     /* align-items: flex-start; */
 }
 
@@ -150,4 +150,20 @@
     padding-bottom: 6px;
     margin-bottom: 8px;
     border-bottom: 1px solid #e5e5e5;
+}
+
+.activity-content .taco-checkin-box {
+    padding: 20px 0;
+    display: flex;
+    border-bottom: 1px solid lightgray;
+}
+
+.activity-content .taco-checkin-box .profile-pic{
+    width: 75px;
+    height: 75px;
+    padding-right: 10px;
+}
+
+.activity-content .taco-checkin-box .checkin-info{
+
 }

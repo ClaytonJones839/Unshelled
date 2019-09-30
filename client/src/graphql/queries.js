@@ -56,6 +56,11 @@ export default {
           _id
           body
           rating
+          user {
+            _id
+            firstName
+            lastName
+          }
         }
       }
     }
@@ -84,6 +89,11 @@ export default {
           _id
           body
           rating
+          user {
+            _id
+            firstName
+            lastName
+          }
         }
       }
     }
