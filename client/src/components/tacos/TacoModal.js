@@ -14,26 +14,6 @@ const Modal = ({ handleClose, show, children, userId, tacoId }) => {
   const [rating, setRating] =
     useState("");
   
-  // updateCache(cache, data) {
-  //   let taco;
-  //   try {
-  //     taco = cache.readQuery({ query: Mutations.FETCH_TACO, variables: {tacoId}})
-  //   } catch (err) {
-  //     return;
-  //   }
-  //   const newTacoCheckinToCache = data.data.taco.newTacoCheckin;
-
-  //   if (taco) {
-  //     const tacoCheckinArray = taco.taco.tacoCheckin;
-  //     cache.writeQuery({
-  //       query: FETCH_TACO,
-  //       variables: { tacoId },
-  //       data: { taco: tacoCheckinArray.concat(newTacoCheckinToCache) }
-  //     });
-  //   }
-  // }
-  
-   
   return (
     <div className={showHideClassName}>
       <section className="modal-main">
@@ -47,15 +27,9 @@ const Modal = ({ handleClose, show, children, userId, tacoId }) => {
           update={(cache, data) => {
             let taco;
             let user;
-            // let tacooos;
-             
-            // tacooos = cache.readQuery({ query: Mutations.FETCH_TACOS });
-            // console.log(tacooos);
-             
             try {
               taco = cache.readQuery({ query: Queries.FETCH_TACO, variables: { id: tacoId } });
               user = cache.readQuery({ query: Queries.FETCH_USER, variables: { id: userId } });
-               
             } catch (err) {
               return;
             }

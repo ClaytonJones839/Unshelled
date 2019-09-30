@@ -40,7 +40,6 @@ div {
             font-size: 20px;
  
                 .header1 {
-                    border: 1px solid red;
 
                     .text {
                         font-size: 18px;
@@ -69,6 +68,7 @@ div {
                         border: 1px solid black;
                         margin-left: 350px;
                         height: 30px;
+                        outline: none;
                         width: 100px;
                         background-color: rgb(255, 205, 40);
                         color: white;
@@ -126,7 +126,6 @@ div {
 
     .center-boxes {
         width: 730px;
-        border: 1px solid red;
         min-height: 1px;
 
         .taco-info-box {
@@ -254,9 +253,8 @@ div {
 
                 .rating {
                     width: 336px;
-                    padding-top: 12px;
-                    text-align: center;
-                    
+                    font-size: 18px;
+                    color: black;
                 }
 
                 .total-ratings {
@@ -287,6 +285,7 @@ div {
 
                     .check-in {
                         height: 50px;
+                        outline: none;
                         width: 50px;
                         margin-left: 5px;
                         margin-right: 12px;
@@ -354,6 +353,7 @@ div {
 
 
                     .add-to-list {
+                        outline: none;
                         height: 50px;
                         width: 50px;
                         background-color: rgb(255, 205, 40);
@@ -417,7 +417,7 @@ div {
                     flex-wrap: wrap;
                     font-size: 20px;
                     margin-top: 55px;
-                    height: 200px;
+                    height: fit-content;
 
                     .profile-pic {
                         font-size: 8px;
@@ -437,9 +437,7 @@ div {
                     }
 
                     .description-and-rating {
-                        border: 2px solid black;
                         word-wrap: break-word;
-                        height: 1000px;
                         min-height: 60px;
                         overflow: visible;
                         width: 500px;

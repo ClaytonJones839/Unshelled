@@ -48,13 +48,13 @@ class TacoShow extends Component {
                             alt=''
                             ></img>
                             <div className="checkin-info">
-                                <Link>{checkin.name}</Link> is eating a 
+                                <Link to={`/users/${checkin.user._id}`}>{checkin.name}</Link> is eating a 
                                 <Link to={`/taco/${data.taco._id}`}> {data.taco.name}</Link> by
                                 <Link to={`/restaurant/${data.taco.restaurant._id}`}> {data.taco.restaurant.name}</Link>
                             </div>
                             
                             <div className="description-and-rating">
-                              <div class="speech-bubble">
+                              <div className="speech-bubble">
                                 {checkin.description}
                               </div>
                           </div>
@@ -93,6 +93,8 @@ class TacoShow extends Component {
 
                 if (count !== 0) {
                   avgRating = count / total;
+                } else {
+                  avgRating = 0.00
                 }
                       
                 let background;
@@ -240,10 +242,6 @@ class TacoShow extends Component {
                     );
                   } 
                 
-                      
-                // debugger;
-                            // console.log(rdata);
-                            // console.log(data);
                 return (
                   <div className="super-detail">
                     <Modal tacoId={this.props.match.params.id} userId={rdata._id} show={this.state.show} handleClose={this.hideModal.bind(this)}>
