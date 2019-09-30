@@ -1,4 +1,6 @@
 div {
+.super-detail {
+
     .detail {
         background-color: rgb(250, 247, 234);
         display: flex;
@@ -6,10 +8,126 @@ div {
         padding-top: 80px;
         font-family: 'Roboto', sans-serif;
 
+        filter: brightness(100%);
     }
+
+    .detail-dark {
+        background-color: rgb(250, 247, 234);
+        display: flex;
+        padding-left: 155px;
+        padding-top: 80px;
+        filter: brightness(80%);
+     }
+
+    .display-none {
+        display: none;
+    }
+
+            .display-block {
+            display: block;
+            font-size: 20px;
+ 
+            .modal-main {
+            border: 1px solid black;
+            position:fixed;
+            z-index: 1000;
+            background: white;
+            width: 500px;
+            height: 260px;
+            margin-top: 15%;
+
+            left: 30%;
+            font-size: 20px;
+ 
+                .header1 {
+                    border: 1px solid red;
+
+                    .text {
+                        font-size: 18px;
+                        font-weight: 500;
+                        height: 31px;
+                        padding-top: 3px;
+                        padding-left: 10px;
+                        background-color: black;
+                        color: white;
+                    }
+
+                    .exit {
+                        font-size: 26px;
+                        background-color: black;
+                        color: white;
+                        height: 34px;
+                        font-weight: 100;
+                    }
+                }
+
+                .new-checkin-form {
+                    height: 50px;
+                    width: 100%;
+
+                    .checkin-form-button {
+                        border: 1px solid black;
+                        margin-left: 350px;
+                        height: 30px;
+                        width: 100px;
+                        background-color: rgb(255, 205, 40);
+                        color: white;
+                        font-size: 16px;
+                        font-weight: 700;
+                        border-radius: 5px;
+                    }
+
+                    .checkin-form-button:hover {
+                    border: 1px solid black;
+                    margin-left: 350px;
+                    height: 30px;
+                    width: 100px;
+                    background-color: rgb(230, 184, 36);
+                    color: white;
+                    font-size: 16px;
+                    font-weight: 700;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    }
+
+
+
+                    .close-button {
+                        float: left;
+                        margin-top: 10px;
+                    }
+
+                    .checkin-inputs {
+
+                        .description-input {
+                            border: 1px solid black;
+                            font-size: 20px;
+                            
+                        }
+
+                        .rate-the-taco {
+                            text-align: center;
+                        }
+
+                        .rating-input {
+                            border: 1px solid black;
+                        }
+
+                        .rating-stars {
+                            border: 1px solid black;
+                            margin-right: 130px;
+                            margin-top: 1px;
+                            
+                        }
+                    }
+                }
+            }
+        }
 
     .center-boxes {
         width: 730px;
+        border: 1px solid red;
+        min-height: 1px;
 
         .taco-info-box {
             background-color: white;
@@ -230,6 +348,10 @@ div {
     .display-none {
         display: none;
     }
+
+
+
+
                     .add-to-list {
                         height: 50px;
                         width: 50px;
@@ -255,11 +377,13 @@ div {
         }
 
         .taco-pics {
-            background-color: white;
+            background-color: white; 
             font-size: 20px;
             height: 130px;
             width: 100%;
             padding-left: 3px;
+            width: 684px;
+            margin-left: 3px;
             margin-bottom: 15px;
         }
 
@@ -312,11 +436,40 @@ div {
                     }
 
                     .description-and-rating {
-                        height: 60px;
+                        border: 2px solid black;
+                        word-wrap: break-word;
+                        height: 1000px;
+                        min-height: 60px;
+                        overflow: visible;
                         width: 500px;
                         margin-left: 50px;
                         margin-bottom: 10px;
                         padding-left: 8px;
+
+.speech-bubble {
+    background: #efefef;
+    -webkit-border-radius: 4px;
+            border-radius: 4px;
+    font-size: 1.2rem;
+    margin: 0 auto 40px;
+    max-width: 400px;
+    padding: 15px;
+    position: relative;
+    margin-bottom: 5px;
+    box-shadow: 5px 2px 2px grey;
+    word-wrap: break-word;
+}
+
+.speech-bubble::after {
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #efefef;
+    top: -20px;
+    content: "";
+    position: absolute;
+    left: 10px;
+
+}
+
                     }
 
                     .taco-pic {
@@ -324,6 +477,7 @@ div {
                         width: 200px;
                         margin-left: 50px;
                         padding-left: 8px;
+                        min-height: 1px;
                     }
 
                 }
@@ -492,26 +646,5 @@ div {
         }
     }
 }
-
-.speech-bubble {
-    background: #efefef;
-    -webkit-border-radius: 4px;
-            border-radius: 4px;
-    font-size: 1.2rem;
-    margin: 0 auto 40px;
-    max-width: 400px;
-    padding: 15px;
-    position: relative;
-    margin-bottom: 5px;
-    box-shadow: 5px 2px 2px grey;
-    word-wrap: break-word;
 }
 
-.speech-bubble::after {
-    border-right: 20px solid transparent;
-    border-bottom: 20px solid #efefef;
-    top: -20px;
-    content: "";
-    position: absolute;
-    left: 10px;
-}

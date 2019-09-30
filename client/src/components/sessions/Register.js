@@ -28,7 +28,7 @@ export default class Register extends Component {
             data: { isLoggedIn: data.register.isLoggedIn, _id: data.register._id, photo: data.register.photo, firstName: data.register.firstName, lastName: data.register.lastName, username: data.register.username }
         });
     }
-
+ 
     render() {
       const errors = this.state.errors ? (
         <li className='li-errors'>{this.state.errors.graphQLErrors[0].message}</li>

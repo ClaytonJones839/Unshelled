@@ -169,6 +169,11 @@ export default {
           name
           taco {
             _id
+            name
+            restaurant {
+              _id
+              name
+            }
           }
           description
           rating

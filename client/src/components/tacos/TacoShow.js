@@ -12,7 +12,7 @@ class TacoShow extends Component {
 
     state = { show: false };
 
-    showModal = () => {
+    showModal = () => { 
         this.setState({ show: true });
     };
 
@@ -49,7 +49,7 @@ class TacoShow extends Component {
                             ></img>
                             <div className="checkin-info">
                                 <Link>{checkin.name}</Link> is eating a 
-                                <Link to={`/tacoshow/${data.taco._id}`}> {data.taco.name}</Link> by
+                                <Link to={`/taco/${data.taco._id}`}> {data.taco.name}</Link> by
                                 <Link to={`/restaurant/${data.taco.restaurant._id}`}> {data.taco.restaurant.name}</Link>
                             </div>
                             
@@ -79,9 +79,177 @@ class TacoShow extends Component {
                     uniqueCheckins[checkin.user._id] = true;
                   }
                 })
+                      
+                let avgRating;
+                let count;
+                count = 0;
+                let total;
+                total = 0;
+                
+                data.taco.tacoCheckin.forEach(checkin => {
+                  count += checkin.rating;
+                  total += 1;
+                })
+
+                if (count !== 0) {
+                  avgRating = count / total;
+                }
+                      
+                let background;
+                // background = document.getElementsByClassName("detail");
+                if (this.state.show === true) {
+                  background = "detail-dark";
+                } else {
+                  background = "detail"
+                }
+                      
+                      
+                  let stars;
+                  if (avgRating > 4.75) {
+                    // 5
+                    stars = (
+                      <div>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <p className="star-div"> ({total})</p>
+                      </div>
+                    );
+                  } else if (avgRating > 4.25) {
+                    //4.5
+                    stars = (
+                      <div>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star-half-alt"></i>
+                        <p className="star-div"> ({total})</p>
+                      </div>
+                    );
+                  } else if (avgRating > 3.75) {
+                    // 4
+                    stars = (
+                      <div>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <p className="star-div"> ({total})</p>
+                      </div>
+                    );
+                  } else if (avgRating > 3.25) {
+                    //3.5
+                    stars = (
+                      <div>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star-half-alt"></i>
+                        <i className="far fa-star"></i>
+                        <p className="star-div"> ({total})</p>
+                      </div>
+                    );
+                  } else if (avgRating > 2.75) {
+                    // 3
+                    stars = (
+                      <div>    
+                          <i className="fas fa-star"></i>
+                          <i className="fas fa-star"></i>
+                          <i className="fas fa-star"></i>
+                          <i className="far fa-star"></i>
+                          <i className="far fa-star"></i>
+                          <p className="star-div"> ({total})</p>
+                      </div>
+                    );
+                  } else if (avgRating > 2.25) {
+                    //2.5
+                    stars = (
+                      <div>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star-half-alt"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <p className="star-div"> ({total})</p>
+                      </div>
+                    );
+                  } else if (avgRating > 1.75) {
+                    // 2
+                    stars = (
+                      <div>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <p className="star-div"> ({total})</p>
+                      </div>
+                    );
+                  } else if (avgRating > 1.25) {
+                    // 1.5
+                    stars = (
+                      <div>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star-half-alt"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <p className="star-div"> ({total})</p>
+                      </div>
+                    );
+                  } else if (avgRating > 0.75) {
+                    // 1
+                    stars = (
+                      <div>
+                        <i className="fas fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <p className="star-div"> ({total})</p>
+                      </div>
+                    );
+                  } else if (avgRating > 0) {
+                    // 0.5
+                    stars = (
+                      <div>
+                        <i className="fas fa-star-half-alt"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <p className="star-div"> ({total})</p>
+                      </div>
+                    );
+                  } else {
+                    // 0
+                    stars = (
+                      <div>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <p className="star-div"> ({total})</p>
+                        <p className="star-rev">Be the first to review!</p>
+                      </div>
+                    );
+                  } 
+                
+                      
+                // debugger;
+                            // console.log(rdata);
+                            // console.log(data);
                 return (
-                    
-                  <div className="detail">
+                  <div className="super-detail">
+                    <Modal tacoId={this.props.match.params.id} userId={rdata._id} show={this.state.show} handleClose={this.hideModal.bind(this)}>
+                      
+                    </Modal>
+                  <div className={background}>
                     <div className="center-boxes">
                       <div className="taco-info-box">
 
@@ -114,22 +282,29 @@ class TacoShow extends Component {
                           </div>
                         </div>
                         <div className="info-bar">
-                          <div className="rating">Avg rating: {data.taco.rating}</div>
-                          <div className="total-ratings">Ratings</div>
+                          <div className="rating">Avg rating:{avgRating} {stars}</div>
+                          <div className="total-ratings">Ratings: {totalCheckins}</div>
                         </div>
                         <div className="description">
                           <div className="description-text">
                             Description: {data.taco.description}
                           </div>
                           <div className="taco-buttons">
-                            <Modal tacoId={this.props.match.params.id} userId={rdata._id} show={this.state.show} handleClose={this.hideModal.bind(this)}>
+                              
+                                        
+                        
+                            {/* <Modal tacoId={this.props.match.params.id} userId={rdata._id} show={this.state.show} handleClose={this.hideModal.bind(this)}>
                                 
-                            </Modal>
-                            <button className="check-in" onClick={this.showModal}>✓</button>         
+                            </Modal> */}
+                            <button className="check-in" onClick={this.showModal}>✓</button>
+            
+                                        
                             <button className="add-to-list">+</button>
                           </div>
                         </div>
                       </div>
+
+                      {/* <div className="taco-pics">taco pics</div> */}
 
                       <div className="taco-activity-box">
                         <div className="header">Global Recent Activity</div>
@@ -190,13 +365,18 @@ class TacoShow extends Component {
                       </div> */}
                     </div>
                   </div>
+                    
+                  <Modal tacoId={this.props.match.params.id} userId={rdata._id} show={this.state.show} handleClose={this.hideModal.bind(this)}>
+                      
+                  </Modal>
+                  </div> 
                 );
                         }}
                 </Query>)      
     }}
             </Query>
         );
-    }
+    }   
             }
             </Query>
         );

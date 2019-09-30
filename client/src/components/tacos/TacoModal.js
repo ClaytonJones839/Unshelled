@@ -37,9 +37,9 @@ const Modal = ({ handleClose, show, children, userId, tacoId }) => {
   return (
     <div className={showHideClassName}>
       <section className="modal-main">
-        <div className="header">
+        <div className="header1">
           <div className="text">Check-In</div>
-          <div className="exit">X</div>
+          {/* <div className="exit">X</div> */}
         </div>
 
         <Mutation
@@ -117,28 +117,95 @@ const Modal = ({ handleClose, show, children, userId, tacoId }) => {
               }}
             >
               <div className="checkin-inputs">
-                <input
+                <textarea
                   className="description-input"
                   value={description}
                   onChange={e => setDescription(e.target.value)}
                   placeholder="How's the taco?"
+                  rows="4"
+                  cols="53"
                 />
 
-                <input
+              {/* <button className="checkin-form-button" type="submit">
+                Check In
+              </button> */}
+
+                <div className="rate-the-taco">Rate the taco!</div>
+
+                {/* <input
                   className="rating-input"
                   value={rating}
                   onChange={e => setRating(e.target.value)}
                   placeholder="rate it 1 to 5"
+                /> */}
+
+                              <fieldset className="rating-stars">
+                <input
+                  onChange={setRating(5)}  
+                  type="radio"
+                  id="star1"
+                  name="rating"
+                  hidden={true}
+                  value="5"
                 />
+                <label htmlFor="star1">
+                  <i className="fas fa-star rad-1"></i>
+                </label>
+                <input
+                  onChange={setRating(4)}
+                  type="radio"
+                  id="star2"
+                  name="rating"
+                  hidden={true}
+                  value="4"
+                />
+                <label htmlFor="star2">
+                  <i className="fas fa-star rad-2"></i>
+                </label>
+                <input
+                  onChange={setRating(3)}
+                  type="radio"
+                  id="star3"
+                  name="rating"
+                  hidden={true}
+                  value="3"
+                />
+                <label htmlFor="star3">
+                  <i className="fas fa-star rad-3"></i>
+                </label>
+                <input
+                  onChange={setRating(2)}
+                  type="radio"
+                  id="star4"
+                  name="rating"
+                  hidden={true}
+                  value="2"
+                />
+                <label htmlFor="star4">
+                  <i className="fas fa-star rad-4"></i>
+                </label>
+                <input
+                  onChange={setRating(1)}
+                  type="radio"
+                  id="star5"
+                  name="rating"
+                  hidden={true}
+                  value="1" 
+                />
+                <label htmlFor="star5">
+                  <i className="fas fa-star rad-5"></i>
+                </label>
+                </fieldset>
               </div>
               <button className="checkin-form-button" type="submit">
                 Check In
               </button>
+              <button className="close-button" onClick={handleClose}>close</button>
             </form>
           )}
         </Mutation>
         {children}
-        <button onClick={handleClose}>close</button>
+        {/* <button onClick={handleClose}>close</button> */}
       </section>
     </div>
   );
