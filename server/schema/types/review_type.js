@@ -15,6 +15,12 @@ const ReviewType = new GraphQLObjectType({
       resolve(parentValue) {
         return Review.findRestaurant(parentValue._id);
       }
+    },
+    user: {
+      type: require("./user_type"),
+      resolve(parentValue) {
+        return Review.findUser(parentValue._id);
+      }
     }
   })
 });
