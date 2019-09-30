@@ -267,6 +267,8 @@ div {
             background-color: white;
             font-size: 20px;
             width: 730px;
+            height: 100%;
+            margin-bottom: 100px;
             box-sizing: border-box;
             padding-left: 25px;
             padding-right: 25px;
@@ -502,7 +504,7 @@ div {
     position: relative;
     margin-bottom: 5px;
     box-shadow: 5px 2px 2px grey;
-
+    word-wrap: break-word;
 }
 
 .speech-bubble::after {
