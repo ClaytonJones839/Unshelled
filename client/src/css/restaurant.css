@@ -356,8 +356,8 @@ a {
 /* top tacos */
 
 .top-taco-image {
-    width: 70px;
-    height: 70px;
+    width: 70px !important;
+    height: 70px !important;
     object-fit: cover;
     margin: 10px 10px 0px -5px; 
 }
