@@ -41,6 +41,7 @@ class RestaurantShow extends Component {
     }
 
     render() {
+      // debugger
       return (
         <Query query={FETCH_RESTAURANT} variables={{ id: this.props.match.params.id }}>
                 {({ loading, error, data }) => {
@@ -86,8 +87,8 @@ class RestaurantShow extends Component {
                     })
                   }
 
-                  let reviewBody = reviewBodyArray.map((review) => {
-                    debugger
+                  let reviewBody = reviewBodyArray.length > 1 ? reviewBodyArray.map((review) => {
+                    // debugger
                     if (review.user) {
                       // debugger
                       return (
@@ -107,7 +108,13 @@ class RestaurantShow extends Component {
                         </li>
                       );
                     }
-                  })
+                  }) : <p>Be the first to write a review!</p>
+                  // debugger
+                  // if (!reviewBodyArray || reviewBodyArray.length === 0) {
+                  //   return (
+                  //     reviewBody = <p>Be the first to write a written review!</p>
+                  //   )
+                  // }
 
                   let taco;
                   if (this.state.addTaco) {
