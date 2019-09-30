@@ -93,6 +93,8 @@ class TacoShow extends Component {
 
                 if (count !== 0) {
                   avgRating = count / total;
+                } else {
+                  avgRating = 0.00
                 }
                       
                 let background;
@@ -240,10 +242,6 @@ class TacoShow extends Component {
                     );
                   } 
                 
-                      
-                // debugger;
-                            // console.log(rdata);
-                            // console.log(data);
                 return (
                   <div className="super-detail">
                     <Modal tacoId={this.props.match.params.id} userId={rdata._id} show={this.state.show} handleClose={this.hideModal.bind(this)}>
@@ -282,7 +280,8 @@ class TacoShow extends Component {
                           </div>
                         </div>
                         <div className="info-bar">
-                          <div className="rating">Avg rating:&nbsp;{avgRating.toFixed(2)} {stars}</div>
+                          <div className="rating">Avg rating:
+                          &nbsp;{avgRating.toFixed(2)} {stars}</div>
                           <div className="total-ratings">Ratings: {totalCheckins}</div>
                         </div>
                         <div className="description">
