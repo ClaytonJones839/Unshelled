@@ -71,15 +71,16 @@
     justify-content: center;
 }
 
-.rest-show-like-btn {
+.rest-show-like-btn, .rest-show-unlike-btn {
     font-family: 'Roboto', sans-serif;
     width: 250px;
     margin: 12px auto 24px;
     display: block;
     padding: 10px 0;
     text-align: center;
-    color: black;
+    color: #fff;
     background-color: #ffcc00;
+    color: black;
     font-size: 18px;
     -webkit-border-radius: 4px;
     border-radius: 4px;
@@ -87,7 +88,13 @@
     outline: none;
 }
 
-.rest-show-like-btn:hover, .rest-show-like-image:hover {
+.rest-show-unlike-btn {
+    background-color: #efefef;
+}
+
+.rest-show-like-btn:hover, 
+.rest-show-like-image:hover,
+.rest-show-unlike-btn:hover {
     filter: brightness(0.8);
     cursor: pointer;
 }

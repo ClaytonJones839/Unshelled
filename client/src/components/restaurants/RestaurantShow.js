@@ -13,9 +13,32 @@ class RestaurantShow extends Component {
 
     this.state = {
         addTaco: false,
-        reviewArray: []
+        reviewArray: [],
+        numLikes: 112,
+        likeText: "Like This Restaurant",
+        likeButtonClass: "rest-show-like-btn"
     };
+
+    this.likeRestaurant = this.likeRestaurant.bind(this)
   } 
+
+
+    likeRestaurant(e) {
+      e.preventDefault();
+      if (this.state.numLikes === 112) {
+        this.setState({
+          numLikes: 113, 
+          likeButtonClass: "rest-show-unlike-btn",
+          likeText: "Unlike This Restaurant"
+        })
+      } else {
+        this.setState({
+          numLikes: 112,
+          likeButtonClass: "rest-show-like-btn",
+          likeText: "Like This Restaurant"
+        })
+      }
+    }
 
     render() {
       return (
@@ -325,14 +348,16 @@ class RestaurantShow extends Component {
                         </div>
                         <div className="rest-show-right">
                           <div className="rest-show-r-top">
-                            <div className="rest-show-num-likes">112</div>
+                            <div className="rest-show-num-likes">{this.state.numLikes}</div>
                             <div className="rest-show-likes-text">
                               People Like This Restaurant
                             </div>
                           </div>
                           <div className="rest-show-r-mid">
-                            <button className="rest-show-like-btn">
-                              Like This Restaurant
+                            <button 
+                              onClick={this.likeRestaurant}
+                              className={this.state.likeButtonClass}>
+                              {this.state.likeText}
                             </button>
                           </div>
                           <div className="rest-show-r-bottom">
