@@ -91,7 +91,7 @@ class RestaurantShow extends Component {
                       return (
                         <li className="review-body">
                           <div className="review-top">
-                            <p className="review-name">{review.firstName}%nbsp;{review.user.lastName}</p>
+                            <p className="review-name">{review.firstName} &nbsp;{review.user.lastName}</p>
                             <p className="review-rate">Rating: {review.rating}</p>
                           </div>  
                           <div className="review-bottom">
@@ -103,7 +103,7 @@ class RestaurantShow extends Component {
                       return (
                         <li className="review-body">
                           <div className="review-top">
-                            <p className="review-name">Annoyamus User</p>
+                            <p className="review-name">Anonymous User</p>
                             <p className="review-rate">Rating: {review.rating}</p>
                           </div>
                           <div className="review-bottom">
