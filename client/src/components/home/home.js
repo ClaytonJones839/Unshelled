@@ -102,9 +102,12 @@ class Home extends React.Component {
                         uniqueCheckins[checkin.taco._id] = true;
                       }
                       return (
-                        <div className="taco-checkin-box">
+                        <div 
+                        key={i}
+                        className="taco-checkin-box">
                           <img className="profile-pic"
-                            src={user_data.user.photo} alt=""></img>
+                            alt=""
+                            src={user_data.user.photo}></img>
                           <div className="checkin-info">
                             <div className="checkin-statement">
                             <Link to={`/users/${log_data._id}`}>{checkin.name}</Link> is eating a
@@ -149,7 +152,7 @@ class Home extends React.Component {
                           <div className="user-info">
                             <div className="user-avatar">
                               <Link to={`/users/${log_data._id}`}>
-                                <img src={log_data.photo}></img>
+                                <img alt="" src={log_data.photo}></img>
                               </Link>
                             </div>
                             <div className="info">
@@ -165,15 +168,15 @@ class Home extends React.Component {
                             <a className="unique">
                               <span className="stat">{user_data.user ? Object.keys(uniqueCheckins).length : 0}</span>
                               <span className="title">Unique</span>
-                            </a>
-                            <a className="badges">
+                            </div>
+                            <div className="badges">
                               <span className="stat">0</span>
                               <span className="title">Badges</span>
-                            </a>
-                            <a className="friends">
+                            </div>
+                            <div className="friends">
                               <span className="stat">0</span>
                               <span className="title">Friends</span>
-                            </a>
+                            </div>
                           </div>
                         </div>
                         <div className="home-lists">

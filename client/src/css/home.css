@@ -98,7 +98,7 @@
     border-radius: 4px;
 }
 
-.prof-stats a {
+.prof-stats div {
     display: inline-block;
     width: 50%;
     color: #333;
@@ -110,25 +110,25 @@
     box-sizing: border-box;
 }
 
-.prof-stats a:first-child {
+.prof-stats div:first-child {
     box-shadow: inset -1px 0 0 0 rgba(0,0,0,0.1);
 }
 
-.prof-stats a:first-child, .prof-stats a:nth-child(2) {
+.prof-stats div:first-child, .prof-stats div:nth-child(2) {
     border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
-.prof-stats a:nth-child(3) {
+.prof-stats div:nth-child(3) {
     box-shadow: inset -1px 0 0 0 rgba(0,0,0,0.1);
 }
 
-.prof-stats a .stat {
+.prof-stats div .stat {
     display: block;
     font-size: 1.2em;
     margin-bottom: 4px;
 }
 
-.prof-stats a .title {
+.prof-stats div .title {
     text-transform: uppercase;
     font-size: .6em;
     font-weight: 600;

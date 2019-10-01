@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Mutation } from "react-apollo";
+import { Mutation, Query } from "react-apollo";
 // import gql from "graphql-tag";
 import Queries from "../../graphql/queries";
 import Mutations from "../../graphql/mutations";
-const { FETCH_REVIEWS } = Queries;
+const { FETCH_REVIEWS, IS_LOGGED_IN } = Queries;
 const { NEW_REVIEW } = Mutations;
 
 class ReviewNew extends Component {
@@ -24,22 +24,23 @@ class ReviewNew extends Component {
     };
   }
 
-  handleSubmit(e, newReview) {
+  handleSubmit(e, newReview, userId) {
     e.preventDefault();
     let body = this.state.body;
-
+    // debugger
     newReview({
       variables: {
         body: body,
         rating: parseInt(this.state.rating),
-        restaurantId: this.state.restaurantId
+        restaurantId: this.state.restaurantId,
+        userId: userId
       }
     }).then(data => {
       this.setState({
         message: `New review created successfully`,
         body: "",
       });
-      setTimeout(() => document.location.reload(true), 1000);
+      setTimeout(() => document.location.reload(true), 1200);
     });
   }
 
@@ -71,11 +72,18 @@ class ReviewNew extends Component {
         mutation={NEW_REVIEW}
         update={(cache, data) => this.updateCache(cache, data)}
       >
-        {(newReview, { data }) => (
+        {(newReview, { data }) => {
+          return (
+            <Query query={IS_LOGGED_IN}>
+                    {({ loading: loadingTwo, error, data: rdata }) => {
+                  if (loadingTwo) return <p>Loading...</p>;
+                  if (error) return <p>Error</p>;
+                // debugger
+                return (
           <div className="new-review-form">
             <div className="review-form-text">Restaurant Review</div>
             <form
-              onSubmit={e => this.handleSubmit(e, newReview)}
+              onSubmit={e => this.handleSubmit(e, newReview, rdata._id)}
               className="inner-review-form"
             >
               <fieldset className="rating-stars">
@@ -147,7 +155,10 @@ class ReviewNew extends Component {
             </form>
             <div className="review-confirm">{this.state.message}</div>
           </div>
+        )}}
+        </Query>
         )}
+        }
       </Mutation>
     );
   }
