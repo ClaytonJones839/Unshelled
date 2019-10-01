@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Mutation } from "react-apollo";
 import Mutations from "../../graphql/mutations";
 import { Link } from "react-router-dom";
-// import { onError } from "apollo-link-error";
 
 
 export default class Login extends Component {
@@ -75,7 +74,6 @@ export default class Login extends Component {
                                       password: this.state.password
                                     }
                                   });
-                                   
                                 }}
                             >
                                 <button className="login-form-demo" onClick={e => {

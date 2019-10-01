@@ -27,7 +27,6 @@ class ReviewNew extends Component {
   handleSubmit(e, newReview, userId) {
     e.preventDefault();
     let body = this.state.body;
-    // debugger
     newReview({
       variables: {
         body: body,
@@ -78,7 +77,6 @@ class ReviewNew extends Component {
                     {({ loading: loadingTwo, error, data: rdata }) => {
                   if (loadingTwo) return <p>Loading...</p>;
                   if (error) return <p>Error</p>;
-                // debugger
                 return (
           <div className="new-review-form">
             <div className="review-form-text">Restaurant Review</div>

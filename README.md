@@ -25,3 +25,18 @@ Unshelled features a directory of some of the best Taco restaurants across the c
 ## Restaurant Show Pages
 Each restaurant featured on Unshelled has it's own show page. At this page, users are able to add tacos to that restaurants current menu directory, rate the restaurant, and access external social media links. 
 ![Restaurant Page](./client/public/rest_show.png)
+
+```javascript
+  VERIFY_USER: gql`
+    mutation VerifyUser($token: String!) {
+      verifyUser(token: $token) {
+        _id
+        isLoggedIn
+        firstName
+        lastName
+        photo
+        username
+      }
+    }
+  `,
+```
