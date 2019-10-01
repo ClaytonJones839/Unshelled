@@ -57,7 +57,7 @@ export default class Register extends Component {
             >
                 {registerUser => (
                     <div className="login-page-wrap">
-                        <div className="signup-form-container">
+                        <div className="animated fadeInRightBig signup-form-container">
                         <div className="login-form-top">
                             <div className="login-logo">
                                 UNSHELLED
