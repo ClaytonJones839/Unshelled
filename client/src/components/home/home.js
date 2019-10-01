@@ -96,7 +96,11 @@ class Home extends React.Component {
                   ({ loading2, error2, data: user_data }) => {
                     if (loading2) return <p>Loading...</p>;
                     if (error2) return <p>Error</p>;
+                    let uniqueCheckins = {};
                     let checkins = user_data.user ? user_data.user.tacoCheckin.map(checkin => {
+                      if (!uniqueCheckins[checkin.taco._id]) {
+                        uniqueCheckins[checkin.taco._id] = true;
+                      }
                       return (
                         <div className="taco-checkin-box">
                           <img className="profile-pic"
@@ -155,11 +159,11 @@ class Home extends React.Component {
                           </div>
                           <div className="prof-stats">
                             <a className="total">
-                              <span className="stat">Count</span>
+                              <span className="stat">{user_data.user ? user_data.user.tacoCheckin.length : 0}</span>
                               <span className="title">Total</span>
                             </a>
                             <a className="unique">
-                              <span className="stat">Count</span>
+                              <span className="stat">{user_data.user ? Object.keys(uniqueCheckins).length : 0}</span>
                               <span className="title">Unique</span>
                             </a>
                             <a className="badges">

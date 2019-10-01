@@ -16,8 +16,11 @@ class UserProfile extends React.Component {
                     if (error) return <p>Error</p>;
 
                     let checkIns = [];
- 
+                    let uniqueCheckins = {};
                     checkIns = data.user.tacoCheckin.map(checkin => {
+                        if (!uniqueCheckins[checkin.taco._id]) {
+                            uniqueCheckins[checkin.taco._id] = true;
+                        }
                     return (
                         <div 
                             id={checkin._id}
@@ -49,11 +52,11 @@ class UserProfile extends React.Component {
                                     <span>{data.user.username}</span>
                                     <div className="user-stats">
                                         <Link to={`/users/${data.user._id}`} className="user-stat">
-                                            <span className="stat-count">0</span>
+                                            <span className="stat-count">{data.user.tacoCheckin.length}</span>
                                             <span className="stat-name">TOTAL</span>
                                         </Link>
                                         <Link to={`/users/${data.user._id}`} className="user-stat">
-                                            <span className="stat-count">0</span>
+                                            <span className="stat-count">{Object.keys(uniqueCheckins).length}</span>
                                             <span className="stat-name">UNIQUE</span>
                                         </Link>
                                         <Link to={`/users/${data.user._id}`} className="user-stat">
