@@ -97,7 +97,7 @@ class Home extends React.Component {
                     if (loading2) return <p>Loading...</p>;
                     if (error2) return <p>Error</p>;
                     let uniqueCheckins = {};
-                    let checkins = user_data.user ? user_data.user.tacoCheckin.map(checkin => {
+                    let checkins = user_data.user ? user_data.user.tacoCheckin.map((checkin,i) => {
                       if (!uniqueCheckins[checkin.taco._id]) {
                         uniqueCheckins[checkin.taco._id] = true;
                       }
@@ -161,11 +161,11 @@ class Home extends React.Component {
                             </div>
                           </div>
                           <div className="prof-stats">
-                            <a className="total">
+                            <div className="total">
                               <span className="stat">{user_data.user ? user_data.user.tacoCheckin.length : 0}</span>
                               <span className="title">Total</span>
-                            </a>
-                            <a className="unique">
+                            </div>
+                            <div className="unique">
                               <span className="stat">{user_data.user ? Object.keys(uniqueCheckins).length : 0}</span>
                               <span className="title">Unique</span>
                             </div>
