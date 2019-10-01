@@ -9,6 +9,7 @@ body {
     position: relative;
 }
 
+@import "./animate.css";
 @import "./reset.css";
 @import "./navbar.css";
 @import "./static.css";
