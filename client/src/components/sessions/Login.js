@@ -56,7 +56,7 @@ export default class Login extends Component {
             >
                 {loginUser => (
                     <div className="login-page-wrap">
-                        <div className="login-form-container">
+                <div className="animated fadeInRightBig login-form-container">
                             <div className="login-form-top">
                                 <div className="login-logo">
                                     UNSHELLED
