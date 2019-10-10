@@ -6,7 +6,6 @@ Unshelled is a web application that focuses on helping it's users find the best 
 - JavaScript
 - React
 - GraphQL
-- Node.js
 - Mongoose
 - Docker
 - MongoDB
